@@ -1,0 +1,1117 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\newfontfamily\EmojiFont[Renderer=HarfBuzz]{Apple Color Emoji}
+\newfontfamily\SymbolFont{Arial Unicode MS}
+\newcommand{\EmojiGlyph}[1]{{\normalfont\EmojiFont #1}}
+\newcommand{\SymbolGlyph}[1]{{\normalfont\SymbolFont #1}}
+\usepackage{newunicodechar}
+\usepackage{microtype}
+\usepackage{setspace}
+\setstretch{1.08}
+\usepackage{hyperref}
+\usepackage{xurl}
+\urlstyle{same}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+\usepackage{enumitem}
+\setlist{leftmargin=*,itemsep=2pt,topsep=2pt}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{ragged2e}
+\renewcommand{\arraystretch}{1.15}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{3em}
+\sloppy
+\newcommand{\UncheckedBox}{$\square$}
+\newcommand{\CheckedBox}{$\blacksquare$}
+\title{Wealth Management Prompt Library\\LaTeX Translation and Dependency Map}
+\author{financial-services-plugins repository}
+\date{Generated on 2026-03-05 09:31 }
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Repository Structure Overview}
+
+\subsection{Folder Tree}
+\textbf{Root directory: wealth-management}
+\begin{itemize}[leftmargin=*,itemsep=1pt,topsep=2pt]
+\item \hspace*{0.0em}commands
+\item \hspace*{0.0em}skills
+\item \hspace*{0.9em}commands/client-report.md
+\item \hspace*{0.9em}commands/client-review.md
+\item \hspace*{0.9em}commands/financial-plan.md
+\item \hspace*{0.9em}commands/proposal.md
+\item \hspace*{0.9em}commands/rebalance.md
+\item \hspace*{0.9em}commands/tlh.md
+\item \hspace*{0.9em}skills/client-report
+\item \hspace*{0.9em}skills/client-review
+\item \hspace*{0.9em}skills/financial-plan
+\item \hspace*{0.9em}skills/investment-proposal
+\item \hspace*{0.9em}skills/portfolio-rebalance
+\item \hspace*{0.9em}skills/tax-loss-harvesting
+\item \hspace*{1.8em}skills/client-report/SKILL.md
+\item \hspace*{1.8em}skills/client-review/SKILL.md
+\item \hspace*{1.8em}skills/financial-plan/SKILL.md
+\item \hspace*{1.8em}skills/investment-proposal/SKILL.md
+\item \hspace*{1.8em}skills/portfolio-rebalance/SKILL.md
+\item \hspace*{1.8em}skills/tax-loss-harvesting/SKILL.md
+\end{itemize}
+
+\section{Prompt Dependency Structure}
+
+\subsection{Command-to-Skill Dependencies}
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Command Prompt} & \textbf{Loaded Skill Prompt} \\
+\midrule
+{} commands/ client-report.md & skills/ client-report/ SKILL.md \\
+{} commands/ client-review.md & skills/ client-review/ SKILL.md \\
+{} commands/ financial-plan.md & skills/ financial-plan/ SKILL.md \\
+{} commands/ proposal.md & skills/ investment-proposal/ SKILL.md \\
+{} commands/ rebalance.md & skills/ portfolio-rebalance/ SKILL.md \\
+{} commands/ tlh.md & skills/ tax-loss-harvesting/ SKILL.md \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\newpage
+
+\section{Translated Prompt Corpus}
+
+This section translates every markdown prompt under the wealth-management directory into LaTeX-native structure, preserving hierarchy and dependency flow.
+
+\subsection{Directory: commands}
+
+\subsection{Command: client-report.md}\label{file:commands-client-report.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Generate a client performance report \\
+{} argument-hint & [client name] [period, e.g. Q4 2025] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{client-report} skill to generate a professional client-facing performance report.
+
+
+If a client and period are provided, use them. Otherwise ask for client details and reporting period.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: client-review.md}\label{file:commands-client-review.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Prep for a client review meeting \\
+{} argument-hint & [client name] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{client-review} skill and prepare a client meeting package with performance, allocation, and talking points.
+
+
+If a client name is provided, use it. Otherwise ask who the meeting is with.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: financial-plan.md}\label{file:commands-financial-plan.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Build or update a financial plan \\
+{} argument-hint & [client name] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{financial-plan} skill to create or update a comprehensive financial plan covering retirement, education, estate, and cash flow projections.
+
+
+If a client name is provided, use it. Otherwise ask for client details.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: proposal.md}\label{file:commands-proposal.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Create an investment proposal for a prospect \\
+{} argument-hint & [prospect name] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{investment-proposal} skill to create a personalized investment proposal for a prospective client.
+
+
+If a prospect name is provided, use it. Otherwise ask for prospect details.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: rebalance.md}\label{file:commands-rebalance.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Analyze drift and generate rebalancing trades \\
+{} argument-hint & [client name or account] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{portfolio-rebalance} skill to analyze allocation drift and recommend tax-aware rebalancing trades.
+
+
+If a client or account is provided, use it. Otherwise ask for the portfolio to analyze.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: tlh.md}\label{file:commands-tlh.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Identify tax-loss harvesting opportunities \\
+{} argument-hint & [client name or account] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{tax-loss-harvesting} skill to scan taxable accounts for harvestable losses, suggest replacement securities, and manage wash sale windows.
+
+
+If a client or account is provided, use it. Otherwise ask for the portfolio to scan.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Directory: skills}
+
+\subsection{Skill: client-report}\label{file:skills-client-report-SKILL.md}
+
+\paragraph{Client Report}\mbox{}\par
+
+description: Generate professional client-facing performance reports with portfolio returns, allocation breakdowns, and market commentary. Suitable for quarterly or annual distribution. Triggers on ``client report'', ``performance report'', ``quarterly report for [client]'', ``generate reports'', or ``client statement''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Report Parameters}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Client name} and household
+\item {} \textbf{Reporting period}: Quarter, YTD, annual, custom range
+\item {} \textbf{Accounts}: All accounts or specific account
+\item {} \textbf{Benchmark}: S\&P 500, 60/40 blend, custom benchmark matching IPS
+\item {} \textbf{Firm branding}: Logo, colors, disclaimers
+\end{itemize}
+
+\subparagraph{Step 2: Performance Summary}\mbox{}\par
+
+\textbf{Household Summary:}
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}}
+\toprule
+{} \textbf{} & \textbf{QTD} & \textbf{YTD} & \textbf{1-Year} & \textbf{3-Year Ann.} & \textbf{5-Year Ann.} & \textbf{ITD Ann.} \\
+\midrule
+{} Portfolio &  &  &  &  &  &  \\
+{} Benchmark &  &  &  &  &  &  \\
+{} +/ - &  &  &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{By Account:}
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
+\toprule
+{} \textbf{Account} & \textbf{Type} & \textbf{Value} & \textbf{QTD} & \textbf{YTD} & \textbf{Benchmark} \\
+\midrule
+{} Joint Taxable & Brokerage &  &  &  &  \\
+{} John IRA & Traditional &  &  &  &  \\
+{} Jane Roth & Roth IRA &  &  &  &  \\
+{} 529 Plan & Education &  &  &  &  \\
+{} \textbf{Total} &  &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 3: Allocation Overview}\mbox{}\par
+
+Current allocation with visual (pie chart or bar chart):
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{Asset Class} & \textbf{\% of Portfolio} & \textbf{\$ Value} & \textbf{Benchmark \%} \\
+\midrule
+{}  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 4: Holdings Detail}\mbox{}\par
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}}
+\toprule
+{} \textbf{Security} & \textbf{Asset Class} & \textbf{Shares} & \textbf{Price} & \textbf{Value} & \textbf{\% of Portfolio} & \textbf{QTD Return} \\
+\midrule
+{}  &  &  &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 5: Market Commentary}\mbox{}\par
+
+Brief market summary tailored to the client's level of sophistication:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} What happened in markets this quarter (2-3 sentences)
+\item {} How it affected the portfolio
+\item {} Outlook and positioning rationale (2-3 sentences)
+\item {} No jargon for retail clients; can be more technical for sophisticated investors
+\end{itemize}
+
+\subparagraph{Step 6: Activity Summary}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Trades executed during the period
+\item {} Contributions and withdrawals
+\item {} Dividends and interest received
+\item {} Fees charged
+\item {} Rebalancing activity
+\end{itemize}
+
+\subparagraph{Step 7: Planning Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Progress toward financial goals (retirement, education, etc.)
+\item {} Any plan changes or recommendations
+\item {} Upcoming action items
+\item {} Next review date
+\end{itemize}
+
+\subparagraph{Step 8: Output}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} PDF report (8-12 pages) with firm branding
+\item {} Word document for customization
+\item {} Excel data appendix (optional)
+\end{itemize}
+
+\textbf{Report Structure:}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Cover page (client name, period, firm logo)
+\item {} Executive summary (1 page)
+\item {} Performance summary (1-2 pages)
+\item {} Allocation overview with charts (1 page)
+\item {} Holdings detail (1-2 pages)
+\item {} Market commentary (1 page)
+\item {} Activity summary (1 page)
+\item {} Planning notes (1 page)
+\item {} Disclosures and disclaimers (1 page)
+\end{enumerate}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Performance must be calculated net of fees unless client/compliance requires gross
+\item {} Always include appropriate disclaimers and disclosures (past performance, risk factors)
+\item {} Reports should be consistent across clients — use a standard template
+\item {} Match the level of detail to the client — some want every holding, others want a one-page summary
+\item {} Benchmark selection matters — use the benchmark from the IPS, not whatever looks best
+\item {} Review for compliance approval before first distribution of a new template
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: client-review}\label{file:skills-client-review-SKILL.md}
+
+\paragraph{Client Review Prep}\mbox{}\par
+
+description: Prepare for client review meetings with portfolio performance summary, allocation analysis, talking points, and action items. Pulls together account data into a concise meeting-ready format. Use before quarterly reviews, annual checkups, or ad-hoc client meetings. Triggers on ``client review'', ``meeting prep for [client]'', ``quarterly review'', ``prep for [client name]'', or ``client meeting''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Client Context}\mbox{}\par
+
+Gather or look up:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Client name} and household members
+\item {} \textbf{Account types}: Taxable, IRA, Roth, 401(k), trust, etc.
+\item {} \textbf{Total AUM} across accounts
+\item {} \textbf{Investment Policy Statement (IPS)}: Target allocation, risk tolerance, constraints
+\item {} \textbf{Life stage}: Accumulation, pre-retirement, retirement, legacy
+\item {} \textbf{Last meeting date} and any outstanding action items
+\end{itemize}
+
+\subparagraph{Step 2: Portfolio Performance}\mbox{}\par
+
+For each account and the household aggregate:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
+\toprule
+{} \textbf{Metric} & \textbf{QTD} & \textbf{YTD} & \textbf{1-Year} & \textbf{3-Year} & \textbf{Since Inception} \\
+\midrule
+{} Portfolio return &  &  &  &  &  \\
+{} Benchmark return &  &  &  &  &  \\
+{} Alpha &  &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{Performance Attribution:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Which asset classes / positions drove returns?
+\item {} Top 3 contributors and top 3 detractors
+\item {} Any outsized single-position impact?
+\end{itemize}
+
+\subparagraph{Step 3: Allocation Review}\mbox{}\par
+
+Current vs. target allocation:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}}
+\toprule
+{} \textbf{Asset Class} & \textbf{Target} & \textbf{Current} & \textbf{Drift} & \textbf{Action} \\
+\midrule
+{} US Large Cap &  &  &  &  \\
+{} US Mid/ Small &  &  &  &  \\
+{} International Developed &  &  &  &  \\
+{} Emerging Markets &  &  &  &  \\
+{} Fixed Income &  &  &  &  \\
+{} Alternatives &  &  &  &  \\
+{} Cash &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Flag any drift exceeding the IPS rebalancing threshold (typically 3-5\%).
+
+
+\subparagraph{Step 4: Talking Points}\mbox{}\par
+
+Generate a meeting agenda:
+
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Market overview} (2-3 min): Brief macro context and outlook
+\item {} \textbf{Portfolio performance} (5 min): How did we do? Why?
+\item {} \textbf{Allocation review} (5 min): Any rebalancing needed?
+\item {} \textbf{Planning updates} (5-10 min):
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Life changes? (job, health, family, home, education)
+\item {} Income needs changing?
+\item {} Tax situation updates
+\item {} Estate planning updates
+\end{itemize}
+\item {} \textbf{Action items} (5 min): What are we doing before next meeting?
+\end{enumerate}
+
+\subparagraph{Step 5: Proactive Recommendations}\mbox{}\par
+
+Based on the review, suggest:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Rebalancing trades (if drift exceeds thresholds)
+\item {} Tax-loss harvesting opportunities
+\item {} Cash deployment or withdrawal planning
+\item {} Roth conversion opportunities (if applicable)
+\item {} Beneficiary updates or estate planning needs
+\item {} Insurance review (life, disability, LTC)
+\end{itemize}
+
+\subparagraph{Step 6: Output}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} One-page client review summary (Word or PDF)
+\item {} Performance table with benchmarks
+\item {} Allocation pie chart (current vs. target)
+\item {} Recommended action items
+\item {} Meeting agenda
+\end{itemize}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Know your client before the meeting — review notes from last meeting
+\item {} Lead with what the client cares about, not what you want to talk about
+\item {} If performance was bad, address it directly — don't hide or spin
+\item {} Always end with clear action items and next steps with dates
+\item {} Document the meeting notes and any changes to the IPS
+\item {} Compliance: ensure all materials are compliant with firm policies and regulatory requirements
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: financial-plan}\label{file:skills-financial-plan-SKILL.md}
+
+\paragraph{Financial Plan}\mbox{}\par
+
+description: Build or update a comprehensive financial plan covering retirement projections, education funding, estate planning, and cash flow analysis. Use for new client onboarding, annual plan reviews, or scenario modeling. Triggers on ``financial plan'', ``retirement plan'', ``can I retire'', ``education funding'', ``estate plan'', ``cash flow analysis'', or ``plan update''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Client Profile}\mbox{}\par
+
+Gather or confirm:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Demographics}: Age, spouse age, dependents, life expectancy assumptions
+\item {} \textbf{Employment}: Current income, expected raises, retirement age target
+\item {} \textbf{Accounts}: All investment accounts with balances and asset allocation
+\item {} \textbf{Income sources}: Salary, bonuses, rental income, Social Security estimates, pensions
+\item {} \textbf{Expenses}: Current annual spending, expected changes (mortgage payoff, kids' independence)
+\item {} \textbf{Liabilities}: Mortgage, student loans, other debt
+\item {} \textbf{Insurance}: Life, disability, LTC, health
+\item {} \textbf{Estate}: Wills, trusts, beneficiary designations, gifting strategy
+\end{itemize}
+
+\subparagraph{Step 2: Cash Flow Analysis}\mbox{}\par
+
+Build annual cash flow projections:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}}
+\toprule
+{} \textbf{Year} & \textbf{Age} & \textbf{Gross Income} & \textbf{Taxes} & \textbf{Living Expenses} & \textbf{Savings} & \textbf{Net Cash Flow} \\
+\midrule
+{}  &  &  &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Key inputs:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Inflation rate assumption (typically 2.5-3\%)
+\item {} Tax rate (marginal and effective)
+\item {} Savings rate and where savings are directed (pre-tax, Roth, taxable)
+\end{itemize}
+
+\subparagraph{Step 3: Retirement Projections}\mbox{}\par
+
+\textbf{Accumulation Phase:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Current portfolio value
+\item {} Annual contributions (401k, IRA, taxable)
+\item {} Expected return by asset class
+\item {} Monte Carlo simulation: probability of success at various spending levels
+\end{itemize}
+
+\textbf{Distribution Phase:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Required annual spending in retirement (today's dollars → inflation-adjusted)
+\item {} Social Security start age and benefit
+\item {} Pension income (if any)
+\item {} Portfolio withdrawal rate and sequence
+\item {} Required Minimum Distributions (RMDs)
+\end{itemize}
+
+\textbf{Key Output:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Projected portfolio value at retirement
+\item {} Sustainable withdrawal rate
+\item {} Probability of not running out of money (target >85\%)
+\item {} ``What if'' scenarios: retire early, market downturn, higher spending
+\end{itemize}
+
+\subparagraph{Step 4: Goal-Specific Analysis}\mbox{}\par
+
+\subparagraph{Education Funding}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Children's ages and target college start
+\item {} Current 529 balances
+\item {} Target funding level (public vs. private, 4-year vs. graduate)
+\item {} Required monthly savings to reach goal
+\item {} Financial aid considerations
+\end{itemize}
+
+\subparagraph{Estate Planning}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Current estate value and projected growth
+\item {} Estate tax exposure (federal and state)
+\item {} Trust structures in place
+\item {} Gifting strategy (annual exclusion, lifetime exemption usage)
+\item {} Charitable giving plans
+\item {} Beneficiary review
+\end{itemize}
+
+\subparagraph{Risk Management}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Life insurance needs analysis (income replacement, debt payoff, education funding)
+\item {} Disability insurance adequacy
+\item {} Long-term care planning
+\item {} Umbrella liability coverage
+\end{itemize}
+
+\subparagraph{Step 5: Scenario Modeling}\mbox{}\par
+
+Run key scenarios:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{Scenario} & \textbf{Probability of Success} & \textbf{Portfolio at 90} & \textbf{Notes} \\
+\midrule
+{} Base case &  &  &  \\
+{} Retire 2 years early &  &  &  \\
+{} 20\% market drop in Year 1 &  &  &  \\
+{} Higher spending (+20\%) &  &  &  \\
+{} One spouse lives to 95 &  &  &  \\
+{} Long-term care event &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 6: Recommendations}\mbox{}\par
+
+Prioritized action items:
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Savings rate changes
+\item {} Asset allocation adjustments
+\item {} Tax optimization (Roth conversions, tax-loss harvesting, asset location)
+\item {} Insurance gaps to fill
+\item {} Estate document updates
+\item {} Beneficiary designation review
+\end{enumerate}
+
+\subparagraph{Step 7: Output}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Financial plan document (Word/PDF, 15-25 pages)
+\item {} Cash flow projection spreadsheet (Excel)
+\item {} Retirement projection charts
+\item {} Goal funding analysis
+\item {} Scenario comparison table
+\item {} Action item checklist
+\end{itemize}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Financial plans are living documents — review and update annually or after major life events
+\item {} Be conservative with return assumptions — overestimating returns gives false confidence
+\item {} Tax planning is as important as investment returns — model tax implications of every recommendation
+\item {} Social Security timing is a major lever — model start ages of 62, 67, and 70
+\item {} Always stress-test the plan — a plan that only works in the base case isn't a good plan
+\item {} Compliance: ensure recommendations align with suitability/fiduciary standards
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: investment-proposal}\label{file:skills-investment-proposal-SKILL.md}
+
+\paragraph{Investment Proposal}\mbox{}\par
+
+description: Create professional investment proposals for prospective clients. Covers the firm's approach, proposed allocation, expected outcomes, and fee structure. Use when pitching new clients or presenting a new investment strategy. Triggers on ``investment proposal'', ``prospect presentation'', ``pitch new client'', ``proposal for [client]'', or ``new client presentation''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Prospect Context}\mbox{}\par
+
+Gather:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Prospect name} and household details
+\item {} \textbf{Current situation}: Existing advisor? Self-directed? What prompted the meeting?
+\item {} \textbf{Assets}: Estimated AUM, account types, current holdings (if shared)
+\item {} \textbf{Goals}: Retirement, wealth preservation, growth, income, education, estate
+\item {} \textbf{Risk tolerance}: Conservative, moderate, aggressive (or questionnaire score)
+\item {} \textbf{Constraints}: ESG preferences, concentrated stock, illiquidity needs
+\item {} \textbf{Fee sensitivity}: What are they paying now?
+\item {} \textbf{Competition}: Who else are they considering?
+\end{itemize}
+
+\subparagraph{Step 2: Proposal Structure}\mbox{}\par
+
+\textbf{I. About Our Firm} (1 page)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Firm overview, history, AUM
+\item {} Investment philosophy (in plain English)
+\item {} Team bios (relevant to this client)
+\item {} Client service model (how often do we meet, who do they call)
+\end{itemize}
+
+\textbf{II. Understanding Your Needs} (1 page)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Restate their goals and concerns — show you listened
+\item {} Key planning considerations identified in discovery
+\item {} What success looks like for them
+\end{itemize}
+
+\textbf{III. Proposed Investment Strategy} (2-3 pages)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Recommended asset allocation with rationale
+\item {} How allocation maps to their goals and risk tolerance
+\item {} Investment vehicles (ETFs, mutual funds, individual securities, alternatives)
+\item {} Tax-aware strategy (asset location, tax-loss harvesting)
+\end{itemize}
+
+Proposed allocation:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{Asset Class} & \textbf{Allocation} & \textbf{Vehicle} & \textbf{Rationale} \\
+\midrule
+{}  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{IV. Expected Outcomes} (1-2 pages)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Projected growth scenarios (conservative, moderate, optimistic)
+\item {} Monte Carlo probability of meeting goals
+\item {} Income projections (if retirement or income-focused)
+\item {} Risk metrics (max drawdown, volatility)
+\item {} Comparison to current portfolio (if known)
+\end{itemize}
+
+\textbf{V. Fee Structure} (1 page)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Advisory fee schedule (tiered if applicable)
+\item {} Underlying fund expenses
+\item {} Total all-in cost estimate
+\item {} How fees compare to industry averages
+\item {} Value proposition — what they get for the fee
+\end{itemize}
+
+\textbf{VI. Getting Started} (1 page)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Account opening process
+\item {} Asset transfer timeline
+\item {} Transition plan (if moving from another advisor)
+\item {} First 90 days — what to expect
+\item {} Required documents and next steps
+\end{itemize}
+
+\subparagraph{Step 3: Customization}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Match the tone to the prospect (corporate executive vs. small business owner vs. retiree)
+\item {} If they have a concentrated stock position, address it directly
+\item {} If they're comparing you to robo-advisors, emphasize the planning and relationship value
+\item {} If they're price-sensitive, lead with total value and outcomes, not just fees
+\end{itemize}
+
+\subparagraph{Step 4: Output}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} PowerPoint presentation (12-15 slides) with firm branding
+\item {} PDF leave-behind version
+\item {} One-page summary for follow-up email
+\end{itemize}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} The proposal should feel personalized, not templated — reference their specific situation
+\item {} Don't oversell performance — set realistic expectations and emphasize process
+\item {} Always include disclaimers (projections are hypothetical, past performance, etc.)
+\item {} The transition plan matters — clients fear the disruption of switching advisors
+\item {} Follow up within 48 hours with the proposal and a clear next step
+\item {} Compliance must review before presenting to prospects
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: portfolio-rebalance}\label{file:skills-portfolio-rebalance-SKILL.md}
+
+\paragraph{Portfolio Rebalance}\mbox{}\par
+
+description: Analyze portfolio allocation drift and generate rebalancing trade recommendations across accounts. Considers tax implications, transaction costs, and wash sale rules. Triggers on ``rebalance'', ``portfolio drift'', ``allocation check'', ``rebalancing trades'', or ``my portfolio is out of balance''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Current State}\mbox{}\par
+
+For each account, capture:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Account type (taxable, IRA, Roth, 401k)
+\item {} Holdings with current market value
+\item {} Cost basis (for taxable accounts)
+\item {} Unrealized gains/losses per position
+\end{itemize}
+
+\subparagraph{Step 2: Drift Analysis}\mbox{}\par
+
+Compare current allocation to IPS targets:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}}
+\toprule
+{} \textbf{Asset Class} & \textbf{Target \%} & \textbf{Current \%} & \textbf{Drift} & \textbf{\$ Over/ Under} \\
+\midrule
+{} US Large Cap Equity &  &  &  &  \\
+{} US Small/ Mid Cap &  &  &  &  \\
+{} International Developed &  &  &  &  \\
+{} Emerging Markets &  &  &  &  \\
+{} Investment Grade Bonds &  &  &  &  \\
+{} High Yield /  Credit &  &  &  &  \\
+{} TIPS /  Inflation Protected &  &  &  &  \\
+{} Alternatives &  &  &  &  \\
+{} Cash &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Flag positions exceeding the rebalancing band (typically ±3-5\%).
+
+
+\subparagraph{Step 3: Trade Recommendations}\mbox{}\par
+
+Generate trades to bring allocation back to target:
+
+
+\textbf{Tax-Aware Rebalancing Rules:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Prefer rebalancing in tax-advantaged accounts (IRA, Roth) first — no tax consequences
+\item {} In taxable accounts, avoid selling positions with large short-term gains
+\item {} Harvest losses where possible while rebalancing
+\item {} Watch for wash sale rules (30-day window) across all accounts
+\item {} Consider directing new contributions to underweight asset classes instead of trading
+\end{itemize}
+
+\textbf{Trade List:}
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
+\toprule
+{} \textbf{Account} & \textbf{Action} & \textbf{Security} & \textbf{Shares/ \$} & \textbf{Reason} & \textbf{Tax Impact} \\
+\midrule
+{}  & Buy/ Sell &  &  & Rebalance /  TLH & ST gain /  LT gain /  Loss \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 4: Asset Location Review}\mbox{}\par
+
+Optimize which assets are held in which account types:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Tax-deferred (IRA/401k)}: Bonds, REITs, high-turnover funds (highest tax drag)
+\item {} \textbf{Roth}: Highest expected growth assets (tax-free growth)
+\item {} \textbf{Taxable}: Tax-efficient equity (index funds, ETFs, munis), tax-loss harvesting candidates
+\end{itemize}
+
+\subparagraph{Step 5: Implementation}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Total trades by account
+\item {} Estimated transaction costs
+\item {} Estimated tax impact (realized gains/losses)
+\item {} Net effect on allocation drift
+\end{itemize}
+
+\subparagraph{Step 6: Output}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Drift analysis table
+\item {} Recommended trade list (Excel)
+\item {} Tax impact summary
+\item {} Before/after allocation comparison
+\end{itemize}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Don't rebalance for rebalancing's sake — small drift within bands is fine
+\item {} Tax costs can outweigh rebalancing benefits in taxable accounts — calculate the breakeven
+\item {} Consider pending cash flows (contributions, withdrawals, RMDs) before trading
+\item {} Check for any client-specific restrictions (ESG, concentrated stock, lockups)
+\item {} Document rationale for every trade for compliance records
+\item {} Wash sale rules apply across accounts — coordinate trades across the household
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: tax-loss-harvesting}\label{file:skills-tax-loss-harvesting-SKILL.md}
+
+\paragraph{Tax-Loss Harvesting}\mbox{}\par
+
+description: Identify tax-loss harvesting opportunities across taxable accounts. Finds positions with unrealized losses, suggests replacement securities, and tracks wash sale windows. Triggers on ``tax-loss harvesting'', ``TLH'', ``harvest losses'', ``tax losses'', ``unrealized losses'', or ``year-end tax planning''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Identify Candidates}\mbox{}\par
+
+Scan taxable accounts for positions with unrealized losses:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}}
+\toprule
+{} \textbf{Security} & \textbf{Asset Class} & \textbf{Cost Basis} & \textbf{Current Value} & \textbf{Unrealized Loss} & \textbf{Holding Period} & \textbf{\% Loss} \\
+\midrule
+{}  &  &  &  &  & ST /  LT &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{Prioritize by:}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Largest absolute loss (biggest tax benefit)
+\item {} Short-term losses first (offset short-term gains taxed at ordinary income rates)
+\item {} Positions with the largest \% loss (less likely to recover quickly)
+\end{enumerate}
+
+\subparagraph{Step 2: Gain/Loss Budget}\mbox{}\par
+
+Calculate the client's tax situation:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Category} & \textbf{Amount} \\
+\midrule
+{} Realized short-term gains YTD &  \\
+{} Realized long-term gains YTD &  \\
+{} Realized losses YTD &  \\
+{} Net gain/ (loss) position &  \\
+{} Carryforward losses from prior years &  \\
+{} \textbf{Target harvesting amount} &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{Tax savings estimate:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Short-term losses × marginal ordinary income rate
+\item {} Long-term losses × capital gains rate
+\item {} Up to \$3,000 net loss deduction against ordinary income
+\item {} Excess carries forward
+\end{itemize}
+
+\subparagraph{Step 3: Replacement Securities}\mbox{}\par
+
+For each harvest candidate, suggest a replacement that:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Maintains similar market exposure (same asset class, sector, geography)
+\item {} Is NOT ``substantially identical'' (wash sale rule)
+\item {} Has similar risk/return characteristics
+\end{itemize}
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{Sell} & \textbf{Replace With} & \textbf{Reason} & \textbf{Tracking Error Risk} \\
+\midrule
+{} SPDR S\&P 500 (SPY) & iShares Core S\&P 500 (IVV) & Same index, different fund family & Minimal \\
+{} Vanguard Total Intl (VXUS) & iShares MSCI ACWI ex-US (ACWX) & Similar exposure, different index & Low \\
+{} Individual stock ABC & Sector ETF (XLK) & Broader exposure, no wash sale risk & Moderate \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 4: Wash Sale Check}\mbox{}\par
+
+Before executing, verify no wash sales:
+
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Check ALL accounts in the household (taxable, IRA, Roth, spouse accounts)
+\item {} 30-day lookback: Did we buy substantially identical securities in the last 30 days?
+\item {} 30-day forward: Block repurchase of the same security for 30 days
+\item {} Check for dividend reinvestment plans (DRIPs) that could trigger wash sales
+\item {} Document the wash sale window for each trade
+\end{itemize}
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}}
+\toprule
+{} \textbf{Security Sold} & \textbf{Wash Sale Window Start} & \textbf{Window End} & \textbf{DRIP Active?} & \textbf{Risk} \\
+\midrule
+{}  &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 5: Execution Plan}\mbox{}\par
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.102\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.102\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.102\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.102\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.102\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.102\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.102\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.102\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.102\textwidth}}
+\toprule
+{} \textbf{Trade \#} & \textbf{Account} & \textbf{Action} & \textbf{Security} & \textbf{Shares} & \textbf{Est. Proceeds} & \textbf{Est. Loss} & \textbf{Replacement} & \textbf{Notes} \\
+\midrule
+{}  &  & Sell &  &  &  &  &  &  \\
+{}  &  & Buy &  &  &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{Summary:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Total estimated losses harvested: \$
+\item {} Estimated tax savings: \$ (at marginal rate of \%)
+\item {} Net portfolio impact: minimal (replacement securities maintain exposure)
+\item {} Wash sale window management: [dates]
+\end{itemize}
+
+\subparagraph{Step 6: Post-Harvest Tracking}\mbox{}\par
+
+After 30+ days, optionally:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Swap back to original securities (if preferred)
+\item {} Maintain replacement securities (if no reason to switch back)
+\item {} Update cost basis records
+\item {} Document for tax reporting
+\end{itemize}
+
+\subparagraph{Step 7: Output}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Harvest opportunity list (Excel)
+\item {} Trade execution sheet
+\item {} Wash sale tracking calendar
+\item {} Tax savings estimate summary
+\item {} Replacement security rationale
+\end{itemize}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Wash sale rules are strict — violations disallow the loss AND adjust cost basis
+\item {} Substantially identical means same security, not same asset class — ETFs tracking different indexes are generally fine
+\item {} Always coordinate across all household accounts including retirement accounts
+\item {} Consider the long-term cost basis step-down — harvesting resets cost basis, which means more gains later
+\item {} Year-end is prime harvesting season but opportunities exist throughout the year
+\item {} Mutual fund capital gains distributions in December can create additional harvesting urgency
+\item {} Document everything for tax reporting and compliance
+\item {} Not all losses are worth harvesting — transaction costs and tracking error have real costs
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\end{document}

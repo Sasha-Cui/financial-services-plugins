@@ -1,0 +1,4944 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\newfontfamily\EmojiFont[Renderer=HarfBuzz]{Apple Color Emoji}
+\newfontfamily\SymbolFont{Arial Unicode MS}
+\newcommand{\EmojiGlyph}[1]{{\normalfont\EmojiFont #1}}
+\newcommand{\SymbolGlyph}[1]{{\normalfont\SymbolFont #1}}
+\usepackage{newunicodechar}
+\usepackage{microtype}
+\usepackage{setspace}
+\setstretch{1.08}
+\usepackage{hyperref}
+\usepackage{xurl}
+\urlstyle{same}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+\usepackage{enumitem}
+\setlist{leftmargin=*,itemsep=2pt,topsep=2pt}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{ragged2e}
+\renewcommand{\arraystretch}{1.15}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{3em}
+\sloppy
+\newcommand{\UncheckedBox}{$\square$}
+\newcommand{\CheckedBox}{$\blacksquare$}
+\title{Investment Banking Prompt Library\\LaTeX Translation and Dependency Map}
+\author{financial-services-plugins repository}
+\date{Generated on 2026-03-05 09:31 }
+\newunicodechar{⚠}{{\EmojiGlyph{⚠}}}
+\newunicodechar{✅}{{\EmojiGlyph{✅}}}
+\newunicodechar{❌}{{\EmojiGlyph{❌}}}
+\newunicodechar{‣}{{\SymbolGlyph{‣}}}
+\newunicodechar{✓}{{\SymbolGlyph{✓}}}
+\newunicodechar{⟹}{$\Longrightarrow$}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Repository Structure Overview}
+
+\subsection{Folder Tree}
+\textbf{Root directory: investment-banking}
+\begin{itemize}[leftmargin=*,itemsep=1pt,topsep=2pt]
+\item \hspace*{0.0em}commands
+\item \hspace*{0.0em}README.md
+\item \hspace*{0.0em}skills
+\item \hspace*{0.9em}commands/buyer-list.md
+\item \hspace*{0.9em}commands/cim.md
+\item \hspace*{0.9em}commands/deal-tracker.md
+\item \hspace*{0.9em}commands/merger-model.md
+\item \hspace*{0.9em}commands/one-pager.md
+\item \hspace*{0.9em}commands/process-letter.md
+\item \hspace*{0.9em}commands/teaser.md
+\item \hspace*{0.9em}skills/buyer-list
+\item \hspace*{0.9em}skills/cim-builder
+\item \hspace*{0.9em}skills/datapack-builder
+\item \hspace*{0.9em}skills/deal-tracker
+\item \hspace*{0.9em}skills/merger-model
+\item \hspace*{0.9em}skills/pitch-deck
+\item \hspace*{0.9em}skills/process-letter
+\item \hspace*{0.9em}skills/strip-profile
+\item \hspace*{0.9em}skills/teaser
+\item \hspace*{1.8em}skills/buyer-list/SKILL.md
+\item \hspace*{1.8em}skills/cim-builder/SKILL.md
+\item \hspace*{1.8em}skills/datapack-builder/SKILL.md
+\item \hspace*{1.8em}skills/deal-tracker/SKILL.md
+\item \hspace*{1.8em}skills/merger-model/SKILL.md
+\item \hspace*{1.8em}skills/pitch-deck/reference
+\item \hspace*{1.8em}skills/pitch-deck/SKILL.md
+\item \hspace*{1.8em}skills/process-letter/SKILL.md
+\item \hspace*{1.8em}skills/strip-profile/SKILL.md
+\item \hspace*{1.8em}skills/teaser/SKILL.md
+\item \hspace*{2.7em}skills/pitch-deck/reference/calculation-standards.md
+\item \hspace*{2.7em}skills/pitch-deck/reference/formatting-standards.md
+\item \hspace*{2.7em}skills/pitch-deck/reference/slide-templates.md
+\item \hspace*{2.7em}skills/pitch-deck/reference/xml-reference.md
+\end{itemize}
+
+\section{Prompt Dependency Structure}
+
+\subsection{Command-to-Skill Dependencies}
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Command Prompt} & \textbf{Loaded Skill Prompt} \\
+\midrule
+{} commands/ buyer-list.md & skills/ buyer-list/ SKILL.md \\
+{} commands/ cim.md & skills/ cim-builder/ SKILL.md \\
+{} commands/ deal-tracker.md & skills/ deal-tracker/ SKILL.md \\
+{} commands/ merger-model.md & skills/ merger-model/ SKILL.md \\
+{} commands/ one-pager.md & skills/ strip-profile/ SKILL.md \\
+{} commands/ process-letter.md & skills/ process-letter/ SKILL.md \\
+{} commands/ teaser.md & skills/ teaser/ SKILL.md \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subsection{Skill-to-Resource Dependencies}
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Skill Prompt} & \textbf{Referenced Prompt File} \\
+\midrule
+{} skills/ pitch-deck/ SKILL.md & skills/ pitch-deck/ reference/ calculation-standards.md \\
+{} skills/ pitch-deck/ SKILL.md & skills/ pitch-deck/ reference/ formatting-standards.md \\
+{} skills/ pitch-deck/ SKILL.md & skills/ pitch-deck/ reference/ slide-templates.md \\
+{} skills/ pitch-deck/ SKILL.md & skills/ pitch-deck/ reference/ xml-reference.md \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\newpage
+
+\section{Translated Prompt Corpus}
+
+This section translates every markdown prompt under the investment-banking directory into LaTeX-native structure, preserving hierarchy and dependency flow.
+
+\subsection{Directory: README.md}
+
+\subsection{File: README.md}\label{file:README.md}
+
+\paragraph{Investment Banking Plugin}\mbox{}\par
+
+Investment banking productivity tools for equity research, valuation, presentations, and deal materials.
+
+
+\subparagraph{Features}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Deal Materials} - CIMs, teasers, process letters, and buyer lists
+\item {} \textbf{Presentations} - Strip profiles, pitch decks with branded templates
+\item {} \textbf{Transaction Support} - Merger models, deal tracking, and data packs
+\end{itemize}
+
+\subparagraph{Installation}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} claude --plugin-dir /path/to/investment-banking
+\end{itemize}
+
+Or copy to your project's \emph{.claude-plugin/} directory.
+
+
+\subparagraph{Commands}\mbox{}\par
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Command} & \textbf{Description} \\
+\midrule
+{} \emph{/ one-pager [company]} & One-page strip profile for pitch books \\
+{} \emph{/ cim [company]} & Draft Confidential Information Memorandum \\
+{} \emph{/ teaser [company]} & Anonymous one-page company teaser \\
+{} \emph{/ buyer-list [company]} & Strategic and financial buyer universe \\
+{} \emph{/ merger-model [deal]} & Accretion/ dilution M\&A analysis \\
+{} \emph{/ process-letter [deal]} & Bid instructions and process correspondence \\
+{} \emph{/ deal-tracker} & Track live deals, milestones, and action items \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Skills}\mbox{}\par
+
+\subparagraph{Deal Materials}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Skill} & \textbf{Description} \\
+\midrule
+{} \textbf{cim-builder} & Draft Confidential Information Memorandums \\
+{} \textbf{teaser} & Anonymous one-page company teasers \\
+{} \textbf{process-letter} & Bid instructions and process correspondence \\
+{} \textbf{buyer-list} & Strategic and financial buyer universe \\
+{} \textbf{datapack-builder} & Build data packs from CIMs and filings \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Presentations}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Skill} & \textbf{Description} \\
+\midrule
+{} \textbf{strip-profile} & Information-dense company profiles for pitch books \\
+{} \textbf{pitch-deck} & Populate pitch deck templates with data \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Transaction Support}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Skill} & \textbf{Description} \\
+\midrule
+{} \textbf{merger-model} & Accretion/ dilution M\&A analysis \\
+{} \textbf{deal-tracker} & Track live deals, milestones, and action items \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Example Workflows}\mbox{}\par
+
+\subparagraph{One-Page Strip Profile}\mbox{}\par
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} /one-pager Target
+\item {} \# Generates:
+\item {} \# - Single-slide company profile using PPT template
+\item {} \# - 4 quadrants: Overview, Business, Financials, Ownership
+\item {} \# - Respects template margins and branding
+\end{itemize}
+
+\subparagraph{CIM Drafting}\mbox{}\par
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} /cim Target
+\item {} \# Generates:
+\item {} \# - Full CIM document with executive summary, business overview,
+\item {} \# financial analysis, and market positioning
+\end{itemize}
+
+\subparagraph{Merger Model}\mbox{}\par
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} /merger-model Acquirer acquiring Target
+\item {} \# Generates:
+\item {} \# - Accretion/dilution analysis
+\item {} \# - Sources and uses, pro forma financials
+\item {} \# - Sensitivity on purchase price and synergies
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Directory: commands}
+
+\subsection{Command: buyer-list.md}\label{file:commands-buyer-list.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Build a buyer universe for a sell-side process \\
+{} argument-hint & [company or sector] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{buyer-list} skill and build a universe of potential strategic and financial acquirers.
+
+
+If a company or sector is provided, use it. Otherwise ask the user for the target company details.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: cim.md}\label{file:commands-cim.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Draft a Confidential Information Memorandum \\
+{} argument-hint & [company name] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{cim-builder} skill and structure a CIM for the specified company.
+
+
+If a company name is provided, use it. Otherwise ask the user for the target company and available source materials.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: deal-tracker.md}\label{file:commands-deal-tracker.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Track and review live deal pipeline \\
+{} argument-hint &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{deal-tracker} skill to review deal status, update milestones, and manage action items across live deals.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: merger-model.md}\label{file:commands-merger-model.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Build an accretion/ dilution merger model \\
+{} argument-hint & [acquirer] acquiring [target] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{merger-model} skill and build a merger consequences analysis.
+
+
+If acquirer and target are provided, use them. Otherwise ask the user for deal details.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: one-pager.md}\label{file:commands-one-pager.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Create a one-page company strip profile using branded PPT template \\
+{} argument-hint & [company name or ticker] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+\paragraph{One-Pager Strip Profile Command}\mbox{}\par
+
+Create a professional one-page company strip profile for pitch books and deal materials.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Gather Company Information}\mbox{}\par
+
+If a company name or ticker is provided, use it. Otherwise ask:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ``What company would you like to profile?''
+\end{itemize}
+
+\subparagraph{Step 2: Check for Available PPT Template Skills}\mbox{}\par
+
+\textbf{First, check for existing ppt-template skills} in the skills directory:
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ls skills/ | grep -E ``ppt-template|brand-guidelines''
+\end{itemize}
+
+If template skills exist (e.g., \emph{techcorp-ppt-template}, \emph{gs-brand-guidelines}):
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} List available templates to the user
+\item {} Ask which template to use, or if they want a clean professional format
+\item {} Load the selected template skill with \emph{skill: ``[template-name]''}
+\end{enumerate}
+
+If no template skills exist, ask:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ``Do you have a branded PowerPoint template file to use? If so, provide the path. Otherwise I'll use a clean professional format.''
+\end{itemize}
+
+If a template file is provided:
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Analyze the template structure to understand layouts
+\item {} Use appropriate layout for one-pager content
+\end{enumerate}
+
+\subparagraph{Step 3: Load Strip Profile Skill}\mbox{}\par
+
+Use \emph{skill: ``strip-profile''} to execute the profile creation:
+
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Clarify requirements}:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Confirm single-slide format (one-pager)
+\item {} Ask about any specific focus areas
+\end{itemize}
+\item {} \textbf{Research company data}:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Company overview (HQ, founded, employees, leadership)
+\item {} Business description and positioning
+\item {} Key financials (Revenue, EBITDA, margins, growth)
+\item {} Valuation metrics (Market Cap, EV, multiples)
+\item {} Recent developments and news
+\item {} Top shareholders (for public companies)
+\end{itemize}
+\item {} \textbf{Create the strip profile}:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Use 4:3 aspect ratio (10`` x 7.5'')
+\item {} 4-quadrant layout:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Top-left: Company Overview (bullets)
+\item {} Top-right: Business \& Positioning (bullets)
+\item {} Bottom-left: Key Financials (table)
+\item {} Bottom-right: Stock chart + Shareholders OR Recent News
+\end{itemize}
+\item {} Apply company brand colors
+\item {} Include accent bars on section headers
+\end{itemize}
+\end{enumerate}
+
+\subparagraph{Step 4: Visual Review}\mbox{}\par
+
+After creating the slide:
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Convert to image for review
+\item {} Check for text overlap/cutoff issues
+\item {} Verify all data is populated (no placeholders)
+\item {} Show preview to user for approval
+\end{enumerate}
+
+\subparagraph{Step 5: Deliver Output}\mbox{}\par
+
+Provide:
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{PowerPoint file} (.pptx) - the one-pager
+\item {} \textbf{Image preview} - for quick review
+\item {} \textbf{Summary} of key data points included
+\end{enumerate}
+
+\subparagraph{One-Pager Layout Reference}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Company Name (TICKER) [Logo]
+\item {} COMPANY OVERVIEW BUSINESS \& POSITIONING
+\item {} • HQ, Founded, Employees • Core business description
+\item {} • CEO, CFO • Key products/services
+\item {} • Market cap, industry • Competitive positioning
+\item {} • Key stats • Growth drivers
+\item {} KEY FINANCIALS STOCK PERFORMANCE / OWNERSHIP
+\item {} [1Y Stock Chart]
+\item {} Metric FY24 FY25E
+\item {} Rev \$XXB \$XXB Top Shareholders:
+\item {} EBITDA \$XXB \$XXB • Vanguard: X.X\%
+\item {} Margin XX\% XX\% • BlackRock: X.X\%
+\item {} EV/EBITDA XXx XXx • State Street: X.X\%
+\item {} Source: Company filings, FactSet
+\end{itemize}
+
+\subparagraph{Quality Checklist}\mbox{}\par
+
+Before delivery:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox All 4 quadrants populated with real data
+\item {} \UncheckedBox No placeholder text remaining
+\item {} \UncheckedBox Company brand colors applied
+\item {} \UncheckedBox Accent bars on all section headers
+\item {} \UncheckedBox Financial table properly formatted
+\item {} \UncheckedBox Sources cited at bottom
+\item {} \UncheckedBox No text overflow or cutoff
+\item {} \UncheckedBox Investment banking quality (GS/MS/JPM standard)
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: process-letter.md}\label{file:commands-process-letter.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Draft a process letter or bid instructions \\
+{} argument-hint & [IOI or final bid] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{process-letter} skill and draft process correspondence.
+
+
+If a letter type is specified (IOI, final bid, management meeting invite), use it. Otherwise ask the user what stage the process is in.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: teaser.md}\label{file:commands-teaser.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Draft an anonymous one-page teaser \\
+{} argument-hint & [company name] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{teaser} skill and create a blind teaser for the specified company.
+
+
+If a company name is provided, use it. Otherwise ask the user for the company details to anonymize.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Directory: skills}
+
+\subsection{Skill: buyer-list}\label{file:skills-buyer-list-SKILL.md}
+
+\paragraph{Buyer List}\mbox{}\par
+
+description: Build and organize a universe of potential acquirers for sell-side M\&A processes. Identifies strategic and financial buyers, assesses fit, and prioritizes outreach. Use when preparing for a sell-side mandate, building a buyer universe, or evaluating potential partners. Triggers on ``buyer list'', ``buyer universe'', ``potential acquirers'', ``who would buy this'', ``strategic buyers'', or ``financial sponsors''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Understand the Target}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Company description, sector, and business model
+\item {} Revenue, EBITDA, and growth profile
+\item {} Key assets and capabilities (IP, customer relationships, geographic footprint, team)
+\item {} Expected valuation range
+\item {} Seller preferences (strategic vs. financial, management continuity, timeline)
+\end{itemize}
+
+\subparagraph{Step 2: Strategic Buyers}\mbox{}\par
+
+Identify strategic acquirers across categories:
+
+
+\textbf{Direct Competitors}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Companies in the same space that would gain market share
+\item {} Rationale: Revenue synergies, eliminate competitor, scale
+\end{itemize}
+
+\textbf{Adjacent Players}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Companies in adjacent markets that could expand into the target's space
+\item {} Rationale: Product extension, cross-sell, new market entry
+\end{itemize}
+
+\textbf{Vertical Integrators}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Customers or suppliers that could integrate vertically
+\item {} Rationale: Supply chain control, margin capture, strategic lock-in
+\end{itemize}
+
+\textbf{Platform Builders}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Large companies building a platform in the space through M\&A
+\item {} Rationale: Tuck-in acquisition, fill capability gap
+\end{itemize}
+
+For each strategic buyer, assess:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.115\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.115\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.115\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.115\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.115\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.115\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.115\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.115\textwidth}}
+\toprule
+{} \textbf{Buyer} & \textbf{Sector} & \textbf{Revenue} & \textbf{Strategic Fit} & \textbf{Financial Capacity} & \textbf{M\&A Track Record} & \textbf{Likelihood} & \textbf{Priority} \\
+\midrule
+{}  &  &  & High/ Med/ Low &  & Active/ Moderate/ None &  & A/ B/ C \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 3: Financial Sponsors}\mbox{}\par
+
+Identify PE/financial buyers:
+
+
+\textbf{Platform Investors}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Sponsors looking for a new platform in this sector
+\item {} Criteria: Fund size, sector focus, deal size range
+\end{itemize}
+
+\textbf{Add-on Buyers}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Sponsors with existing portfolio companies that could acquire the target as a bolt-on
+\item {} Identify the specific portfolio company and synergy rationale
+\end{itemize}
+
+\textbf{Growth Equity}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} For earlier-stage or high-growth targets
+\item {} Minority vs. majority preference
+\end{itemize}
+
+For each sponsor:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
+\toprule
+{} \textbf{Sponsor} & \textbf{Fund Size} & \textbf{Sector Focus} & \textbf{Portfolio Overlap} & \textbf{Recent Activity} & \textbf{Priority} \\
+\midrule
+{}  &  &  &  &  & A/ B/ C \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 4: Prioritization}\mbox{}\par
+
+Tier the buyer list:
+
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Tier 1 (5-10)}: Highest strategic fit, proven acquirers, clear rationale — contact first
+\item {} \textbf{Tier 2 (10-15)}: Good fit but less obvious — contact in second wave
+\item {} \textbf{Tier 3 (10-20)}: Possible but lower probability — contact if process needs broadening
+\end{itemize}
+
+\subparagraph{Step 5: Contact Mapping}\mbox{}\par
+
+For each Tier 1 buyer:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Key decision maker (CEO, Corp Dev head, Partner)
+\item {} Relationship status (existing relationship, cold outreach, need introduction)
+\item {} Known preferences or constraints (size, geography, structure)
+\item {} Best approach channel
+\end{itemize}
+
+\subparagraph{Step 6: Output}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Excel workbook with:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Strategic buyers tab (sorted by tier)
+\item {} Financial sponsors tab (sorted by tier)
+\item {} Contact mapping for Tier 1
+\item {} Summary statistics (total buyers by tier, by type)
+\end{itemize}
+\item {} One-page buyer universe summary for the engagement letter or pitch
+\end{itemize}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Quality over quantity — a focused list of 30-40 well-researched buyers beats a list of 200 names
+\item {} Research recent M\&A activity — buyers who just did a deal in the space are either hungry for more or tapped out
+\item {} Check for antitrust concerns with direct competitors — flag any that might face regulatory issues
+\item {} Financial sponsors: check fund vintage and deployment pace — a fund nearing end of investment period may be more motivated
+\item {} Always ask the seller if there are buyers they want included or excluded
+\item {} Update the list as the process progresses — move buyers between tiers based on feedback
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: cim-builder}\label{file:skills-cim-builder-SKILL.md}
+
+\paragraph{CIM Builder}\mbox{}\par
+
+description: Structure and draft a Confidential Information Memorandum for sell-side M\&A processes. Organizes company information into a professional, investor-ready document with consistent formatting and narrative flow. Use when preparing sell-side materials, drafting a CIM, or organizing company data for a sale process. Triggers on ``CIM'', ``confidential information memorandum'', ``offering memorandum'', ``info memo'', ``draft CIM'', or ``sell-side materials''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Gather Source Materials}\mbox{}\par
+
+Ask for available inputs:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Management presentations
+\item {} Historical financials (3-5 years)
+\item {} Budget/forecast
+\item {} Company website and marketing materials
+\item {} Customer data (anonymized if needed)
+\item {} Org chart
+\item {} Prior presentations or board decks
+\item {} Quality of earnings report (if available)
+\end{itemize}
+
+\subparagraph{Step 2: CIM Structure}\mbox{}\par
+
+Standard CIM table of contents:
+
+
+\textbf{I. Executive Summary} (2-3 pages)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Company overview — what they do, why they win
+\item {} Investment highlights (5-7 key selling points)
+\item {} Financial summary — headline revenue, EBITDA, growth, margins
+\item {} Transaction overview — what's being sold, indicative timeline
+\end{itemize}
+
+\textbf{II. Company Overview} (3-5 pages)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} History and founding story
+\item {} Mission and value proposition
+\item {} Products and services description
+\item {} Business model and revenue streams
+\item {} Key differentiators and competitive advantages
+\end{itemize}
+
+\textbf{III. Industry Overview} (3-5 pages)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Market size and growth dynamics (TAM/SAM/SOM)
+\item {} Key industry trends and tailwinds
+\item {} Competitive landscape
+\item {} Regulatory environment
+\item {} Barriers to entry
+\end{itemize}
+
+\textbf{IV. Growth Opportunities} (2-3 pages)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Organic growth levers (new products, markets, pricing)
+\item {} M\&A / add-on opportunities
+\item {} Operational improvements
+\item {} Technology investments
+\item {} White space analysis
+\end{itemize}
+
+\textbf{V. Customers \& Sales} (3-5 pages)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Customer overview (number, segments, geography)
+\item {} Top customer analysis (anonymized if pre-LOI)
+\item {} Customer concentration and retention metrics
+\item {} Sales process and go-to-market strategy
+\item {} Pipeline and backlog
+\end{itemize}
+
+\textbf{VI. Operations} (2-3 pages)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Organizational structure
+\item {} Key personnel
+\item {} Facilities and geographic footprint
+\item {} Technology and systems
+\item {} Supply chain / vendor relationships
+\end{itemize}
+
+\textbf{VII. Financial Overview} (5-8 pages)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Historical income statement (3-5 years)
+\item {} Revenue analysis — by segment, geography, customer type
+\item {} EBITDA bridge and margin analysis
+\item {} Balance sheet overview
+\item {} Cash flow summary
+\item {} Capital expenditure history
+\item {} Working capital analysis
+\item {} Management forecast / budget (if included)
+\end{itemize}
+
+\textbf{VIII. Appendix}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Detailed financial statements
+\item {} Customer list (anonymized)
+\item {} Product catalog
+\item {} Management bios
+\end{itemize}
+
+\subparagraph{Step 3: Drafting Guidelines}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Tone}: Professional, factual, compelling but not hyperbolic
+\item {} \textbf{Narrative}: Tell a story — why this business is attractive, defensible, and positioned for growth
+\item {} \textbf{Data-driven}: Support every claim with data. ``Strong growth'' → ``Revenue grew at a 15\% CAGR from 2021-2024''
+\item {} \textbf{Visuals}: Charts and graphs for financial trends, market size, competitive positioning
+\item {} \textbf{Length}: 40-60 pages total — enough detail to inform first-round bids, not so long buyers won't read it
+\item {} \textbf{Confidentiality}: Include a disclaimer page. Anonymize sensitive customer data unless seller approves
+\end{itemize}
+
+\subparagraph{Step 4: Output}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Word document (.docx) with professional formatting
+\item {} Separate Excel appendix with detailed financials
+\item {} Charts and exhibits embedded in the document
+\end{itemize}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} The CIM is a sales document — lead with strengths, but don't hide material issues (buyers will find them in diligence)
+\item {} Investment highlights should address the 3 things every buyer cares about: growth potential, margin profile, and defensibility
+\item {} Financial normalization / pro forma adjustments should be clearly labeled and explained
+\item {} Work with legal on the confidentiality disclaimer and any regulatory disclosures
+\item {} Get management to review for factual accuracy before distribution
+\item {} The CIM sets expectations on valuation — make sure the narrative supports the asking price
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: datapack-builder}\label{file:skills-datapack-builder-SKILL.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} name & datapack-builder \\
+{} description & Build professional financial services data packs from various sources including CIMs, offering memorandums, SEC filings, web search, or MCP servers. Extract, normalize, and standardize financial data into investment committee-ready Excel workbooks with consistent structure, proper formatting, and documented assumptions. Use for M\&A due diligence, private equity analysis, investment committee materials, and standardizing financial reporting across portfolio companies. Do not use for simple financial calculations or working with already-completed data packs. \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+\paragraph{Financial Data Pack Builder}\mbox{}\par
+
+Build professional, standardized financial data packs for private equity, investment banking, and asset management. Transform financial data from CIMs, offering memorandums, SEC filings, web search, or MCP server access into polished Excel workbooks ready for investment committee review.
+
+
+\textbf{Important:} Use the xlsx skill for all Excel file creation and manipulation throughout this workflow.
+
+
+\subparagraph{CRITICAL SUCCESS FACTORS}\mbox{}\par
+
+Every data pack must achieve these standards. Failure on any point makes the deliverable unusable.
+
+
+\subparagraph{1. Data Accuracy (Zero Tolerance for Errors)}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Trace every number to source document with page reference
+\item {} Use formula-based calculations exclusively (no hardcoded values)
+\item {} Cross-check subtotals and totals for internal consistency
+\item {} Verify balance sheet balances: Assets = Liabilities + Equity
+\item {} Confirm cash flow ties to balance sheet changes
+\end{itemize}
+
+\subparagraph{2. ESSENTIAL RULES}\mbox{}\par
+
+\textbf{RULE 1: Financial data (measuring money) → Currency format with \$} Triggers: Revenue, Sales, Income, EBITDA, Profit, Loss, Cost, Expense, Cash, Debt, Assets, Liabilities, Equity, Capex Format: \$\#,\#\#0.0 for millions, \$\#,\#\#0 for thousands Negatives: \$(123.0) NOT -\$123
+
+
+\textbf{RULE 2: Operational data (counting things) → Number format, NO \$} Triggers: Units, Stores, Locations, Employees, Customers, Square Feet, Properties, Headcount Format: \#,\#\#0 with commas Negatives: (123) consistent with rest of table
+
+
+\textbf{RULE 3: Percentages (rates and ratios) → Percentage format} Triggers: Margin, Growth, Rate, Percentage, Yield, Return, Utilization, Occupancy Format: 0.0\% for one decimal place Display: 15.0\% NOT 0.15
+
+
+\textbf{RULE 4: Years → Text format to prevent comma insertion} Format: Text or custom to prevent 2,024 Display: 2020, 2021, 2022, 2023A, 2024E
+
+
+\textbf{RULE 5: When context is mixed, each metric gets its own appropriate format} Example:
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Segment Analysis, 2022, 2023, 2024
+\item {} Retail Revenue, \$50.0, \$55.0, \$60.0
+\item {} Stores, 100, 110, 120
+\item {} Revenue per Store, \$0.5, \$0.5, \$0.5
+\end{itemize}
+Revenue and per-store metrics use \$, Store count uses number format.
+
+
+\textbf{RULE 6: Use formulas for all calculations → Never hardcode calculated values} All subtotals, totals, ratios, and derived metrics must be formula-based, not hardcoded values. This ensures accuracy and allows for dynamic updates.
+
+
+\subparagraph{3. Professional Presentation Standards}\mbox{}\par
+
+\textbf{Formatting Standards:}
+
+
+\textbf{Color Scheme - Two Layers:}
+
+
+\textbf{Layer 1: Font Colors (MANDATORY from xlsx skill)}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Blue text (RGB: 0,0,255)}: ALL hardcoded inputs (historical data, assumptions), NOT normal text
+\item {} \textbf{Black text (RGB: 0,0,0)}: ALL formulas and calculations
+\item {} \textbf{Green text (RGB: 0,128,0)}: Links to other sheets
+\end{itemize}
+
+\textbf{Layer 2: Fill Colors (Optional for enhanced presentation)}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Fill colors are optional and should only be applied if requested by the user or if enhancing presentation
+\item {} If the user requests colors or professional formatting, use this standard scheme:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Section headers}: Dark blue (RGB: 68,114,196) background with white text
+\item {} \textbf{Sub-headers/column headers}: Light blue (RGB: 217,225,242) background with black text
+\item {} \textbf{Input cells}: Light green/cream (RGB: 226,239,218) background with blue text
+\item {} \textbf{Calculated cells}: White background with black text
+\end{itemize}
+\item {} Users can override with custom brand colors if specified
+\end{itemize}
+
+\textbf{How the layers work together (if fill colors are used):}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Input cell: Blue text + light green fill = ``User-entered data''
+\item {} Formula cell: Black text + white background = ``Calculated value''
+\item {} Sheet link: Green text + white background = ``Reference from another tab''
+\end{itemize}
+
+\textbf{Font color tells you WHAT it is. Fill color tells you WHERE it is (if used).}
+
+
+\textbf{IMPORTANT:} Font colors from xlsx skill are mandatory. Fill colors are optional - default is white/no fill unless the user requests enhanced formatting or colors.
+
+
+\textbf{Always apply:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Bold headers, left-aligned
+\item {} Numbers right-aligned
+\item {} 2-space indentation for sub-items
+\item {} Single underline above subtotals
+\item {} Double underline below final totals
+\item {} Freeze panes on row/column headers
+\item {} Minimal borders (only where structurally needed)
+\item {} Consistent font (typically Calibri or Arial 11pt)
+\end{itemize}
+
+\textbf{Never include:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Borders around every cell
+\item {} Multiple fonts or font sizes
+\item {} Charts unless specifically requested
+\item {} Excessive formatting or decoration
+\end{itemize}
+
+\subparagraph{Structural Consistency}\mbox{}\par
+Use the standard 8-tab structure unless explicitly instructed otherwise:
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Executive Summary
+\item {} Historical Financials (Income Statement)
+\item {} Balance Sheet
+\item {} Cash Flow Statement
+\item {} Operating Metrics
+\item {} Property/Segment Performance (if applicable)
+\item {} Market Analysis
+\item {} Investment Highlights
+\end{enumerate}
+
+\subparagraph{Tab 1: Executive Summary}\mbox{}\par
+Purpose: One-page overview for busy executives
+
+
+Contents:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Company overview (2-3 sentences on business model)
+\item {} Key investment highlights (3-5 bullet points)
+\item {} Financial snapshot table (Revenue, EBITDA, Growth for last 3 years + projections)
+\item {} Transaction overview if applicable
+\item {} Key metrics prominently displayed
+\end{itemize}
+
+Format: Clean, bold headers, minimal decoration, critical numbers emphasized
+
+
+\subparagraph{Tab 2: Historical Financials (Income Statement)}\mbox{}\par
+Purpose: Complete profit and loss history
+
+
+Contents:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Revenue breakdown by segment/product line
+\item {} Cost of goods sold / Cost of revenue
+\item {} Gross profit and gross margin \%
+\item {} Operating expenses detailed (S\&M, R\&D, G\&A)
+\item {} EBITDA and Adjusted EBITDA
+\item {} Below-the-line items (D\&A, interest, taxes)
+\item {} Net income
+\end{itemize}
+
+Format:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Years as columns (text format: 2020, 2021, 2022)
+\item {} \$ millions or \$ thousands (specify units clearly at top)
+\item {} Accounting format for all financial data
+\item {} Single underline above subtotals, double underline below net income
+\item {} Right-align all numbers
+\end{itemize}
+
+\subparagraph{Tab 3: Balance Sheet}\mbox{}\par
+Purpose: Financial position at period end
+
+
+Contents:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Current assets (cash, AR, inventory, prepaid, other)
+\item {} Long-term assets (PP\&E, intangibles, goodwill, other)
+\item {} Current liabilities (AP, accrued expenses, current portion of debt, other)
+\item {} Long-term liabilities (long-term debt, deferred taxes, other)
+\item {} Shareholders' equity (common stock, retained earnings, other)
+\end{itemize}
+
+Format:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Verify formula: Assets = Liabilities + Equity
+\item {} Consistent date labeling
+\item {} Include working capital calculation
+\item {} Single underline above major subtotals, double underline for final totals
+\end{itemize}
+
+\subparagraph{Tab 4: Cash Flow Statement}\mbox{}\par
+Purpose: Cash generation and use analysis
+
+
+Contents:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Operating cash flow (indirect method preferred)
+\item {} Investing cash flow (capex, acquisitions, asset sales)
+\item {} Financing cash flow (debt issuance/repayment, equity, dividends)
+\item {} Net change in cash
+\item {} Beginning and ending cash balances
+\end{itemize}
+
+Format:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Link to income statement and balance sheet where possible
+\item {} Show reconciliation of net income to operating cash flow
+\item {} Clear labeling of cash uses (outflows) vs sources (inflows)
+\end{itemize}
+
+\subparagraph{Tab 5: Operating Metrics}\mbox{}\par
+Purpose: Non-financial KPIs and operational data
+
+
+Contents (industry-dependent):
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Unit volumes, customer counts, locations
+\item {} Productivity metrics (revenue per employee, per store, per unit)
+\item {} Capacity utilization
+\item {} Market share
+\item {} Customer retention/churn rates
+\item {} Industry-specific KPIs
+\end{itemize}
+
+\textbf{CRITICAL FORMAT NOTE:} NO dollar signs on operational metrics. These are quantities, not currency.
+
+
+Format:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Clear units specified (customers, employees, stores, square feet, etc.)
+\item {} Whole numbers with commas: 1,250 NOT \$1,250
+\item {} Percentages for rates: 95.0\%
+\item {} Right-align numbers
+\end{itemize}
+
+\subparagraph{Tab 6: Property/Segment Performance (if applicable)}\mbox{}\par
+Purpose: Detailed breakdown by business unit, property, or segment
+
+
+Contents:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Revenue and profitability by segment
+\item {} Key metrics by location/product
+\item {} Segment-specific KPIs
+\item {} Comparative performance analysis
+\end{itemize}
+
+Format: Consistent with financial tabs for revenue/EBITDA, number format for operational metrics
+
+
+\subparagraph{Tab 7: Market Analysis}\mbox{}\par
+Purpose: Industry context and competitive positioning
+
+
+Contents:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Market size and growth trends
+\item {} Competitive landscape overview
+\item {} Market share analysis
+\item {} Industry benchmarks and peer comparisons
+\item {} Regulatory environment if relevant
+\end{itemize}
+
+Format: Mix of narrative text and tables, cite sources for market data
+
+
+\subparagraph{Tab 8: Investment Highlights}\mbox{}\par
+Purpose: Narrative summary of key investment thesis points
+
+
+Contents:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Detailed writeup of competitive strengths
+\item {} Growth opportunities and strategic initiatives
+\item {} Risk factors and mitigation strategies
+\item {} Management assessment and track record
+\item {} Investment thesis summary
+\end{itemize}
+
+Format: Clear headers, bullet points, concise paragraphs
+
+
+\subparagraph{STEP-BY-STEP WORKFLOW}\mbox{}\par
+
+\subparagraph{Phase 1: Document Processing and Data Extraction}\mbox{}\par
+
+\textbf{Step 1.1: Analyze source data}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Access source materials: uploaded documents, web search for public filings, or MCP server data
+\item {} Review data structure and identify key sections
+\item {} Locate financial statements (typically 3-5 years historical)
+\item {} Identify management projections if included
+\item {} Note fiscal year end date
+\item {} Flag any data quality issues immediately
+\end{itemize}
+
+\textbf{Step 1.2: Extract financial statements}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Locate historical income statement data
+\item {} Extract balance sheet snapshots (year-end or quarter-end)
+\item {} Find cash flow statement
+\item {} Extract management projections if available
+\item {} Note all page references for traceability
+\end{itemize}
+
+\textbf{Step 1.3: Extract operating metrics}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Identify non-financial KPIs relevant to industry
+\item {} Capture unit economics data
+\item {} Extract customer/location/capacity data
+\item {} Document growth metrics and trends
+\end{itemize}
+
+\textbf{Step 1.4: Extract market and industry data}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Competitive positioning information
+\item {} Market size and growth rates
+\item {} Industry benchmark data
+\item {} Peer comparison information
+\end{itemize}
+
+\textbf{Step 1.5: Note key context}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Transaction structure and rationale
+\item {} Management team background
+\item {} Investment highlights from source materials
+\item {} Risk factors and considerations
+\item {} Any data gaps or inconsistencies
+\end{itemize}
+
+\subparagraph{Phase 2: Data Normalization and Standardization}\mbox{}\par
+
+\textbf{Step 2.1: Normalize accounting presentation}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Ensure consistent line item names across all years
+\item {} Standardize revenue recognition treatment
+\item {} Identify and document one-time charges
+\item {} Create ``Adjusted EBITDA'' reconciliation if needed
+\item {} Note any accounting policy changes
+\end{itemize}
+
+\textbf{Step 2.2: Apply format detection logic} For each data point, determine format based on full context:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Read tab name, table title, column header, and row label
+\item {} Apply essential rules (see above)
+\item {} When uncertain, examine original source document
+\item {} Default to cleaner formatting (less is more)
+\end{itemize}
+
+\textbf{Step 2.3: Identify normalization adjustments} Common adjustments to document:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Restructuring charges (add back if truly non-recurring)
+\item {} Stock-based compensation (add back per industry standard)
+\item {} Acquisition-related costs (add back, specify amounts)
+\item {} Legal settlements or litigation costs (evaluate recurrence risk)
+\item {} Asset sales or impairments (exclude from operating results)
+\item {} Related party adjustments (normalize to market rates)
+\end{itemize}
+Note: Source citation format varies by data source (page numbers for documents, URLs for web sources, server references for MCP data)
+
+
+\textbf{Step 2.4: Create adjustment schedule} For every normalization:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Document what was adjusted and why
+\item {} Cite source (document page number, URL, or data source reference)
+\item {} Quantify dollar impact by year
+\item {} Assess recurrence risk
+\item {} Show calculation from reported to adjusted figures
+\end{itemize}
+
+\textbf{Step 2.5: Verify data integrity}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Confirm subtotals sum correctly using formulas
+\item {} Verify balance sheet balances
+\item {} Check cash flow ties to balance sheet changes
+\item {} Cross-check numbers across tabs for consistency
+\item {} Flag any discrepancies for investigation
+\end{itemize}
+
+\subparagraph{Phase 3: Build Excel Workbook}\mbox{}\par
+
+\textbf{CRITICAL: Use xlsx skill for all Excel file manipulation. Read xlsx skill documentation before proceeding.}
+
+
+\textbf{Step 3.1: Create standardized tab structure} Create workbook with tabs:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Executive Summary
+\item {} Historical Financials
+\item {} Balance Sheet
+\item {} Cash Flow
+\item {} Operating Metrics
+\item {} Property Performance (if applicable)
+\item {} Market Analysis
+\item {} Investment Highlights
+\end{itemize}
+
+\textbf{Step 3.2: Build each tab with proper formatting} Apply formatting rules systematically:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Headers: Bold, left-aligned, 11pt font
+\item {} Financial data: Currency format \$\#,\#\#0.0 for millions
+\item {} Operational data: Number format \#,\#\#0 (no \$)
+\item {} Percentages: 0.0\% format
+\item {} Years: Text format to prevent comma insertion
+\item {} Negatives: Use accounting format with parentheses
+\item {} Underlines: Single above subtotals, double below totals
+\end{itemize}
+
+\textbf{Step 3.3: Insert formulas for calculations}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} All subtotals and totals must be formula-based
+\item {} Link balance sheet to income statement where appropriate
+\item {} Link cash flow to both income statement and balance sheet
+\item {} Create cross-tab references for validation
+\item {} Avoid hardcoding any calculated values
+\end{itemize}
+
+<correct\_\allowbreak{}patterns>
+
+
+\subparagraph{Row Reference Tracking - Copy This Pattern}\mbox{}\par
+
+\textbf{Store row numbers when writing data, then reference them in formulas:}
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \# ✅ CORRECT - Track row numbers as you write
+\item {} revenue\_\allowbreak{}row = row
+\item {} write\_\allowbreak{}data\_\allowbreak{}row(ws, row, ``Revenue'', revenue\_\allowbreak{}values)
+\item {} row += 1
+\item {} ebitda\_\allowbreak{}row = row
+\item {} write\_\allowbreak{}data\_\allowbreak{}row(ws, row, ``EBITDA'', ebitda\_\allowbreak{}values)
+\item {} row += 1
+\item {} \# Use stored row numbers in formulas
+\item {} margin\_\allowbreak{}row = row
+\item {} for col in year\_\allowbreak{}columns:
+\item {} cell = ws.cell(row=margin\_\allowbreak{}row, column=col)
+\item {} cell.value = f``=\{get\_\allowbreak{}column\_\allowbreak{}letter(col)\}\{ebitda\_\allowbreak{}row\}/\{get\_\allowbreak{}column\_\allowbreak{}letter(col)\}\{revenue\_\allowbreak{}row\}''
+\end{itemize}
+
+\textbf{For complex models, use a dictionary:}
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} row\_\allowbreak{}refs = \{
+\item {} 'revenue': 5,
+\item {} 'cogs': 6,
+\item {} 'gross\_\allowbreak{}profit': 7,
+\item {} 'ebitda': 12
+\item {} \}
+\item {} \# Later in formulas
+\item {} margin\_\allowbreak{}formula = f``=B\{row\_\allowbreak{}refs['ebitda']\}/B\{row\_\allowbreak{}refs['revenue']\}''
+\end{itemize}
+
+</correct\_\allowbreak{}patterns>
+
+
+<common\_\allowbreak{}mistakes>
+
+
+\subparagraph{WRONG: Hardcoded Row Offsets}\mbox{}\par
+
+\textbf{Don't use relative offsets - they break when table structure changes:}
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \# ❌ WRONG - Fragile offset-based references
+\item {} formula = f``=B\{row-15\}/B\{row-19\}'' \# What is row-15? What is row-19?
+\item {} \# ❌ WRONG - Magic numbers
+\item {} formula = f``=B\{current\_\allowbreak{}row-10\}*C\{current\_\allowbreak{}row-20\}''
+\end{itemize}
+
+\textbf{Why this fails:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Breaks silently when you add/remove rows
+\item {} Impossible to verify correctness by reading code
+\item {} Creates debugging nightmares in the delivered Excel file
+\end{itemize}
+
+</common\_\allowbreak{}mistakes>
+
+
+\textbf{Step 3.4: Apply professional presentation}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Freeze top row and first column on each data tab
+\item {} Set appropriate column widths (typically 12-15 characters)
+\item {} Right-align all numeric data
+\item {} Left-align all text and headers
+\item {} Add single/double underlines per accounting standards
+\item {} Ensure clean, minimal appearance
+\end{itemize}
+
+\subparagraph{Phase 4: Scenario Building (if projections included)}\mbox{}\par
+
+\textbf{Management Case:} Present company's projections as provided in source materials:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Extract all management assumptions
+\item {} Document growth rates, margin expansion, capital requirements
+\item {} Note key drivers and sensitivities
+\item {} Flag any ``hockey stick'' inflections that require skepticism
+\item {} Present as ``Management Case'' with clear labeling
+\end{itemize}
+
+\textbf{Base Case (Risk-Adjusted):} Apply conservative adjustments to management projections based on company-specific risk factors:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Apply revenue growth haircut reflecting execution risk and historical forecast accuracy
+\item {} Moderate margin expansion assumptions based on industry benchmarks and operating leverage
+\item {} Increase capex assumptions if growth-dependent
+\item {} Add working capital requirements if understated
+\item {} Delay synergy realization if applicable, based on integration complexity
+\item {} Document all adjustments with rationale and supporting analysis
+\end{itemize}
+
+\textbf{Downside Case (optional but recommended for LBO analysis):} Stress test scenario based on industry cyclicality and company vulnerabilities:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Model revenue decline reflecting recession risk or competitive pressure
+\item {} Assume margin compression under stress (volume deleverage, pricing pressure)
+\item {} Test covenant compliance and liquidity
+\item {} Assess downside protection
+\item {} Document key risks being stress-tested
+\end{itemize}
+
+\textbf{Documentation requirements for scenarios:} Create assumptions schedule showing:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Key assumptions by scenario (revenue growth, margins, capex \%)
+\item {} Rationale for each adjustment
+\item {} Sensitivity analysis on key variables
+\item {} Historical forecast accuracy if available
+\item {} Comparison to industry benchmarks
+\end{itemize}
+
+\subparagraph{Phase 5: Quality Control and Validation}\mbox{}\par
+
+\textbf{Step 5.1: Data accuracy checks} Validate:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Every number traces to source (check spot samples, cite documents/URLs/servers)
+\item {} All calculations are formula-based (no hardcoded values)
+\item {} Subtotals and totals are mathematically correct
+\item {} Years display without commas (2024 NOT 2,024)
+\item {} No formula errors: \#REF!, \#VALUE!, \#DIV/0!, \#N/A
+\end{itemize}
+
+\textbf{Step 5.2: Format consistency checks} Verify:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Financial data has \$ signs in format
+\item {} Operational data has NO \$ signs
+\item {} Percentages display as \% (15.0\% not 0.15)
+\item {} Negative numbers use parentheses for financial data
+\item {} Headers are bold and left-aligned
+\item {} Numbers are right-aligned
+\item {} Years are text format
+\end{itemize}
+
+\textbf{Step 5.3: Structure and completeness checks} Confirm:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} All required tabs present and properly sequenced
+\item {} Executive summary is concise (fits on one page)
+\item {} All key metrics captured comprehensively
+\item {} Logical flow from summary to detail
+\item {} Appropriate level of granularity in each tab
+\item {} No missing data or incomplete sections
+\end{itemize}
+
+\textbf{Step 5.4: Professional presentation checks} Review:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Minimal borders (only for structure)
+\item {} Consistent indentation (2 spaces for sub-items)
+\item {} Proper accounting underlines (single and double)
+\item {} Clean, professional appearance throughout
+\item {} Appropriate column widths (not too narrow or wide)
+\end{itemize}
+
+\textbf{Step 5.5: Documentation and assumptions checks} Ensure:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} All normalization adjustments documented with rationale
+\item {} Source citations included (document page numbers, URLs, or data source references)
+\item {} Assumptions clearly stated and reasonable
+\item {} Executive summary accurate and impactful
+\item {} Filename includes company name and date
+\end{itemize}
+
+\subparagraph{Phase 6: Final Delivery}\mbox{}\par
+
+\textbf{Step 6.1: Create executive summary} Write concise, impactful summary including:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Company overview: business model, products/services, geography (2-3 sentences)
+\item {} Key financial metrics: Revenue, EBITDA, Growth rates (table format)
+\item {} Investment highlights: 3-5 key strengths or opportunities
+\item {} Notable risks or considerations (briefly)
+\item {} Transaction context if applicable
+\end{itemize}
+
+\textbf{Step 6.2: Final file preparation}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Save workbook with proper naming: CompanyName\_\allowbreak{}DataPack\_\allowbreak{}YYYY-MM-DD.xlsx
+\end{itemize}
+
+\subparagraph{NORMALIZATION PATTERNS}\mbox{}\par
+
+\subparagraph{Common Adjustments to EBITDA}\mbox{}\par
+
+\textbf{1. Restructuring charges}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Add back if truly non-recurring (facility closure, one-time severance)
+\item {} Do NOT add back if company restructures every year
+\item {} Document specific nature and rationale for non-recurrence
+\item {} Example: ``2023 restructuring: \$3.0M facility closure, documented in source materials, one-time event''
+\end{itemize}
+
+\textbf{2. Stock-based compensation}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Industry standard: add back for private equity analysis
+\item {} Treat as non-cash operating expense
+\item {} Be consistent across all periods
+\item {} Note if unusually high or includes one-time grants
+\end{itemize}
+
+\textbf{3. Acquisition-related costs}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Add back transaction fees, integration costs
+\item {} Document specific amounts by type
+\item {} Do not add back ongoing integration investments
+\item {} Cite source for each adjustment
+\end{itemize}
+
+\textbf{4. Legal settlements and litigation}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Add back if truly isolated incident
+\item {} Assess recurrence risk (one settlement vs pattern of litigation)
+\item {} Document nature of settlement
+\item {} Consider if this is normal course of business
+\end{itemize}
+
+\textbf{5. Asset sales or impairments}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Exclude gains/losses on asset sales from operating EBITDA
+\item {} Remove impairment charges if truly non-recurring
+\item {} Document what assets were sold/impaired and why
+\item {} Adjust revenue if assets generated operating income
+\end{itemize}
+
+\textbf{6. Related party adjustments}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Normalize above-market related party expenses (rent, management fees)
+\item {} Adjust to market rates with supporting documentation
+\item {} Remove personal expenses run through business
+\item {} Document market rate comparison
+\end{itemize}
+
+\subparagraph{Conservative vs Aggressive Normalization}\mbox{}\par
+
+\textbf{Management Case:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Include all adjustments management proposes
+\item {} Accept company's definition of ``non-recurring''
+\item {} More aggressive EBITDA adjustments
+\item {} Use for understanding management's view
+\end{itemize}
+
+\textbf{Base Case (Recommended for investment decisions):}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Only clearly non-recurring items
+\item {} Apply higher scrutiny to recurring ``one-time'' charges
+\item {} Exclude speculative adjustments
+\item {} More conservative, defensible to investment committee
+\end{itemize}
+
+\subparagraph{INDUSTRY-SPECIFIC ADAPTATIONS}\mbox{}\par
+
+\subparagraph{Technology/SaaS}\mbox{}\par
+Key metrics to capture:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ARR (Annual Recurring Revenue) and MRR
+\item {} Customer count by cohort
+\item {} CAC (Customer Acquisition Cost) and LTV (Lifetime Value)
+\item {} Churn rate (gross and net)
+\item {} Net revenue retention
+\item {} Rule of 40 (Growth \% + EBITDA Margin \%)
+\item {} Magic number (sales efficiency)
+\end{itemize}
+
+Format notes: ARR is currency (\$), customer count is number (no \$), rates are \%
+
+
+\subparagraph{Manufacturing/Industrial}\mbox{}\par
+Key metrics to capture:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Production capacity and capacity utilization \%
+\item {} Units produced by product line
+\item {} Inventory turns
+\item {} Gross margin by product line
+\item {} Order backlog
+\end{itemize}
+
+Format notes: Units, capacity are numbers (no \$), utilization is \%, revenue/costs are currency
+
+
+\subparagraph{Real Estate/Hospitality}\mbox{}\par
+Key metrics to capture:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Properties/rooms/square footage
+\item {} Occupancy rates \%
+\item {} ADR (Average Daily Rate) - currency format
+\item {} RevPAR (Revenue per Available Room) - currency format
+\item {} NOI (Net Operating Income) - currency format
+\item {} Cap rates \%
+\item {} FF\&E reserve
+\end{itemize}
+
+Format notes: Rooms/sqft are numbers, occupancy is \%, ADR/RevPAR are currency
+
+
+\subparagraph{Healthcare/Services}\mbox{}\par
+Key metrics to capture:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Locations/facilities
+\item {} Providers/employees
+\item {} Patients/visits (volume metrics)
+\item {} Revenue per visit - currency
+\item {} Payor mix \%
+\item {} Same-store growth \%
+\end{itemize}
+
+Format notes: Locations/visits are numbers, revenue per visit is currency, rates are \%
+
+
+\subparagraph{FINAL DELIVERY CHECKLIST}\mbox{}\par
+
+Complete this checklist before delivering the data pack:
+
+
+\textbf{Structure:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} All required tabs present and in logical sequence
+\item {} Each tab has clear header and title
+\item {} Executive summary is concise (fits on one page)
+\end{itemize}
+
+\textbf{Data Accuracy:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} All numbers trace to source (documents, URLs, or data servers)
+\item {} Source references documented for key figures (page numbers, URLs, etc.)
+\item {} All calculations are formula-based (no hardcoded calculated values)
+\item {} Subtotals and totals verified
+\item {} Balance sheet balances (Assets = Liabilities + Equity)
+\item {} No \#REF!, \#VALUE!, or \#DIV/0! errors
+\end{itemize}
+
+\textbf{Formatting - Years and Numbers:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Years display correctly: 2020, 2021, 2022 (no commas)
+\item {} Financial data has \$ signs: \$50.0, \$125.5
+\item {} Operational metrics have NO \$ signs: 100 stores, 250 employees
+\item {} Percentages formatted correctly: 15.0\%, 25.5\%
+\item {} Negatives in parentheses: \$(15.0) not -\$15.0
+\end{itemize}
+
+\textbf{Formatting - Professional Standards:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Headers bold and left-aligned
+\item {} Numbers right-aligned
+\item {} Consistent indentation (2 spaces for sub-items)
+\item {} Single underline above subtotals
+\item {} Double underline below final totals
+\item {} Frozen panes on headers
+\item {} Consistent font throughout
+\item {} Minimal borders (only for structure)
+\item {} Clean, professional appearance throughout
+\end{itemize}
+
+\textbf{Content Completeness:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Financial statements complete (IS, BS, CF)
+\item {} Operating metrics comprehensively captured
+\item {} Normalization adjustments documented
+\item {} Assumptions clearly stated
+\item {} Executive summary clear, concise, and impactful
+\item {} Investment highlights compelling
+\item {} Market analysis provides context
+\end{itemize}
+
+\textbf{Documentation:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} All normalization adjustments explained
+\item {} Every data cell cited from source with comments and links (document page numbers, URLs, or data source references)
+\item {} Assumptions documented with rationale
+\item {} Any data limitations noted
+\item {} Filename follows convention: CompanyName\_\allowbreak{}DataPack\_\allowbreak{}YYYY-MM-DD.xlsx
+\end{itemize}
+
+\textbf{Final Output:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} File saved to outputs with proper naming convention
+\item {} All quality control checks passed
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: deal-tracker}\label{file:skills-deal-tracker-SKILL.md}
+
+\paragraph{Deal Tracker}\mbox{}\par
+
+description: Track multiple live deals with milestones, deadlines, action items, and status updates. Maintains a deal pipeline view and surfaces upcoming deadlines and overdue items. Use when managing a book of business, tracking process milestones, or preparing for weekly deal reviews. Triggers on ``deal tracker'', ``deal status'', ``where are we on'', ``process update'', ``deal pipeline'', or ``weekly deal review''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Deal Setup}\mbox{}\par
+
+For each deal, capture:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Deal name / code name}: Project [Name]
+\item {} \textbf{Client}: Seller or buyer name
+\item {} \textbf{Deal type}: Sell-side, buy-side, financing, restructuring
+\item {} \textbf{Role}: Lead advisor, co-advisor, fairness opinion
+\item {} \textbf{Deal size}: Expected enterprise value
+\item {} \textbf{Stage}: Pre-mandate → Engaged → Marketing → IOI → Diligence → Final bids → Signing → Close
+\item {} \textbf{Team}: MD, VP, Associate, Analyst assigned
+\item {} \textbf{Key dates}: Engagement date, CIM distribution, IOI deadline, management meetings, final bid deadline, target close
+\end{itemize}
+
+\subparagraph{Step 2: Milestone Tracking}\mbox{}\par
+
+Track key milestones per deal:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}}
+\toprule
+{} \textbf{Milestone} & \textbf{Target Date} & \textbf{Actual Date} & \textbf{Status} & \textbf{Notes} \\
+\midrule
+{} Engagement letter signed &  &  &  &  \\
+{} CIM /  teaser drafted &  &  &  &  \\
+{} Buyer list approved &  &  &  &  \\
+{} Teaser distributed &  &  &  &  \\
+{} NDA execution &  &  &  &  \\
+{} CIM distributed &  &  &  &  \\
+{} IOI deadline &  &  &  &  \\
+{} IOIs received /  reviewed &  &  &  &  \\
+{} Shortlist selected &  &  &  &  \\
+{} Management meetings &  &  &  &  \\
+{} Data room opened &  &  &  &  \\
+{} Final bid deadline &  &  &  &  \\
+{} Bids received /  reviewed &  &  &  &  \\
+{} Exclusivity granted &  &  &  &  \\
+{} Confirmatory diligence &  &  &  &  \\
+{} Purchase agreement signed &  &  &  &  \\
+{} Regulatory approval &  &  &  &  \\
+{} Close &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Status: On Track / At Risk / Delayed / Complete
+
+
+\subparagraph{Step 3: Action Items}\mbox{}\par
+
+Maintain a running action item list across all deals:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
+\toprule
+{} \textbf{Action} & \textbf{Deal} & \textbf{Owner} & \textbf{Due Date} & \textbf{Priority} & \textbf{Status} \\
+\midrule
+{}  &  &  &  & P0/ P1/ P2 & Open/ Done/ Blocked \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 4: Weekly Deal Review}\mbox{}\par
+
+Generate a summary for weekly team meetings:
+
+
+\textbf{For each active deal:}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} One-line status update
+\item {} Key developments this week
+\item {} Upcoming milestones (next 2 weeks)
+\item {} Blockers or risks
+\item {} Action items for next week
+\end{enumerate}
+
+\textbf{Pipeline summary:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Total active deals by stage
+\item {} Deals at risk (missed milestones, stalled processes)
+\item {} New mandates / pitches in pipeline
+\item {} Expected closings this quarter
+\end{itemize}
+
+\subparagraph{Step 5: Output}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Excel workbook with:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Pipeline overview (all deals, one row each)
+\item {} Per-deal milestone tracker tabs
+\item {} Action item master list
+\item {} Weekly review summary
+\end{itemize}
+\item {} Optional: Markdown summary for email/Slack distribution
+\end{itemize}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Update the tracker weekly at minimum — stale trackers are worse than no tracker
+\item {} Flag deals where milestones are slipping — early warning prevents surprises
+\item {} Action items without owners and due dates don't get done — be specific
+\item {} The pipeline view should show deal stage, size, and likelihood — useful for revenue forecasting
+\item {} Keep notes on buyer/investor feedback — patterns in feedback inform strategy adjustments
+\item {} Archive closed/dead deals separately — keep the active view clean
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: merger-model}\label{file:skills-merger-model-SKILL.md}
+
+\paragraph{Merger Model}\mbox{}\par
+
+description: Build accretion/dilution analysis for M\&A transactions. Models pro forma EPS impact, synergy sensitivities, and purchase price allocation. Use when evaluating a potential acquisition, preparing merger consequences analysis for a pitch, or advising on deal terms. Triggers on ``merger model'', ``accretion dilution'', ``M\&A model'', ``pro forma EPS'', ``merger consequences'', or ``deal impact analysis''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Gather Inputs}\mbox{}\par
+
+\textbf{Acquirer:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Company name, current share price, shares outstanding
+\item {} LTM and NTM EPS (GAAP and adjusted)
+\item {} P/E multiple
+\item {} Pre-tax cost of debt, tax rate
+\item {} Cash on balance sheet, existing debt
+\end{itemize}
+
+\textbf{Target:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Company name, current share price, shares outstanding (if public)
+\item {} LTM and NTM EPS or net income
+\item {} Enterprise value or equity value
+\end{itemize}
+
+\textbf{Deal Terms:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Offer price per share (or premium to current)
+\item {} Consideration mix: \% cash vs. \% stock
+\item {} New debt raised to fund cash portion
+\item {} Expected synergies (revenue and cost) and phase-in timeline
+\item {} Transaction fees and financing costs
+\item {} Expected close date
+\end{itemize}
+
+\subparagraph{Step 2: Purchase Price Analysis}\mbox{}\par
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Item} & \textbf{Value} \\
+\midrule
+{} Offer price per share &  \\
+{} Premium to current &  \\
+{} Equity value &  \\
+{} Plus: net debt assumed &  \\
+{} Enterprise value &  \\
+{} EV /  EBITDA implied &  \\
+{} P/ E implied &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 3: Sources \& Uses}\mbox{}\par
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{Sources} & \textbf{\$} & \textbf{Uses} & \textbf{\$} \\
+\midrule
+{} New debt &  & Equity purchase price &  \\
+{} Cash on hand &  & Refinance target debt &  \\
+{} New equity issued &  & Transaction fees &  \\
+{}  &  & Financing fees &  \\
+{} \textbf{Total} &  & \textbf{Total} &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 4: Pro Forma EPS (Accretion / Dilution)}\mbox{}\par
+
+Calculate year-by-year (Year 1-3):
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{} & \textbf{Standalone} & \textbf{Pro Forma} & \textbf{Accretion/ (Dilution)} \\
+\midrule
+{} Acquirer net income &  &  &  \\
+{} Target net income &  &  &  \\
+{} Synergies (after tax) &  &  &  \\
+{} Foregone interest on cash (after tax) &  &  &  \\
+{} New debt interest (after tax) &  &  &  \\
+{} Intangible amortization (after tax) &  &  &  \\
+{} Pro forma net income &  &  &  \\
+{} Pro forma shares &  &  &  \\
+{} \textbf{Pro forma EPS} &  &  &  \\
+{} \textbf{Accretion /  (Dilution) \%} &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 5: Sensitivity Analysis}\mbox{}\par
+
+\textbf{Accretion/Dilution vs. Synergies and Offer Premium:}
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
+\toprule
+{} \textbf{} & \textbf{\$0M syn} & \textbf{\$25M syn} & \textbf{\$50M syn} & \textbf{\$75M syn} & \textbf{\$100M syn} \\
+\midrule
+{} 15\% premium &  &  &  &  &  \\
+{} 20\% premium &  &  &  &  &  \\
+{} 25\% premium &  &  &  &  &  \\
+{} 30\% premium &  &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{Accretion/Dilution vs. Cash/Stock Mix:}
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
+\toprule
+{} \textbf{} & \textbf{100\% cash} & \textbf{75/ 25} & \textbf{50/ 50} & \textbf{25/ 75} & \textbf{100\% stock} \\
+\midrule
+{} Year 1 &  &  &  &  &  \\
+{} Year 2 &  &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 6: Breakeven Synergies}\mbox{}\par
+
+Calculate the minimum synergies needed for the deal to be EPS-neutral in Year 1.
+
+
+\subparagraph{Step 7: Output}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Excel workbook with:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Assumptions tab
+\item {} Sources \& uses
+\item {} Pro forma income statement
+\item {} Accretion/dilution summary
+\item {} Sensitivity tables
+\item {} Breakeven analysis
+\end{itemize}
+\item {} One-page merger consequences summary for pitch book
+\end{itemize}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Always show both GAAP and adjusted (cash) EPS where relevant
+\item {} Stock deals: use acquirer's current price for exchange ratio, note dilution from new shares
+\item {} Include purchase price allocation — goodwill and intangible amortization matter for GAAP EPS
+\item {} Synergy phase-in is critical — Year 1 is often only 25-50\% of run-rate synergies
+\item {} Don't forget foregone interest income on cash used and new interest expense on debt raised
+\item {} Tax rate on synergies and interest adjustments should match the acquirer's marginal rate
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: pitch-deck}\label{file:skills-pitch-deck-SKILL.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} name & pitch-deck \\
+{} description & Populates investment banking pitch deck templates with data from source files. Use when: user provides a PowerPoint template to fill in, user has source data (Excel/ CSV) to populate into slides, user mentions populating or filling a pitch deck template, or user needs to transfer data into existing slide layouts. Not for creating presentations from scratch. \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+\paragraph{Populating Investment Banking Pitch Deck Templates}\mbox{}\par
+
+\subparagraph{Reference Files}\mbox{}\par
+
+\textbf{Read all reference files at task start before beginning any work.} These contain critical patterns and anti-patterns that will affect your approach. Do not wait until you encounter issues.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{File} & \textbf{Purpose} \\
+\midrule
+{} \href{reference/ formatting-standards.md}{\emph{formatting-standards.md}} & Text, bullets, tables, charts, alignment \\
+{} \href{reference/ slide-templates.md}{\emph{slide-templates.md}} & Content mapping guidance for common slide types \\
+{} \href{reference/ xml-reference.md}{\emph{xml-reference.md}} & PowerPoint XML patterns for tables, shapes, arrows \\
+{} \href{reference/ calculation-standards.md}{\emph{calculation-standards.md}} & Financial formulas for verification (CAGR, consensus) \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Workflow Decision Tree}\mbox{}\par
+
+\textbf{What type of task is this?}
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Populating empty template with source data?
+\item {} → Follow ``Template Population Workflow'' below
+\item {} Editing existing populated slides?
+\item {} → Extract current content, modify, revalidate
+\item {} Fixing formatting issues on existing slides?
+\item {} → See ``Common Failures'' table, apply targeted fixes
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{⚠ Critical Rendering Limitation}\mbox{}\par
+
+\textbf{LibreOffice is used for validation but DOES NOT render PowerPoint files accurately.} It will mangle fonts, gradients, shape positions, text wrapping, and some table formatting.
+
+
+\textbf{What this means:} A slide that passes visual validation in LibreOffice may still have issues in Microsoft PowerPoint. The validation loop catches structural issues (missing content, broken tables, placeholder formatting retained) but \textbf{cannot} catch font substitution, subtle alignment shifts, or gradient problems.
+
+
+\textbf{Required action:} Always include this statement when delivering output:
+
+\begin{quote}
+````This file was validated using LibreOffice. Please review in Microsoft PowerPoint before distribution, as rendering differences may exist.''''
+\end{quote}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Template Population Workflow}\mbox{}\par
+
+Copy and track progress:
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Pitch Deck Progress:
+\item {} - [ ] Phase 1: Extract and validate source data
+\item {} - [ ] Phase 2: Map content to template sections
+\item {} - [ ] Phase 3: Populate slides with proper formatting
+\item {} - [ ] Phase 4: Validate → Fix → Repeat until clean
+\item {} - [ ] Phase 5: Final verification
+\end{itemize}
+
+\subparagraph{Phase 1: Data Extraction}\mbox{}\par
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Create backup} of original template before any modifications — copy to \emph{[filename]\_\allowbreak{}backup.pptx}. Direct XML editing or unexpected errors can corrupt files.
+\item {} Identify all source materials (Excel, CSV, PDF reports, Word documents, databases, web sources)
+\item {} Extract relevant data points from each source
+\item {} Validate all numbers against original sources
+\item {} Standardize units and currency (convert all figures to the primary unit/currency used in the template)
+\item {} Note any calculations that need verification → see \href{reference/calculation-standards.md}{\emph{calculation-standards.md}} for formulas
+\end{enumerate}
+
+\subparagraph{Phase 2: Content Mapping}\mbox{}\par
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Open and visually review the template} — understand its structure, style, and existing content before modifying
+\item {} Analyze template structure — identify all placeholder areas and content boxes
+\item {} Map source data to corresponding template sections → see \href{reference/slide-templates.md}{\emph{slide-templates.md}} for mapping guidance
+\item {} Identify placeholder guidance boxes (colored instruction boxes from task creator)
+\item {} Note any data gaps or mismatches → see \href{reference/slide-templates.md\#handling-data-template-mismatches}{\emph{slide-templates.md}} for resolution
+\end{enumerate}
+
+\subparagraph{Phase 3: Template Population}\mbox{}\par
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Remove or reformat placeholder boxes} — colored instruction boxes show WHAT to create, not HOW to format. Delete them and create properly formatted content in their place. See \href{\#critical-anti-patterns-never-do-these}{Critical Anti-Patterns}.
+\item {} Populate each section with mapped content (focus on content first)
+\item {} \textbf{Then apply formatting} to match template style → see \href{reference/formatting-standards.md}{\emph{formatting-standards.md}}
+\item {} Create tables as actual table objects (NEVER use pipe/tab-separated text) → see \href{reference/xml-reference.md\#table-implementation}{\emph{xml-reference.md}}
+\item {} Create arrows/shapes as PowerPoint objects → see \href{reference/xml-reference.md\#arrow-shapes}{\emph{xml-reference.md}}
+\item {} Insert company logo if provided in task files; if not available, flag to user: ``[LOGO NOT PROVIDED - please supply company logo]''
+\end{enumerate}
+
+\subparagraph{Phase 4: Validate → Fix → Repeat}\mbox{}\par
+
+\textbf{This is a feedback loop. Repeat until all checks pass OR escalation is triggered.}
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \# Convert to images for visual validation
+\item {} soffice --headless --convert-to pdf presentation.pptx
+\item {} pdftoppm -jpeg -r 150 presentation.pdf slide
+\end{itemize}
+
+\textbf{Validation checklist (check each slide image):}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Text readable against background?
+\item {} \UncheckedBox Tables are actual objects (columns aligned, NOT pipe/tab-separated text)?
+\item {} \UncheckedBox Charts/tables fill designated areas?
+\item {} \UncheckedBox Bullet formatting consistent within sections?
+\item {} \UncheckedBox Font sizes match across same-level boxes?
+\item {} \UncheckedBox No content beyond slide boundaries?
+\item {} \UncheckedBox \textbf{No placeholder formatting retained} (no large colored boxes with data dumped in)?
+\item {} \UncheckedBox \textbf{No text-based ``tables''} (no \emph{|} or tab separators creating fake columns)?
+\item {} \UncheckedBox \textbf{Cross-slide consistency}: Same metrics/figures identical across all slides where they appear?
+\end{itemize}
+
+\textbf{Fix cycle protocol:}
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Cycle} & \textbf{Action} \\
+\midrule
+{} 1 & Fix all identified issues, re-validate \\
+{} 2 & Fix remaining issues, re-validate \\
+{} 3 & If issues persist, document remaining problems and escalate to user \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{After 3 cycles, if issues remain:}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} List each unresolved issue with slide number and description
+\item {} Explain what was attempted
+\item {} Deliver the file with explicit disclaimer: ``The following issues could not be resolved automatically: [list]. Manual review required.''
+\end{enumerate}
+
+\textbf{Do not} continue cycling indefinitely. Some issues (font rendering, complex shape alignment) may require manual intervention in PowerPoint.
+
+
+\subparagraph{Phase 5: Final Verification}\mbox{}\par
+
+Run through the \href{\#final-quality-checklist}{Final Quality Checklist} before delivering.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Quick Reference Tables}\mbox{}\par
+
+\subparagraph{Bullet Symbols}\mbox{}\par
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Context} & \textbf{Symbol} & \textbf{Usage} \\
+\midrule
+{} Included/ Positive & ✓ & Items within scope, features present \\
+{} Excluded/ Negative & × & Items outside scope, features absent \\
+{} Neutral list & • & General enumeration, commentary \\
+{} Numbered sequence & 1. 2. 3. & Process steps, rankings \\
+{} Sub-bullets & – & Secondary points under main bullets \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Slide Hierarchy Levels (Typical)}\mbox{}\par
+
+These are typical ranges—adjust based on template specifications:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{Level} & \textbf{Examples} & \textbf{Typical Size} & \textbf{Style} \\
+\midrule
+{} Title & Slide title & 40-48pt & Bold \\
+{} Subtitle & Market definition, slide descriptor & 18-22pt & Bold \\
+{} Section Header & ``Key Projections'', ``Commentary'' & 14-16pt & Regular \\
+{} Block Label & ``Segments Included'', ``Definition'' sidebar & 12-14pt & Regular \\
+{} Block Content & Bullet points, body text & 11-14pt & Regular \\
+{} Table Header & Column headers & 10-12pt & Bold \\
+{} Table Body & Cell content & 9-11pt & Regular \\
+{} Footnotes & Sources, notes & 8-9pt & Italic \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Font Consistency Matching}\mbox{}\par
+
+Boxes at the \textbf{same hierarchy level} MUST use identical font sizes:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Same Level} & \textbf{Must Match With} \\
+\midrule
+{} ``Segments Included'' & ``Segments Excluded'' \\
+{} ``Definition'' & ``Scope Rationale'' \\
+{} Left column bullets & Right column bullets \\
+{} All block labels & Each other \\
+{} All section headers & Each other \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Rounding for Presentation}\mbox{}\par
+
+These are \textbf{typical conventions} — adjust based on the magnitude of values and template style:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Value Type} & \textbf{Typical Rounding} & \textbf{Example} \\
+\midrule
+{} Large market sizes (\$10bn+) & Nearest \$1bn & 18.5 → \$19bn \\
+{} Smaller market sizes (<\$10bn) & Nearest \$0.5bn or \$0.1bn & 2.3 → \$2.5bn \\
+{} Size ranges & Match precision of sources & 14.9-22.1 → \$15-22bn \\
+{} CAGR & Whole \% or 0.5\% & 16.4\% → 16\% or 16.5\% \\
+{} Market share & Nearest 5\% or match source & 21.4\% → 20\% \\
+{} Multiples & 1 decimal & 9.69 → 9.7x \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{Principle:} Rounding should not materially change the figure. For smaller values, use finer precision.
+
+
+\subparagraph{Text Density Rules}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Max 6-7 bullets per content box
+\item {} Max 2 lines per bullet point
+\item {} Parenthetical examples: same line or indented below
+\item {} No orphan words (single word on new line)
+\end{itemize}
+
+\subparagraph{Alignment Principles}\mbox{}\par
+
+\textbf{Vertically stacked boxes} must have identical:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Left margin position, bullet indentation, text start position, box width
+\end{itemize}
+
+\textbf{Horizontally adjacent boxes} must have identical:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Top position, height (where possible), internal padding
+\end{itemize}
+
+\subparagraph{Multi-Slide Consistency}\mbox{}\par
+
+When the same data appears on multiple slides:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Use identical figures, formatting, and terminology
+\item {} If a metric is updated on one slide, update all occurrences
+\item {} Cross-reference during validation to catch mismatches
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{MUST Requirements}\mbox{}\par
+
+These requirements are non-negotiable regardless of template:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Requirement} & \textbf{Details} \\
+\midrule
+{} \textbf{Text Readability} & All text MUST have sufficient contrast with background. Examples: white/ light text on dark blue, dark green, black backgrounds; black/ dark text on white, light gray, light yellow backgrounds. \\
+{} \textbf{Actual Table Objects} & Tabular data MUST be table objects, not tab-separated text. See \href{reference/ xml-reference.md\#table-implementation}{\emph{xml-reference.md}}. \\
+{} \textbf{Proper Chart/ Table Sizing} & Pasted visuals MUST fill designated area. See \href{reference/ formatting-standards.md\#chart-and-image-handling}{\emph{formatting-standards.md}}. \\
+{} \textbf{Consistent Formatting} & Bullets within section MUST match (symbol, size, indent). Same-level boxes MUST use same font size. \\
+{} \textbf{Content Boundaries} & All content MUST stay within slide edges. Footnote box width: \textasciitilde{}32.5cm for 16:9, \textasciitilde{}24cm for 4:3. \\
+{} \textbf{No Placeholder Formatting} & Remove colored instruction boxes. Main body: dark text on light background per template. \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Critical Anti-Patterns: NEVER DO THESE}\mbox{}\par
+
+These failures occur when placeholder formatting is mistaken for output formatting. Recognizing these patterns is essential.
+
+
+\subparagraph{Anti-Pattern 1: Populating Data INTO Placeholder Boxes}\mbox{}\par
+
+\textbf{What happens:} Template has colored instruction boxes (yellow, orange, etc.) with guidance text. Model replaces the guidance text with actual data BUT KEEPS THE COLORED BOX.
+
+
+\textbf{Why it's wrong:} The colored box IS the placeholder. It tells you what content goes there. The output should have different formatting — typically dark text on white/light background, or properly styled shapes.
+
+
+\textbf{Recognition test:} If your populated slide has large colored rectangles filled with data text, you have copied the placeholder format instead of replacing it.
+
+
+\textbf{Critical distinction — two types of ``placeholders'':}
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Type} & \textbf{How to identify} & \textbf{What to do} \\
+\midrule
+{} \textbf{Instruction boxes} & Bright colors (yellow, orange), contains guidance text like ``Insert X here'', white/ light text on colored background & DELETE the entire shape, then create new content with production formatting \\
+{} \textbf{Layout placeholders} & Part of slide master/ layout, neutral colors matching template theme, ``Click to add text'' & KEEP the shape, REPLACE the text content only \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+If uncertain: check if the shape exists on an empty slide from the same template. Layout placeholders persist; instruction boxes are regular shapes.
+
+
+\subparagraph{Anti-Pattern 2: Text-Based ``Tables''}\mbox{}\par
+
+\textbf{What happens:} Model creates table-like content using separator characters (\emph{|}, tabs, spaces) instead of actual table objects.
+
+
+\textbf{Why it's wrong:} This is NOT a table. Columns will never align properly, it cannot be formatted consistently, and it looks unprofessional.
+
+
+\textbf{Recognition test:} If you're typing \emph{|} characters or relying on spaces/tabs to create columns, you're creating text, not a table.
+
+
+\textbf{MUST verify:} After creating any table, verify it is an actual table object. See \href{reference/xml-reference.md\#critical-verify-tables-are-actual-table-objects}{\emph{xml-reference.md}} for verification methods.
+
+
+\subparagraph{Anti-Pattern 3: Inheriting Placeholder Contrast}\mbox{}\par
+
+\textbf{What happens:} Placeholder uses light text on colored background (e.g., white on yellow). Model populates data but keeps this color scheme, resulting in hard-to-read output.
+
+
+\textbf{Why it's wrong:} Placeholder colors are deliberately distinct to signal ``replace me.'' Production slides typically use dark text on light backgrounds for body content.
+
+
+\textbf{Recognition test:} If your populated content has light/white text on bright colored backgrounds in body areas (not headers), you've inherited placeholder formatting.
+
+
+\textbf{Correct approach:} Apply production formatting — typically dark text (\#000000 or \#333333) on white or light backgrounds for body content. Headers and accent areas may use brand colors.
+
+
+\subparagraph{Summary: Placeholder vs. Production}\mbox{}\par
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Element} & \textbf{Placeholder (Input)} & \textbf{Production (Output)} \\
+\midrule
+{} Instruction boxes & Colored background, guidance text & Removed or reformatted \\
+{} Data areas & ``[Insert data here]'' text & Actual data with clean formatting \\
+{} Tables & Description of what table should contain & Actual table object with rows/ columns \\
+{} Body text & Light text on colored background & Dark text on light background \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{The placeholder tells you WHAT to create, not HOW to format it.}
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Common Failures}\mbox{}\par
+
+For detailed explanations of the most critical failures, see \href{\#critical-anti-patterns-never-do-these}{Critical Anti-Patterns} above.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Failure} & \textbf{Solution} & \textbf{Reference} \\
+\midrule
+{} Unstructured text dumps & Break into bullets (✓, ×, •) & \href{reference/ formatting-standards.md\#bullet-point-structure}{\emph{formatting-standards.md}} \\
+{} Pipe/ tab-separated ``tables'' & Create actual table objects — text with separators is NOT a table & \href{reference/ xml-reference.md\#table-implementation}{\emph{xml-reference.md}} \\
+{} Poor text/ background contrast & Audit every text element & — \\
+{} Tiny pasted charts & Resize to fill area, paste chart only & \href{reference/ formatting-standards.md\#proper-sizing-workflow}{\emph{formatting-standards.md}} \\
+{} Source data pasted with charts & Select only chart object before copy & — \\
+{} Data dumped into placeholder boxes & Delete colored instruction boxes, create new properly formatted content & \href{\#critical-anti-patterns-never-do-these}{Anti-Patterns} \\
+{} Inconsistent bullets & Define style once, apply to all & \href{reference/ formatting-standards.md\#bullet-consistency}{\emph{formatting-standards.md}} \\
+{} Inconsistent fonts across boxes & Standardize same-level boxes & \href{reference/ formatting-standards.md\#font-consistency}{\emph{formatting-standards.md}} \\
+{} Content overflow & Set explicit box widths (footnotes: 32.5cm for 16:9, 24cm for 4:3) & — \\
+{} Missing logo & Use logo from task files; if not provided, flag to user & — \\
+{} Remaining \emph{[brackets]} & Search and replace all placeholders & — \\
+{} Text arrows (→, ⟹) & Use PowerPoint shape objects & \href{reference/ xml-reference.md\#arrow-shapes}{\emph{xml-reference.md}} \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Error Handling}\mbox{}\par
+
+\textbf{If PDF/image conversion fails:}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Check LibreOffice is installed: \emph{which soffice}
+\item {} Try alternative: \emph{libreoffice --headless --convert-to pdf presentation.pptx}
+\item {} If still failing, open in PowerPoint/LibreOffice manually and export
+\end{enumerate}
+
+\textbf{If source data has inconsistencies or conflicts:}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Priority order}: Use data explicitly provided in the task files first
+\item {} If using data from other sources (web search, external documents), flag this to the user
+\item {} Document any discrepancies explicitly
+\item {} Add footnote explaining data source choice
+\end{enumerate}
+
+\textbf{If calculations don't match source projections:}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Show your calculation methodology
+\item {} Note the discrepancy and possible causes (different base year, methodology)
+\item {} Present both values if material difference
+\item {} Flag to user for resolution
+\end{enumerate}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Table Structure Guidelines}\mbox{}\par
+
+When creating tables (MUST be actual table objects):
+
+
+\textbf{Column Alignment:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Text columns: Left-aligned (header and content)
+\item {} Numeric columns: Right-aligned or center-aligned (header matches content)
+\end{itemize}
+
+\textbf{Header Row:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Bold text
+\item {} Shaded background (template's brand color)
+\item {} White or contrasting text
+\end{itemize}
+
+\textbf{Consensus/Total Row:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Bold text
+\item {} Separator line above
+\item {} Distinct background shading
+\end{itemize}
+
+\textbf{Width:} Fill designated section width completely.
+
+
+For XML implementation, see \href{reference/xml-reference.md\#table-implementation}{\emph{xml-reference.md}}.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Footnote Format}\mbox{}\par
+
+\textbf{Format:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Sources: [Source 1] (Year), [Source 2] (Year).
+\item {} Notes: (1) [First note]; (2) [Second note].
+\end{itemize}
+
+\textbf{Example:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Sources: Grand View Research (2024), Mordor Intelligence (2024), Markets and Markets (2023).
+\item {} Notes: (1) Excludes hardware revenue; (2) Includes both B2B and B2C segments.
+\end{itemize}
+
+All superscript numbers (¹, ², ³) in slide body MUST have corresponding Notes entries.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Logo Placement}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Use logo file provided in task materials
+\item {} If no logo provided, flag to user: ``[LOGO NOT PROVIDED - please supply company logo]''
+\item {} Position: typically top-right, consistent size across slides, must not overlap content
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Data Requirements by Slide Type}\mbox{}\par
+
+For detailed data requirements, formatting principles, and example column headers for each slide type, see \href{reference/slide-templates.md\#common-slide-types-and-data-requirements}{\emph{slide-templates.md}}.
+
+
+Common slide types covered: Market Definition, Market Sizing/TAM, Competitive Landscape, Financial Summary, Transaction Comparables.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Final Quality Checklist}\mbox{}\par
+
+Before delivering the populated template, verify:
+
+
+\subparagraph{Data Accuracy}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox All figures match original source documents
+\item {} \UncheckedBox Calculated values verified against formulas (see \href{reference/calculation-standards.md}{\emph{calculation-standards.md}})
+\item {} \UncheckedBox Years and time periods are correct
+\item {} \UncheckedBox Company/competitor names spelled correctly
+\item {} \UncheckedBox Same figures are identical across all slides where they appear
+\end{itemize}
+
+\subparagraph{Content Mapping}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Every template section populated with appropriate data
+\item {} \UncheckedBox No \emph{[bracket]} placeholder text remaining
+\item {} \UncheckedBox All source citations included in footnotes
+\item {} \UncheckedBox Footnote numbers (¹²³) have corresponding Notes entries
+\end{itemize}
+
+\subparagraph{Formatting}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Text readable against all backgrounds (sufficient contrast)
+\item {} \UncheckedBox Tables are actual table objects (NOT pipe/tab-separated text)
+\item {} \UncheckedBox Charts/tables fill designated areas (no thumbnails)
+\item {} \UncheckedBox Bullet formatting consistent within each section
+\item {} \UncheckedBox Font sizes match across same-level boxes
+\item {} \UncheckedBox No content extends beyond slide boundaries
+\item {} \UncheckedBox No placeholder boxes retained with data dumped inside
+\item {} \UncheckedBox No colored instruction boxes in final output
+\end{itemize}
+
+\subparagraph{Template Compliance}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Placeholder instruction boxes reformatted or removed
+\item {} \UncheckedBox Formatting matches template style (colors, fonts)
+\item {} \UncheckedBox Logo present and correctly positioned
+\item {} \UncheckedBox Production formatting applied (dark text on light background for main content)
+\end{itemize}
+
+\subparagraph{Final Step}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Recommend user validate in Microsoft PowerPoint before distribution (LibreOffice may render differently)
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill Resource: skills/pitch-deck/reference/calculation-standards.md}\label{file:skills-pitch-deck-reference-calculation-standards.md}
+
+\paragraph{Calculation Verification Reference}\mbox{}\par
+
+This file provides formulas and guidelines for verifying pre-calculated values in source data before populating templates. Source data should already contain calculated figures—use these formulas to verify accuracy.
+
+
+\subparagraph{Contents}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \href{\#key-verification-formulas}{Key Verification Formulas}
+\item {} \href{\#consensus-methodology}{Consensus Methodology}
+\item {} \href{\#rounding-guidelines}{Rounding Guidelines}
+\item {} \href{\#verification-checklist}{Verification Checklist}
+\item {} \href{\#red-flags-to-investigate}{Red Flags to Investigate}
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Key Verification Formulas}\mbox{}\par
+
+\subparagraph{CAGR Projection}\mbox{}\par
+
+\textbf{Formula:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Future Value = Present Value × (1 + CAGR)\textasciicircum{}n
+\end{itemize}
+
+\textbf{Variables:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Present Value: Current/base year market size
+\item {} CAGR: Compound Annual Growth Rate (as decimal, e.g., 16.4\% = 0.164)
+\item {} n: Number of years between base and target year
+\end{itemize}
+
+\textbf{Verification example:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Source claims: \$22.1bn (2024) at 16.4\% CAGR = \$55.0bn (2030)
+\item {} Verify: 22.1 × (1.164)\textasciicircum{}6 = 22.1 × 2.488 = 55.0 ✓
+\end{itemize}
+
+\textbf{Calculating n (years):} Count years between base and target year. Examples: 2024→2030 = 6 years, 2025→2030 = 5 years.
+
+
+\subparagraph{Valuation Multiples}\mbox{}\par
+
+\textbf{EV/Revenue:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} EV/Revenue Multiple = Enterprise Value ÷ Revenue
+\item {} Implied EV = Revenue × Multiple
+\end{itemize}
+
+\textbf{EV/EBITDA:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} EV/EBITDA Multiple = Enterprise Value ÷ EBITDA
+\item {} Implied EV = EBITDA × Multiple
+\end{itemize}
+
+\textbf{Verification example:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Source claims: \$436m deal at 9.7x revenue multiple on \$45m revenue
+\item {} Verify: 436 ÷ 45 = 9.69 ≈ 9.7x ✓
+\end{itemize}
+
+\subparagraph{Market Share}\mbox{}\par
+
+\textbf{Formula:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Market Share = (Segment Size ÷ Total Market Size) × 100
+\end{itemize}
+
+\textbf{Verification example:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Source claims: Online segment (\$18bn) is 28\% of total market (\$65bn)
+\item {} Verify: 18 ÷ 65 = 0.277 = 27.7\% ≈ 28\% ✓
+\end{itemize}
+
+\subparagraph{Growth Rate}\mbox{}\par
+
+\textbf{Year-over-Year:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} YoY Growth = (Current Year - Prior Year) ÷ Prior Year × 100
+\end{itemize}
+
+\textbf{CAGR from endpoints:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} CAGR = (End Value ÷ Start Value)\textasciicircum{}(1/n) - 1
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Consensus Methodology}\mbox{}\par
+
+When source data contains multiple estimates, verify consensus calculations:
+
+
+\subparagraph{Size Consensus (Range)}\mbox{}\par
+
+\textbf{Method:} Full min-max range across all sources
+
+
+\textbf{Example:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Sources: \$14.9bn, \$18.3bn, \$21.1bn, \$21.2bn, \$22.1bn
+\item {} Consensus: \$15-22bn (rounded to nearest \$1bn)
+\end{itemize}
+
+\subparagraph{CAGR Consensus (Central Cluster)}\mbox{}\par
+
+\textbf{Method:} Exclude outliers (highest and lowest), use central cluster range
+
+
+\textbf{Example:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Sources: 10.6\%, 16.4\%, 17.2\%, 19.0\%, 22.7\%
+\item {} Exclude outliers: 10.6\% (low), 22.7\% (high)
+\item {} Central cluster: 16.4\%, 17.2\%, 19.0\%
+\item {} Consensus: 16-19\% or 16-17\% (conservative)
+\end{itemize}
+
+\subparagraph{Projection Consensus}\mbox{}\par
+
+\textbf{Method:} Apply consensus CAGR to midpoint of size range
+
+
+\textbf{Example:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Size range: \$15-22bn → Midpoint: \$18.5bn
+\item {} CAGR consensus: 16-17\%
+\item {} At 16\%: 18.5 × (1.16)\textasciicircum{}6 = \$45.1bn
+\item {} At 17\%: 18.5 × (1.17)\textasciicircum{}6 = \$47.5bn
+\item {} Consensus projection: \$45-48bn
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Rounding Guidelines}\mbox{}\par
+
+These are \textbf{typical conventions} — adjust based on the magnitude of values and template style:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Value Type} & \textbf{Typical Rounding} & \textbf{Example} \\
+\midrule
+{} Large market sizes (\$10bn+) & Nearest \$1bn & 18.47 → \$18bn \\
+{} Smaller market sizes (<\$10bn) & Nearest \$0.5bn or \$0.1bn & 2.3 → \$2.5bn \\
+{} Size ranges & Match precision of sources & 14.9-22.1 → \$15-22bn \\
+{} CAGR & Whole \% or 0.5\% & 16.4\% → 16\% or 16.5\% \\
+{} Market share & Nearest 5\% or match source & 27.7\% → 25\% or 30\% \\
+{} Revenue (\$m) & 1 decimal & 18.47 → \$18.5m \\
+{} Multiples & 1 decimal & 9.688 → 9.7x \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{Rounding principles:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Rounding should not materially change the figure — for smaller values, use finer precision
+\item {} Consistency matters more than precision — use same rounding across similar figures
+\item {} When creating ranges, round down for low end, round up for high end
+\item {} For summary statistics (mean, median), match precision of input data
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Verification Checklist}\mbox{}\par
+
+Before using any calculated value from source data:
+
+
+\subparagraph{Formula Verification}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Projection uses correct CAGR formula: \emph{PV × (1 + r)\textasciicircum{}n}
+\item {} \UncheckedBox Multiples calculated as EV ÷ Metric (not reversed)
+\item {} \UncheckedBox Growth rates use correct base year in denominator
+\item {} \UncheckedBox Percentage shares sum to \textasciitilde{}100\% where applicable
+\end{itemize}
+
+\subparagraph{Input Verification}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Base year figures match source documents
+\item {} \UncheckedBox CAGR/growth rates match stated source methodology
+\item {} \UncheckedBox Time periods (n) calculated correctly
+\item {} \UncheckedBox Currency and units consistent (\$bn vs \$m)
+\end{itemize}
+
+\subparagraph{Output Verification}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Calculated result matches source's stated figure
+\item {} \UncheckedBox If mismatch, investigate methodology difference
+\item {} \UncheckedBox Rounding applied consistently
+\item {} \UncheckedBox Results are plausible (no order-of-magnitude errors)
+\end{itemize}
+
+\subparagraph{Consensus Verification}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox All sources included in range calculations
+\item {} \UncheckedBox Outlier exclusion methodology documented
+\item {} \UncheckedBox Midpoint calculations use correct averaging
+\item {} \UncheckedBox Range bounds represent actual min/max or documented subset
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Red Flags to Investigate}\mbox{}\par
+
+\textbf{Projection mismatches:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Calculated projection differs from source by >5\%
+\item {} Likely cause: Different base year, different CAGR, or rounding
+\end{itemize}
+
+\textbf{Multiple mismatches:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Calculated multiple differs from source
+\item {} Likely cause: Different metric definition (LTM vs. NTM, Revenue vs. Net Revenue)
+\end{itemize}
+
+\textbf{Consensus mismatches:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Your consensus differs from source's consensus
+\item {} Likely cause: Source excluded certain data points, different outlier treatment
+\end{itemize}
+
+\textbf{When in doubt:} Note the discrepancy in a footnote and show your calculation methodology.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill Resource: skills/pitch-deck/reference/formatting-standards.md}\label{file:skills-pitch-deck-reference-formatting-standards.md}
+
+\paragraph{Formatting Standards Reference}\mbox{}\par
+
+This reference file contains general PowerPoint formatting guidance for pitch deck creation. These are best practices that should be adapted to the specific template being used.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Table of Contents}\mbox{}\par
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \href{\#visual-hierarchy-and-layout}{Visual Hierarchy and Layout}
+\item {} \href{\#text-formatting}{Text Formatting}
+\item {} \href{\#table-creation}{Table Creation}
+\item {} \href{\#chart-and-image-handling}{Chart and Image Handling}
+\item {} \href{\#data-visualization}{Data Visualization}
+\item {} \href{\#font-consistency}{Font Consistency}
+\item {} \href{\#template-adaptation}{Template Adaptation}
+\end{enumerate}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Visual Hierarchy and Layout}\mbox{}\par
+
+\subparagraph{Box and Section Layout}\mbox{}\par
+
+Slide layouts vary based on content requirements and template design. Common elements include:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Header sections with titles and subtitles
+\item {} Content boxes with label sidebars
+\item {} Tables for structured data
+\item {} Charts for visual data representation
+\item {} Footnote bars at slide bottom
+\end{itemize}
+
+The specific layout should follow the template provided. Common content types and their typical structures:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Market definition slides}: Label boxes with bullet content + commentary sections
+\item {} \textbf{TAM/sizing slides}: Metrics callouts + data tables + key takeaways
+\item {} \textbf{Competitive analysis}: Comparison tables or matrices
+\item {} \textbf{Financial summaries}: Charts with supporting data tables
+\end{itemize}
+
+\subparagraph{Alignment Principles}\mbox{}\par
+
+\textbf{Vertical alignment of parallel sections:}
+
+
+Boxes that are vertically stacked should have consistent:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Left margin position
+\item {} Bullet indentation
+\item {} Text start position
+\item {} Box width
+\end{itemize}
+
+Boxes that are horizontally adjacent should have consistent:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Top position
+\item {} Height (where content allows)
+\item {} Internal padding
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Text Formatting}\mbox{}\par
+
+\subparagraph{Bullet Point Structure}\mbox{}\par
+
+Avoid unstructured text dumps. Break content into scannable bullet points.
+
+
+\textbf{Illustrative Correct Structure:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ✓ Consumer mobile and web language learning apps
+\item {} (Duolingo, Babbel, Memrise, Busuu)
+\item {} ✓ B2B enterprise language training platforms
+\item {} (goFLUENT, Speexx, Learnship)
+\item {} ✓ Online tutoring marketplaces
+\item {} (italki, Preply, Cambly)
+\end{itemize}
+
+\textbf{Illustrative Incorrect Structure (Text Dump):}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Consumer mobile/web apps (Duolingo, Babbel, Memrise, Busuu)
+\item {} B2B enterprise platforms (Speexx, Rosetta Stone Enterprise)
+\item {} Online tutoring marketplaces (Preply, italki, Cambly)
+\end{itemize}
+
+\subparagraph{Bullet Symbol Guidelines}\mbox{}\par
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Context} & \textbf{Symbol} & \textbf{Usage} \\
+\midrule
+{} Included/ Positive & ✓ (checkmark) & Items within scope, features present \\
+{} Excluded/ Negative & × (cross) & Items outside scope, features absent \\
+{} Neutral list & • (bullet) & General enumeration, commentary \\
+{} Numbered sequence & 1. 2. 3. & Process steps, rankings \\
+{} Sub-bullets & ‣ or – & Secondary points under main bullets \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Adapt symbol usage to match the template's existing conventions.
+
+
+\subparagraph{Bullet Consistency}\mbox{}\par
+
+All bullets within a box/section should have identical formatting:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Same bullet symbol throughout the box (unless intentionally differentiated)
+\item {} Same indent level for all primary bullets
+\item {} Same bullet size
+\item {} Same spacing between bullet and text
+\item {} Same font size for all bullet text at same level
+\end{itemize}
+
+\subparagraph{Font Size Guidelines}\mbox{}\par
+
+These are typical ranges - adjust based on template specifications:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Element} & \textbf{Typical Size (pt)} & \textbf{Style} \\
+\midrule
+{} Slide Title & 40-48 & Bold \\
+{} Subtitle/ Definition & 18-22 & Bold \\
+{} Section Headers & 14-16 & Regular \\
+{} Body Text/ Bullets & 12-14 & Regular \\
+{} Table Headers & 10-12 & Bold \\
+{} Table Body & 9-11 & Regular \\
+{} Footnotes & 8-9 & Italic \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Text Density Guidelines}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Maximum 6-7 bullets} per content box (adjust based on space)
+\item {} \textbf{Maximum 2 lines} per bullet point
+\item {} \textbf{Parenthetical examples} on same line or indented below
+\item {} \textbf{Avoid orphan words} - adjust line breaks to avoid single words on new lines
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Table Creation}\mbox{}\par
+
+\subparagraph{CRITICAL: Use Actual Table Objects}\mbox{}\par
+
+\textbf{Tables must be actual table objects, NOT text with tab spacing.}
+
+
+Text with tabs will never align properly and looks unprofessional. Always create proper table objects.
+
+
+\subparagraph{Table Structure Guidelines}\mbox{}\par
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Column alignment}:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Text columns: Left-aligned (both header and content)
+\item {} Numeric columns: Center-aligned or right-aligned
+\item {} Headers should align with their column content
+\end{itemize}
+\item {} \textbf{Header row}:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Bold text
+\item {} Shaded background (use template's brand color)
+\item {} Contrasting text color for readability
+\item {} Alignment matches column content alignment
+\end{itemize}
+\item {} \textbf{Alternating rows} (optional):
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Light shading on alternate rows improves readability
+\end{itemize}
+\item {} \textbf{Summary/Total row}:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Bold text
+\item {} Heavier top border (separator line)
+\item {} Distinct background shading
+\end{itemize}
+\item {} \textbf{Table width}:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Fill the designated section width
+\item {} Avoid tables floating in white space
+\end{itemize}
+\end{enumerate}
+
+\subparagraph{For XML implementation patterns, see \href{xml-reference.md\#table-implementation}{\emph{xml-reference.md}}}\mbox{}\par
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Chart and Image Handling}\mbox{}\par
+
+\subparagraph{Pasting Charts from Excel}\mbox{}\par
+
+When pasting charts from Excel:
+
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Paste the chart ONLY} - do not include source data tables
+\item {} \textbf{Resize to fill the designated area} - charts should not appear as tiny thumbnails
+\item {} \textbf{Maintain aspect ratio} - do not distort the chart
+\item {} \textbf{Verify readability} - axis labels, legends, data labels must be legible
+\end{enumerate}
+
+\subparagraph{Pasting Tables from Excel}\mbox{}\par
+
+When pasting tables from Excel:
+
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Paste the formatted table ONLY} - exclude any source data or calculations
+\item {} \textbf{Resize to fill the designated area} - table should occupy its full section
+\item {} \textbf{Verify column widths} - adjust so text is not truncated
+\item {} \textbf{Check formatting preservation} - colors, borders, fonts may need adjustment
+\end{enumerate}
+
+\subparagraph{Size Guidelines}\mbox{}\par
+
+\textbf{Minimum sizing principles:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Charts: Should occupy a substantial portion of their designated area
+\item {} Tables: Fill the designated section width completely
+\item {} Images: Sized appropriately for context, never thumbnail-sized
+\end{itemize}
+
+\textbf{Indicators of undersized visuals (avoid these):}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Chart occupies small fraction of available space
+\item {} Text labels are unreadable
+\item {} Large empty areas surrounding the visual
+\item {} Visual appears as a ``thumbnail''
+\end{itemize}
+
+\subparagraph{Proper Sizing Workflow}\mbox{}\par
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Identify the target area dimensions
+\item {} Paste the chart/table
+\item {} Immediately resize to fill the target area
+\item {} Verify all text remains readable
+\item {} Adjust internal elements if needed (legend position, axis labels)
+\end{enumerate}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Data Visualization}\mbox{}\par
+
+\subparagraph{Key Metrics Display}\mbox{}\par
+
+When displaying key metrics (e.g., TAM, CAGR, projections), consider showing relationships between values rather than listing them statically:
+
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Visual flow indicators}: Shapes (arrows, chevrons, connectors) showing progression
+\item {} \textbf{Size hierarchy}: Larger font for primary metrics, smaller for labels
+\item {} \textbf{Spatial arrangement}: Position elements to show logical flow
+\end{itemize}
+
+\subparagraph{Arrow and Flow Indicators}\mbox{}\par
+
+If using arrows or flow indicators:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Use PowerPoint shape objects, not text characters
+\item {} Do not use text-based arrows (→, ⟹) in the final presentation
+\item {} Create arrows using PowerPoint's shape tools or via XML shape elements
+\end{itemize}
+
+\textbf{For XML implementation, see @@TOKEN0@@}
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Font Consistency}\mbox{}\par
+
+\subparagraph{Cross-Box Font Consistency}\mbox{}\par
+
+All text boxes at the same hierarchy level should use identical font sizes.
+
+
+\textbf{Same-level boxes that should match:}
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Box Type} & \textbf{Should Match With} \\
+\midrule
+{} ``Segments Included'' content & ``Segments Excluded'' content \\
+{} ``Definition'' content & ``Scope Rationale'' content \\
+{} Left column bullets & Right column bullets \\
+{} All label boxes & Each other \\
+{} All section headers & Each other \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Verification Process}\mbox{}\par
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Identify all text boxes at the same hierarchy level
+\item {} Check font size of each box
+\item {} If any box differs, adjust all to match
+\item {} Default to the larger size if content fits; otherwise use the smaller size consistently
+\end{enumerate}
+
+\textbf{Exception}: Sub-bullets or secondary text may use smaller font than primary bullets, but this must be consistent across ALL boxes.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Template Adaptation}\mbox{}\par
+
+These standards should be adapted to match the specific template being used:
+
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Colors}: Use the template's brand colors rather than prescribing specific colors
+\item {} \textbf{Fonts}: Use the template's font family
+\item {} \textbf{Spacing}: Match the template's existing spacing conventions
+\item {} \textbf{Layout}: Follow the template's section structure
+\end{enumerate}
+
+The key principles that remain constant regardless of template:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Text must be readable against its background
+\item {} Tables must be actual table objects
+\item {} Content should fill available space appropriately
+\item {} Formatting should be consistent across parallel elements
+\item {} Charts/images should be properly sized
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill Resource: skills/pitch-deck/reference/slide-templates.md}\label{file:skills-pitch-deck-reference-slide-templates.md}
+
+\paragraph{Content Mapping Reference}\mbox{}\par
+
+This file provides guidance for mapping source data to pitch deck template sections. The process is template-agnostic—these principles apply regardless of the specific template design.
+
+
+\subparagraph{Contents}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \href{\#template-analysis-process}{Template Analysis Process}
+\item {} \href{\#content-mapping-workflow}{Content Mapping Workflow}
+\item {} \href{\#common-slide-types-and-data-requirements}{Common Slide Types and Data Requirements}
+\item {} \href{\#mapping-verification-checklist}{Mapping Verification Checklist}
+\item {} \href{\#handling-data-template-mismatches}{Handling Data-Template Mismatches}
+\item {} \href{\#template-specific-adaptation}{Template-Specific Adaptation}
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Template Analysis Process}\mbox{}\par
+
+Before populating any template, analyze its structure:
+
+
+\subparagraph{Step 1: Identify All Content Areas}\mbox{}\par
+
+Scan each slide for:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Title/header placeholders} — Where slide titles go
+\item {} \textbf{Subtitle/definition areas} — Secondary headers or definitions
+\item {} \textbf{Content boxes} — Main content areas (may have label sidebars)
+\item {} \textbf{Table placeholders} — Areas designated for tabular data
+\item {} \textbf{Chart/visual areas} — Spaces for charts, diagrams, or images
+\item {} \textbf{Metric callout boxes} — Highlighted key figures
+\item {} \textbf{Footnote/source bars} — Bottom areas for citations and notes
+\item {} \textbf{Logo placeholder} — Usually top-right corner
+\end{itemize}
+
+\subparagraph{Step 2: Note Template Conventions}\mbox{}\par
+
+Each template has its own style. Observe:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Color scheme} — What colors are used for headers, backgrounds, accents?
+\item {} \textbf{Font choices} — What fonts and sizes are already set?
+\item {} \textbf{Box styling} — Do content boxes have sidebars, borders, or shading?
+\item {} \textbf{Bullet styles} — What bullet symbols does the template use?
+\item {} \textbf{Alignment patterns} — How are parallel sections aligned?
+\end{itemize}
+
+\subparagraph{Step 3: Identify Instruction vs. Output Areas}\mbox{}\par
+
+Templates often include guidance:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Instruction boxes} — Colored boxes with guidance text (often yellow background, white text)
+\item {} \textbf{Placeholder text} — Text in [brackets] indicating what to replace
+\item {} \textbf{Example content} — Sample content showing expected format
+\end{itemize}
+
+\textbf{Key distinction}: Instruction boxes tell you what to do; they should be reformatted or removed in final output. Output areas are where your content goes.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Content Mapping Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Inventory Source Data}\mbox{}\par
+
+Create a list of all available data:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Market size figures and ranges
+\item {} Growth rates (CAGR, YoY)
+\item {} Company names and descriptions
+\item {} Segment definitions
+\item {} Financial metrics
+\item {} Source citations and dates
+\item {} Footnote content
+\end{itemize}
+
+\subparagraph{Step 2: Match Data to Template Sections}\mbox{}\par
+
+For each template section, identify:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Template Section} & \textbf{Required Data} & \textbf{Source Location} \\
+\midrule
+{} [Section name] & [Data needed] & [Where to find it] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 3: Identify Gaps}\mbox{}\par
+
+After mapping, note:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Missing data} — Template requires data not in sources
+\item {} \textbf{Extra data} — Sources contain data with no template home
+\item {} \textbf{Format mismatches} — Data exists but in wrong format
+\end{itemize}
+
+\subparagraph{Step 4: Resolve Gaps Before Populating}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Missing data: Flag for user or search for additional sources
+\item {} Extra data: Confirm if it should be excluded or if template needs adjustment
+\item {} Format mismatches: Transform data to required format
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Common Slide Types and Data Requirements}\mbox{}\par
+
+These are typical data requirements for common slide types. Your specific template may vary—always follow the template's actual structure.
+
+
+\subparagraph{Market Definition Slides}\mbox{}\par
+
+\textbf{Typical content areas:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Segments included in scope (with examples/key players)
+\item {} Segments excluded from scope (with examples)
+\item {} Market definition text
+\item {} Scope rationale/justification
+\end{itemize}
+
+\textbf{Data mapping considerations:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Source data should clearly distinguish included vs. excluded segments
+\item {} Key players should be mapped to their respective segments
+\item {} Definition text should align with how sources define the market
+\end{itemize}
+
+\textbf{Data typically needed:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} List of market segments to include (with key player examples)
+\item {} List of market segments to exclude (with examples)
+\item {} Market definition text
+\item {} Scope rationale or justification
+\end{itemize}
+
+\textbf{Formatting principle:} Parallel sections (included vs. excluded) should use matching formatting.
+
+
+\textbf{Verification questions:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Does every segment have the appropriate symbol (✓ for included, × for excluded)?
+\item {} Are key players correctly assigned to segments?
+\item {} Does the definition match the source methodology?
+\end{itemize}
+
+\subparagraph{Market Sizing / TAM Slides}\mbox{}\par
+
+\textbf{Typical content areas:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Current market size (with year)
+\item {} Growth rate (CAGR with period)
+\item {} Future projection (with target year)
+\item {} Source-by-source breakdown table
+\item {} Consensus/summary figures
+\item {} Key takeaways or insights
+\end{itemize}
+
+\textbf{Data typically needed:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Market size figures with base year
+\item {} Growth rates (CAGR with time period)
+\item {} Projection figures with target year
+\item {} Source citations for each data point
+\end{itemize}
+
+\textbf{Example column headers:} Source | [Base Year] Size | CAGR | [Target Year] Projection
+
+
+\textbf{Formatting principle:} If showing multiple sources, include a consensus/summary row.
+
+
+\textbf{Data mapping considerations:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Multiple sources may have different estimates—map each to table rows
+\item {} Consensus figures require calculation from individual sources
+\item {} Projections should be verifiable using CAGR formula
+\end{itemize}
+
+\textbf{Verification questions:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Do all source figures match original documents?
+\item {} Is the consensus calculated correctly (not just copied from one source)?
+\item {} Are projection years consistent across all figures?
+\item {} Do CAGR-based projections match when manually verified?
+\end{itemize}
+
+\subparagraph{Competitive Landscape Slides}\mbox{}\par
+
+\textbf{Typical content areas:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Comparison table with competitors as columns
+\item {} Feature/capability rows
+\item {} Financial metric rows (revenue, growth, market share)
+\item {} Key observations or positioning notes
+\end{itemize}
+
+\textbf{Data typically needed:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} List of competitors to compare
+\item {} Features or capabilities for each
+\item {} Financial metrics (revenue, growth, market share) if available
+\item {} Time period for financial data
+\end{itemize}
+
+\textbf{Formatting principle:} Subject company should be visually distinguished from competitors (e.g., bold text, different background color, border, or positioned in rightmost column).
+
+
+\textbf{Data mapping considerations:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Ensure all competitors from source data are included
+\item {} Feature comparisons should use consistent criteria
+\item {} Financial figures should be from comparable periods
+\end{itemize}
+
+\textbf{Verification questions:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Are all competitors from the source data represented?
+\item {} Is the subject company visually distinguished?
+\item {} Are financial figures from the same time period?
+\item {} Is the ✓/× usage consistent and accurate?
+\end{itemize}
+
+\subparagraph{Financial Summary Slides}\mbox{}\par
+
+\textbf{Typical content areas:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Key metric callouts (headline figures)
+\item {} Historical financials table (actuals)
+\item {} Projected financials table (estimates)
+\item {} Growth rates and margins
+\item {} Optional trend charts
+\end{itemize}
+
+\textbf{Data typically needed:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Historical financials (actuals) for recent years
+\item {} Projected financials (estimates) for future years
+\item {} Key metrics: Revenue, Growth \%, Margins, EBITDA
+\end{itemize}
+
+\textbf{Example column headers:} Metric | FY[Year-2] | FY[Year-1] | FY[Year]A | FY[Year+1]E | FY[Year+2]E
+
+
+\textbf{Formatting principle:} Clearly distinguish historical (A) from projected (E) data.
+
+
+\textbf{Data mapping considerations:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Clearly distinguish historical (A) from projected (E) data
+\item {} Ensure metric definitions match source (Revenue vs. Net Revenue, EBITDA vs. Adjusted EBITDA)
+\item {} Growth rates should be calculated consistently
+\end{itemize}
+
+\textbf{Verification questions:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Are historical vs. projected periods clearly labeled?
+\item {} Do calculated growth rates match source or manual calculation?
+\item {} Are metric definitions consistent with source documents?
+\end{itemize}
+
+\subparagraph{Transaction Comparables Slides}\mbox{}\par
+
+\textbf{Typical content areas:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Transaction table (date, target, acquirer, deal value)
+\item {} Valuation multiples (EV/Revenue, EV/EBITDA)
+\item {} Summary statistics (mean, median, high, low)
+\item {} Implied valuation for subject company
+\end{itemize}
+
+\textbf{Data typically needed:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Transaction details: Date, Target, Acquirer, Deal Value
+\item {} Valuation multiples: EV/Revenue, EV/EBITDA
+\item {} Subject company metrics for implied valuation
+\end{itemize}
+
+\textbf{Formatting principle:} Include summary statistics (Mean, Median, High, Low) for multiples.
+
+
+\textbf{Data mapping considerations:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Multiples should be calculated from transaction data, not just copied
+\item {} Summary statistics require calculation across all transactions
+\item {} Implied valuation applies multiples to subject company metrics
+\end{itemize}
+
+\textbf{Verification questions:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Are all relevant transactions from the source included?
+\item {} Are multiples calculated correctly (EV ÷ Metric)?
+\item {} Do summary statistics cover all transactions in the table?
+\item {} Is implied valuation clearly labeled as illustrative?
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Mapping Verification Checklist}\mbox{}\par
+
+Before moving to formatting, verify mapping completeness:
+
+
+\subparagraph{Data Completeness}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Every template placeholder has mapped source data
+\item {} \UncheckedBox All source citations are recorded for footnotes
+\item {} \UncheckedBox No placeholder [brackets] remain unmapped
+\end{itemize}
+
+\subparagraph{Data Accuracy}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Figures match original source documents exactly
+\item {} \UncheckedBox Years and time periods are correctly noted
+\item {} \UncheckedBox Company names are spelled correctly
+\item {} \UncheckedBox Calculated values (consensus, projections, multiples) verified
+\end{itemize}
+
+\subparagraph{Logical Consistency}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Included vs. excluded segments are logically coherent
+\item {} \UncheckedBox Historical data precedes projected data chronologically
+\item {} \UncheckedBox Comparison data uses consistent time periods
+\item {} \UncheckedBox Totals and subtotals sum correctly
+\end{itemize}
+
+\subparagraph{Source Attribution}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Every data point can be traced to a source
+\item {} \UncheckedBox Source names and publication years recorded
+\item {} \UncheckedBox Footnote numbers assigned for special notes
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Handling Data-Template Mismatches}\mbox{}\par
+
+\subparagraph{Template Requires More Data Than Available}\mbox{}\par
+
+\textbf{Options:}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Flag the gap explicitly for user review
+\item {} Mark section as ``Data not available'' with explanation
+\item {} Search for additional sources if appropriate
+\item {} Recommend template adjustment if data doesn't exist
+\end{enumerate}
+
+\textbf{Do not:} Fabricate data or make unsupported estimates.
+
+
+\subparagraph{Source Has More Data Than Template Accommodates}\mbox{}\par
+
+\textbf{Options:}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Include most relevant/recent data points
+\item {} Summarize or aggregate where appropriate
+\item {} Add footnotes referencing additional available data
+\item {} Recommend template expansion if data is critical
+\end{enumerate}
+
+\subparagraph{Data Format Doesn't Match Template Format}\mbox{}\par
+
+\textbf{Common transformations:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Individual figures → Range (use min-max from sources)
+\item {} Detailed breakdown → Summary category
+\item {} Annual figures → CAGR (calculate from endpoints)
+\item {} Absolute values → Percentages (calculate share)
+\item {} Multiple sources → Consensus (apply methodology)
+\end{itemize}
+
+\subparagraph{Template Uses Different Terminology}\mbox{}\par
+
+\textbf{Resolution process:}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Identify template term and source term
+\item {} Confirm they refer to the same concept
+\item {} Use template terminology in output
+\item {} Add footnote if clarification needed
+\end{enumerate}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Template-Specific Adaptation}\mbox{}\par
+
+Remember: This guidance describes common patterns, not requirements. Always:
+
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Follow the template} — If template uses different section names, use those
+\item {} \textbf{Match template style} — Use template's existing fonts, colors, bullet styles
+\item {} \textbf{Preserve template structure} — Don't rearrange sections unless necessary
+\item {} \textbf{Respect template spacing} — Content should fit designated areas without overflow
+\end{enumerate}
+
+The goal is to populate the template as designed, not to redesign it.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill Resource: skills/pitch-deck/reference/xml-reference.md}\label{file:skills-pitch-deck-reference-xml-reference.md}
+
+\paragraph{PowerPoint XML Reference}\mbox{}\par
+
+This file contains XML patterns for programmatic PowerPoint editing. Use these patterns when working directly with OOXML format.
+
+
+\textbf{Note:} Color values in examples (e.g., \emph{E67E22}, \emph{D35400}) are placeholders. Replace with your template's brand colors.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{⚠ When to Use This Reference}\mbox{}\par
+
+\textbf{Use python-pptx for:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Creating new tables (handles cell structure and relationships automatically)
+\item {} Adding text boxes
+\item {} Inserting images
+\item {} Most shape creation
+\item {} Any operation where python-pptx provides an API
+\end{itemize}
+
+\textbf{Use direct XML editing only for:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Modifying properties of existing elements that python-pptx doesn't expose
+\item {} Fine-tuning cell formatting after table creation via python-pptx
+\item {} Adjusting specific shape properties not available via the python-pptx API
+\end{itemize}
+
+\textbf{NEVER use direct XML for:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Creating tables from scratch (relationship management is error-prone and will likely corrupt the file)
+\item {} Initial shape creation (shape ID collision risk)
+\item {} Anything you can accomplish via python-pptx
+\end{itemize}
+
+The XML patterns in this file are for \textbf{reference and targeted modifications}, not wholesale element construction.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{XML Editing Risks}\mbox{}\par
+
+Direct XML editing can corrupt PowerPoint files if not done carefully:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} PowerPoint XML has interdependencies (relationship files, content types)
+\item {} Invalid XML or missing relationships can corrupt the entire file
+\item {} Shape IDs must be unique across each slide
+\end{itemize}
+
+\textbf{Always work on a backup copy} — never edit the original file directly.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Contents}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \href{\#table-implementation}{Table Implementation}
+\item {} \href{\#arrow-shapes}{Arrow Shapes}
+\item {} \href{\#text-boxes}{Text Boxes}
+\item {} \href{\#shapes-with-fill}{Shapes with Fill}
+\item {} \href{\#image-insertion}{Image Insertion}
+\item {} \href{\#connector-lines}{Connector Lines}
+\item {} \href{\#unit-conversions}{Unit Conversions}
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Table Implementation}\mbox{}\par
+
+\subparagraph{CRITICAL: Verify Tables Are Actual Table Objects}\mbox{}\par
+
+After creating any table, you MUST verify it is an actual table object, not text with separators.
+
+
+\textbf{Programmatic verification (python-pptx):}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} for shape in slide.shapes:
+\item {} if shape.has\_\allowbreak{}table:
+\item {} print(f``✓ Found table: \{len(shape.table.rows)\} rows, \{len(shape.table.columns)\} columns'')
+\end{itemize}
+
+\textbf{Visual verification (in exported image):}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Columns align perfectly regardless of content length
+\item {} Cell borders are consistent
+\item {} Selecting the table selects all cells as a unit
+\end{itemize}
+
+\textbf{Failure indicators — you have created TEXT, not a table:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \emph{|} characters visible between values
+\item {} Columns misalign when content length varies
+\item {} Tab characters (\emph{\textbackslash{}t}) used for spacing
+\item {} Multiple text boxes arranged to look like a table
+\end{itemize}
+
+Text-based ``tables'' cannot be edited by the recipient, will misalign when fonts change, and signal amateur work. There is no acceptable use case for pipe/tab-separated tabular data in a pitch deck.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Basic Table Structure}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} <a:tbl>
+\item {} <a:tblPr firstRow=``1'' bandRow=``1''>
+\item {} <a:tableStyleId>\{5C22544A-7EE6-4342-B048-85BDC9FD1C3A\}</a:tableStyleId>
+\item {} </a:tblPr>
+\item {} <a:tblGrid>
+\item {} <a:gridCol w=``2000000''/> <!-- Source column - width in EMUs -->
+\item {} <a:gridCol w=``1200000''/> <!-- 2024 Size column -->
+\item {} <a:gridCol w=``1200000''/> <!-- CAGR column -->
+\item {} <a:gridCol w=``1200000''/> <!-- 2030 Projection column -->
+\item {} </a:tblGrid>
+\item {} <!-- Row definitions follow -->
+\item {} </a:tbl>
+\end{itemize}
+
+\subparagraph{Table Row with Cells}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} <a:tr h=``370840''> <!-- Row height in EMUs -->
+\item {} <a:tc>
+\item {} <a:txBody>
+\item {} <a:bodyPr/>
+\item {} <a:lstStyle/>
+\item {} <a:p>
+\item {} <a:pPr algn=``l''/> <!-- Left alignment for text columns -->
+\item {} <a:r>
+\item {} <a:rPr lang=``en-US'' sz=``1000'' b=``0''/>
+\item {} <a:t>Grand View Research</a:t>
+\item {} </a:r>
+\item {} </a:p>
+\item {} </a:txBody>
+\item {} <a:tcPr/>
+\item {} </a:tc>
+\item {} <a:tc>
+\item {} <a:txBody>
+\item {} <a:bodyPr/>
+\item {} <a:lstStyle/>
+\item {} <a:p>
+\item {} <a:pPr algn=``ctr''/> <!-- Center alignment for numeric columns -->
+\item {} <a:r>
+\item {} <a:rPr lang=``en-US'' sz=``1000''/>
+\item {} <a:t>22.1</a:t>
+\item {} </a:r>
+\item {} </a:p>
+\item {} </a:txBody>
+\item {} <a:tcPr/>
+\item {} </a:tc>
+\item {} <!-- Additional cells... -->
+\item {} </a:tr>
+\end{itemize}
+
+\subparagraph{Header Row Styling}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} <a:tr h=``370840''>
+\item {} <a:tc>
+\item {} <a:txBody>
+\item {} <a:bodyPr/>
+\item {} <a:lstStyle/>
+\item {} <a:p>
+\item {} <a:pPr algn=``l''/>
+\item {} <a:r>
+\item {} <a:rPr lang=``en-US'' sz=``1000'' b=``1''> <!-- Bold for headers -->
+\item {} <a:solidFill>
+\item {} <a:srgbClr val=``FFFFFF''/> <!-- White text -->
+\item {} </a:solidFill>
+\item {} </a:rPr>
+\item {} <a:t>Source</a:t>
+\item {} </a:r>
+\item {} </a:p>
+\item {} </a:txBody>
+\item {} <a:tcPr>
+\item {} <a:solidFill>
+\item {} <a:srgbClr val=``E67E22''/> <!-- Orange background -->
+\item {} </a:solidFill>
+\item {} </a:tcPr>
+\item {} </a:tc>
+\item {} <!-- Additional header cells... -->
+\item {} </a:tr>
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Arrow Shapes}\mbox{}\par
+
+\subparagraph{Right Arrow Shape}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} <p:sp>
+\item {} <p:nvSpPr>
+\item {} <p:cNvPr id=``10'' name=``Arrow Right''/>
+\item {} <p:cNvSpPr/>
+\item {} <p:nvPr/>
+\item {} </p:nvSpPr>
+\item {} <p:spPr>
+\item {} <a:xfrm>
+\item {} <a:off x=``3000000'' y=``2500000''/> <!-- Position in EMUs -->
+\item {} <a:ext cx=``500000'' cy=``300000''/> <!-- Size in EMUs -->
+\item {} </a:xfrm>
+\item {} <a:prstGeom prst=``rightArrow''>
+\item {} <a:avLst/>
+\item {} </a:prstGeom>
+\item {} <a:solidFill>
+\item {} <a:srgbClr val=``E67E22''/> <!-- Arrow fill color -->
+\item {} </a:solidFill>
+\item {} <a:ln>
+\item {} <a:noFill/> <!-- No outline -->
+\item {} </a:ln>
+\item {} </p:spPr>
+\item {} </p:sp>
+\end{itemize}
+
+\subparagraph{Down Arrow Shape}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} <p:sp>
+\item {} <p:nvSpPr>
+\item {} <p:cNvPr id=``11'' name=``Arrow Down''/>
+\item {} <p:cNvSpPr/>
+\item {} <p:nvPr/>
+\item {} </p:nvSpPr>
+\item {} <p:spPr>
+\item {} <a:xfrm>
+\item {} <a:off x=``2500000'' y=``3000000''/>
+\item {} <a:ext cx=``300000'' cy=``500000''/>
+\item {} </a:xfrm>
+\item {} <a:prstGeom prst=``downArrow''>
+\item {} <a:avLst/>
+\item {} </a:prstGeom>
+\item {} <a:solidFill>
+\item {} <a:srgbClr val=``E67E22''/>
+\item {} </a:solidFill>
+\item {} </p:spPr>
+\item {} </p:sp>
+\end{itemize}
+
+\subparagraph{Chevron Shape}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} <p:sp>
+\item {} <p:nvSpPr>
+\item {} <p:cNvPr id=``12'' name=``Chevron''/>
+\item {} <p:cNvSpPr/>
+\item {} <p:nvPr/>
+\item {} </p:nvSpPr>
+\item {} <p:spPr>
+\item {} <a:xfrm>
+\item {} <a:off x=``3000000'' y=``2500000''/>
+\item {} <a:ext cx=``400000'' cy=``600000''/>
+\item {} </a:xfrm>
+\item {} <a:prstGeom prst=``chevron''>
+\item {} <a:avLst/>
+\item {} </a:prstGeom>
+\item {} <a:solidFill>
+\item {} <a:srgbClr val=``E67E22''/>
+\item {} </a:solidFill>
+\item {} </p:spPr>
+\item {} </p:sp>
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Text Boxes}\mbox{}\par
+
+\subparagraph{Basic Text Box}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} <p:sp>
+\item {} <p:nvSpPr>
+\item {} <p:cNvPr id=``5'' name=``TextBox 4''/>
+\item {} <p:cNvSpPr txBox=``1''/>
+\item {} <p:nvPr/>
+\item {} </p:nvSpPr>
+\item {} <p:spPr>
+\item {} <a:xfrm>
+\item {} <a:off x=``500000'' y=``1500000''/>
+\item {} <a:ext cx=``4000000'' cy=``500000''/>
+\item {} </a:xfrm>
+\item {} <a:prstGeom prst=``rect''>
+\item {} <a:avLst/>
+\item {} </a:prstGeom>
+\item {} <a:noFill/>
+\item {} </p:spPr>
+\item {} <p:txBody>
+\item {} <a:bodyPr wrap=``square'' rtlCol=``0''>
+\item {} <a:spAutoFit/>
+\item {} </a:bodyPr>
+\item {} <a:lstStyle/>
+\item {} <a:p>
+\item {} <a:r>
+\item {} <a:rPr lang=``en-US'' sz=``1400'' dirty=``0''/>
+\item {} <a:t>Text content here</a:t>
+\item {} </a:r>
+\item {} </a:p>
+\item {} </p:txBody>
+\item {} </p:sp>
+\end{itemize}
+
+\subparagraph{Text Box with Bullet Points}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} <p:txBody>
+\item {} <a:bodyPr wrap=``square''>
+\item {} <a:spAutoFit/>
+\item {} </a:bodyPr>
+\item {} <a:lstStyle/>
+\item {} <a:p>
+\item {} <a:pPr marL=``342900'' indent=``-342900''>
+\item {} <a:buFont typeface=``Wingdings'' panose=``05000000000000000000'' pitchFamily=``2'' charset=``2''/>
+\item {} <a:buChar char=``\&\#252;''/> <!-- Checkmark character -->
+\item {} </a:pPr>
+\item {} <a:r>
+\item {} <a:rPr lang=``en-US'' sz=``1400'' dirty=``0''/>
+\item {} <a:t>First bullet point</a:t>
+\item {} </a:r>
+\item {} </a:p>
+\item {} <a:p>
+\item {} <a:pPr marL=``342900'' indent=``-342900''>
+\item {} <a:buFont typeface=``Wingdings'' panose=``05000000000000000000'' pitchFamily=``2'' charset=``2''/>
+\item {} <a:buChar char=``\&\#252;''/>
+\item {} </a:pPr>
+\item {} <a:r>
+\item {} <a:rPr lang=``en-US'' sz=``1400'' dirty=``0''/>
+\item {} <a:t>Second bullet point</a:t>
+\item {} </a:r>
+\item {} </a:p>
+\item {} </p:txBody>
+\end{itemize}
+
+\subparagraph{Text with White Color (for dark backgrounds)}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} <a:r>
+\item {} <a:rPr lang=``en-US'' sz=``1000'' b=``1'' i=``1'' dirty=``0''>
+\item {} <a:solidFill>
+\item {} <a:srgbClr val=``FFFFFF''/> <!-- White text -->
+\item {} </a:solidFill>
+\item {} </a:rPr>
+\item {} <a:t>White text on colored background</a:t>
+\item {} </a:r>
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Shapes with Fill}\mbox{}\par
+
+\subparagraph{Rectangle with Solid Fill}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} <p:sp>
+\item {} <p:nvSpPr>
+\item {} <p:cNvPr id=``20'' name=``Rectangle 19''/>
+\item {} <p:cNvSpPr/>
+\item {} <p:nvPr/>
+\item {} </p:nvSpPr>
+\item {} <p:spPr>
+\item {} <a:xfrm>
+\item {} <a:off x=``500000'' y=``2500000''/>
+\item {} <a:ext cx=``1000000'' cy=``2000000''/>
+\item {} </a:xfrm>
+\item {} <a:prstGeom prst=``rect''>
+\item {} <a:avLst/>
+\item {} </a:prstGeom>
+\item {} <a:solidFill>
+\item {} <a:srgbClr val=``E67E22''/> <!-- Orange fill -->
+\item {} </a:solidFill>
+\item {} <a:ln w=``12700''> <!-- Border width -->
+\item {} <a:solidFill>
+\item {} <a:srgbClr val=``D35400''/> <!-- Darker border -->
+\item {} </a:solidFill>
+\item {} </a:ln>
+\item {} </p:spPr>
+\item {} <p:txBody>
+\item {} <a:bodyPr rtlCol=``0'' anchor=``ctr''/> <!-- Vertically centered text -->
+\item {} <a:lstStyle/>
+\item {} <a:p>
+\item {} <a:pPr algn=``ctr''/> <!-- Horizontally centered -->
+\item {} <a:r>
+\item {} <a:rPr lang=``en-US'' sz=``1600'' b=``1''>
+\item {} <a:solidFill>
+\item {} <a:srgbClr val=``FFFFFF''/>
+\item {} </a:solidFill>
+\item {} </a:rPr>
+\item {} <a:t>Label Text</a:t>
+\item {} </a:r>
+\item {} </a:p>
+\item {} </p:txBody>
+\item {} </p:sp>
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Image Insertion}\mbox{}\par
+
+\subparagraph{Adding Image to Slide}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} <p:pic>
+\item {} <p:nvPicPr>
+\item {} <p:cNvPr id=``99'' name=``Company Logo''/>
+\item {} <p:cNvPicPr>
+\item {} <a:picLocks noChangeAspect=``1''/>
+\item {} </p:cNvPicPr>
+\item {} <p:nvPr/>
+\item {} </p:nvPicPr>
+\item {} <p:blipFill>
+\item {} <a:blip r:embed=``rIdLogo''/> <!-- Reference to relationship ID -->
+\item {} <a:stretch>
+\item {} <a:fillRect/>
+\item {} </a:stretch>
+\item {} </p:blipFill>
+\item {} <p:spPr>
+\item {} <a:xfrm>
+\item {} <a:off x=``10800000'' y=``200000''/> <!-- Top-right position -->
+\item {} <a:ext cx=``800000'' cy=``600000''/> <!-- Logo dimensions -->
+\item {} </a:xfrm>
+\item {} <a:prstGeom prst=``rect''>
+\item {} <a:avLst/>
+\item {} </a:prstGeom>
+\item {} </p:spPr>
+\item {} </p:pic>
+\end{itemize}
+
+\subparagraph{Adding Image Relationship}\mbox{}\par
+
+In \emph{ppt/slides/\_\allowbreak{}rels/slideN.xml.rels}:
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} <Relationship Id=``rIdLogo''
+\item {} Type=``http://schemas.openxmlformats.org/officeDocument/2006/relationships/image''
+\item {} Target=``../media/logo.png''/>
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Connector Lines}\mbox{}\par
+
+\subparagraph{Straight Connector}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} <p:cxnSp>
+\item {} <p:nvCxnSpPr>
+\item {} <p:cNvPr id=``15'' name=``Straight Connector 14''/>
+\item {} <p:cNvCxnSpPr>
+\item {} <a:cxnSpLocks/>
+\item {} </p:cNvCxnSpPr>
+\item {} <p:nvPr/>
+\item {} </p:nvCxnSpPr>
+\item {} <p:spPr>
+\item {} <a:xfrm>
+\item {} <a:off x=``500000'' y=``2500000''/>
+\item {} <a:ext cx=``5000000'' cy=``0''/> <!-- Horizontal line -->
+\item {} </a:xfrm>
+\item {} <a:prstGeom prst=``line''>
+\item {} <a:avLst/>
+\item {} </a:prstGeom>
+\item {} <a:ln w=``12700''>
+\item {} <a:solidFill>
+\item {} <a:srgbClr val=``E67E22''/>
+\item {} </a:solidFill>
+\item {} </a:ln>
+\item {} </p:spPr>
+\item {} </p:cxnSp>
+\end{itemize}
+
+\subparagraph{Dashed Line}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} <p:spPr>
+\item {} <a:xfrm>
+\item {} <a:off x=``500000'' y=``4500000''/>
+\item {} <a:ext cx=``5000000'' cy=``0''/>
+\item {} </a:xfrm>
+\item {} <a:prstGeom prst=``line''>
+\item {} <a:avLst/>
+\item {} </a:prstGeom>
+\item {} <a:ln w=``12700''>
+\item {} <a:solidFill>
+\item {} <a:srgbClr val=``E67E22''/>
+\item {} </a:solidFill>
+\item {} <a:prstDash val=``dash''/> <!-- Dashed style -->
+\item {} </a:ln>
+\item {} </p:spPr>
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Unit Conversions}\mbox{}\par
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Unit} & \textbf{EMUs per unit} \\
+\midrule
+{} 1 inch & 914400 \\
+{} 1 cm & 360000 \\
+{} 1 point & 12700 \\
+{} 1 pixel (96 DPI) & 9525 \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Common Slide Dimensions (16:9)}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Width: 12192000 EMUs (13.333 inches)
+\item {} Height: 6858000 EMUs (7.5 inches)
+\end{itemize}
+
+\subparagraph{Typical Element Positions}\mbox{}\par
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Element} & \textbf{X Position} & \textbf{Y Position} \\
+\midrule
+{} Logo (top-right) & 10800000 & 200000 \\
+{} Title & 342583 & 286603 \\
+{} Subtitle & 402591 & 1767390 \\
+{} Footer & 342583 & 6435334 \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: process-letter}\label{file:skills-process-letter-SKILL.md}
+
+\paragraph{Process Letter}\mbox{}\par
+
+description: Draft process letters and bid instructions for sell-side M\&A processes. Covers initial indication of interest (IOI) instructions, final bid procedures, and management meeting logistics. Triggers on ``process letter'', ``bid instructions'', ``IOI letter'', ``bid procedures'', ``final round letter'', or ``management meeting invite''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Determine Letter Type}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Initial process letter}: Sent with teaser/CIM to outline the process and IOI requirements
+\item {} \textbf{IOI instructions}: Specific requirements for first-round indications of interest
+\item {} \textbf{Second round / final bid letter}: Instructions for submitting binding offers after diligence
+\item {} \textbf{Management meeting invitation}: Logistics for in-person management presentations
+\end{itemize}
+
+\subparagraph{Step 2: Initial Process Letter / IOI Instructions}\mbox{}\par
+
+\textbf{Header:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Date, deal code name
+\item {} ``Confidential''
+\item {} Addressed to prospective buyer
+\end{itemize}
+
+\textbf{Sections:}
+
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Introduction}: Brief overview of the opportunity and the seller's objectives
+\item {} \textbf{Process Overview}: Timeline, key dates, expected number of rounds
+\item {} \textbf{IOI Requirements}: What to include in the initial indication:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Proposed valuation range (enterprise value)
+\item {} Consideration form (cash, stock, earnout, rollover)
+\item {} Financing sources and certainty
+\item {} Key due diligence requirements
+\item {} Indicative timeline to close
+\item {} Any conditions or contingencies
+\item {} Brief description of the buyer and strategic rationale
+\end{itemize}
+\item {} \textbf{Submission Details}: Where to send, deadline (date and time), format
+\item {} \textbf{Confidentiality Reminder}: Reference to NDA, data room access
+\item {} \textbf{Contact Information}: Banker contacts for questions
+\end{enumerate}
+
+\subparagraph{Step 3: Final Bid / Second Round Letter}\mbox{}\par
+
+Additional requirements beyond IOI:
+
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Markup of purchase agreement}: Provide the draft SPA/APA and request markup
+\item {} \textbf{Detailed financing commitments}: Committed financing letters required
+\item {} \textbf{Remaining diligence items}: Specify what confirmatory diligence is expected
+\item {} \textbf{Exclusivity terms}: Duration and conditions of any exclusivity period
+\item {} \textbf{Regulatory analysis}: Antitrust filing requirements and timeline
+\item {} \textbf{Key personnel terms}: Employment agreements, compensation, rollover equity
+\item {} \textbf{Binding vs. non-binding}: Clarify what is binding at this stage
+\item {} \textbf{Evaluation criteria}: How bids will be evaluated (price, certainty, speed, fit)
+\end{enumerate}
+
+\subparagraph{Step 4: Management Meeting Invitation}\mbox{}\par
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Logistics}: Date, time, location (or video link), duration
+\item {} \textbf{Attendees}: Who from the company will present, who from the buyer should attend
+\item {} \textbf{Agenda}: Typical management presentation agenda (overview, financials, operations, growth, Q\&A)
+\item {} \textbf{Ground rules}: No recording, confidentiality, questions format
+\item {} \textbf{Materials}: What will be distributed (presentation deck, data room access)
+\item {} \textbf{Follow-up}: Process for submitting additional questions after the meeting
+\end{enumerate}
+
+\subparagraph{Step 5: Output}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Word document (.docx) with professional letter formatting
+\item {} Firm letterhead placeholder
+\item {} Track changes version for client review
+\end{itemize}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Process letters set the tone for the entire deal — be clear, professional, and organized
+\item {} Deadlines should be firm but reasonable — typically 2-3 weeks for IOIs, 3-4 weeks for final bids
+\item {} Always include the evaluation criteria — buyers want to know how they'll be judged
+\item {} Coordinate with legal on any representations or commitments in the letter
+\item {} Client should review and approve before sending — they may want to adjust tone or terms
+\item {} Keep a log of who received each letter and when — this becomes the process tracker
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: strip-profile}\label{file:skills-strip-profile-SKILL.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} name & fsi-strip-profile \\
+{} description & | \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{1. Clarify Requirements}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Ask the user}: Single-slide or multi-slide (3-4 slides)?
+\item {} \textbf{Ask the user}: Any specific focus areas or topics to emphasize?
+\item {} \textbf{Only after user confirms}, proceed to research
+\end{itemize}
+
+\subparagraph{2. Research \& Planning}\mbox{}\par
+\textbf{Data Sources:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Primary}: Company filings (BamSEC, SEC EDGAR - ``Item 1. Business'', MD\&A), investor presentations, corporate website
+\item {} \textbf{Market data}: Bloomberg, FactSet, CapIQ (price, shares, market cap, net debt, EV, ownership)
+\item {} \textbf{Estimates}: FactSet/CapIQ consensus for NTM revenue, EBITDA, EPS
+\item {} \textbf{News}: Press releases from last 90 days, M\&A activity, guidance changes
+\end{itemize}
+
+\textbf{Required Metrics:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Financials}: Revenue, EBITDA, margins (\%), EPS, FCF for ±3 years
+\item {} \textbf{Valuation}: Market Cap, EV, EV/Revenue, EV/EBITDA, P/E multiples
+\item {} \textbf{Growth}: YoY growth rates (\%)
+\item {} \textbf{Ownership}: Top 5 shareholders with \% ownership
+\item {} \textbf{Segments}: Product mix and/or geographic mix (\% breakdown)
+\end{itemize}
+
+\textbf{Normalization:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Convert all amounts to consistent currency
+\item {} Scale consistently (\$mm or \$bn throughout, not mixed)
+\end{itemize}
+
+\textbf{Before Building:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Print outline to chat with 4-5 bullet points per item (actual numbers, no placeholders)
+\item {} Print style choices: fonts, colors (hex codes), chart types for each data set
+\item {} Get user alignment: ``Does this outline and visual strategy align with your vision?''
+\end{itemize}
+
+\subparagraph{3. Slide-by-Slide Creation}\mbox{}\par
+\textbf{CRITICAL: You MUST create ONE slide at a time and get user approval before proceeding to the next slide.}
+
+
+\textbf{For EACH slide:}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Create ONLY this one slide with PptxGenJS
+\item {} \textbf{MANDATORY: Convert to image for review} - You MUST convert slides to images so you can visually verify them: ``\emph{bash soffice --headless --convert-to pdf presentation.pptx pdftoppm -jpeg -r 150 -f 1 -l 1 presentation.pdf slide }``
+\item {} \textbf{MANDATORY VISUAL REVIEW}: You MUST carefully examine the rendered slide image before proceeding:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Text overlap check}: Scan every text element - do any labels, bullets, or titles collide with each other?
+\item {} \textbf{Text cutoff check}: Is any text truncated at boundaries? Are all words fully visible?
+\item {} \textbf{Chart boundary check}: Do charts stay within their containers? Are ALL axis labels fully visible?
+\item {} \textbf{Quadrant integrity}: Does content in one quadrant bleed into adjacent quadrants?
+\end{itemize}
+\item {} \textbf{If ANY overlap or cutoff is detected}: Fix immediately using these strategies in order:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{First}: Reduce font size (go down 1-2pt)
+\item {} \textbf{Second}: Shorten text (abbreviate, remove less critical info)
+\item {} \textbf{Third}: Adjust element positions or container sizes
+\item {} \textbf{Re-render and verify again} - do not proceed until all text fits cleanly
+\end{itemize}
+\item {} Show slide image to user with download link
+\item {} \textbf{STOP and wait for explicit user approval} before creating the next slide. Do NOT proceed until user confirms.
+\end{enumerate}
+
+\textbf{YOU MUST CHECK FOR THESE SPECIFIC ISSUES ON EVERY PAGE:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Table rows colliding with text below them
+\item {} Chart x-axis labels cut off at bottom
+\item {} Long bullet points wrapping into adjacent content
+\item {} Quadrant content bleeding into adjacent quadrants
+\item {} Title text overlapping with content below
+\item {} Legend text overlapping with chart elements
+\item {} Footer/source text colliding with main content
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Slide Format Requirements}\mbox{}\par
+
+\subparagraph{Information Density is Critical}\mbox{}\par
+
+\textbf{The \#1 goal is MAXIMUM information density.} A busy executive should understand the entire company story in 30 seconds. Fill every quadrant to capacity.
+
+
+\textbf{Per quadrant targets:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Company Overview}: 6-8 bullets minimum (HQ, founded, employees, CEO/CFO, market cap, ticker, industry, key stat)
+\item {} \textbf{Business \& Positioning}: 6-8 bullets (revenue drivers, products, market share \%, competitive moat, customer count, geographic mix)
+\item {} \textbf{Key Financials}: Table with 8-10 rows OR chart + 4-5 key metrics (Revenue, EBITDA, margins, EPS, FCF, growth rates, valuation multiples)
+\item {} \textbf{Fourth quadrant}: 5-7 bullets (ownership \%, recent M\&A, developments, catalysts)
+\end{itemize}
+
+\textbf{Information packing techniques:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Combine related facts: ``HQ: Austin, TX; Founded: 2003; 140K employees''
+\item {} Always include numbers: ``\$50B revenue'' not ``large revenue''
+\item {} Add context: ``EBITDA margin: 25\% (vs. 18\% industry avg)''
+\item {} Include YoY changes: ``Revenue: \$125M (+28\% YoY)''
+\item {} Use percentages: ``Enterprise: 62\% of revenue''
+\end{itemize}
+
+\textbf{If a quadrant looks sparse, add more:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Segment breakdowns with \%
+\item {} Geographic revenue splits
+\item {} Customer concentration (top 10 = X\%)
+\item {} Recent contract wins with \$ values
+\item {} Guidance vs. consensus
+\item {} Insider ownership \%
+\end{itemize}
+
+\textbf{Line spacing - use single textbox per section:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} def add\_\allowbreak{}section(slide, x, y, w, header\_\allowbreak{}text, bullets, header\_\allowbreak{}size=10, bullet\_\allowbreak{}size=8):
+\item {} ``''``Header + bullets in single textbox with natural spacing''``''
+\item {} tb = slide.shapes.add\_\allowbreak{}textbox(x, y, w, Inches(len(bullets) * 0.18 + 0.3))
+\item {} tf = tb.text\_\allowbreak{}frame
+\item {} tf.word\_\allowbreak{}wrap = True
+\item {} \# Header paragraph
+\item {} p = tf.paragraphs[0]
+\item {} p.text = header\_\allowbreak{}text
+\item {} p.font.bold = True
+\item {} p.font.size = Pt(header\_\allowbreak{}size)
+\item {} p.font.color.rgb = RGBColor(0, 51, 102)
+\item {} p.space\_\allowbreak{}after = Pt(6) \# Small gap after header
+\item {} \# Bullet paragraphs
+\item {} for bullet in bullets:
+\item {} p = tf.add\_\allowbreak{}paragraph()
+\item {} p.text = bullet
+\item {} p.font.size = Pt(bullet\_\allowbreak{}size)
+\item {} p.space\_\allowbreak{}after = Pt(3)
+\item {} return tb
+\end{itemize}
+
+\textbf{Key spacing principles:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Put header + bullets in SAME textbox (no separate header textbox)
+\item {} Use \emph{space\_\allowbreak{}after = Pt(6)} after header, \emph{Pt(3)} between bullets
+\item {} Don't hardcode gaps - let paragraph spacing handle it naturally
+\item {} If content overflows, reduce font by 1pt rather than removing content
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{3-4 dense slides} - use quadrants, columns, tables, charts
+\item {} \textbf{Bullets for ALL body text} - NEVER paragraphs. \textbf{Use ONE textbox per section with all bullets inside} - do NOT create separate textboxes for each bullet point. Use PptxGenJS bullet formatting: ``\emph{javascript // CORRECT: Single textbox with bullet list - each array item becomes a bullet // Position in top-left quadrant (Company Overview) - after header with accent bar slide.addText( [ \{ text: 'Headquarters: Austin, Texas; Founded 2003', options: \{ bullet: \{ indent: 10 \}, breakLine: true \} \}, \{ text: 'Employees: 140,000+ globally across 6 continents', options: \{ bullet: \{ indent: 10 \}, breakLine: true \} \}, \{ text: 'CEO: Elon Musk; CFO: Vaibhav Taneja', options: \{ bullet: \{ indent: 10 \}, breakLine: true \} \}, \{ text: 'Market Cap: \$850B (\#6 globally by market cap)', options: \{ bullet: \{ indent: 10 \}, breakLine: true \} \}, \{ text: 'Segments: Automotive (85\%), Energy (10\%), Services (5\%)', options: \{ bullet: \{ indent: 10 \} \} \} ], \{ x: 0.45, y: 0.95, w: 4.5, h: 2.6, fontSize: 11, fontFace: 'Arial', valign: 'top', paraSpaceAfter: 6 \} ); // WRONG: Multiple separate textboxes for each bullet - causes alignment issues // slide.addText('Headquarters: Austin', \{ x: 0.5, y: 1.0, bullet: true \}); }`` \textbf{Bullet formatting tips:}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \emph{bullet: \{ indent: 10 \}} - controls bullet indentation (smaller = tighter)
+\item {} \emph{paraSpaceAfter: 6} - space after each paragraph in points
+\item {} Pack multiple related facts into each bullet (e.g., ``HQ: Austin; Founded: 2003'')
+\item {} Include specific numbers and percentages for information density
+\end{itemize}
+\item {} \textbf{Title case} for titles (not ALL CAPS), left-aligned
+\item {} \textbf{Consistent fonts} everywhere including tables
+\item {} \textbf{Company's brand colors} - YOU MUST research actual brand colors via web search before creating slides. Do not guess or assume colors.
+\item {} \textbf{Follow brand guidelines if provided}
+\end{itemize}
+
+\subparagraph{Visual Reference}\mbox{}\par
+See \emph{examples/Nike\_\allowbreak{}Strip\_\allowbreak{}Profile\_\allowbreak{}Example.pptx} for layout inspiration. Adapt colors to each company's brand.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{First Page Layout}\mbox{}\par
+
+Must pass ``30-second comprehension test'' for a busy executive.
+
+
+\subparagraph{Slide Setup (CRITICAL)}\mbox{}\par
+\textbf{Use 4:3 aspect ratio} (standard IB pitch book format):
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} const pptx = new pptxgen();
+\item {} pptx.layout = 'LAYOUT\_\allowbreak{}4x3'; // 10`` wide × 7.5'' tall - MUST USE THIS
+\end{itemize}
+
+\subparagraph{Slide Coordinate System}\mbox{}\par
+PptxGenJS uses inches. 4:3 slide = \textbf{10`` wide × 7.5'' tall}.
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{x}: horizontal position from left edge (0 = left, 10 = right)
+\item {} \textbf{y}: vertical position from top edge (0 = top, 7.5 = bottom)
+\item {} \textbf{Content must stay within bounds} - leave 0.3`` margin on all sides
+\end{itemize}
+
+\subparagraph{First Page Positioning (in inches)}\mbox{}\par
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} y=0.2 Title: Company Name (Ticker)
+\item {} y=0.6 Company Overview y=0.6 Business \& Positioning
+\item {} x=0.3, w=4.7 x=5.0, w=4.7
+\item {} h=3.0 h=3.0
+\item {} y=3.7 Key Financials y=3.7 Stock/Recent Developments
+\item {} x=0.3, w=4.7 x=5.0, w=4.7
+\item {} h=3.5 h=3.5
+\item {} y=7.5
+\end{itemize}
+
+\subparagraph{Title Section (y=0.2)}\mbox{}\par
+\textbf{Company Name (Ticker)} - Example: \emph{Tesla, Inc. (TSLA)}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} slide.addText('Tesla, Inc. (TSLA)', \{ x: 0.3, y: 0.2, w: 9.4, h: 0.35, fontSize: 18, bold: true \});
+\end{itemize}
+
+\subparagraph{4-Quadrant Layout (y=0.6 to y=7.2)}\mbox{}\par
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Quadrant} & \textbf{Position} & \textbf{Content} \\
+\midrule
+{} \textbf{1} & x=0.3, y=0.6, w=4.7, h=3.0 & \textbf{Company Overview}: HQ, founded, key stats, business summary (4-5 bullets) \\
+{} \textbf{2} & x=5.0, y=0.6, w=4.7, h=3.0 & \textbf{Business \& Positioning}: revenue drivers, products/ services, competitive position, growth drivers (4-5 bullets) \\
+{} \textbf{3} & x=0.3, y=3.7, w=4.7, h=3.5 & \textbf{Key Financials}: Revenue, EBITDA, margins, EPS, FCF + Valuation (Mkt Cap, EV, multiples) — \textbf{table OR chart, not both} \\
+{} \textbf{4} & x=5.0, y=3.7, w=4.7, h=3.5 & \textbf{For public companies}: 1Y stock price chart + top shareholders. \textbf{For private}: Recent developments or Ownership/ M\&A history \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Font Sizes - USE THESE EXACT VALUES}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Element} & \textbf{Size} & \textbf{Notes} \\
+\midrule
+{} Slide title & 24pt & Bold, company brand color \\
+{} Quadrant headers & 14pt & Bold, with accent bar \\
+{} Body/ bullet text & 11pt & Regular weight \\
+{} Table text & 10pt & Use 9pt for dense tables \\
+{} Chart labels & 9pt & Keep labels short \\
+{} Source/ footer & 8pt & Bottom of slide \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{CRITICAL: If text overflows, REDUCE font size by 1pt and re-render.}
+
+
+\subparagraph{Visual Accents (REQUIRED)}\mbox{}\par
+Each quadrant header MUST have a colored accent bar to the left:
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} // Add accent bar for quadrant header
+\item {} slide.addShape(pptx.shapes.RECTANGLE, \{
+\item {} x: 0.3, y: 0.6, w: 0.08, h: 0.25,
+\item {} fill: \{ color: 'E31937' \} // Use company brand color
+\item {} \});
+\item {} slide.addText('Company Overview', \{
+\item {} x: 0.45, y: 0.6, w: 4.5, h: 0.3, fontSize: 14, bold: true, fontFace: 'Arial'
+\item {} \});
+\end{itemize}
+
+\textbf{Visual elements to include:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Accent bars next to all section headers (brand color)
+\item {} Thin horizontal divider line between top and bottom quadrants
+\item {} Company logo in top-right corner if available
+\item {} Subtle gridlines in tables (light gray \#CCCCCC)
+\end{itemize}
+
+\subparagraph{First Page Formatting}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Font: Arial} (or as specified by user/brand guidelines)
+\item {} \textbf{Quadrant titles}: Title Case (not ALL CAPS), e.g., ``Company Overview'' not ``COMPANY OVERVIEW''
+\item {} \textbf{Bullets}: Bold key terms at start, e.g., ``\textbf{Market Position:} Leading global manufacturer...''
+\item {} White background only — no boxes, fills, or shading
+\item {} Section headers: bold text, follow brand guidelines for styling
+\item {} All quadrants equally sized and aligned
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Subsequent Pages: Free-Form Layouts}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Two-column (40/60 or 50/50), full-slide charts, or sidebar layouts
+\item {} Each page elaborates on first page content
+\item {} Maintain consistent typography and color scheme
+\item {} Suggested flow: Products/Market → Financial Analysis → Leadership
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Charts (Multi-Slide Profiles)}\mbox{}\par
+
+\textbf{For multi-slide profiles}: Include 2-3 actual PptxGenJS charts. Never use placeholder divs or static images.
+
+
+\textbf{For single-slide profiles}: Use tables for financials (more space-efficient). Only add a chart if it replaces the table, not in addition to it.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Data Type} & \textbf{Chart Type} \\
+\midrule
+{} Revenue trends & Line or column (multi-year) \\
+{} Geographic breakdown & Horizontal bar \\
+{} Product mix & Pie with percentages \\
+{} Financial comparison & Column \\
+{} Stock price (1Y daily) & Line \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Chart Code Examples}\mbox{}\par
+
+\textbf{Horizontal Bar (fits in bottom-right quadrant for 4:3 slide):}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} slide.addChart(pptx.charts.BAR, [\{
+\item {} name: 'FY2024 Revenue by Region',
+\item {} labels: ['North America', 'EMEA', 'China', 'APLA'],
+\item {} values: [21.4, 13.6, 7.6, 6.7]
+\item {} \}], \{
+\item {} x: 5.0, y: 4.1, w: 4.5, h: 3.0, // Fits in bottom-right quadrant (4:3)
+\item {} barDir: 'bar', chartColors: ['FF6B35'], showValue: true,
+\item {} dataLabelFontSize: 10, catAxisLabelFontSize: 10, valAxisLabelFontSize: 10,
+\item {} dataLabelFormatCode: '\$\#,\#\#0.0B',
+\item {} title: 'Revenue by Geography', titleFontSize: 12, titleBold: true
+\item {} \});
+\end{itemize}
+
+\textbf{Pie Chart (fits in bottom-right quadrant for 4:3 slide):}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} slide.addChart(pptx.charts.PIE, [\{
+\item {} name: 'Product Mix',
+\item {} labels: ['Footwear', 'Apparel', 'Equipment'],
+\item {} values: [68, 29, 3]
+\item {} \}], \{
+\item {} x: 5.0, y: 4.1, w: 4.5, h: 3.0, // Fits in bottom-right quadrant (4:3)
+\item {} showPercent: true, showLegend: true, legendPos: 'r',
+\item {} dataLabelFontSize: 10, legendFontSize: 10,
+\item {} chartColors: ['FF6B35', '2C2C2C', '4A4A4A'],
+\item {} title: 'Revenue Mix FY24', titleFontSize: 12, titleBold: true
+\item {} \});
+\end{itemize}
+
+\textbf{Line Chart (full width for subsequent slides):}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} slide.addChart(pptx.charts.LINE, [\{
+\item {} name: 'Revenue (\$B)',
+\item {} labels: ['FY21', 'FY22', 'FY23', 'FY24', 'FY25E'],
+\item {} values: [44.5, 46.7, 48.5, 51.4, 54.2]
+\item {} \}], \{
+\item {} x: 0.3, y: 1.2, w: 9.4, h: 5.5, // Full width for 4:3 slide
+\item {} chartColors: ['FF6B35'], showValue: true, lineSmooth: true,
+\item {} dataLabelFontSize: 11, catAxisLabelFontSize: 11, valAxisLabelFontSize: 11,
+\item {} title: 'Revenue Trend \& Forecast', titleFontSize: 14, titleBold: true
+\item {} \});
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Financial Data Formatting}\mbox{}\par
+
+\textbf{Always use native PptxGenJS tables or charts - NEVER plain text prose or HTML tables.}
+
+
+Use \emph{slide.addTable()} for financial data (fits in bottom-left quadrant for 4:3 slide):
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} // Add header with accent bar first
+\item {} slide.addShape(pptx.shapes.RECTANGLE, \{
+\item {} x: 0.3, y: 3.7, w: 0.08, h: 0.25, fill: \{ color: 'E31937' \}
+\item {} \});
+\item {} slide.addText('Key Financials \& Valuation', \{
+\item {} x: 0.45, y: 3.7, w: 4.5, h: 0.3, fontSize: 14, bold: true, fontFace: 'Arial'
+\item {} \});
+\item {} // Financial data table
+\item {} slide.addTable([
+\item {} [\{ text: 'Metric', options: \{ bold: true, fill: '003366', color: 'FFFFFF' \} \},
+\item {} \{ text: 'FY24', options: \{ bold: true, fill: '003366', color: 'FFFFFF' \} \},
+\item {} \{ text: 'FY25E', options: \{ bold: true, fill: '003366', color: 'FFFFFF' \} \}],
+\item {} ['Revenue', '\$51.4B', '\$54.2B'],
+\item {} ['YoY Growth', '+6.0\%', '+5.5\%'],
+\item {} ['EBITDA', '\$8.9B', '\$9.5B'],
+\item {} ['EBITDA Margin', '17.3\%', '17.5\%'],
+\item {} ['EPS', '\$3.42', '\$3.75'],
+\item {} ['Market Cap', '\$185B', '—'],
+\item {} ['EV/EBITDA', '12.5x', '11.7x']
+\item {} ], \{
+\item {} x: 0.45, y: 4.1, w: 4.3, h: 3.0, // Below header in bottom-left quadrant
+\item {} fontFace: 'Arial', fontSize: 10,
+\item {} border: \{ pt: 0.5, color: 'CCCCCC' \},
+\item {} valign: 'middle',
+\item {} colW: [1.8, 1.25, 1.25] // Column widths
+\item {} \});
+\end{itemize}
+
+❌ \textbf{Incorrect:} Plain text like \emph{Note: FY2024 revenue growth +1.0\%, Net Income \$5.1B...} ❌ \textbf{Incorrect:} HTML tables that don't convert properly to PowerPoint
+
+
+For projections, use Bear/Base/Bull case scenarios in structured tables.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Quality Checklist}\mbox{}\par
+
+\subparagraph{First Page}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Title section with company name, ticker, industry
+\item {} \UncheckedBox Exactly 4 equal quadrants below title
+\item {} \UncheckedBox All bullets, no paragraphs, 1 line max each
+\item {} \UncheckedBox Financials in table or chart (not both)
+\end{itemize}
+
+\subparagraph{All Slides}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox No text overflow or cutoff
+\item {} \UncheckedBox Consistent fonts and colors throughout
+\item {} \UncheckedBox Charts render correctly
+\item {} \UncheckedBox No placeholder text - all actual data
+\item {} \UncheckedBox Consistent scaling (\$mm or \$bn, not mixed)
+\item {} \UncheckedBox Sources cited
+\item {} \UncheckedBox Investment banking quality (GS/MS/JPM standard)
+\end{itemize}
+
+\textbf{Note:} Reference the \textbf{PPTX skill} for PowerPoint file creation.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: teaser}\label{file:skills-teaser-SKILL.md}
+
+\paragraph{Teaser}\mbox{}\par
+
+description: Draft anonymous one-page company teasers for sell-side M\&A processes. Creates a compelling summary without revealing the company's identity, designed to gauge buyer interest before NDA execution. Triggers on ``teaser'', ``blind teaser'', ``anonymous profile'', ``one-pager for process'', or ``draft teaser for sell-side''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Gather Inputs}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Company description (what they do, how they make money)
+\item {} Sector / industry
+\item {} Key financial metrics: revenue, EBITDA, growth rate, margins
+\item {} Geographic footprint
+\item {} Key selling points (3-5 highlights)
+\item {} What to anonymize vs. disclose
+\item {} Target buyer audience (strategic, financial, or both)
+\end{itemize}
+
+\subparagraph{Step 2: Teaser Structure}\mbox{}\par
+
+One page, professionally formatted:
+
+
+\textbf{Header}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Deal code name (e.g., ``Project [Name]'')
+\item {} Sector descriptor (e.g., ``Leading Specialty Industrial Services Platform'')
+\item {} ``Confidential — For Discussion Purposes Only''
+\end{itemize}
+
+\textbf{Company Description} (2-3 sentences)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} What the company does, without naming it
+\item {} Market position (e.g., ``a leading provider of...'', ``a top-3 player in...'')
+\item {} Geography (region-level, not city-specific)
+\end{itemize}
+
+\textbf{Investment Highlights} (4-6 bullet points)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Market leadership / positioning
+\item {} Revenue quality (recurring \%, retention, diversification)
+\item {} Growth profile and trajectory
+\item {} Margin profile and expansion opportunity
+\item {} Management team strength
+\item {} Strategic value / synergy potential
+\end{itemize}
+
+\textbf{Financial Summary} (table or key metrics)
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Metric} & \textbf{Value} \\
+\midrule
+{} Revenue & \$XXM \\
+{} Revenue Growth & XX\% CAGR \\
+{} EBITDA & \$XXM \\
+{} EBITDA Margin & XX\% \\
+{} Employees & XXX \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{Transaction Overview} (2-3 sentences)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} What's being offered (100\% sale, majority stake, growth equity)
+\item {} Indicative timeline
+\item {} Contact information for expressions of interest
+\end{itemize}
+
+\subparagraph{Step 3: Anonymization Check}\mbox{}\par
+
+Ensure the teaser doesn't inadvertently identify the company:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} No company name, brand names, or product names
+\item {} No specific city (use region: ``Southeast US'', ``Midwest'')
+\item {} No named customers or partners
+\item {} No employee count if it's too distinctive
+\item {} Revenue ranges instead of exact figures if the sector is small
+\item {} No logos, screenshots, or identifiable imagery
+\end{itemize}
+
+\subparagraph{Step 4: Output}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Word document (.docx) — one page, clean formatting
+\item {} PDF version for distribution
+\item {} Optional PowerPoint version (single slide)
+\end{itemize}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} The teaser's job is to generate interest, not close a deal — keep it tight and compelling
+\item {} Less is more — a good teaser makes buyers want to sign the NDA to learn more
+\item {} Use aspirational but accurate language — ``leading'', ``differentiated'', ``high-growth'' are fine if true
+\item {} Include enough financial detail to qualify serious buyers but not so much that tire-kickers waste your time
+\item {} Always have the client and legal review before distribution
+\item {} Track who receives the teaser — it becomes the outreach log for the process
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\end{document}

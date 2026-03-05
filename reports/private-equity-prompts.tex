@@ -1,0 +1,1510 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\newfontfamily\EmojiFont[Renderer=HarfBuzz]{Apple Color Emoji}
+\newfontfamily\SymbolFont{Arial Unicode MS}
+\newcommand{\EmojiGlyph}[1]{{\normalfont\EmojiFont #1}}
+\newcommand{\SymbolGlyph}[1]{{\normalfont\SymbolFont #1}}
+\usepackage{newunicodechar}
+\usepackage{microtype}
+\usepackage{setspace}
+\setstretch{1.08}
+\usepackage{hyperref}
+\usepackage{xurl}
+\urlstyle{same}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+\usepackage{enumitem}
+\setlist{leftmargin=*,itemsep=2pt,topsep=2pt}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{ragged2e}
+\renewcommand{\arraystretch}{1.15}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{3em}
+\sloppy
+\newcommand{\UncheckedBox}{$\square$}
+\newcommand{\CheckedBox}{$\blacksquare$}
+\title{Private Equity Prompt Library\\LaTeX Translation and Dependency Map}
+\author{financial-services-plugins repository}
+\date{Generated on 2026-03-05 09:31 }
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Repository Structure Overview}
+
+\subsection{Folder Tree}
+\textbf{Root directory: private-equity}
+\begin{itemize}[leftmargin=*,itemsep=1pt,topsep=2pt]
+\item \hspace*{0.0em}commands
+\item \hspace*{0.0em}skills
+\item \hspace*{0.9em}commands/dd-checklist.md
+\item \hspace*{0.9em}commands/dd-prep.md
+\item \hspace*{0.9em}commands/ic-memo.md
+\item \hspace*{0.9em}commands/portfolio.md
+\item \hspace*{0.9em}commands/returns.md
+\item \hspace*{0.9em}commands/screen-deal.md
+\item \hspace*{0.9em}commands/source.md
+\item \hspace*{0.9em}commands/unit-economics.md
+\item \hspace*{0.9em}commands/value-creation.md
+\item \hspace*{0.9em}skills/dd-checklist
+\item \hspace*{0.9em}skills/dd-meeting-prep
+\item \hspace*{0.9em}skills/deal-screening
+\item \hspace*{0.9em}skills/deal-sourcing
+\item \hspace*{0.9em}skills/ic-memo
+\item \hspace*{0.9em}skills/portfolio-monitoring
+\item \hspace*{0.9em}skills/returns-analysis
+\item \hspace*{0.9em}skills/unit-economics
+\item \hspace*{0.9em}skills/value-creation-plan
+\item \hspace*{1.8em}skills/dd-checklist/SKILL.md
+\item \hspace*{1.8em}skills/dd-meeting-prep/SKILL.md
+\item \hspace*{1.8em}skills/deal-screening/SKILL.md
+\item \hspace*{1.8em}skills/deal-sourcing/SKILL.md
+\item \hspace*{1.8em}skills/ic-memo/SKILL.md
+\item \hspace*{1.8em}skills/portfolio-monitoring/SKILL.md
+\item \hspace*{1.8em}skills/returns-analysis/SKILL.md
+\item \hspace*{1.8em}skills/unit-economics/SKILL.md
+\item \hspace*{1.8em}skills/value-creation-plan/SKILL.md
+\end{itemize}
+
+\section{Prompt Dependency Structure}
+
+\subsection{Command-to-Skill Dependencies}
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Command Prompt} & \textbf{Loaded Skill Prompt} \\
+\midrule
+{} commands/ dd-checklist.md & skills/ dd-checklist/ SKILL.md \\
+{} commands/ dd-prep.md & skills/ dd-meeting-prep/ SKILL.md \\
+{} commands/ ic-memo.md & skills/ ic-memo/ SKILL.md \\
+{} commands/ portfolio.md & skills/ portfolio-monitoring/ SKILL.md \\
+{} commands/ returns.md & skills/ returns-analysis/ SKILL.md \\
+{} commands/ screen-deal.md & skills/ deal-screening/ SKILL.md \\
+{} commands/ source.md & skills/ deal-sourcing/ SKILL.md \\
+{} commands/ unit-economics.md & skills/ unit-economics/ SKILL.md \\
+{} commands/ value-creation.md & skills/ value-creation-plan/ SKILL.md \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\newpage
+
+\section{Translated Prompt Corpus}
+
+This section translates every markdown prompt under the private-equity directory into LaTeX-native structure, preserving hierarchy and dependency flow.
+
+\subsection{Directory: commands}
+
+\subsection{Command: dd-checklist.md}\label{file:commands-dd-checklist.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Generate a due diligence checklist \\
+{} argument-hint & [company name] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{dd-checklist} skill and generate a comprehensive, sector-tailored due diligence checklist with status tracking.
+
+
+If a company name is provided, use it. Otherwise ask the user for the target company and deal details.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: dd-prep.md}\label{file:commands-dd-prep.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Prep for a diligence meeting or expert call \\
+{} argument-hint & [company name] [meeting type] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{dd-meeting-prep} skill and generate targeted questions, benchmarks, and red flags to probe.
+
+
+If details are provided, use them. Otherwise ask for the company, meeting type (management presentation, expert call, customer reference), and topic focus.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: ic-memo.md}\label{file:commands-ic-memo.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Draft an investment committee memo \\
+{} argument-hint & [company name] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{ic-memo} skill and draft a structured IC memo synthesizing due diligence findings, financial analysis, and deal terms.
+
+
+If a company name is provided, use it. Otherwise ask the user for the target and available materials.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: portfolio.md}\label{file:commands-portfolio.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Review portfolio company performance \\
+{} argument-hint & [company name or path to financial package] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{portfolio-monitoring} skill and analyze a portfolio company's performance against plan — KPIs, variances, and red flags.
+
+
+If a company name or file is provided, use it. Otherwise ask the user for the portfolio company and financial data.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: returns.md}\label{file:commands-returns.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Build IRR/ MOIC sensitivity tables \\
+{} argument-hint & [company or deal parameters] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{returns-analysis} skill and model PE returns with sensitivity across entry multiple, leverage, exit multiple, and growth scenarios.
+
+
+If deal parameters are provided, use them. Otherwise ask the user for entry EBITDA, valuation, and financing assumptions.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: screen-deal.md}\label{file:commands-screen-deal.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Screen an inbound deal (CIM or teaser) \\
+{} argument-hint & [path to CIM/ teaser file] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{deal-screening} skill and quickly evaluate an inbound deal against the fund's investment criteria.
+
+
+If a file path is provided, use it. Otherwise ask the user for the deal materials or description.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: source.md}\label{file:commands-source.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Source deals — discover companies and draft founder outreach \\
+{} argument-hint & [sector or criteria, e.g. 'industrial services in Texas \$10-50M'] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{deal-sourcing} skill and run the sourcing pipeline: discover target companies, check CRM for existing relationships, and draft personalized founder outreach emails.
+
+
+If criteria are provided, use them. Otherwise ask the user for sector, size, geography, and deal parameters.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: unit-economics.md}\label{file:commands-unit-economics.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Analyze unit economics (ARR cohorts, LTV/ CAC, retention) \\
+{} argument-hint & [company name or path to data] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{unit-economics} skill and analyze customer economics, ARR cohorts, net retention, and revenue quality.
+
+
+If a company or file is provided, use it. Otherwise ask the user for the target and available data.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: value-creation.md}\label{file:commands-value-creation.md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Build a post-acquisition value creation plan \\
+{} argument-hint & [company name] \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+Load the \emph{value-creation-plan} skill and structure a value creation roadmap with EBITDA bridge, 100-day plan, and KPI dashboard.
+
+
+If a company name is provided, use it. Otherwise ask the user for the target company details.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Directory: skills}
+
+\subsection{Skill: dd-checklist}\label{file:skills-dd-checklist-SKILL.md}
+
+\paragraph{Due Diligence Checklist}\mbox{}\par
+
+description: Generate and track comprehensive due diligence checklists tailored to the target company's sector, deal type, and complexity. Covers all major workstreams with request lists, status tracking, and red flag escalation. Use when kicking off diligence, organizing a data room review, or tracking outstanding items. Triggers on ``dd checklist'', ``due diligence tracker'', ``diligence request list'', ``what do we still need'', or ``data room review''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Scope the Diligence}\mbox{}\par
+
+Ask the user for:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Target company}: Name, sector, business model
+\item {} \textbf{Deal type}: Platform acquisition, add-on, growth equity, recap, carve-out
+\item {} \textbf{Deal size / complexity}: Determines depth of diligence
+\item {} \textbf{Key concerns}: Any known issues to prioritize (customer concentration, regulatory, environmental, etc.)
+\item {} \textbf{Timeline}: When is LOI / close targeted?
+\end{itemize}
+
+\subparagraph{Step 2: Generate Workstream Checklists}\mbox{}\par
+
+Generate a checklist across all major workstreams, tailored to the sector:
+
+
+\textbf{Financial Due Diligence}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Quality of earnings (QoE) — revenue and EBITDA adjustments
+\item {} Working capital analysis — normalized vs. actual
+\item {} Debt and debt-like items
+\item {} Capital expenditure (maintenance vs. growth)
+\item {} Tax structure and exposure
+\item {} Audit history and accounting policies
+\item {} Pro forma adjustments (run-rate, synergies)
+\end{itemize}
+
+\textbf{Commercial Due Diligence}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Market size and growth (TAM/SAM/SOM)
+\item {} Competitive positioning and market share
+\item {} Customer analysis — concentration, retention, NPS
+\item {} Pricing power and contract structure
+\item {} Sales pipeline and backlog
+\item {} Go-to-market effectiveness
+\end{itemize}
+
+\textbf{Legal Due Diligence}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Corporate structure and org chart
+\item {} Material contracts (customer, supplier, partnership)
+\item {} Litigation history and pending claims
+\item {} IP portfolio and protection
+\item {} Regulatory compliance
+\item {} Employment agreements and non-competes
+\end{itemize}
+
+\textbf{Operational Due Diligence}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Management team assessment
+\item {} Organizational structure and key person risk
+\item {} IT systems and infrastructure
+\item {} Supply chain and vendor dependencies
+\item {} Facilities and real estate
+\item {} Insurance coverage
+\end{itemize}
+
+\textbf{HR / People Due Diligence}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Org chart and headcount trends
+\item {} Compensation benchmarking
+\item {} Benefits and pension obligations
+\item {} Key employee retention risk
+\item {} Culture assessment
+\item {} Union/labor agreements
+\end{itemize}
+
+\textbf{IT / Technology Due Diligence} (for tech-enabled businesses)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Technology stack and architecture
+\item {} Technical debt assessment
+\item {} Cybersecurity posture
+\item {} Data privacy compliance (GDPR, CCPA, SOC2)
+\item {} Product roadmap and R\&D spend
+\item {} Scalability assessment
+\end{itemize}
+
+\textbf{Environmental / ESG} (where applicable)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Environmental liabilities
+\item {} Regulatory compliance history
+\item {} ESG risks and opportunities
+\end{itemize}
+
+\subparagraph{Step 3: Status Tracking}\mbox{}\par
+
+For each item, track:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
+\toprule
+{} \textbf{Item} & \textbf{Workstream} & \textbf{Priority} & \textbf{Status} & \textbf{Owner} & \textbf{Notes} \\
+\midrule
+{} QoE report & Financial & P0 & Pending &  &  \\
+{} Customer interviews & Commercial & P0 & In Progress &  & 3 of 10 complete \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Status options: Not Started → Requested → Received → In Review → Complete → Red Flag
+
+
+\subparagraph{Step 4: Red Flag Summary}\mbox{}\par
+
+Maintain a running list of red flags discovered during diligence:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} What was found
+\item {} Which workstream
+\item {} Severity (deal-breaker / significant / manageable)
+\item {} Mitigant or path to resolution
+\item {} Impact on valuation or deal terms
+\end{itemize}
+
+\subparagraph{Step 5: Output}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Excel workbook with tabs per workstream (default)
+\item {} Summary dashboard: \% complete by workstream, outstanding items, red flags
+\item {} Weekly status update format for deal team
+\end{itemize}
+
+\subparagraph{Sector-Specific Additions}\mbox{}\par
+
+Automatically add relevant items based on sector:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Software/SaaS}: ARR quality, cohort analysis, hosting costs, SOC2
+\item {} \textbf{Healthcare}: Regulatory approvals, reimbursement risk, payor mix
+\item {} \textbf{Industrial}: Equipment condition, environmental remediation, safety record
+\item {} \textbf{Financial services}: Regulatory capital, compliance history, credit quality
+\item {} \textbf{Consumer}: Brand health, channel mix, seasonality, inventory management
+\end{itemize}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Prioritize P0 items that are gating to LOI or close
+\item {} Flag items where the seller is slow to respond — may indicate issues
+\item {} Cross-reference data room contents against the checklist to identify gaps
+\item {} Update the checklist as diligence progresses — it's a living document
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: dd-meeting-prep}\label{file:skills-dd-meeting-prep-SKILL.md}
+
+\paragraph{Diligence Meeting Prep}\mbox{}\par
+
+description: Prepare for due diligence meetings — management presentations, expert network calls, customer references, and advisor sessions. Generates targeted question lists, benchmarks to reference, and red flags to probe. Use before any diligence meeting or call. Triggers on ``prep for management meeting'', ``diligence call prep'', ``expert call questions'', ``customer reference questions'', or ``meeting prep for [company]''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Meeting Context}\mbox{}\par
+
+Ask the user for:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Meeting type}: Management presentation, expert call, customer reference, advisor check-in, site visit
+\item {} \textbf{Attendees}: Who from the target company or third party
+\item {} \textbf{Topic focus}: Full business overview, or specific workstream (financial, commercial, operational, tech)
+\item {} \textbf{What you already know}: Prior meetings, CIM, data room findings
+\item {} \textbf{Key concerns}: Specific issues to probe
+\end{itemize}
+
+\subparagraph{Step 2: Generate Question List}\mbox{}\par
+
+Organize questions by priority and topic. Structure depends on meeting type:
+
+
+\subparagraph{Management Presentation}\mbox{}\par
+\textbf{Business Overview (warm-up)}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Walk us through the founding story and key milestones
+\item {} How do you describe the business to someone unfamiliar with the space?
+\item {} What are you most proud of? What would you do differently?
+\end{itemize}
+
+\textbf{Revenue \& Growth}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Walk us through revenue by customer/segment/geography
+\item {} What's driving growth? Price vs. volume vs. new customers
+\item {} What does the sales cycle look like? How has win rate trended?
+\item {} Where do you see the biggest growth opportunities in the next 3-5 years?
+\end{itemize}
+
+\textbf{Competitive Positioning}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Who do you lose deals to and why?
+\item {} What's your moat? How defensible is it?
+\item {} How do customers evaluate you vs. alternatives?
+\end{itemize}
+
+\textbf{Operations \& Team}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Walk us through the org chart — who are the key people?
+\item {} What roles are you hiring for? What's been hardest to fill?
+\item {} What keeps you up at night operationally?
+\end{itemize}
+
+\textbf{Financial Deep-Dive}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Walk us through the margin bridge — what's changed and why?
+\item {} Any one-time or non-recurring items we should understand?
+\item {} How do you think about capex — maintenance vs. growth?
+\item {} Working capital seasonality?
+\end{itemize}
+
+\textbf{Forward Look}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Walk us through the budget/plan for next year
+\item {} What assumptions are you most/least confident in?
+\item {} What would need to go right/wrong to significantly beat/miss plan?
+\end{itemize}
+
+\subparagraph{Expert Network Call}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} How do you view [company]'s positioning in the market?
+\item {} What are the secular trends driving this space?
+\item {} Who are the strongest competitors and why?
+\item {} What risks should an investor be aware of?
+\item {} If you were buying this business, what would you diligence most carefully?
+\end{itemize}
+
+\subparagraph{Customer Reference Call}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} How did you find [company] and why did you choose them?
+\item {} What alternatives did you evaluate?
+\item {} What do they do well? Where could they improve?
+\item {} How likely are you to renew/expand? What would change that?
+\item {} If they raised prices 10-20\%, how would you react?
+\end{itemize}
+
+\subparagraph{Step 3: Benchmarks \& Context}\mbox{}\par
+
+For each key topic, provide relevant benchmarks:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Industry growth rates and margin profiles
+\item {} Comparable company metrics (if comps analysis exists in session)
+\item {} Data points from the CIM or data room that warrant follow-up
+\item {} Discrepancies between different data sources to clarify
+\end{itemize}
+
+\subparagraph{Step 4: Red Flags to Probe}\mbox{}\par
+
+Based on what's known, flag specific areas to dig into:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Inconsistencies in the CIM or financials
+\item {} Customer concentration or churn signals
+\item {} Management team gaps or recent departures
+\item {} Unusual accounting treatments
+\item {} Missing data room items
+\end{itemize}
+
+\subparagraph{Step 5: Output}\mbox{}\par
+
+One-page meeting prep doc:
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Meeting logistics}: Who, when, where, duration
+\item {} \textbf{Objectives}: Top 3 things you need to learn from this meeting
+\item {} \textbf{Question list}: Prioritized, grouped by topic (star the must-asks)
+\item {} \textbf{Benchmarks}: Key numbers to reference
+\item {} \textbf{Red flags}: Specific items to probe
+\item {} \textbf{Follow-up items}: What to request after the meeting
+\end{enumerate}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Lead with open-ended questions — let management talk, then follow up on specifics
+\item {} Don't lead the witness — ask neutral questions, not ``isn't it true that...''
+\item {} Take notes on body language and confidence levels, not just answers
+\item {} Always end with: ``What haven't we asked about that we should?''
+\item {} Keep the question list to 15-20 max — you won't get through more in a 60-90 min session
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: deal-screening}\label{file:skills-deal-screening-SKILL.md}
+
+\paragraph{Deal Screening}\mbox{}\par
+
+description: Quickly screen inbound deal flow — CIMs, teasers, and broker materials — against the fund's investment criteria. Extracts key deal metrics, runs a pass/fail framework, and outputs a one-page screening memo. Use when reviewing new deal flow, triaging inbound materials, or deciding whether to take a first call. Triggers on ``screen this deal'', ``review this CIM'', ``should we look at this'', ``triage this teaser'', or ``deal screening''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Extract Deal Facts}\mbox{}\par
+
+From the provided CIM, teaser, or description, extract:
+
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Company}: Name, location, sector/subsector
+\item {} \textbf{Description}: What they do (1-2 sentences)
+\item {} \textbf{Financials}: Revenue, EBITDA, margins, growth rate
+\item {} \textbf{Deal type}: Platform, add-on, recap, minority, carve-out
+\item {} \textbf{Asking price / valuation}: Multiple, enterprise value if stated
+\item {} \textbf{Seller motivation}: Why selling now
+\item {} \textbf{Management}: Rolling or exiting
+\item {} \textbf{Key customers}: Concentration risk
+\item {} \textbf{Key risks}: Obvious red flags
+\end{itemize}
+
+\subparagraph{Step 2: Screen Against Criteria}\mbox{}\par
+
+Apply the fund's investment criteria (ask user if not known):
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{Criterion} & \textbf{Target} & \textbf{Actual} & \textbf{Pass/ Fail} \\
+\midrule
+{} Revenue range &  &  &  \\
+{} EBITDA range &  &  &  \\
+{} EBITDA margin &  &  &  \\
+{} Growth profile &  &  &  \\
+{} Sector fit &  &  &  \\
+{} Geography &  &  &  \\
+{} Deal size /  EV &  &  &  \\
+{} Valuation (x EBITDA) &  &  &  \\
+{} Customer concentration &  &  &  \\
+{} Management continuity &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 3: Quick Assessment}\mbox{}\par
+
+Provide a 3-part assessment:
+
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Verdict}: Pass / Further Diligence / Hard Pass
+\item {} \textbf{Bull case} (2-3 bullets): Why this could be a good deal
+\item {} \textbf{Bear case} (2-3 bullets): Key risks and concerns
+\item {} \textbf{Key questions}: What you'd need to answer on a first call
+\end{enumerate}
+
+\subparagraph{Step 4: Output}\mbox{}\par
+
+One-page screening memo suitable for sharing with partners or an IC quick screen.
+
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Speed matters — screening should take minutes, not hours
+\item {} Be direct about red flags. Don't bury concerns
+\item {} If financials seem inconsistent or incomplete, flag it explicitly
+\item {} Ask for the fund's criteria upfront if this is the first screening
+\item {} Save screening criteria in memory for future deals once confirmed
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: deal-sourcing}\label{file:skills-deal-sourcing-SKILL.md}
+
+\paragraph{Deal Sourcing}\mbox{}\par
+
+description: PE deal sourcing workflow — discover target companies, check CRM for existing relationships, and draft personalized founder outreach emails. Use when sourcing new deals, prospecting companies in a sector, or reaching out to founders. Triggers on ``find companies'', ``source deals'', ``draft founder email'', ``check if we've seen this company'', or ``outreach to founder''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+This skill follows a 3-step sourcing pipeline:
+
+
+\subparagraph{Step 1: Discover Companies}\mbox{}\par
+
+Research and identify potential target companies based on the user's criteria:
+
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Sector/industry focus}: Ask the user what space they're looking in (e.g., ``B2B SaaS in healthcare'', ``industrial services in the Southeast'')
+\item {} \textbf{Deal parameters}: Revenue range, EBITDA range, growth profile, geography, ownership type (founder-owned, PE-backed, corporate carve-out)
+\item {} \textbf{Sources}: Use web search to find companies matching criteria. Look at industry reports, conference attendee lists, trade publications, and competitor landscapes
+\item {} \textbf{Output}: A shortlist of companies with: name, description, estimated revenue/size, location, founder/CEO name, website, and why they fit the thesis
+\end{itemize}
+
+\subparagraph{Step 2: CRM Check}\mbox{}\par
+
+Before outreach, check if the company or founder already exists in the firm's CRM:
+
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Search the user's email (Gmail) for prior correspondence with the company or founder
+\item {} Search Slack for any internal mentions or prior discussions about the target
+\item {} Ask the user: ``Have you or your team had any prior contact with [Company]?''
+\item {} Flag any existing relationships, prior passes, or known context
+\item {} \textbf{Output}: For each company, note: ``New'' (no prior contact), ``Existing'' (prior correspondence found — summarize), or ``Previously Passed'' (if evidence of a prior pass)
+\end{itemize}
+
+\subparagraph{Step 3: Draft Founder Outreach}\mbox{}\par
+
+Draft personalized cold emails to founders/CEOs:
+
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Tone}: Professional but warm. Not overly formal — founders respond better to genuine, concise outreach
+\item {} \textbf{Structure}:
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Brief intro — who you are and your firm (ask user for their firm intro if not known)
+\item {} Why this company caught your attention — reference something specific (product, market position, growth)
+\item {} What you're looking for — partnership, not just a transaction
+\item {} Soft ask — ``Would you be open to a brief conversation?''
+\end{enumerate}
+\item {} \textbf{Personalization}: Reference the company's specific product, recent news, or market position. Never use generic templates
+\item {} \textbf{Length}: 4-6 sentences max. Founders are busy
+\item {} \textbf{Voice matching}: If the user has sent prior outreach emails, study them to match their tone and style. Search Gmail for ``sent'' emails with keywords like ``reaching out'', ``introduction'', ``partnership'' to find examples
+\end{itemize}
+
+\subparagraph{Email Draft Guidelines}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Subject line: Keep it short and specific. Reference the company or sector, not ``Investment Opportunity''
+\item {} No attachments on first touch
+\item {} Include a clear but low-pressure CTA
+\item {} Draft in Gmail if available, otherwise output as text for the user to copy
+\end{itemize}
+
+\subparagraph{Example Interaction}\mbox{}\par
+
+\textbf{User}: ``Find me founder-owned industrial services companies in Texas doing \$10-50M revenue''
+
+
+\textbf{Assistant}:
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Searches web for industrial services companies in Texas matching the criteria
+\item {} Presents a shortlist of 5-8 companies with key details
+\item {} For each, checks Gmail/Slack for prior contact
+\item {} Drafts personalized outreach emails for the ones marked ``New''
+\item {} Presents drafts for user review before sending
+\end{enumerate}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Always present the shortlist for user review before drafting emails
+\item {} Never send emails without explicit user approval
+\item {} If the user's firm intro or investment criteria aren't clear, ask before drafting
+\item {} Prioritize quality over quantity — 5 well-researched targets beat 20 generic ones
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: ic-memo}\label{file:skills-ic-memo-SKILL.md}
+
+\paragraph{Investment Committee Memo}\mbox{}\par
+
+description: Draft a structured investment committee memo for PE deal approval. Synthesizes due diligence findings, financial analysis, and deal terms into a professional IC-ready document. Use when preparing for investment committee, writing up a deal, or creating a formal recommendation. Triggers on ``write IC memo'', ``investment committee memo'', ``deal write-up'', ``prepare IC materials'', or ``recommendation memo''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Gather Inputs}\mbox{}\par
+
+Collect from the user (or from prior analysis in the session):
+
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Company overview and business description
+\item {} Industry/market context
+\item {} Historical financials (3-5 years)
+\item {} Management assessment
+\item {} Deal terms (price, structure, financing)
+\item {} Due diligence findings (commercial, financial, legal, operational)
+\item {} Value creation plan / 100-day plan
+\item {} Returns analysis (base, upside, downside)
+\end{itemize}
+
+\subparagraph{Step 2: Draft Memo Structure}\mbox{}\par
+
+Standard IC memo format:
+
+
+\textbf{I. Executive Summary} (1 page)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Company description, deal rationale, key terms
+\item {} Recommendation and headline returns
+\item {} Top 3 risks and mitigants
+\end{itemize}
+
+\textbf{II. Company Overview} (1-2 pages)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Business description, products/services
+\item {} Customer base and go-to-market
+\item {} Competitive positioning
+\item {} Management team
+\end{itemize}
+
+\textbf{III. Industry \& Market} (1 page)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Market size and growth
+\item {} Competitive landscape
+\item {} Secular trends / tailwinds
+\item {} Regulatory environment
+\end{itemize}
+
+\textbf{IV. Financial Analysis} (2-3 pages)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Historical performance (revenue, EBITDA, margins, cash flow)
+\item {} Quality of earnings adjustments
+\item {} Working capital analysis
+\item {} Capex requirements
+\end{itemize}
+
+\textbf{V. Investment Thesis} (1 page)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Why this is an attractive investment (3-5 pillars)
+\item {} Value creation levers (organic growth, margin expansion, M\&A, multiple expansion)
+\item {} 100-day priorities
+\end{itemize}
+
+\textbf{VI. Deal Terms \& Structure} (1 page)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Enterprise value and implied multiples
+\item {} Sources \& uses
+\item {} Capital structure / leverage
+\item {} Key legal terms
+\end{itemize}
+
+\textbf{VII. Returns Analysis} (1 page)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Base, upside, and downside scenarios
+\item {} IRR and MOIC across scenarios
+\item {} Key assumptions driving returns
+\item {} Sensitivity analysis
+\end{itemize}
+
+\textbf{VIII. Risk Factors} (1 page)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Key risks ranked by severity and likelihood
+\item {} Mitigants for each risk
+\item {} Deal-breaker risks (if any)
+\end{itemize}
+
+\textbf{IX. Recommendation}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Clear recommendation: Proceed / Pass / Conditional proceed
+\item {} Key conditions or next steps
+\end{itemize}
+
+\subparagraph{Step 3: Output Format}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Default: Word document (.docx) with professional formatting
+\item {} Alternative: Markdown for quick review
+\item {} Include tables for financials and returns, not just prose
+\end{itemize}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} IC memos should be factual and balanced — present both bull and bear cases honestly
+\item {} Don't minimize risks. IC members will find them anyway; credibility matters
+\item {} Use the firm's standard memo template if the user provides one
+\item {} Financial tables should tie — check that EBITDA bridges, S\&U balances, and returns math is consistent
+\item {} Ask for missing inputs rather than making assumptions on deal terms or returns
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: portfolio-monitoring}\label{file:skills-portfolio-monitoring-SKILL.md}
+
+\paragraph{Portfolio Monitoring}\mbox{}\par
+
+description: Track and analyze portfolio company performance against plan. Ingests monthly/quarterly financial packages (Excel, PDF), extracts KPIs, flags variances to budget, and produces summary dashboards. Use when reviewing portfolio company financials, preparing board materials, or monitoring covenant compliance. Triggers on ``review portfolio company'', ``monthly financials'', ``how is [company] performing'', ``covenant check'', or ``portfolio update''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Ingest Financial Package}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Accept the user's portfolio company financial package (Excel workbook, PDF, or CSV)
+\item {} Extract key financials: Revenue, EBITDA, cash balance, debt outstanding, capex, working capital
+\item {} Identify the reporting period and compare to prior period and budget/plan
+\end{itemize}
+
+\subparagraph{Step 2: KPI Extraction \& Variance Analysis}\mbox{}\par
+
+Key metrics to track (adapt to the company's sector):
+
+
+\textbf{Financial KPIs:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Revenue vs. budget (\$ and \%)
+\item {} EBITDA and EBITDA margin vs. budget
+\item {} Cash balance and net debt
+\item {} Leverage ratio (Net Debt / LTM EBITDA)
+\item {} Interest coverage ratio
+\item {} Capex vs. budget
+\item {} Free cash flow
+\end{itemize}
+
+\textbf{Operational KPIs} (ask user or infer from data):
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Customer count / revenue per customer
+\item {} Employee headcount / revenue per employee
+\item {} Backlog / pipeline
+\item {} Churn / retention rates
+\end{itemize}
+
+\subparagraph{Step 3: Flag \& Summarize}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Green}: Within 5\% of plan
+\item {} \textbf{Yellow}: 5-15\% below plan — flag for discussion
+\item {} \textbf{Red}: >15\% below plan or covenant breach risk — immediate attention
+\end{itemize}
+
+Output a concise summary:
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} One-paragraph executive summary (``Company X is tracking [ahead/behind/on] plan...'')
+\item {} KPI table with actual vs. budget vs. prior period
+\item {} Red/yellow flags with context
+\item {} Covenant compliance status (if applicable)
+\item {} Questions for management
+\end{enumerate}
+
+\subparagraph{Step 4: Trend Analysis}\mbox{}\par
+
+If multiple periods are provided:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Chart key metrics over time (revenue, EBITDA, cash)
+\item {} Identify trends — accelerating, decelerating, or stable
+\item {} Compare vs. underwriting case
+\end{itemize}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Always ask for the budget/plan to compare against if not provided
+\item {} Don't assume sector-specific KPIs — ask what matters for this company
+\item {} If covenant levels aren't known, ask the user for the credit agreement terms
+\item {} Output should be board-ready — concise, factual, no fluff
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: returns-analysis}\label{file:skills-returns-analysis-SKILL.md}
+
+\paragraph{Returns Analysis}\mbox{}\par
+
+description: Build quick IRR/MOIC sensitivity tables for PE deal evaluation. Models returns across entry multiple, leverage, exit multiple, growth, and hold period scenarios. Use when sizing up a deal, stress-testing assumptions, or preparing IC returns exhibits. Triggers on ``returns analysis'', ``IRR sensitivity'', ``MOIC table'', ``what's the return at'', ``model the returns'', or ``back of the envelope''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Gather Deal Inputs}\mbox{}\par
+
+Ask for (or extract from prior analysis):
+
+
+\textbf{Entry:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Entry EBITDA (LTM or NTM)
+\item {} Entry multiple (EV / EBITDA)
+\item {} Enterprise value
+\item {} Net debt at close
+\item {} Equity check size
+\item {} Transaction fees \& expenses
+\end{itemize}
+
+\textbf{Financing:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Senior debt (x EBITDA, rate, amortization)
+\item {} Subordinated debt / mezzanine (if any)
+\item {} Total leverage at entry (x EBITDA)
+\item {} Equity contribution
+\end{itemize}
+
+\textbf{Operating Assumptions:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Revenue growth rate (annual)
+\item {} EBITDA margin trajectory
+\item {} Capex as \% of revenue
+\item {} Working capital changes
+\item {} Debt paydown schedule
+\end{itemize}
+
+\textbf{Exit:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Hold period (years)
+\item {} Exit multiple (EV / EBITDA)
+\item {} Exit EBITDA (calculated from growth assumptions)
+\end{itemize}
+
+\subparagraph{Step 2: Base Case Returns}\mbox{}\par
+
+Calculate:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Metric} & \textbf{Value} \\
+\midrule
+{} Entry EV &  \\
+{} Equity invested &  \\
+{} Exit EBITDA &  \\
+{} Exit EV &  \\
+{} Net debt at exit &  \\
+{} Exit equity value &  \\
+{} \textbf{MOIC} &  \\
+{} \textbf{IRR} &  \\
+{} Cash-on-cash &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Show the returns waterfall:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} EBITDA growth contribution
+\item {} Multiple expansion/contraction contribution
+\item {} Debt paydown contribution
+\item {} Fee/expense drag
+\end{itemize}
+
+\subparagraph{Step 3: Sensitivity Tables}\mbox{}\par
+
+Build 2-way sensitivity matrices:
+
+
+\textbf{Entry Multiple vs. Exit Multiple}
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
+\toprule
+{} \textbf{} & \textbf{Exit 6x} & \textbf{Exit 7x} & \textbf{Exit 8x} & \textbf{Exit 9x} & \textbf{Exit 10x} \\
+\midrule
+{} Entry 7x &  &  &  &  &  \\
+{} Entry 8x &  &  &  &  &  \\
+{} Entry 9x &  &  &  &  &  \\
+{} Entry 10x &  &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{EBITDA Growth vs. Exit Multiple} (at fixed entry)
+
+
+\textbf{Leverage vs. Exit Multiple} (at fixed entry and growth)
+
+
+\textbf{Hold Period vs. Exit Multiple}
+
+
+Show both IRR and MOIC in each cell (IRR / MOIC format).
+
+
+\subparagraph{Step 4: Scenario Analysis}\mbox{}\par
+
+Build 3 scenarios:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{} & \textbf{Bull} & \textbf{Base} & \textbf{Bear} \\
+\midrule
+{} Revenue CAGR &  &  &  \\
+{} Exit EBITDA margin &  &  &  \\
+{} Exit multiple &  &  &  \\
+{} Exit EBITDA &  &  &  \\
+{} MOIC &  &  &  \\
+{} IRR &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 5: Output}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Excel workbook with:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Assumptions tab
+\item {} Returns calculation
+\item {} Sensitivity tables (formatted with conditional coloring)
+\item {} Scenario summary
+\end{itemize}
+\item {} One-page returns summary suitable for IC deck
+\end{itemize}
+
+\subparagraph{Key Formulas}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{MOIC} = Exit Equity Value / Equity Invested
+\item {} \textbf{IRR} = solve for r: Equity Invested × (1 + r)\textasciicircum{}n = Exit Equity Value (adjust for interim cash flows)
+\item {} \textbf{Returns attribution}:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Growth: (Exit EBITDA - Entry EBITDA) × Exit Multiple / Equity
+\item {} Multiple: (Exit Multiple - Entry Multiple) × Entry EBITDA / Equity
+\item {} Leverage: Debt paydown over hold period / Equity
+\end{itemize}
+\end{itemize}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Always show returns both gross and net of fees/carry where applicable
+\item {} Management rollover and co-invest change the equity check — ask if relevant
+\item {} Dividend recaps or interim distributions affect IRR significantly — include if planned
+\item {} Don't forget transaction costs (typically 2-4\% of EV) — they reduce Day 1 equity value
+\item {} Tax considerations (asset vs. stock deal, 338(h)(10) election) can materially affect after-tax returns
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: unit-economics}\label{file:skills-unit-economics-SKILL.md}
+
+\paragraph{Unit Economics Analysis}\mbox{}\par
+
+description: Analyze unit economics for PE targets — ARR cohorts, LTV/CAC, net retention, payback periods, revenue quality, and margin waterfall. Essential for software/SaaS, recurring revenue, and subscription businesses. Use when evaluating revenue quality, building a cohort analysis, or assessing customer economics. Triggers on ``unit economics'', ``cohort analysis'', ``ARR analysis'', ``LTV CAC'', ``net retention'', ``revenue quality'', or ``customer economics''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Identify Business Model}\mbox{}\par
+
+Determine the revenue model to tailor the analysis:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{SaaS / Subscription}: ARR, net retention, cohorts
+\item {} \textbf{Recurring services}: Contract value, renewal rates, upsell
+\item {} \textbf{Transaction / usage-based}: Revenue per transaction, volume trends, take rate
+\item {} \textbf{Hybrid}: Break down by revenue stream
+\end{itemize}
+
+\subparagraph{Step 2: Core Metrics}\mbox{}\par
+
+\subparagraph{ARR / Revenue Quality}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{ARR bridge}: Beginning ARR → New → Expansion → Contraction → Churn → Ending ARR
+\item {} \textbf{ARR by cohort}: Vintage analysis — how does each annual cohort retain and grow?
+\item {} \textbf{Revenue concentration}: Top 10/20/50 customers as \% of total
+\item {} \textbf{Revenue by type}: Recurring vs. non-recurring vs. professional services
+\item {} \textbf{Contract structure}: ACV distribution, multi-year \%, auto-renewal \%
+\end{itemize}
+
+\subparagraph{Customer Economics}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{CAC (Customer Acquisition Cost)}: Total S\&M spend / new customers acquired
+\item {} \textbf{LTV (Lifetime Value)}: (ARPU × Gross Margin) / Churn Rate
+\item {} \textbf{LTV:CAC ratio}: Target >3x for healthy businesses
+\item {} \textbf{CAC payback period}: Months to recover acquisition cost
+\item {} \textbf{Blended vs. segmented}: Break down by customer segment (enterprise vs. SMB vs. mid-market)
+\end{itemize}
+
+\subparagraph{Retention \& Expansion}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Gross retention}: \% of beginning ARR retained (excludes expansion)
+\item {} \textbf{Net retention (NDR)}: \% of beginning ARR retained including expansion
+\item {} \textbf{Logo churn}: \% of customers lost
+\item {} \textbf{Dollar churn}: \% of revenue lost (often different from logo churn)
+\item {} \textbf{Expansion rate}: Upsell + cross-sell as \% of beginning ARR
+\end{itemize}
+
+\subparagraph{Cohort Analysis}\mbox{}\par
+Build a cohort matrix showing:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
+\toprule
+{} \textbf{Cohort} & \textbf{Year 0} & \textbf{Year 1} & \textbf{Year 2} & \textbf{Year 3} & \textbf{Year 4} \\
+\midrule
+{} 2020 & \$1.0M & \$1.1M & \$1.2M & \$1.1M &  \\
+{} 2021 & \$1.5M & \$1.7M & \$1.8M &  &  \\
+{} 2022 & \$2.0M & \$2.3M &  &  &  \\
+{} 2023 & \$3.0M &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Show both absolute \$ and indexed (Year 0 = 100\%) views.
+
+
+\subparagraph{Margin Waterfall}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Revenue → Gross Profit → Contribution Margin → EBITDA
+\item {} Fully loaded unit economics: what does it cost to acquire, serve, and retain a customer?
+\item {} Gross margin by revenue stream (subscription vs. services vs. other)
+\end{itemize}
+
+\subparagraph{Step 3: Benchmarking}\mbox{}\par
+
+Compare unit economics to relevant benchmarks:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{SaaS Rule of 40}: Growth rate + EBITDA margin > 40\%
+\item {} \textbf{SaaS Magic Number}: Net new ARR / prior period S\&M spend > 0.75x
+\item {} \textbf{NDR benchmarks}: Best-in-class >120\%, good >110\%, concerning <100\%
+\item {} \textbf{LTV:CAC}: Best-in-class >5x, good >3x, concerning <2x
+\item {} \textbf{Gross retention}: Best-in-class >95\%, good >90\%, concerning <85\%
+\item {} \textbf{CAC payback}: Best-in-class <12mo, good <18mo, concerning >24mo
+\end{itemize}
+
+\subparagraph{Step 4: Revenue Quality Score}\mbox{}\par
+
+Synthesize into a revenue quality assessment:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Factor} & \textbf{Score (1-5)} & \textbf{Notes} \\
+\midrule
+{} Recurring \% &  &  \\
+{} Net retention &  &  \\
+{} Customer concentration &  &  \\
+{} Cohort stability &  &  \\
+{} Growth durability &  &  \\
+{} Margin profile &  &  \\
+{} \textbf{Overall} &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 5: Output}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Excel workbook with ARR bridge, cohort matrix, unit economics dashboard
+\item {} Summary slide with key metrics and benchmarks
+\item {} Red flags and areas for further diligence
+\end{itemize}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Always ask for raw customer-level data if available — aggregate metrics can hide problems
+\item {} NDR above 100\% can mask high gross churn if expansion is strong enough — always show both
+\item {} Cohort analysis is the single most important view for revenue quality — push for this data
+\item {} Differentiate between contracted ARR and actual recognized revenue
+\item {} For usage-based models, focus on consumption trends and expansion patterns rather than traditional ARR metrics
+\item {} Professional services revenue should be evaluated separately — it's not recurring and margins are typically lower
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: value-creation-plan}\label{file:skills-value-creation-plan-SKILL.md}
+
+\paragraph{Value Creation Plan}\mbox{}\par
+
+description: Structure post-acquisition value creation plans with revenue, cost, and operational levers mapped to an EBITDA bridge. Includes 100-day priorities, KPI targets, and accountability frameworks. Use when planning post-close execution, preparing operating partner materials, or building a board-ready value creation roadmap. Triggers on ``value creation plan'', ``100-day plan'', ``post-close plan'', ``EBITDA bridge'', ``operating plan'', or ``value creation levers''.
+
+
+\subparagraph{Workflow}\mbox{}\par
+
+\subparagraph{Step 1: Baseline Assessment}\mbox{}\par
+
+Understand the starting point:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Current revenue, EBITDA, and margins
+\item {} Organizational structure and capabilities
+\item {} Key operational metrics by function
+\item {} Management team strengths and gaps
+\item {} Quick wins already identified during diligence
+\end{itemize}
+
+\subparagraph{Step 2: Value Creation Levers}\mbox{}\par
+
+Map all levers to an EBITDA bridge over the hold period:
+
+
+\subparagraph{Revenue Growth Levers}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Organic growth}: Price increases, volume growth, market expansion
+\item {} \textbf{Cross-sell / upsell}: New products to existing customers
+\item {} \textbf{New market entry}: Geographic expansion, new verticals, new channels
+\item {} \textbf{Sales force effectiveness}: Hire reps, improve conversion, shorten cycle
+\item {} \textbf{M\&A / add-ons}: Bolt-on acquisitions to add revenue and capabilities
+\end{itemize}
+
+For each lever:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Current state → Target state
+\item {} Revenue impact (\$)
+\item {} Timeline to impact
+\item {} Investment required
+\item {} Confidence level (high/medium/low)
+\end{itemize}
+
+\subparagraph{Margin Expansion Levers}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Pricing optimization}: Price increases, mix shift, bundling
+\item {} \textbf{COGS reduction}: Procurement savings, supplier consolidation, automation
+\item {} \textbf{OpEx optimization}: Overhead reduction, shared services, offshoring
+\item {} \textbf{Technology investment}: Automation, systems integration, data analytics
+\item {} \textbf{Scale leverage}: Fixed cost leverage as revenue grows
+\end{itemize}
+
+\subparagraph{Strategic / Multiple Expansion}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Platform building}: Add-on acquisitions, tuck-ins
+\item {} \textbf{Recurring revenue shift}: Move from project to recurring/subscription
+\item {} \textbf{Market positioning}: Category leadership, brand building
+\item {} \textbf{Management upgrades}: Key hires to professionalize the business
+\item {} \textbf{ESG / governance}: Board formation, reporting improvements
+\end{itemize}
+
+\subparagraph{Step 3: EBITDA Bridge}\mbox{}\par
+
+Build the walk from current to target EBITDA:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
+\toprule
+{} \textbf{Lever} & \textbf{Year 1} & \textbf{Year 2} & \textbf{Year 3} & \textbf{Year 4} & \textbf{Year 5} \\
+\midrule
+{} Base EBITDA &  &  &  &  &  \\
+{} Organic revenue growth &  &  &  &  &  \\
+{} Pricing &  &  &  &  &  \\
+{} Add-on M\&A &  &  &  &  &  \\
+{} COGS savings &  &  &  &  &  \\
+{} OpEx optimization &  &  &  &  &  \\
+{} Technology investment &  &  &  &  &  \\
+{} \textbf{Pro Forma EBITDA} &  &  &  &  &  \\
+{} \textbf{Margin} &  &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 4: 100-Day Plan}\mbox{}\par
+
+Prioritize the first 100 days post-close:
+
+
+\textbf{Days 1-30: Stabilize \& Assess}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Management alignment and retention (sign employment agreements, set comp)
+\item {} Quick wins — pricing, obvious cost cuts, low-hanging fruit
+\item {} Detailed operational assessment by function
+\item {} Customer communication plan
+\item {} Set up reporting and KPI dashboards
+\end{itemize}
+
+\textbf{Days 31-60: Plan \& Initiate}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Finalize strategic plan and communicate to organization
+\item {} Launch top 3-5 value creation initiatives
+\item {} Begin add-on M\&A pipeline development
+\item {} Hire for critical gaps
+\item {} Implement new reporting cadence (weekly flash, monthly review, quarterly board)
+\end{itemize}
+
+\textbf{Days 61-100: Execute \& Measure}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} First results from quick-win initiatives
+\item {} First board meeting with operating metrics
+\item {} Progress report on each value creation lever
+\item {} Adjust plan based on early learnings
+\end{itemize}
+
+\subparagraph{Step 5: KPI Dashboard}\mbox{}\par
+
+Define the metrics that will track value creation:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}}
+\toprule
+{} \textbf{KPI} & \textbf{Current} & \textbf{Year 1 Target} & \textbf{Owner} & \textbf{Reporting Frequency} \\
+\midrule
+{} Revenue &  &  & CEO & Monthly \\
+{} EBITDA &  &  & CFO & Monthly \\
+{} EBITDA margin &  &  & CFO & Monthly \\
+{} New customer wins &  &  & CRO & Weekly \\
+{} Net retention &  &  & CRO & Monthly \\
+{} Employee turnover &  &  & CHRO & Monthly \\
+{} Cash conversion &  &  & CFO & Monthly \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Step 6: Output}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Word document or PowerPoint with:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Executive summary (1 page)
+\item {} EBITDA bridge chart
+\item {} Value creation levers detail (1 page per lever)
+\item {} 100-day plan timeline
+\item {} KPI dashboard
+\item {} Accountability matrix (who owns what)
+\end{itemize}
+\item {} Excel model backing the EBITDA bridge
+\end{itemize}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Be realistic about timing — most PE value creation takes 12-24 months to show in financials
+\item {} Quick wins matter for momentum and credibility, but don't over-rotate on cost cuts at the expense of growth
+\item {} Management buy-in is critical — co-develop the plan, don't impose it
+\item {} Track initiative-level P\&L impact, not just top-line EBITDA — you need to know what's working
+\item {} Add-on M\&A is often the largest value creation lever — start the pipeline on Day 1
+\item {} Always pressure-test assumptions with operating partners or industry experts
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\end{document}
