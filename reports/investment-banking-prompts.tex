@@ -30,7 +30,7 @@
 \newcommand{\CheckedBox}{$\blacksquare$}
 \title{Investment Banking Prompt Library\\LaTeX Translation and Dependency Map}
 \author{financial-services-plugins repository}
-\date{Generated on 2026-03-05 09:31 }
+\date{Generated on 2026-03-06 02:50 }
 \newunicodechar{⚠}{{\EmojiGlyph{⚠}}}
 \newunicodechar{✅}{{\EmojiGlyph{✅}}}
 \newunicodechar{❌}{{\EmojiGlyph{❌}}}
@@ -1319,7 +1319,7 @@ Note: Source citation format varies by data source (page numbers for documents, 
 \item {} Avoid hardcoding any calculated values
 \end{itemize}
 
-<correct\_\allowbreak{}patterns>
+
 
 
 \subparagraph{Row Reference Tracking - Copy This Pattern}\mbox{}\par
@@ -1358,10 +1358,10 @@ Note: Source citation format varies by data source (page numbers for documents, 
 \item {} margin\_\allowbreak{}formula = f``=B\{row\_\allowbreak{}refs['ebitda']\}/B\{row\_\allowbreak{}refs['revenue']\}''
 \end{itemize}
 
-</correct\_\allowbreak{}patterns>
 
 
-<common\_\allowbreak{}mistakes>
+
+
 
 
 \subparagraph{WRONG: Hardcoded Row Offsets}\mbox{}\par
@@ -1385,7 +1385,7 @@ Note: Source citation format varies by data source (page numbers for documents, 
 \item {} Creates debugging nightmares in the delivered Excel file
 \end{itemize}
 
-</common\_\allowbreak{}mistakes>
+
 
 
 \textbf{Step 3.4: Apply professional presentation}
@@ -3191,7 +3191,7 @@ If using arrows or flow indicators:
 \item {} Create arrows using PowerPoint's shape tools or via XML shape elements
 \end{itemize}
 
-\textbf{For XML implementation, see @@TOKEN0@@}
+\textbf{For XML implementation, see \href{xml-reference.md\#arrow-shapes}{\emph{xml-reference.md}}}
 
 
 \vspace{0.5em}\hrule\vspace{0.5em}
@@ -3811,88 +3811,26 @@ Text-based ``tables'' cannot be edited by the recipient, will misalign when font
 
 \subparagraph{Basic Table Structure}\mbox{}\par
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} <a:tbl>
-\item {} <a:tblPr firstRow=``1'' bandRow=``1''>
-\item {} <a:tableStyleId>\{5C22544A-7EE6-4342-B048-85BDC9FD1C3A\}</a:tableStyleId>
-\item {} </a:tblPr>
-\item {} <a:tblGrid>
-\item {} <a:gridCol w=``2000000''/> <!-- Source column - width in EMUs -->
-\item {} <a:gridCol w=``1200000''/> <!-- 2024 Size column -->
-\item {} <a:gridCol w=``1200000''/> <!-- CAGR column -->
-\item {} <a:gridCol w=``1200000''/> <!-- 2030 Projection column -->
-\item {} </a:tblGrid>
-\item {} <!-- Row definitions follow -->
-\item {} </a:tbl>
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \subparagraph{Table Row with Cells}\mbox{}\par
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} <a:tr h=``370840''> <!-- Row height in EMUs -->
-\item {} <a:tc>
-\item {} <a:txBody>
-\item {} <a:bodyPr/>
-\item {} <a:lstStyle/>
-\item {} <a:p>
-\item {} <a:pPr algn=``l''/> <!-- Left alignment for text columns -->
-\item {} <a:r>
-\item {} <a:rPr lang=``en-US'' sz=``1000'' b=``0''/>
-\item {} <a:t>Grand View Research</a:t>
-\item {} </a:r>
-\item {} </a:p>
-\item {} </a:txBody>
-\item {} <a:tcPr/>
-\item {} </a:tc>
-\item {} <a:tc>
-\item {} <a:txBody>
-\item {} <a:bodyPr/>
-\item {} <a:lstStyle/>
-\item {} <a:p>
-\item {} <a:pPr algn=``ctr''/> <!-- Center alignment for numeric columns -->
-\item {} <a:r>
-\item {} <a:rPr lang=``en-US'' sz=``1000''/>
-\item {} <a:t>22.1</a:t>
-\item {} </a:r>
-\item {} </a:p>
-\item {} </a:txBody>
-\item {} <a:tcPr/>
-\item {} </a:tc>
-\item {} <!-- Additional cells... -->
-\item {} </a:tr>
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \subparagraph{Header Row Styling}\mbox{}\par
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} <a:tr h=``370840''>
-\item {} <a:tc>
-\item {} <a:txBody>
-\item {} <a:bodyPr/>
-\item {} <a:lstStyle/>
-\item {} <a:p>
-\item {} <a:pPr algn=``l''/>
-\item {} <a:r>
-\item {} <a:rPr lang=``en-US'' sz=``1000'' b=``1''> <!-- Bold for headers -->
-\item {} <a:solidFill>
-\item {} <a:srgbClr val=``FFFFFF''/> <!-- White text -->
-\item {} </a:solidFill>
-\item {} </a:rPr>
-\item {} <a:t>Source</a:t>
-\item {} </a:r>
-\item {} </a:p>
-\item {} </a:txBody>
-\item {} <a:tcPr>
-\item {} <a:solidFill>
-\item {} <a:srgbClr val=``E67E22''/> <!-- Orange background -->
-\item {} </a:solidFill>
-\item {} </a:tcPr>
-\item {} </a:tc>
-\item {} <!-- Additional header cells... -->
-\item {} </a:tr>
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \vspace{0.5em}\hrule\vspace{0.5em}
@@ -3901,80 +3839,26 @@ Text-based ``tables'' cannot be edited by the recipient, will misalign when font
 
 \subparagraph{Right Arrow Shape}\mbox{}\par
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} <p:sp>
-\item {} <p:nvSpPr>
-\item {} <p:cNvPr id=``10'' name=``Arrow Right''/>
-\item {} <p:cNvSpPr/>
-\item {} <p:nvPr/>
-\item {} </p:nvSpPr>
-\item {} <p:spPr>
-\item {} <a:xfrm>
-\item {} <a:off x=``3000000'' y=``2500000''/> <!-- Position in EMUs -->
-\item {} <a:ext cx=``500000'' cy=``300000''/> <!-- Size in EMUs -->
-\item {} </a:xfrm>
-\item {} <a:prstGeom prst=``rightArrow''>
-\item {} <a:avLst/>
-\item {} </a:prstGeom>
-\item {} <a:solidFill>
-\item {} <a:srgbClr val=``E67E22''/> <!-- Arrow fill color -->
-\item {} </a:solidFill>
-\item {} <a:ln>
-\item {} <a:noFill/> <!-- No outline -->
-\item {} </a:ln>
-\item {} </p:spPr>
-\item {} </p:sp>
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \subparagraph{Down Arrow Shape}\mbox{}\par
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} <p:sp>
-\item {} <p:nvSpPr>
-\item {} <p:cNvPr id=``11'' name=``Arrow Down''/>
-\item {} <p:cNvSpPr/>
-\item {} <p:nvPr/>
-\item {} </p:nvSpPr>
-\item {} <p:spPr>
-\item {} <a:xfrm>
-\item {} <a:off x=``2500000'' y=``3000000''/>
-\item {} <a:ext cx=``300000'' cy=``500000''/>
-\item {} </a:xfrm>
-\item {} <a:prstGeom prst=``downArrow''>
-\item {} <a:avLst/>
-\item {} </a:prstGeom>
-\item {} <a:solidFill>
-\item {} <a:srgbClr val=``E67E22''/>
-\item {} </a:solidFill>
-\item {} </p:spPr>
-\item {} </p:sp>
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \subparagraph{Chevron Shape}\mbox{}\par
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} <p:sp>
-\item {} <p:nvSpPr>
-\item {} <p:cNvPr id=``12'' name=``Chevron''/>
-\item {} <p:cNvSpPr/>
-\item {} <p:nvPr/>
-\item {} </p:nvSpPr>
-\item {} <p:spPr>
-\item {} <a:xfrm>
-\item {} <a:off x=``3000000'' y=``2500000''/>
-\item {} <a:ext cx=``400000'' cy=``600000''/>
-\item {} </a:xfrm>
-\item {} <a:prstGeom prst=``chevron''>
-\item {} <a:avLst/>
-\item {} </a:prstGeom>
-\item {} <a:solidFill>
-\item {} <a:srgbClr val=``E67E22''/>
-\item {} </a:solidFill>
-\item {} </p:spPr>
-\item {} </p:sp>
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \vspace{0.5em}\hrule\vspace{0.5em}
@@ -3983,83 +3867,26 @@ Text-based ``tables'' cannot be edited by the recipient, will misalign when font
 
 \subparagraph{Basic Text Box}\mbox{}\par
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} <p:sp>
-\item {} <p:nvSpPr>
-\item {} <p:cNvPr id=``5'' name=``TextBox 4''/>
-\item {} <p:cNvSpPr txBox=``1''/>
-\item {} <p:nvPr/>
-\item {} </p:nvSpPr>
-\item {} <p:spPr>
-\item {} <a:xfrm>
-\item {} <a:off x=``500000'' y=``1500000''/>
-\item {} <a:ext cx=``4000000'' cy=``500000''/>
-\item {} </a:xfrm>
-\item {} <a:prstGeom prst=``rect''>
-\item {} <a:avLst/>
-\item {} </a:prstGeom>
-\item {} <a:noFill/>
-\item {} </p:spPr>
-\item {} <p:txBody>
-\item {} <a:bodyPr wrap=``square'' rtlCol=``0''>
-\item {} <a:spAutoFit/>
-\item {} </a:bodyPr>
-\item {} <a:lstStyle/>
-\item {} <a:p>
-\item {} <a:r>
-\item {} <a:rPr lang=``en-US'' sz=``1400'' dirty=``0''/>
-\item {} <a:t>Text content here</a:t>
-\item {} </a:r>
-\item {} </a:p>
-\item {} </p:txBody>
-\item {} </p:sp>
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \subparagraph{Text Box with Bullet Points}\mbox{}\par
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} <p:txBody>
-\item {} <a:bodyPr wrap=``square''>
-\item {} <a:spAutoFit/>
-\item {} </a:bodyPr>
-\item {} <a:lstStyle/>
-\item {} <a:p>
-\item {} <a:pPr marL=``342900'' indent=``-342900''>
-\item {} <a:buFont typeface=``Wingdings'' panose=``05000000000000000000'' pitchFamily=``2'' charset=``2''/>
-\item {} <a:buChar char=``\&\#252;''/> <!-- Checkmark character -->
-\item {} </a:pPr>
-\item {} <a:r>
-\item {} <a:rPr lang=``en-US'' sz=``1400'' dirty=``0''/>
-\item {} <a:t>First bullet point</a:t>
-\item {} </a:r>
-\item {} </a:p>
-\item {} <a:p>
-\item {} <a:pPr marL=``342900'' indent=``-342900''>
-\item {} <a:buFont typeface=``Wingdings'' panose=``05000000000000000000'' pitchFamily=``2'' charset=``2''/>
-\item {} <a:buChar char=``\&\#252;''/>
-\item {} </a:pPr>
-\item {} <a:r>
-\item {} <a:rPr lang=``en-US'' sz=``1400'' dirty=``0''/>
-\item {} <a:t>Second bullet point</a:t>
-\item {} </a:r>
-\item {} </a:p>
-\item {} </p:txBody>
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \subparagraph{Text with White Color (for dark backgrounds)}\mbox{}\par
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} <a:r>
-\item {} <a:rPr lang=``en-US'' sz=``1000'' b=``1'' i=``1'' dirty=``0''>
-\item {} <a:solidFill>
-\item {} <a:srgbClr val=``FFFFFF''/> <!-- White text -->
-\item {} </a:solidFill>
-\item {} </a:rPr>
-\item {} <a:t>White text on colored background</a:t>
-\item {} </a:r>
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \vspace{0.5em}\hrule\vspace{0.5em}
@@ -4068,47 +3895,10 @@ Text-based ``tables'' cannot be edited by the recipient, will misalign when font
 
 \subparagraph{Rectangle with Solid Fill}\mbox{}\par
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} <p:sp>
-\item {} <p:nvSpPr>
-\item {} <p:cNvPr id=``20'' name=``Rectangle 19''/>
-\item {} <p:cNvSpPr/>
-\item {} <p:nvPr/>
-\item {} </p:nvSpPr>
-\item {} <p:spPr>
-\item {} <a:xfrm>
-\item {} <a:off x=``500000'' y=``2500000''/>
-\item {} <a:ext cx=``1000000'' cy=``2000000''/>
-\item {} </a:xfrm>
-\item {} <a:prstGeom prst=``rect''>
-\item {} <a:avLst/>
-\item {} </a:prstGeom>
-\item {} <a:solidFill>
-\item {} <a:srgbClr val=``E67E22''/> <!-- Orange fill -->
-\item {} </a:solidFill>
-\item {} <a:ln w=``12700''> <!-- Border width -->
-\item {} <a:solidFill>
-\item {} <a:srgbClr val=``D35400''/> <!-- Darker border -->
-\item {} </a:solidFill>
-\item {} </a:ln>
-\item {} </p:spPr>
-\item {} <p:txBody>
-\item {} <a:bodyPr rtlCol=``0'' anchor=``ctr''/> <!-- Vertically centered text -->
-\item {} <a:lstStyle/>
-\item {} <a:p>
-\item {} <a:pPr algn=``ctr''/> <!-- Horizontally centered -->
-\item {} <a:r>
-\item {} <a:rPr lang=``en-US'' sz=``1600'' b=``1''>
-\item {} <a:solidFill>
-\item {} <a:srgbClr val=``FFFFFF''/>
-\item {} </a:solidFill>
-\item {} </a:rPr>
-\item {} <a:t>Label Text</a:t>
-\item {} </a:r>
-\item {} </a:p>
-\item {} </p:txBody>
-\item {} </p:sp>
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \vspace{0.5em}\hrule\vspace{0.5em}
@@ -4117,32 +3907,10 @@ Text-based ``tables'' cannot be edited by the recipient, will misalign when font
 
 \subparagraph{Adding Image to Slide}\mbox{}\par
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} <p:pic>
-\item {} <p:nvPicPr>
-\item {} <p:cNvPr id=``99'' name=``Company Logo''/>
-\item {} <p:cNvPicPr>
-\item {} <a:picLocks noChangeAspect=``1''/>
-\item {} </p:cNvPicPr>
-\item {} <p:nvPr/>
-\item {} </p:nvPicPr>
-\item {} <p:blipFill>
-\item {} <a:blip r:embed=``rIdLogo''/> <!-- Reference to relationship ID -->
-\item {} <a:stretch>
-\item {} <a:fillRect/>
-\item {} </a:stretch>
-\item {} </p:blipFill>
-\item {} <p:spPr>
-\item {} <a:xfrm>
-\item {} <a:off x=``10800000'' y=``200000''/> <!-- Top-right position -->
-\item {} <a:ext cx=``800000'' cy=``600000''/> <!-- Logo dimensions -->
-\item {} </a:xfrm>
-\item {} <a:prstGeom prst=``rect''>
-\item {} <a:avLst/>
-\item {} </a:prstGeom>
-\item {} </p:spPr>
-\item {} </p:pic>
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \subparagraph{Adding Image Relationship}\mbox{}\par
@@ -4150,11 +3918,10 @@ Text-based ``tables'' cannot be edited by the recipient, will misalign when font
 In \emph{ppt/slides/\_\allowbreak{}rels/slideN.xml.rels}:
 
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} <Relationship Id=``rIdLogo''
-\item {} Type=``http://schemas.openxmlformats.org/officeDocument/2006/relationships/image''
-\item {} Target=``../media/logo.png''/>
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \vspace{0.5em}\hrule\vspace{0.5em}
@@ -4163,52 +3930,18 @@ In \emph{ppt/slides/\_\allowbreak{}rels/slideN.xml.rels}:
 
 \subparagraph{Straight Connector}\mbox{}\par
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} <p:cxnSp>
-\item {} <p:nvCxnSpPr>
-\item {} <p:cNvPr id=``15'' name=``Straight Connector 14''/>
-\item {} <p:cNvCxnSpPr>
-\item {} <a:cxnSpLocks/>
-\item {} </p:cNvCxnSpPr>
-\item {} <p:nvPr/>
-\item {} </p:nvCxnSpPr>
-\item {} <p:spPr>
-\item {} <a:xfrm>
-\item {} <a:off x=``500000'' y=``2500000''/>
-\item {} <a:ext cx=``5000000'' cy=``0''/> <!-- Horizontal line -->
-\item {} </a:xfrm>
-\item {} <a:prstGeom prst=``line''>
-\item {} <a:avLst/>
-\item {} </a:prstGeom>
-\item {} <a:ln w=``12700''>
-\item {} <a:solidFill>
-\item {} <a:srgbClr val=``E67E22''/>
-\item {} </a:solidFill>
-\item {} </a:ln>
-\item {} </p:spPr>
-\item {} </p:cxnSp>
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \subparagraph{Dashed Line}\mbox{}\par
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} <p:spPr>
-\item {} <a:xfrm>
-\item {} <a:off x=``500000'' y=``4500000''/>
-\item {} <a:ext cx=``5000000'' cy=``0''/>
-\item {} </a:xfrm>
-\item {} <a:prstGeom prst=``line''>
-\item {} <a:avLst/>
-\item {} </a:prstGeom>
-\item {} <a:ln w=``12700''>
-\item {} <a:solidFill>
-\item {} <a:srgbClr val=``E67E22''/>
-\item {} </a:solidFill>
-\item {} <a:prstDash val=``dash''/> <!-- Dashed style -->
-\item {} </a:ln>
-\item {} </p:spPr>
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \vspace{0.5em}\hrule\vspace{0.5em}
@@ -4557,10 +4290,10 @@ Must pass ``30-second comprehension test'' for a busy executive.
 \subparagraph{Slide Setup (CRITICAL)}\mbox{}\par
 \textbf{Use 4:3 aspect ratio} (standard IB pitch book format):
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} const pptx = new pptxgen();
-\item {} pptx.layout = 'LAYOUT\_\allowbreak{}4x3'; // 10`` wide × 7.5'' tall - MUST USE THIS
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \subparagraph{Slide Coordinate System}\mbox{}\par
@@ -4588,9 +4321,10 @@ PptxGenJS uses inches. 4:3 slide = \textbf{10`` wide × 7.5'' tall}.
 \subparagraph{Title Section (y=0.2)}\mbox{}\par
 \textbf{Company Name (Ticker)} - Example: \emph{Tesla, Inc. (TSLA)}
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} slide.addText('Tesla, Inc. (TSLA)', \{ x: 0.3, y: 0.2, w: 9.4, h: 0.35, fontSize: 18, bold: true \});
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \subparagraph{4-Quadrant Layout (y=0.6 to y=7.2)}\mbox{}\par
@@ -4634,16 +4368,10 @@ PptxGenJS uses inches. 4:3 slide = \textbf{10`` wide × 7.5'' tall}.
 \subparagraph{Visual Accents (REQUIRED)}\mbox{}\par
 Each quadrant header MUST have a colored accent bar to the left:
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} // Add accent bar for quadrant header
-\item {} slide.addShape(pptx.shapes.RECTANGLE, \{
-\item {} x: 0.3, y: 0.6, w: 0.08, h: 0.25,
-\item {} fill: \{ color: 'E31937' \} // Use company brand color
-\item {} \});
-\item {} slide.addText('Company Overview', \{
-\item {} x: 0.45, y: 0.6, w: 4.5, h: 0.3, fontSize: 14, bold: true, fontFace: 'Arial'
-\item {} \});
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \textbf{Visual elements to include:}
@@ -4706,52 +4434,26 @@ Each quadrant header MUST have a colored accent bar to the left:
 
 \textbf{Horizontal Bar (fits in bottom-right quadrant for 4:3 slide):}
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} slide.addChart(pptx.charts.BAR, [\{
-\item {} name: 'FY2024 Revenue by Region',
-\item {} labels: ['North America', 'EMEA', 'China', 'APLA'],
-\item {} values: [21.4, 13.6, 7.6, 6.7]
-\item {} \}], \{
-\item {} x: 5.0, y: 4.1, w: 4.5, h: 3.0, // Fits in bottom-right quadrant (4:3)
-\item {} barDir: 'bar', chartColors: ['FF6B35'], showValue: true,
-\item {} dataLabelFontSize: 10, catAxisLabelFontSize: 10, valAxisLabelFontSize: 10,
-\item {} dataLabelFormatCode: '\$\#,\#\#0.0B',
-\item {} title: 'Revenue by Geography', titleFontSize: 12, titleBold: true
-\item {} \});
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \textbf{Pie Chart (fits in bottom-right quadrant for 4:3 slide):}
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} slide.addChart(pptx.charts.PIE, [\{
-\item {} name: 'Product Mix',
-\item {} labels: ['Footwear', 'Apparel', 'Equipment'],
-\item {} values: [68, 29, 3]
-\item {} \}], \{
-\item {} x: 5.0, y: 4.1, w: 4.5, h: 3.0, // Fits in bottom-right quadrant (4:3)
-\item {} showPercent: true, showLegend: true, legendPos: 'r',
-\item {} dataLabelFontSize: 10, legendFontSize: 10,
-\item {} chartColors: ['FF6B35', '2C2C2C', '4A4A4A'],
-\item {} title: 'Revenue Mix FY24', titleFontSize: 12, titleBold: true
-\item {} \});
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \textbf{Line Chart (full width for subsequent slides):}
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} slide.addChart(pptx.charts.LINE, [\{
-\item {} name: 'Revenue (\$B)',
-\item {} labels: ['FY21', 'FY22', 'FY23', 'FY24', 'FY25E'],
-\item {} values: [44.5, 46.7, 48.5, 51.4, 54.2]
-\item {} \}], \{
-\item {} x: 0.3, y: 1.2, w: 9.4, h: 5.5, // Full width for 4:3 slide
-\item {} chartColors: ['FF6B35'], showValue: true, lineSmooth: true,
-\item {} dataLabelFontSize: 11, catAxisLabelFontSize: 11, valAxisLabelFontSize: 11,
-\item {} title: 'Revenue Trend \& Forecast', titleFontSize: 14, titleBold: true
-\item {} \});
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \vspace{0.5em}\hrule\vspace{0.5em}
@@ -4763,34 +4465,10 @@ Each quadrant header MUST have a colored accent bar to the left:
 
 Use \emph{slide.addTable()} for financial data (fits in bottom-left quadrant for 4:3 slide):
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} // Add header with accent bar first
-\item {} slide.addShape(pptx.shapes.RECTANGLE, \{
-\item {} x: 0.3, y: 3.7, w: 0.08, h: 0.25, fill: \{ color: 'E31937' \}
-\item {} \});
-\item {} slide.addText('Key Financials \& Valuation', \{
-\item {} x: 0.45, y: 3.7, w: 4.5, h: 0.3, fontSize: 14, bold: true, fontFace: 'Arial'
-\item {} \});
-\item {} // Financial data table
-\item {} slide.addTable([
-\item {} [\{ text: 'Metric', options: \{ bold: true, fill: '003366', color: 'FFFFFF' \} \},
-\item {} \{ text: 'FY24', options: \{ bold: true, fill: '003366', color: 'FFFFFF' \} \},
-\item {} \{ text: 'FY25E', options: \{ bold: true, fill: '003366', color: 'FFFFFF' \} \}],
-\item {} ['Revenue', '\$51.4B', '\$54.2B'],
-\item {} ['YoY Growth', '+6.0\%', '+5.5\%'],
-\item {} ['EBITDA', '\$8.9B', '\$9.5B'],
-\item {} ['EBITDA Margin', '17.3\%', '17.5\%'],
-\item {} ['EPS', '\$3.42', '\$3.75'],
-\item {} ['Market Cap', '\$185B', '—'],
-\item {} ['EV/EBITDA', '12.5x', '11.7x']
-\item {} ], \{
-\item {} x: 0.45, y: 4.1, w: 4.3, h: 3.0, // Below header in bottom-left quadrant
-\item {} fontFace: 'Arial', fontSize: 10,
-\item {} border: \{ pt: 0.5, color: 'CCCCCC' \},
-\item {} valign: 'middle',
-\item {} colW: [1.8, 1.25, 1.25] // Column widths
-\item {} \});
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 ❌ \textbf{Incorrect:} Plain text like \emph{Note: FY2024 revenue growth +1.0\%, Net Income \$5.1B...} ❌ \textbf{Incorrect:} HTML tables that don't convert properly to PowerPoint

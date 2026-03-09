@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import html
 import posixpath
 import re
 import subprocess
@@ -38,6 +39,11 @@ LATEX_ESCAPES = {
     "^": r"\textasciicircum{}",
 }
 
+HTML_TAG_RE = re.compile(r"</?[A-Za-z][^>]*>")
+HTML_COMMENT_RE = re.compile(r"<!--.*?-->", flags=re.DOTALL)
+HTML_DECL_RE = re.compile(r"<![^>]*>")
+HTML_PI_RE = re.compile(r"<\?[^>]*\?>")
+
 
 @dataclass
 class ParsedFile:
@@ -60,6 +66,22 @@ def is_emoji_char(ch: str) -> bool:
 
 def sanitize_unicode(text: str) -> str:
     return text.replace("\ufe0f", "")
+
+
+def strip_html_markup(text: str) -> str:
+    cleaned = text
+    for _ in range(2):
+        decoded = html.unescape(cleaned)
+        if decoded == cleaned:
+            break
+        cleaned = decoded
+
+    cleaned = HTML_COMMENT_RE.sub("", cleaned)
+    cleaned = HTML_DECL_RE.sub("", cleaned)
+    cleaned = HTML_PI_RE.sub("", cleaned)
+    cleaned = HTML_TAG_RE.sub("", cleaned)
+    cleaned = cleaned.replace("\xa0", " ")
+    return cleaned
 
 
 def escape_latex(text: str) -> str:
@@ -107,11 +129,12 @@ def split_front_matter(text: str) -> tuple[dict[str, str], str]:
 
 
 def convert_inline(text: str) -> str:
-    text = sanitize_unicode(text)
+    text = strip_html_markup(sanitize_unicode(text))
     placeholders: dict[str, str] = {}
+    placeholder_prefix = f"CDEXTOKEN{abs(hash(text)) & 0xFFFFFFFF}X"
 
     def stash(value: str) -> str:
-        key = f"@@TOKEN{len(placeholders)}@@"
+        key = f"{placeholder_prefix}{len(placeholders)}Z"
         placeholders[key] = value
         return key
 
@@ -132,8 +155,15 @@ def convert_inline(text: str) -> str:
 
     escaped = escape_latex(text)
 
-    for key, value in placeholders.items():
-        escaped = escaped.replace(key, value)
+    # Resolve placeholders iteratively so nested replacements are fully expanded.
+    for _ in range(len(placeholders) + 2):
+        replaced_any = False
+        for key, value in placeholders.items():
+            if key in escaped:
+                escaped = escaped.replace(key, value)
+                replaced_any = True
+        if not replaced_any:
+            break
 
     return smart_double_quotes(escaped)
 
@@ -184,7 +214,7 @@ def split_pipe_row(line: str) -> list[str]:
 
 
 def normalize_code_line(line: str) -> str:
-    text = sanitize_unicode(line.rstrip())
+    text = strip_html_markup(sanitize_unicode(line.rstrip()))
     text = text.replace("`", "")
     text = re.sub(r"[┌┐└┘├┤┬┴┼─│═]+", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
@@ -233,7 +263,63 @@ def table_from_rows(rows: list[list[str]], header: bool = True) -> str:
     return "\n".join(lines)
 
 
-def convert_code_block(lines: list[str]) -> str:
+def summarize_web_block(lines: list[str]) -> str:
+    raw = "\n".join(lines).lower()
+    points: list[str] = []
+
+    if "<!doctype" in raw or "<html" in raw:
+        points.append("Includes a full HTML document scaffold (doctype, head, and body).")
+    if "<style" in raw or "@media print" in raw or "font-family" in raw:
+        points.append("Defines embedded CSS, including print-oriented layout and typography rules.")
+    if "chart.js" in raw or "chart.register" in raw or "chart." in raw:
+        points.append("Configures Chart.js usage, including plugin registration and chart rendering behavior.")
+    if "function create" in raw or "getcontext(" in raw:
+        points.append("Implements reusable chart helper functions for consistent figure generation.")
+    if "<table" in raw or "<tr" in raw or "<td" in raw:
+        points.append("Contains HTML table structures for presenting formatted metric outputs.")
+    if "<canvas" in raw:
+        points.append("Defines canvas placeholders for interactive chart components.")
+    if "<script" in raw:
+        points.append("Loads and runs JavaScript needed for dynamic report visuals.")
+
+    if not points:
+        points.append("Contains implementation-level web template code for rendering the report.")
+
+    out = [
+        r"\textbf{Web Template Summary}",
+        r"\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]",
+    ]
+    for point in points:
+        out.append(r"\item {} " + convert_inline(point))
+    out.append(r"\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.")
+    out.append(r"\end{itemize}")
+    return "\n".join(out)
+
+
+def is_web_template_block(lines: list[str], fence_info: str) -> bool:
+    lang = fence_info.strip().lower()
+    if lang in {"html", "xml", "javascript", "js", "css"}:
+        return True
+
+    raw = "\n".join(lines).lower()
+    indicators = [
+        "<!doctype",
+        "<html",
+        "<head",
+        "<body",
+        "<script",
+        "<style",
+        "</html",
+        "chart.register",
+        "document.getelementbyid(",
+    ]
+    return any(token in raw for token in indicators)
+
+
+def convert_code_block(lines: list[str], fence_info: str = "") -> str:
+    if is_web_template_block(lines, fence_info):
+        return summarize_web_block(lines)
+
     cleaned = [normalize_code_line(line) for line in lines]
     cleaned = [line for line in cleaned if line]
     if not cleaned:
@@ -384,6 +470,7 @@ def markdown_to_latex(text: str, heading_offset: int = 0) -> str:
             continue
 
         if is_fence_start(line):
+            fence_info = line.strip()[3:].strip()
             i += 1
             block_lines: list[str] = []
             while i < len(lines) and not is_fence_start(lines[i]):
@@ -391,7 +478,7 @@ def markdown_to_latex(text: str, heading_offset: int = 0) -> str:
                 i += 1
             if i < len(lines):
                 i += 1
-            converted = convert_code_block(block_lines)
+            converted = convert_code_block(block_lines, fence_info=fence_info)
             if converted:
                 out.append(converted)
             continue

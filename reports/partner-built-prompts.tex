@@ -30,7 +30,7 @@
 \newcommand{\CheckedBox}{$\blacksquare$}
 \title{Partner Built Prompt Library\\LaTeX Translation and Dependency Map}
 \author{financial-services-plugins repository}
-\date{Generated on 2026-03-05 09:31 }
+\date{Generated on 2026-03-06 02:51 }
 \newunicodechar{⚠}{{\EmojiGlyph{⚠}}}
 \newunicodechar{✅}{{\EmojiGlyph{✅}}}
 \newunicodechar{❌}{{\EmojiGlyph{❌}}}
@@ -164,60 +164,60 @@ Commands in this plugin reference MCP tools by their exact tool name (e.g., \emp
 
 \subparagraph{Bond Domain}\mbox{}\par
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — Calculate bond pricing, valuation, and analytics. Accepts ISIN, RIC, CUSIP, or AssetId. Returns yield, duration, convexity, DV01, accrued interest. Supports what-if scenarios via price/yield overrides.
-\item {} \textbf{@@TOKEN0@@} — Calculate bond future pricing and analytics. Returns fair value, cheapest-to-deliver identification, delivery basket, conversion factors, and contract DV01.
+\item {} \textbf{\emph{bond\_\allowbreak{}price}} — Calculate bond pricing, valuation, and analytics. Accepts ISIN, RIC, CUSIP, or AssetId. Returns yield, duration, convexity, DV01, accrued interest. Supports what-if scenarios via price/yield overrides.
+\item {} \textbf{\emph{bond\_\allowbreak{}future\_\allowbreak{}price}} — Calculate bond future pricing and analytics. Returns fair value, cheapest-to-deliver identification, delivery basket, conversion factors, and contract DV01.
 \end{itemize}
 
 \subparagraph{FX Domain}\mbox{}\par
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — FX spot rate pricing for ISO currency pairs. Returns mid/bid/ask rates.
-\item {} \textbf{@@TOKEN0@@} — FX forward rate pricing at specific tenors or dates. Returns forward points, outright rates, and carry.
+\item {} \textbf{\emph{fx\_\allowbreak{}spot\_\allowbreak{}price}} — FX spot rate pricing for ISO currency pairs. Returns mid/bid/ask rates.
+\item {} \textbf{\emph{fx\_\allowbreak{}forward\_\allowbreak{}price}} — FX forward rate pricing at specific tenors or dates. Returns forward points, outright rates, and carry.
 \end{itemize}
 
 \subparagraph{Curves Domain}\mbox{}\par
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — Government yield curves. Two-phase: list available curves, then calculate curve points. Returns par/zero rates, discount factors, forward rates.
-\item {} \textbf{@@TOKEN0@@} — Credit spread curves. Search by country and issuer type (Corporate, Sovereign, Agency, etc.), then calculate spread term structure.
-\item {} \textbf{@@TOKEN0@@} — Inflation breakeven curves. Search by country/currency, then calculate breakeven rates and real yields.
-\item {} \textbf{@@TOKEN0@@} — FX forward point curves. List curves, then calculate forward points across all standard tenors.
+\item {} \textbf{\emph{interest\_\allowbreak{}rate\_\allowbreak{}curve}} — Government yield curves. Two-phase: list available curves, then calculate curve points. Returns par/zero rates, discount factors, forward rates.
+\item {} \textbf{\emph{credit\_\allowbreak{}curve}} — Credit spread curves. Search by country and issuer type (Corporate, Sovereign, Agency, etc.), then calculate spread term structure.
+\item {} \textbf{\emph{inflation\_\allowbreak{}curve}} — Inflation breakeven curves. Search by country/currency, then calculate breakeven rates and real yields.
+\item {} \textbf{\emph{fx\_\allowbreak{}forward\_\allowbreak{}curve}} — FX forward point curves. List curves, then calculate forward points across all standard tenors.
 \end{itemize}
 
 \subparagraph{Swaps Domain}\mbox{}\par
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — Interest rate swap pricing. Two-phase: list templates by currency/index, then price swaps at specified tenors. Returns par rates, DV01, NPV.
+\item {} \textbf{\emph{ir\_\allowbreak{}swap}} — Interest rate swap pricing. Two-phase: list templates by currency/index, then price swaps at specified tenors. Returns par rates, DV01, NPV.
 \end{itemize}
 
 \subparagraph{Options Domain}\mbox{}\par
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — Option valuation supporting vanilla, barrier, binary, and Asian options. Returns premium, full Greeks (delta, gamma, vega, theta, rho), and risk metrics.
-\item {} \textbf{@@TOKEN0@@} — List available option templates for pricing.
+\item {} \textbf{\emph{option\_\allowbreak{}value}} — Option valuation supporting vanilla, barrier, binary, and Asian options. Returns premium, full Greeks (delta, gamma, vega, theta, rho), and risk metrics.
+\item {} \textbf{\emph{option\_\allowbreak{}template\_\allowbreak{}list}} — List available option templates for pricing.
 \end{itemize}
 
 \subparagraph{Volatility Domain}\mbox{}\par
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — FX volatility surface generation using SABR model. Returns vol surface across tenors and delta strikes.
-\item {} \textbf{@@TOKEN0@@} — Equity implied volatility surface. Supports equities/indices via RIC and futures via RICROOT.
+\item {} \textbf{\emph{fx\_\allowbreak{}vol\_\allowbreak{}surface}} — FX volatility surface generation using SABR model. Returns vol surface across tenors and delta strikes.
+\item {} \textbf{\emph{equity\_\allowbreak{}vol\_\allowbreak{}surface}} — Equity implied volatility surface. Supports equities/indices via RIC and futures via RICROOT.
 \end{itemize}
 
 \subparagraph{Quantitative Analytics Domain}\mbox{}\par
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — IBES analyst consensus estimates (EPS, revenue, EBITDA, DPS). Forward-looking estimates with analyst count, dispersion, and high/low ranges.
-\item {} \textbf{@@TOKEN0@@} — Reported company financials (income statement, balance sheet metrics). Historical fiscal year data.
-\item {} \textbf{@@TOKEN0@@} — Historical equity prices with OHLCV, total returns, and beta.
-\item {} \textbf{@@TOKEN0@@} — Macroeconomic indicators database. Search by mnemonic or description, retrieve latest values or time series.
+\item {} \textbf{\emph{qa\_\allowbreak{}ibes\_\allowbreak{}consensus}} — IBES analyst consensus estimates (EPS, revenue, EBITDA, DPS). Forward-looking estimates with analyst count, dispersion, and high/low ranges.
+\item {} \textbf{\emph{qa\_\allowbreak{}company\_\allowbreak{}fundamentals}} — Reported company financials (income statement, balance sheet metrics). Historical fiscal year data.
+\item {} \textbf{\emph{qa\_\allowbreak{}historical\_\allowbreak{}equity\_\allowbreak{}price}} — Historical equity prices with OHLCV, total returns, and beta.
+\item {} \textbf{\emph{qa\_\allowbreak{}macroeconomic}} — Macroeconomic indicators database. Search by mnemonic or description, retrieve latest values or time series.
 \end{itemize}
 
 \subparagraph{Time Series Domain}\mbox{}\par
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — Historical pricing summaries for any RIC. Supports interday (daily, weekly, monthly) and intraday (1min to 1hr) intervals.
+\item {} \textbf{\emph{tscc\_\allowbreak{}historical\_\allowbreak{}pricing\_\allowbreak{}summaries}} — Historical pricing summaries for any RIC. Supports interday (daily, weekly, monthly) and intraday (1min to 1hr) intervals.
 \end{itemize}
 
 \subparagraph{Fixed Income Analytics (YieldBook) Domain}\mbox{}\par
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — Bond reference data: security type, sector, ratings, coupon, maturity, issuer.
-\item {} \textbf{@@TOKEN0@@} — Bond cashflow projections: future coupon and principal payment schedules.
-\item {} \textbf{@@TOKEN0@@} — Bond scenario analysis: price/yield under parallel rate shifts.
-\item {} \textbf{@@TOKEN0@@} — Bond risk analytics: OAS, effective duration, key rate durations, convexity.
+\item {} \textbf{\emph{yieldbook\_\allowbreak{}bond\_\allowbreak{}reference}} — Bond reference data: security type, sector, ratings, coupon, maturity, issuer.
+\item {} \textbf{\emph{yieldbook\_\allowbreak{}cashflow}} — Bond cashflow projections: future coupon and principal payment schedules.
+\item {} \textbf{\emph{yieldbook\_\allowbreak{}scenario}} — Bond scenario analysis: price/yield under parallel rate shifts.
+\item {} \textbf{\emph{fixed\_\allowbreak{}income\_\allowbreak{}risk\_\allowbreak{}analytics}} — Bond risk analytics: OAS, effective duration, key rate durations, convexity.
 \end{itemize}
 
 \vspace{0.8em}\hrule\vspace{0.8em}
@@ -326,7 +326,7 @@ See \href{CONNECTORS.md}{CONNECTORS.md} for the complete tool reference.
 {} \textbf{Field} & \textbf{Value} \\
 \midrule
 {} description & Analyze the bond futures basis with CTD identification, implied repo rate, and basis trade assessment \\
-{} argument-hint & <bond future RIC e.g. FGBLc1> \\
+{} argument-hint &  \\
 \bottomrule
 \end{longtable}
 \endgroup
@@ -418,7 +418,7 @@ Lead with the basis trade assessment (long/short/neutral) and implied repo compa
 {} \textbf{Field} & \textbf{Value} \\
 \midrule
 {} description & Analyze a bond's relative value vs yield curves and credit spreads with scenario stress testing \\
-{} argument-hint & <ISIN, RIC, or CUSIP> [vs benchmark] \\
+{} argument-hint &  [vs benchmark] \\
 \bottomrule
 \end{longtable}
 \endgroup
@@ -509,7 +509,7 @@ Lead with the rich/cheap assessment and supporting evidence. Follow with spread 
 {} \textbf{Field} & \textbf{Value} \\
 \midrule
 {} description & Evaluate FX carry trade opportunities with spot, forwards, vol surface, and historical context \\
-{} argument-hint & <currency pair e.g. USDJPY> [tenor e.g. 3M] \\
+{} argument-hint &  [tenor e.g. 3M] \\
 \bottomrule
 \end{longtable}
 \endgroup
@@ -605,7 +605,7 @@ Lead with the carry-to-vol ratio and overall assessment (attractive / moderate /
 {} \textbf{Field} & \textbf{Value} \\
 \midrule
 {} description & Analyze option volatility with vol surface, Greeks, and implied vs realized vol comparison \\
-{} argument-hint & <underlying e.g. .SPX or EURUSD> [strike] [expiry] \\
+{} argument-hint &  [strike] [expiry] \\
 \bottomrule
 \end{longtable}
 \endgroup
@@ -699,7 +699,7 @@ Lead with the key vol finding (implied rich/cheap vs realized). Follow with the 
 {} \textbf{Field} & \textbf{Value} \\
 \midrule
 {} description & Analyze the swap curve with government and inflation overlays to identify curve trade opportunities \\
-{} argument-hint & <currency e.g. EUR> [index e.g. ESTR] \\
+{} argument-hint &  [index e.g. ESTR] \\
 \bottomrule
 \end{longtable}
 \endgroup
@@ -790,7 +790,7 @@ Lead with curve shape summary and key metrics (2s10s, butterfly). Follow with de
 {} \textbf{Field} & \textbf{Value} \\
 \midrule
 {} description & Build a macro and rates dashboard with economic indicators, yield curves, inflation, and swap spreads \\
-{} argument-hint & <country e.g. US> [timeframe e.g. 5Y] \\
+{} argument-hint &  [timeframe e.g. 5Y] \\
 \bottomrule
 \end{longtable}
 \endgroup
@@ -892,7 +892,7 @@ Present as a dashboard with clearly labeled sections. Lead with the overall macr
 {} \textbf{Field} & \textbf{Value} \\
 \midrule
 {} description & Generate a comprehensive equity research snapshot with consensus estimates, fundamentals, and price performance \\
-{} argument-hint & <ticker e.g. AAPL> [period e.g. FY2024-FY2026] \\
+{} argument-hint &  [period e.g. FY2024-FY2026] \\
 \bottomrule
 \end{longtable}
 \endgroup
@@ -989,7 +989,7 @@ Present as a structured research note. Lead with the investment thesis summary (
 {} \textbf{Field} & \textbf{Value} \\
 \midrule
 {} description & Review a fixed income portfolio with pricing, reference data, cashflows, and scenario analysis \\
-{} argument-hint & <ISIN1,ISIN2,...> [scenario e.g. +100bp] \\
+{} argument-hint &  [scenario e.g. +100bp] \\
 \bottomrule
 \end{longtable}
 \endgroup
@@ -1108,11 +1108,11 @@ The basis sits at the intersection of cash bond pricing, repo markets, and deliv
 \subparagraph{Available MCP Tools}\mbox{}\par
 
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — Price bond futures. Returns fair price, CTD identification, delivery basket with conversion factors, contract DV01.
-\item {} \textbf{@@TOKEN0@@} — Price individual cash bonds. Returns clean/dirty price, yield, duration, DV01, convexity.
-\item {} \textbf{@@TOKEN0@@} — Government yield curves. Two-phase: list available curves, then calculate. Use short end as repo rate proxy.
-\item {} \textbf{@@TOKEN0@@} — Historical OHLC data for futures and bonds. Use to track basis evolution over time.
-\item {} \textbf{@@TOKEN0@@} — Credit spread curves. Use for sovereign credit context when relevant.
+\item {} \textbf{\emph{bond\_\allowbreak{}future\_\allowbreak{}price}} — Price bond futures. Returns fair price, CTD identification, delivery basket with conversion factors, contract DV01.
+\item {} \textbf{\emph{bond\_\allowbreak{}price}} — Price individual cash bonds. Returns clean/dirty price, yield, duration, DV01, convexity.
+\item {} \textbf{\emph{interest\_\allowbreak{}rate\_\allowbreak{}curve}} — Government yield curves. Two-phase: list available curves, then calculate. Use short end as repo rate proxy.
+\item {} \textbf{\emph{tscc\_\allowbreak{}historical\_\allowbreak{}pricing\_\allowbreak{}summaries}} — Historical OHLC data for futures and bonds. Use to track basis evolution over time.
+\item {} \textbf{\emph{credit\_\allowbreak{}curve}} — Credit spread curves. Use for sovereign credit context when relevant.
 \end{itemize}
 
 \subparagraph{Tool Chaining Workflow}\mbox{}\par
@@ -1228,12 +1228,12 @@ Relative value is about whether a bond's spread adequately compensates for its r
 \subparagraph{Available MCP Tools}\mbox{}\par
 
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — Price bonds. Returns clean/dirty price, yield, duration, convexity, DV01, Z-spread. Accepts ISIN, RIC, or CUSIP.
-\item {} \textbf{@@TOKEN0@@} — Government and swap yield curves. Two-phase: list then calculate. Use to compute G-spreads.
-\item {} \textbf{@@TOKEN0@@} — Credit spread curves by issuer type. Two-phase: search by country/issuerType, then calculate. Use to isolate credit component.
-\item {} \textbf{@@TOKEN0@@} — Scenario analysis with parallel rate shifts. Returns price change and P\&L under each scenario.
-\item {} \textbf{@@TOKEN0@@} — Historical pricing data. Use for historical spread context and Z-score analysis.
-\item {} \textbf{@@TOKEN0@@} — OAS, effective duration, key rate durations. Use for callable bonds and deeper risk decomposition.
+\item {} \textbf{\emph{bond\_\allowbreak{}price}} — Price bonds. Returns clean/dirty price, yield, duration, convexity, DV01, Z-spread. Accepts ISIN, RIC, or CUSIP.
+\item {} \textbf{\emph{interest\_\allowbreak{}rate\_\allowbreak{}curve}} — Government and swap yield curves. Two-phase: list then calculate. Use to compute G-spreads.
+\item {} \textbf{\emph{credit\_\allowbreak{}curve}} — Credit spread curves by issuer type. Two-phase: search by country/issuerType, then calculate. Use to isolate credit component.
+\item {} \textbf{\emph{yieldbook\_\allowbreak{}scenario}} — Scenario analysis with parallel rate shifts. Returns price change and P\&L under each scenario.
+\item {} \textbf{\emph{tscc\_\allowbreak{}historical\_\allowbreak{}pricing\_\allowbreak{}summaries}} — Historical pricing data. Use for historical spread context and Z-score analysis.
+\item {} \textbf{\emph{fixed\_\allowbreak{}income\_\allowbreak{}risk\_\allowbreak{}analytics}} — OAS, effective duration, key rate durations. Use for callable bonds and deeper risk decomposition.
 \end{itemize}
 
 \subparagraph{Tool Chaining Workflow}\mbox{}\par
@@ -1317,11 +1317,11 @@ Every piece of data must connect to an investment thesis. Pull consensus estimat
 \subparagraph{Available MCP Tools}\mbox{}\par
 
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — IBES analyst consensus estimates and actuals. Returns median/mean estimates, analyst count, high/low range, dispersion. Supports EPS, Revenue, EBITDA, DPS.
-\item {} \textbf{@@TOKEN0@@} — Reported financials: income statement, balance sheet, cash flow. Historical fiscal year data for ratio analysis.
-\item {} \textbf{@@TOKEN0@@} — Historical equity prices with OHLCV, total returns, and beta.
-\item {} \textbf{@@TOKEN0@@} — Historical pricing summaries (daily, weekly, monthly). Alternative/supplement for price history.
-\item {} \textbf{@@TOKEN0@@} — Macro indicators (GDP, CPI, unemployment, PMI). Use to establish the economic backdrop for the company's sector.
+\item {} \textbf{\emph{qa\_\allowbreak{}ibes\_\allowbreak{}consensus}} — IBES analyst consensus estimates and actuals. Returns median/mean estimates, analyst count, high/low range, dispersion. Supports EPS, Revenue, EBITDA, DPS.
+\item {} \textbf{\emph{qa\_\allowbreak{}company\_\allowbreak{}fundamentals}} — Reported financials: income statement, balance sheet, cash flow. Historical fiscal year data for ratio analysis.
+\item {} \textbf{\emph{qa\_\allowbreak{}historical\_\allowbreak{}equity\_\allowbreak{}price}} — Historical equity prices with OHLCV, total returns, and beta.
+\item {} \textbf{\emph{tscc\_\allowbreak{}historical\_\allowbreak{}pricing\_\allowbreak{}summaries}} — Historical pricing summaries (daily, weekly, monthly). Alternative/supplement for price history.
+\item {} \textbf{\emph{qa\_\allowbreak{}macroeconomic}} — Macro indicators (GDP, CPI, unemployment, PMI). Use to establish the economic backdrop for the company's sector.
 \end{itemize}
 
 \subparagraph{Tool Chaining Workflow}\mbox{}\par
@@ -1420,12 +1420,12 @@ Always compute portfolio-level metrics as market-value weighted averages (yield,
 \subparagraph{Available MCP Tools}\mbox{}\par
 
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — Price bonds. Returns clean/dirty price, yield, duration, convexity, DV01, spread. Accepts comma-separated identifiers for batch pricing.
-\item {} \textbf{@@TOKEN0@@} — Bond reference data: issuer, coupon, maturity, rating, sector, currency, call provisions.
-\item {} \textbf{@@TOKEN0@@} — Cashflow projections: future coupon and principal payment schedules.
-\item {} \textbf{@@TOKEN0@@} — Scenario analysis: price/yield under parallel rate shifts and curve scenarios.
-\item {} \textbf{@@TOKEN0@@} — Government yield curves. Use for spread-to-curve context and curve environment assessment.
-\item {} \textbf{@@TOKEN0@@} — OAS, effective duration, key rate durations, convexity. Use for bonds with embedded options.
+\item {} \textbf{\emph{bond\_\allowbreak{}price}} — Price bonds. Returns clean/dirty price, yield, duration, convexity, DV01, spread. Accepts comma-separated identifiers for batch pricing.
+\item {} \textbf{\emph{yieldbook\_\allowbreak{}bond\_\allowbreak{}reference}} — Bond reference data: issuer, coupon, maturity, rating, sector, currency, call provisions.
+\item {} \textbf{\emph{yieldbook\_\allowbreak{}cashflow}} — Cashflow projections: future coupon and principal payment schedules.
+\item {} \textbf{\emph{yieldbook\_\allowbreak{}scenario}} — Scenario analysis: price/yield under parallel rate shifts and curve scenarios.
+\item {} \textbf{\emph{interest\_\allowbreak{}rate\_\allowbreak{}curve}} — Government yield curves. Use for spread-to-curve context and curve environment assessment.
+\item {} \textbf{\emph{fixed\_\allowbreak{}income\_\allowbreak{}risk\_\allowbreak{}analytics}} — OAS, effective duration, key rate durations, convexity. Use for bonds with embedded options.
 \end{itemize}
 
 \subparagraph{Tool Chaining Workflow}\mbox{}\par
@@ -1525,12 +1525,12 @@ A carry trade earns the interest rate differential but bears FX spot risk. The c
 \subparagraph{Available MCP Tools}\mbox{}\par
 
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — Current spot rate for a currency pair. Returns mid/bid/ask. Starting point for all carry analysis.
-\item {} \textbf{@@TOKEN0@@} — Forward rate at a specific tenor. Returns forward points and outright rate. Use to compute carry at the target tenor.
-\item {} \textbf{@@TOKEN0@@} — Full forward curve across all standard tenors. Two-phase: list then calculate. Use to map the carry term structure.
-\item {} \textbf{@@TOKEN0@@} — Implied volatility surface by delta and expiry. Returns ATM vol, risk reversals, butterflies. Use for carry-to-vol ratio and skew assessment.
-\item {} \textbf{@@TOKEN0@@} — Historical spot price data. Use to compute realized vol and assess spot trend direction.
-\item {} \textbf{@@TOKEN0@@} — Yield curves by currency. Use to understand the rate differential driving the carry.
+\item {} \textbf{\emph{fx\_\allowbreak{}spot\_\allowbreak{}price}} — Current spot rate for a currency pair. Returns mid/bid/ask. Starting point for all carry analysis.
+\item {} \textbf{\emph{fx\_\allowbreak{}forward\_\allowbreak{}price}} — Forward rate at a specific tenor. Returns forward points and outright rate. Use to compute carry at the target tenor.
+\item {} \textbf{\emph{fx\_\allowbreak{}forward\_\allowbreak{}curve}} — Full forward curve across all standard tenors. Two-phase: list then calculate. Use to map the carry term structure.
+\item {} \textbf{\emph{fx\_\allowbreak{}vol\_\allowbreak{}surface}} — Implied volatility surface by delta and expiry. Returns ATM vol, risk reversals, butterflies. Use for carry-to-vol ratio and skew assessment.
+\item {} \textbf{\emph{tscc\_\allowbreak{}historical\_\allowbreak{}pricing\_\allowbreak{}summaries}} — Historical spot price data. Use to compute realized vol and assess spot trend direction.
+\item {} \textbf{\emph{interest\_\allowbreak{}rate\_\allowbreak{}curve}} — Yield curves by currency. Use to understand the rate differential driving the carry.
 \end{itemize}
 
 \subparagraph{Tool Chaining Workflow}\mbox{}\par
@@ -1614,11 +1614,11 @@ Macro analysis synthesizes multiple indicators into a narrative. Always assess: 
 \subparagraph{Available MCP Tools}\mbox{}\par
 
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — Macro data series: GDP, CPI, PCE, unemployment, payrolls, PMI, retail sales. Multiple countries and frequencies. Search by mnemonic pattern or description.
-\item {} \textbf{@@TOKEN0@@} — Government yield curves and swap curves. Two-phase: list then calculate. Use for curve shape and slope analysis.
-\item {} \textbf{@@TOKEN0@@} — Inflation breakeven curves and real yields. Two-phase: search then calculate. Use for real rate decomposition.
-\item {} \textbf{@@TOKEN0@@} — Swap rates by tenor and currency. Two-phase: list templates then price. Use to compute swap spreads.
-\item {} \textbf{@@TOKEN0@@} — Historical pricing data. Use for historical yield context and trend analysis.
+\item {} \textbf{\emph{qa\_\allowbreak{}macroeconomic}} — Macro data series: GDP, CPI, PCE, unemployment, payrolls, PMI, retail sales. Multiple countries and frequencies. Search by mnemonic pattern or description.
+\item {} \textbf{\emph{interest\_\allowbreak{}rate\_\allowbreak{}curve}} — Government yield curves and swap curves. Two-phase: list then calculate. Use for curve shape and slope analysis.
+\item {} \textbf{\emph{inflation\_\allowbreak{}curve}} — Inflation breakeven curves and real yields. Two-phase: search then calculate. Use for real rate decomposition.
+\item {} \textbf{\emph{ir\_\allowbreak{}swap}} — Swap rates by tenor and currency. Two-phase: list templates then price. Use to compute swap spreads.
+\item {} \textbf{\emph{tscc\_\allowbreak{}historical\_\allowbreak{}pricing\_\allowbreak{}summaries}} — Historical pricing data. Use for historical yield context and trend analysis.
 \end{itemize}
 
 \subparagraph{Tool Chaining Workflow}\mbox{}\par
@@ -1730,12 +1730,12 @@ Always start from the vol surface — it encodes the market's view of future unc
 \subparagraph{Available MCP Tools}\mbox{}\par
 
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — Implied vol surface for equities/indices. Input: RIC (e.g., ``.SPX@RIC'') or RICROOT (e.g., ``ES@RICROOT''). Returns vol by strike/delta and expiry.
-\item {} \textbf{@@TOKEN0@@} — Implied vol surface for FX pairs. Input: currency pair (e.g., ``EURUSD''). Returns vol by delta and expiry. FX surfaces are quoted in delta space.
-\item {} \textbf{@@TOKEN0@@} — Price individual options with full Greeks (delta, gamma, vega, theta, rho). Use after identifying specific strikes from the vol surface.
-\item {} \textbf{@@TOKEN0@@} — Discover available option templates for an underlying. Use to find valid expiries and strikes before pricing.
-\item {} \textbf{@@TOKEN0@@} — Historical OHLC data. Use to compute realized vol from price history.
-\item {} \textbf{@@TOKEN0@@} — Historical equity prices. Alternative source for realized vol computation.
+\item {} \textbf{\emph{equity\_\allowbreak{}vol\_\allowbreak{}surface}} — Implied vol surface for equities/indices. Input: RIC (e.g., ``.SPX@RIC'') or RICROOT (e.g., ``ES@RICROOT''). Returns vol by strike/delta and expiry.
+\item {} \textbf{\emph{fx\_\allowbreak{}vol\_\allowbreak{}surface}} — Implied vol surface for FX pairs. Input: currency pair (e.g., ``EURUSD''). Returns vol by delta and expiry. FX surfaces are quoted in delta space.
+\item {} \textbf{\emph{option\_\allowbreak{}value}} — Price individual options with full Greeks (delta, gamma, vega, theta, rho). Use after identifying specific strikes from the vol surface.
+\item {} \textbf{\emph{option\_\allowbreak{}template\_\allowbreak{}list}} — Discover available option templates for an underlying. Use to find valid expiries and strikes before pricing.
+\item {} \textbf{\emph{tscc\_\allowbreak{}historical\_\allowbreak{}pricing\_\allowbreak{}summaries}} — Historical OHLC data. Use to compute realized vol from price history.
+\item {} \textbf{\emph{qa\_\allowbreak{}historical\_\allowbreak{}equity\_\allowbreak{}price}} — Historical equity prices. Alternative source for realized vol computation.
 \end{itemize}
 
 \subparagraph{Tool Chaining Workflow}\mbox{}\par
@@ -1836,11 +1836,11 @@ The swap curve prices the market's expectation of future short-term rates, credi
 \subparagraph{Available MCP Tools}\mbox{}\par
 
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — Swap pricing. Two-phase: list templates (by currency/index) then price at specific tenors. Returns par swap rate, DV01, NPV.
-\item {} \textbf{@@TOKEN0@@} — Government yield curves. Two-phase: list then calculate. Use for swap spread computation and curve shape context.
-\item {} \textbf{@@TOKEN0@@} — Inflation breakeven curves. Two-phase: search then calculate. Use for real rate decomposition.
-\item {} \textbf{@@TOKEN0@@} — Historical pricing data. Use for historical curve slope context and trend analysis.
-\item {} \textbf{@@TOKEN0@@} — Macro data. Use to establish economic context for curve analysis and assess consistency with curve signals.
+\item {} \textbf{\emph{ir\_\allowbreak{}swap}} — Swap pricing. Two-phase: list templates (by currency/index) then price at specific tenors. Returns par swap rate, DV01, NPV.
+\item {} \textbf{\emph{interest\_\allowbreak{}rate\_\allowbreak{}curve}} — Government yield curves. Two-phase: list then calculate. Use for swap spread computation and curve shape context.
+\item {} \textbf{\emph{inflation\_\allowbreak{}curve}} — Inflation breakeven curves. Two-phase: search then calculate. Use for real rate decomposition.
+\item {} \textbf{\emph{tscc\_\allowbreak{}historical\_\allowbreak{}pricing\_\allowbreak{}summaries}} — Historical pricing data. Use for historical curve slope context and trend analysis.
+\item {} \textbf{\emph{qa\_\allowbreak{}macroeconomic}} — Macro data. Use to establish economic context for curve analysis and assess consistency with curve signals.
 \end{itemize}
 
 \subparagraph{Tool Chaining Workflow}\mbox{}\par
@@ -2070,7 +2070,7 @@ Generate a concise, professional equity research earnings preview for a single c
 \textbf{Critical Rule:} You MUST complete ALL research and data collection (Phases 1-5) BEFORE writing any part of the report.
 
 
-\textbf{Intermediate File Rule:} All raw data from MCP tool calls MUST be written to files in \emph{/tmp/earnings-preview/} \textbf{immediately after each tool call returns} — before moving to the next call. This protects data from context window compression. Do NOT hold data only in memory. At the start of Phase 1, run \emph{mkdir -p /tmp/earnings-preview} to create the directory. \textbf{Before generating the HTML report (Phase 7), you MUST read ALL intermediate files back into context using @@TOKEN2@@ commands. The files — not your memory of earlier conversation — are the single source of truth for every number, quote, and source URL in the report. If you skip reading the files, the report WILL contain errors.}
+\textbf{Intermediate File Rule:} All raw data from MCP tool calls MUST be written to files in \emph{/tmp/earnings-preview/} \textbf{immediately after each tool call returns} — before moving to the next call. This protects data from context window compression. Do NOT hold data only in memory. At the start of Phase 1, run \emph{mkdir -p /tmp/earnings-preview} to create the directory. \textbf{Before generating the HTML report (Phase 7), you MUST read ALL intermediate files back into context using \emph{cat} commands. The files — not your memory of earlier conversation — are the single source of truth for every number, quote, and source URL in the report. If you skip reading the files, the report WILL contain errors.}
 
 
 \textbf{Fiscal Quarter Rule:} NEVER infer the fiscal quarter from the calendar report date. Many companies have non-standard fiscal years (e.g., Walmart's FY ends Jan 31, so a Feb 2026 report covers Q4 FY2026, not Q4 2025 or Q1 2026). Always use the fiscal quarter and fiscal year exactly as stated in the earnings call name returned by \emph{get\_\allowbreak{}next\_\allowbreak{}earnings\_\allowbreak{}from\_\allowbreak{}identifiers} or \emph{get\_\allowbreak{}earnings\_\allowbreak{}from\_\allowbreak{}identifiers} (e.g., ``Walmart Q4 FY2026 Earnings Call'' means the quarter is Q4 FY2026). Use that verbatim in the report title, headers, tables, and all references. If the call name is ambiguous, cross-reference with \emph{get\_\allowbreak{}financial\_\allowbreak{}line\_\allowbreak{}item\_\allowbreak{}from\_\allowbreak{}identifiers} period labels.
@@ -2079,7 +2079,7 @@ Generate a concise, professional equity research earnings preview for a single c
 \textbf{Length Rule:} The report must be concise. Target 4-5 pages when printed. Do NOT write long multi-paragraph narratives. Use tight, punchy bullet points. Every sentence must earn its place. If you can say it in fewer words, do so.
 
 
-\textbf{Verbatim Quote Rule:} When quoting management in \emph{<blockquote>} tags, the text MUST be copied \textbf{exactly} from the transcript — word for word, including filler words and sentence fragments. Do NOT paraphrase, rearrange, combine sentences from different parts of the transcript, or ``clean up'' quotes. If you cannot find the exact phrase in the transcript, do NOT present it as a direct quote. Instead, paraphrase in your own narrative voice without blockquote formatting (e.g., ``Management noted that data center demand remains significant''). Every blockquote must be a verbatim, copy-paste excerpt that can be verified against the transcript.
+\textbf{Verbatim Quote Rule:} When quoting management in `` tags, the text MUST be copied \textbf{exactly} from the transcript — word for word, including filler words and sentence fragments. Do NOT paraphrase, rearrange, combine sentences from different parts of the transcript, or ``clean up'' quotes. If you cannot find the exact phrase in the transcript, do NOT present it as a direct quote. Instead, paraphrase in your own narrative voice without blockquote formatting (e.g., ``Management noted that data center demand remains significant''). Every blockquote must be a verbatim, copy-paste excerpt that can be verified against the transcript.
 
 
 \textbf{Calculation Integrity Rule:} For any multi-step calculation (implied quarterly figures from annual guidance, LTM P/E, y/y growth rates, segment y/y changes), write out each step explicitly and verify intermediate results before using them in the next step. If you state A + B + C = X, verify X is arithmetically correct before using X in a subsequent formula. If the appendix shows a sum that does not equal its stated components, the report is wrong. When in doubt, recompute from raw data rather than reusing a previously calculated intermediate.
@@ -2088,7 +2088,7 @@ Generate a concise, professional equity research earnings preview for a single c
 \textbf{Ratio Nomenclature Rule:} All valuation ratios must be explicitly labeled as \textbf{LTM} (Last Twelve Months) or \textbf{NTM} (Next Twelve Months). Never use ``trailing'' or ``forward'' — always use LTM or NTM. LTM ratios use the sum of the most recent 4 reported quarters. NTM ratios use the \textbf{sum of the next 4 quarterly consensus mean EPS estimates} from \emph{get\_\allowbreak{}consensus\_\allowbreak{}estimates\_\allowbreak{}from\_\allowbreak{}identifiers} — NOT a single annual figure. Both LTM and NTM P/E must be computed and displayed in the competitor comparison table.
 
 
-\textbf{Hyperlink Rule (STRICTLY ENFORCED):} Every claim in the report — numeric AND non-numeric — MUST be wrapped in an \emph{<a href=``\#ref-N'' class=``data-ref''>} hyperlink pointing to the corresponding entry in the Appendix. \textbf{This is not optional. Every single number in the report must be a clickable link.} This includes: revenue figures, EPS, margins, growth rates, market caps, P/E ratios, stock returns, price targets, segment revenue, and any other financial metric. It also includes qualitative claims from transcripts or Kensho searches. If you state it as fact, it must link to a source. Assign each unique claim a sequential reference ID (\emph{ref-1}, \emph{ref-2}, etc.). The hyperlink style is subtle — navy color, no underline, dotted underline on hover. \textbf{Do NOT write any number in the report body without wrapping it in an @@TOKEN3@@ tag.} Example: write \emph{<a href=``\#ref-1'' class=``data-ref''>\$152.3B</a>}, NEVER write \emph{\$152.3B} as plain text.
+\textbf{Hyperlink Rule (STRICTLY ENFORCED):} Every claim in the report — numeric AND non-numeric — MUST be wrapped in an `\emph{ hyperlink pointing to the corresponding entry in the Appendix. **This is not optional. Every single number in the report must be a clickable link.** This includes: revenue figures, EPS, margins, growth rates, market caps, P/E ratios, stock returns, price targets, segment revenue, and any other financial metric. It also includes qualitative claims from transcripts or Kensho searches. If you state it as fact, it must link to a source. Assign each unique claim a sequential reference ID (}ref-1\emph{, }ref-2\emph{, etc.). The hyperlink style is subtle — navy color, no underline, dotted underline on hover. **Do NOT write any number in the report body without wrapping it in an }\emph{ tag.** Example: write }\$152.3B\emph{, NEVER write }\$152.3B` as plain text.
 
 
 \vspace{0.5em}\hrule\vspace{0.5em}
@@ -2499,20 +2499,12 @@ See \href{report-template.md}{report-template.md} for the complete HTML template
 \item {} \emph{createPEChart(canvasId, companies)} — for Figure 7
 \end{itemize}
 
-Each chart call MUST be in its own \emph{<script>} tag wrapped in a try-catch block. This ensures a bug in one chart does not prevent other charts from rendering. Example:
+Each chart call MUST be in its own `` tag wrapped in a try-catch block. This ensures a bug in one chart does not prevent other charts from rendering. Example:
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} <script>
-\item {} try \{
-\item {} createRevEpsChart('chart-rev-eps', [...], [...], [...], 'Revenue (\$B)');
-\item {} \} catch(e) \{ console.error('Figure 1 error:', e); \}
-\item {} </script>
-\item {} <script>
-\item {} try \{
-\item {} createMarginChart('chart-margins', [...], [...], [...]);
-\item {} \} catch(e) \{ console.error('Figure 2 error:', e); \}
-\item {} </script>
+\item {} Loads and runs JavaScript needed for dynamic report visuals.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \subparagraph{Report Structure (4-5 pages total)}\mbox{}\par
@@ -2532,9 +2524,9 @@ The report has two halves: \textbf{narrative} (pages 1-2) and \textbf{figures} (
 It must appear in exactly these 3 locations:
 
 \begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Header banner} — immediately before the cover header, as a centered yellow banner: \emph{<div class=``ai-disclaimer''>Analysis is AI-generated — please confirm all outputs</div>}
-\item {} \textbf{Footer} — inside the page-footer div, as a prominent yellow banner: \emph{<div class=``footer-disclaimer''>Analysis is AI-generated — please confirm all outputs</div>}
-\item {} \textbf{Appendix} — as the first line of the appendix section, before the table: \emph{<div class=``ai-disclaimer''>Analysis is AI-generated — please confirm all outputs</div>}
+\item {} \textbf{Header banner} — immediately before the cover header, as a centered yellow banner: \emph{Analysis is AI-generated — please confirm all outputs}
+\item {} \textbf{Footer} — inside the page-footer div, as a prominent yellow banner: \emph{Analysis is AI-generated — please confirm all outputs}
+\item {} \textbf{Appendix} — as the first line of the appendix section, before the table: \emph{Analysis is AI-generated — please confirm all outputs}
 \end{enumerate}
 
 \vspace{0.5em}\hrule\vspace{0.5em}
@@ -2612,10 +2604,10 @@ All figures are numbered sequentially. Every figure has a title and source line.
 \textbf{APPENDIX: Data Sources \& Calculations (MANDATORY — DO NOT SKIP OR ABBREVIATE)}
 
 
-The appendix MUST begin with the AI disclaimer banner: \emph{<div class=``ai-disclaimer''>Analysis is AI-generated — please confirm all outputs</div>}
+The appendix MUST begin with the AI disclaimer banner: \emph{Analysis is AI-generated — please confirm all outputs}
 
 
-The final page(s) of the report MUST include an Appendix table that documents \textbf{every claim} — numeric and non-numeric — cited in the report. \textbf{Every number that appears in the report body must have a corresponding row in this appendix, and every such number in the report body must be a clickable @@TOKEN0@@ hyperlink that scrolls to its appendix row.} If a number appears in the report without a hyperlink to the appendix, the report is incomplete.
+The final page(s) of the report MUST include an Appendix table that documents \textbf{every claim} — numeric and non-numeric — cited in the report. \textbf{Every number that appears in the report body must have a corresponding row in this appendix, and every such number in the report body must be a clickable `` hyperlink that scrolls to its appendix row.} If a number appears in the report without a hyperlink to the appendix, the report is incomplete.
 
 
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
@@ -2625,7 +2617,7 @@ The final page(s) of the report MUST include an Appendix table that documents \t
 \item {} \textbf{Value}: The exact figure as displayed in the report (e.g., ``\$152.3B'', ``24.5\%'', ``28.1x''). For non-numeric facts, leave blank or write ``N/A''.
 \item {} \textbf{Source \& Derivation}: This is the critical column. \textbf{Every row must have a specific, detailed source — not just a label.} Follow these rules strictly: \textbf{For raw financial data from S\&P Capital IQ (revenue, EPS, gross profit, operating income, net income, EBITDA, prices, market cap, etc.):}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} State the MCP function used and its key parameters. Format: \emph{S\&P Capital IQ — @@TOKEN0@@}
+\item {} State the MCP function used and its key parameters. Format: \emph{S\&P Capital IQ — \href{identifier='[TICKER]', line\_\allowbreak{}item='[item]', period\_\allowbreak{}type='[type]', period='[Q\# FY\#\#\#\#]'}{function\_\allowbreak{}name}}
 \item {} Examples:
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
 \item {} \emph{S\&P Capital IQ — get\_\allowbreak{}financial\_\allowbreak{}line\_\allowbreak{}item\_\allowbreak{}from\_\allowbreak{}identifiers(identifier='WMT', line\_\allowbreak{}item='revenue', period\_\allowbreak{}type='quarterly', period='Q3 FY2026')}
@@ -2634,24 +2626,24 @@ The final page(s) of the report MUST include an Appendix table that documents \t
 \item {} \emph{S\&P Capital IQ — get\_\allowbreak{}capitalization\_\allowbreak{}from\_\allowbreak{}identifiers(identifier='WMT', capitalization='market\_\allowbreak{}cap')}
 \end{itemize}
 \item {} \textbf{Do NOT just write ``S\&P Capital IQ'' with no detail.} The reader must know exactly which data point from which tool call produced this number. \textbf{For calculated values (margins, growth rates, P/E, returns, y/y changes):}
-\item {} Show the full formula with \textbf{hyperlinked components} — each component must be an \emph{<a href=``\#ref-N''>} link back to the appendix row for that raw data point. This is critical: the reader must be able to click through from the calculated value to each of its inputs.
-\item {} Example: \emph{Gross Margin = <a href='\#ref-5'>Gross Profit \$37.2B</a> / <a href='\#ref-1'>Revenue \$152.3B</a> = 24.4\%. Source: S\&P Capital IQ (calculated)}
-\item {} Example: \emph{LTM P/E = <a href='\#ref-20'>Price \$172.35</a> / (<a href='\#ref-8'>Q1 EPS \$1.47</a> + <a href='\#ref-9'>Q2 EPS \$1.84</a> + <a href='\#ref-10'>Q3 EPS \$1.53</a> + <a href='\#ref-11'>Q4 EPS \$1.80</a>) = \$172.35 / \$6.64 = 25.9x}
-\item {} Example: \emph{Revenue y/y growth = (<a href='\#ref-12'>Q3 FY26 Rev \$165.8B</a> - <a href='\#ref-3'>Q3 FY25 Rev \$160.8B</a>) / <a href='\#ref-3'>Q3 FY25 Rev \$160.8B</a> = +3.1\%}
+\item {} Show the full formula with \textbf{hyperlinked components} — each component must be an `` link back to the appendix row for that raw data point. This is critical: the reader must be able to click through from the calculated value to each of its inputs.
+\item {} Example: \emph{Gross Margin = Gross Profit \$37.2B / Revenue \$152.3B = 24.4\%. Source: S\&P Capital IQ (calculated)}
+\item {} Example: \emph{LTM P/E = Price \$172.35 / (Q1 EPS \$1.47 + Q2 EPS \$1.84 + Q3 EPS \$1.53 + Q4 EPS \$1.80) = \$172.35 / \$6.64 = 25.9x}
+\item {} Example: \emph{Revenue y/y growth = (Q3 FY26 Rev \$165.8B - Q3 FY25 Rev \$160.8B) / Q3 FY25 Rev \$160.8B = +3.1\%}
 \item {} \textbf{Every formula component must be a clickable hyperlink.} Do NOT write formulas with plain-text numbers. \textbf{For transcript-sourced claims (quotes, management commentary, guidance):}
 \item {} Write the \textbf{verbatim excerpt sentence} from the transcript.
 \item {} Reference the transcript by its full name and the \emph{key\_\allowbreak{}dev\_\allowbreak{}id} used to fetch it.
 \item {} Format: \emph{``[verbatim quote]'' — [Speaker], [Title]. Source: [Q\# FY\#\#\#\# Earnings Call Transcript] (key\_\allowbreak{}dev\_\allowbreak{}id: [ID])}
 \item {} Example: \emph{``We expect comp sales growth of 3-4\% in Q4'' — CEO John Furner. Source: Q3 FY2026 Earnings Call Transcript (key\_\allowbreak{}dev\_\allowbreak{}id: 12345678)} \textbf{For Kensho Grounding search results (news, analyst ratings, consensus estimates):}
 \item {} Write the key finding or excerpt from the search result.
-\item {} \textbf{MANDATORY: Include the source URL} returned by the Kensho \emph{search} tool as a clickable \emph{<a href=``[URL]'' target=``\_\allowbreak{}blank''>} hyperlink. This is the most important part — readers must be able to click through to the original source.
-\item {} Format: \emph{``[finding/excerpt]'' — <a href=``[URL]'' target=``\_\allowbreak{}blank''>[Source Title or Publication]</a>. Query: search(``[query used]'')}
-\item {} Example: \emph{``Barclays upgraded WMT to Overweight with \$210 price target on Jan 15, 2026.'' — <a href=``https://www.investing.com/news/barclays-upgrades-wmt'' target=``\_\allowbreak{}blank''>Investing.com, Jan 15 2026</a>. Query: search(``WMT analyst ratings price target upgrades downgrades'')}
+\item {} \textbf{MANDATORY: Include the source URL} returned by the Kensho \emph{search} tool as a clickable `` hyperlink. This is the most important part — readers must be able to click through to the original source.
+\item {} Format: \emph{``[finding/excerpt]'' — [Source Title or Publication]. Query: search(``[query used]'')}
+\item {} Example: \emph{``Barclays upgraded WMT to Overweight with \$210 price target on Jan 15, 2026.'' — Investing.com, Jan 15 2026. Query: search(``WMT analyst ratings price target upgrades downgrades'')}
 \item {} If no URL was returned for a particular result, write ``Source URL not available'' and still include the search query.
 \end{itemize}
 \end{itemize}
 
-\textbf{Completeness check:} Before finalizing the report, scan every number in the report body. If any number is not wrapped in \emph{<a href=``\#ref-N'' class=``data-ref''>}, fix it. If any appendix row has a Source \& Derivation that is just a bare label like ``S\&P Capital IQ'' with no function call detail, fix it. If any calculated value's formula lacks hyperlinked components, fix it. If any Kensho-sourced claim lacks a source URL, fix it.
+\textbf{Completeness check:} Before finalizing the report, scan every number in the report body. If any number is not wrapped in ``, fix it. If any appendix row has a Source \& Derivation that is just a bare label like ``S\&P Capital IQ'' with no function call detail, fix it. If any calculated value's formula lacks hyperlinked components, fix it. If any Kensho-sourced claim lacks a source URL, fix it.
 
 
 Group the appendix rows by section (Financials, Valuation, Estimates \& Consensus, Transcript Claims, News \& Analyst Commentary, Stock Performance) with subheadings. Use smaller font size (10-11px).
@@ -2680,7 +2672,7 @@ Group the appendix rows by section (Financials, Valuation, Estimates \& Consensu
 \item {} \textbf{Professional tone}: Sell-side equity research style — analytical, direct, data-driven.
 \item {} \textbf{Charts must use real data}: Every chart populated with actual MCP data. Never fabricate.
 \item {} \textbf{Competitor context}: Frame valuation relative to peers. A 25x P/E means nothing without knowing peers trade at 20x or 35x.
-\item {} \textbf{Hyperlinked claims}: Every factual claim — numeric or qualitative — must be an \emph{<a class=``data-ref''>} tag linking to its appendix entry. Numbers: \emph{<a href=``\#ref-1'' class=``data-ref''>\$152.3B</a>}. Qualitative: \emph{<a href=``\#ref-25'' class=``data-ref''>management flagged tariff headwinds as the primary margin risk</a>}. No fact should appear without a traceable source in the appendix.
+\item {} \textbf{Hyperlinked claims}: Every factual claim — numeric or qualitative — must be an `\emph{ tag linking to its appendix entry. Numbers: }\$152.3B\emph{. Qualitative: }management flagged tariff headwinds as the primary margin risk`. No fact should appear without a traceable source in the appendix.
 \end{itemize}
 
 \vspace{0.8em}\hrule\vspace{0.8em}
@@ -2706,1014 +2698,16 @@ The report is a single self-contained HTML file with:
 
 \subparagraph{Complete Template}\mbox{}\par
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} <!DOCTYPE html>
-\item {} <html lang=``en''>
-\item {} <head>
-\item {} <meta charset=``UTF-8''>
-\item {} <meta name=``viewport'' content=``width=device-width, initial-scale=1.0''>
-\item {} <title>Earnings Preview — [COMPANY] ([TICKER]) — [DATE]</title>
-\item {} <script src=``https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js'' integrity=``sha384-vsrfeLOOY6KuIYKDlmVH5UiBmgIdB1oEf7p01YgWHuqmOHfZr374+odEv96n9tNC'' crossorigin=``anonymous''></script>
-\item {} <script src=``https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.1.0/dist/chartjs-plugin-annotation.min.js'' integrity=``sha384-3N9GHhCtN3CQef6tNfqgZlv7sQLYIkcChN+uaTZ7xVdzKYp/SjBNPxa92+hM7EAY'' crossorigin=``anonymous''></script>
-\item {} <style>
-\item {} /\emph{ Reset \& Base }/
-\item {} \emph{, }::before, *::after \{ box-sizing: border-box; margin: 0; padding: 0; \}
-\item {} html \{ font-size: 15px; \}
-\item {} body \{
-\item {} font-family: 'Arial Narrow', Arial, sans-serif;
-\item {} color: \#1a1a2e;
-\item {} background: \#fff;
-\item {} line-height: 1.6;
-\item {} \}
-\item {} /\emph{ Layout }/
-\item {} .page \{
-\item {} max-width: 1100px;
-\item {} margin: 0 auto;
-\item {} padding: 40px 48px;
-\item {} \}
-\item {} .page-break \{
-\item {} page-break-before: always;
-\item {} border-top: 2px solid \#1a1a4e;
-\item {} margin-top: 48px;
-\item {} padding-top: 32px;
-\item {} \}
-\item {} /\emph{ Header / Cover }/
-\item {} .cover-header \{
-\item {} border-bottom: 3px solid \#1a1a4e;
-\item {} padding-bottom: 16px;
-\item {} margin-bottom: 24px;
-\item {} display: flex;
-\item {} justify-content: space-between;
-\item {} align-items: flex-end;
-\item {} \}
-\item {} .cover-header .brand \{
-\item {} font-size: 24px;
-\item {} font-weight: bold;
-\item {} color: \#1a1a4e;
-\item {} letter-spacing: 2px;
-\item {} text-transform: uppercase;
-\item {} \}
-\item {} .cover-header .sector \{
-\item {} font-size: 13px;
-\item {} color: \#555;
-\item {} \}
-\item {} .cover-header .date \{
-\item {} font-size: 14px;
-\item {} color: \#333;
-\item {} text-align: right;
-\item {} \}
-\item {} .report-title \{
-\item {} font-size: 26px;
-\item {} font-weight: bold;
-\item {} color: \#1a1a2e;
-\item {} margin: 20px 0 16px 0;
-\item {} line-height: 1.3;
-\item {} \}
-\item {} /\emph{ Executive Thesis }/
-\item {} .executive-summary \{
-\item {} font-size: 14px;
-\item {} line-height: 1.65;
-\item {} color: \#222;
-\item {} margin-bottom: 16px;
-\item {} \}
-\item {} .executive-summary p \{
-\item {} margin-bottom: 10px;
-\item {} text-align: justify;
-\item {} \}
-\item {} .executive-summary ul \{
-\item {} margin: 8px 0 10px 20px;
-\item {} font-size: 13.5px;
-\item {} \}
-\item {} .executive-summary ul li \{
-\item {} margin-bottom: 5px;
-\item {} line-height: 1.5;
-\item {} \}
-\item {} blockquote \{
-\item {} border-left: 3px solid \#b0b8c8;
-\item {} padding: 6px 14px;
-\item {} margin: 8px 0 8px 12px;
-\item {} font-style: italic;
-\item {} color: \#444;
-\item {} background: \#f9fafb;
-\item {} font-size: 12.5px;
-\item {} line-height: 1.5;
-\item {} \}
-\item {} /\emph{ Section Headings }/
-\item {} h2.section-title \{
-\item {} font-size: 18px;
-\item {} font-weight: 700;
-\item {} color: \#1a1a4e;
-\item {} border-bottom: 2px solid \#1a1a4e;
-\item {} padding-bottom: 5px;
-\item {} margin: 28px 0 14px 0;
-\item {} \}
-\item {} h3.subsection-title \{
-\item {} font-size: 14px;
-\item {} font-weight: 600;
-\item {} color: \#1a1a4e;
-\item {} margin: 16px 0 8px 0;
-\item {} \}
-\item {} h4.figure-title \{
-\item {} font-size: 12px;
-\item {} font-weight: 600;
-\item {} color: \#444;
-\item {} margin: 14px 0 6px 0;
-\item {} \}
-\item {} /\emph{ Tables }/
-\item {} table \{
-\item {} width: 100\%;
-\item {} border-collapse: collapse;
-\item {} font-size: 12px;
-\item {} margin: 10px 0 16px 0;
-\item {} \}
-\item {} thead th \{
-\item {} background: \#1a1a4e;
-\item {} color: \#fff;
-\item {} padding: 7px 10px;
-\item {} text-align: left;
-\item {} font-weight: 600;
-\item {} font-size: 11px;
-\item {} text-transform: uppercase;
-\item {} letter-spacing: 0.5px;
-\item {} \}
-\item {} tbody td \{
-\item {} padding: 6px 10px;
-\item {} border-bottom: 1px solid \#e0e0e0;
-\item {} \}
-\item {} tbody tr:nth-child(even) \{
-\item {} background: \#f9fafb;
-\item {} \}
-\item {} tbody tr:hover \{
-\item {} background: \#eef0f5;
-\item {} \}
-\item {} .num \{ text-align: right; font-variant-numeric: tabular-nums; \}
-\item {} .pos \{ color: \#0d7a3e; font-weight: 600; \}
-\item {} .neg \{ color: \#c0392b; font-weight: 600; \}
-\item {} .neutral \{ color: \#555; \}
-\item {} .highlight-row \{ background: \#e8eaf6 !important; font-weight: 600; \}
-\item {} /\emph{ Chart Containers }/
-\item {} .chart-row \{
-\item {} display: grid;
-\item {} grid-template-columns: 1fr 1fr;
-\item {} gap: 20px;
-\item {} margin: 12px 0 20px 0;
-\item {} \}
-\item {} .chart-container \{
-\item {} position: relative;
-\item {} background: \#fafbfc;
-\item {} border: 1px solid \#e8e8e8;
-\item {} border-radius: 4px;
-\item {} padding: 14px;
-\item {} \}
-\item {} .chart-container canvas \{
-\item {} max-height: 260px;
-\item {} \}
-\item {} .chart-full \{
-\item {} grid-column: 1 / -1;
-\item {} \}
-\item {} /\emph{ Compact Lists }/
-\item {} .key-metrics ul, .themes ul, .news-list ul \{
-\item {} margin: 6px 0 6px 18px;
-\item {} font-size: 13px;
-\item {} line-height: 1.55;
-\item {} \}
-\item {} .key-metrics li, .themes li, .news-list li \{
-\item {} margin-bottom: 5px;
-\item {} \}
-\item {} /\emph{ Data Reference Links }/
-\item {} a.data-ref \{
-\item {} color: \#1a1a4e;
-\item {} text-decoration: none;
-\item {} border-bottom: 1px dotted transparent;
-\item {} transition: border-color 0.15s;
-\item {} \}
-\item {} a.data-ref:hover \{
-\item {} border-bottom-color: \#1a1a4e;
-\item {} \}
-\item {} /\emph{ Appendix }/
-\item {} .appendix table \{
-\item {} font-size: 10.5px;
-\item {} \}
-\item {} .appendix thead th \{
-\item {} font-size: 10px;
-\item {} padding: 5px 8px;
-\item {} \}
-\item {} .appendix tbody td \{
-\item {} padding: 4px 8px;
-\item {} font-size: 10.5px;
-\item {} vertical-align: top;
-\item {} line-height: 1.45;
-\item {} \}
-\item {} .appendix .ref-id \{
-\item {} font-weight: 600;
-\item {} color: \#1a1a4e;
-\item {} white-space: nowrap;
-\item {} \}
-\item {} .appendix .source-detail \{
-\item {} font-size: 10px;
-\item {} color: \#444;
-\item {} \}
-\item {} .appendix .source-detail .formula \{
-\item {} font-family: 'Courier New', monospace;
-\item {} font-size: 9.5px;
-\item {} color: \#555;
-\item {} \}
-\item {} .appendix .source-detail .excerpt \{
-\item {} font-style: italic;
-\item {} color: \#555;
-\item {} \}
-\item {} .appendix .source-detail .src-label \{
-\item {} font-weight: 600;
-\item {} color: \#1a1a4e;
-\item {} font-size: 9.5px;
-\item {} \}
-\item {} .appendix .source-detail a.data-ref \{
-\item {} font-weight: 600;
-\item {} \}
-\item {} .appendix a.src-url \{
-\item {} color: \#3366cc;
-\item {} text-decoration: underline;
-\item {} font-size: 10px;
-\item {} word-break: break-all;
-\item {} \}
-\item {} .appendix a.src-url:hover \{
-\item {} color: \#1a1a4e;
-\item {} \}
-\item {} .appendix .transcript-ref \{
-\item {} font-weight: 600;
-\item {} color: \#1a1a4e;
-\item {} font-size: 10px;
-\item {} \}
-\item {} .appendix-group \{
-\item {} font-size: 11px;
-\item {} font-weight: 700;
-\item {} color: \#1a1a4e;
-\item {} background: \#f0f1f5;
-\item {} padding: 4px 8px;
-\item {} text-transform: uppercase;
-\item {} letter-spacing: 0.5px;
-\item {} \}
-\item {} /\emph{ Source / Footer }/
-\item {} .source \{
-\item {} font-size: 10px;
-\item {} color: \#999;
-\item {} margin-top: 3px;
-\item {} font-style: italic;
-\item {} \}
-\item {} .ai-disclaimer \{
-\item {} background-color: \#fff3cd;
-\item {} border: 1px solid \#ffc107;
-\item {} border-radius: 4px;
-\item {} padding: 4px 10px;
-\item {} font-size: 11px;
-\item {} font-weight: 600;
-\item {} color: \#664d03;
-\item {} text-align: center;
-\item {} margin-bottom: 12px;
-\item {} \}
-\item {} .page-footer \{
-\item {} border-top: 2px solid \#1a1a4e;
-\item {} padding-top: 10px;
-\item {} margin-top: 32px;
-\item {} text-align: center;
-\item {} \}
-\item {} .page-footer .footer-disclaimer \{
-\item {} font-size: 11px;
-\item {} font-weight: 600;
-\item {} color: \#664d03;
-\item {} background-color: \#fff3cd;
-\item {} border: 1px solid \#ffc107;
-\item {} border-radius: 4px;
-\item {} padding: 4px 10px;
-\item {} display: inline-block;
-\item {} margin-bottom: 4px;
-\item {} \}
-\item {} .page-footer .footer-meta \{
-\item {} font-size: 10px;
-\item {} color: \#888;
-\item {} \}
-\item {} /\emph{ Print Styles }/
-\item {} @media print \{
-\item {} body \{ font-size: 11px; \}
-\item {} .page \{ padding: 16px; max-width: none; \}
-\item {} .chart-container \{ break-inside: avoid; \}
-\item {} table \{ break-inside: avoid; \}
-\item {} .page-break \{ margin-top: 0; \}
-\item {} .no-print \{ display: none; \}
-\item {} \}
-\item {} </style>
-\item {} </head>
-\item {} <body>
-\item {} <div class=``page''>
-\item {} <!-- -->
-\item {} <!-- PAGE 1: COVER \& THESIS -->
-\item {} <!-- -->
-\item {} <div class=``ai-disclaimer''>Analysis is AI-generated — please confirm all outputs</div>
-\item {} <div class=``cover-header''>
-\item {} <div>
-\item {} <div class=``brand''>Earnings Preview</div>
-\item {} <div class=``sector''>[Industry] | [TICKER]</div>
-\item {} </div>
-\item {} <div class=``date''>[Full Date]</div>
-\item {} </div>
-\item {} <h1 class=``report-title''>[Company Name] ([TICKER]) [Q\# FY\#\#\#\#] Earnings Preview: [Thematic Subtitle]</h1>
-\item {} <div class=``executive-summary''>
-\item {} <!-- Executive thesis: 2-3 short paragraphs + bullet points.
-\item {} What we expect, our EPS estimate vs consensus, guidance expectations,
-\item {} key metrics to watch, what would move the stock, key debates.
-\item {} Weave in 3-4 management quotes as blockquotes where they support the thesis.
-\item {} Do NOT create a separate ``Key Management Quotes'' section. -->
-\item {} <p>[Opening 1-2 sentences: what we expect from this print.]</p>
-\item {} <ul>
-\item {} <li><strong>EPS:</strong> We estimate <a href=``\#ref-1'' class=``data-ref''>\$X.XX</a> vs consensus <a href=``\#ref-2'' class=``data-ref''>\$X.XX</a>, [rationale]</li>
-\item {} <li><strong>Revenue:</strong> We estimate <a href=``\#ref-3'' class=``data-ref''>\$XX.XB</a> vs consensus <a href=``\#ref-4'' class=``data-ref''>\$XX.XB</a>, [rationale]</li>
-\item {} <li><strong>Guidance:</strong> [What to expect on forward guidance]</li>
-\item {} <li><strong>Key metric:</strong> [Most important sub-headline metric to watch]</li>
-\item {} <li><strong>Stock catalyst:</strong> [What would move the stock up/down post-print]</li>
-\item {} <li><strong>Key debate:</strong> [What bulls and bears disagree on]</li>
-\item {} </ul>
-\item {} <blockquote>``[Key management quote supporting a thesis point]'' — [Speaker], [Q\# FY\#\#\#\#] Earnings Call</blockquote>
-\item {} <p>[1-2 sentences tying it together — your overall read on the setup.]</p>
-\item {} <blockquote>``[Another supporting quote]'' — [Speaker], [Q\# FY\#\#\#\#] Earnings Call</blockquote>
-\item {} </div>
-\item {} <!-- -->
-\item {} <!-- PAGE 2: ESTIMATES, THEMES \& NEWS -->
-\item {} <!-- -->
-\item {} <div class=``page-break''>
-\item {} <!-- Consensus Estimates Table (Figure label inline) -->
-\item {} <h2 class=``section-title''>Consensus Estimates — [Q\# FY\#\#\#\#]</h2>
-\item {} <h4 class=``figure-title''>[Q\# FY\#\#\#\#] Consensus Estimates</h4>
-\item {} <table>
-\item {} <thead>
-\item {} <tr>
-\item {} <th>Metric</th>
-\item {} <th class=``num''>Consensus</th>
-\item {} <th class=``num''>Our Estimate</th>
-\item {} <th class=``num''>y/y Change</th>
-\item {} </tr>
-\item {} </thead>
-\item {} <tbody>
-\item {} <tr><td>Revenue</td><td class=``num''><a href=``\#ref-N'' class=``data-ref''>\$[XX.X]B</a></td><td class=``num''><a href=``\#ref-N'' class=``data-ref''>\$[XX.X]B</a></td><td class=``num [pos|neg]''><a href=``\#ref-N'' class=``data-ref''>[+/-X.X\%]</a></td></tr>
-\item {} <tr><td>Diluted EPS</td><td class=``num''><a href=``\#ref-N'' class=``data-ref''>\$[X.XX]</a></td><td class=``num''><a href=``\#ref-N'' class=``data-ref''>\$[X.XX]</a></td><td class=``num [pos|neg]''><a href=``\#ref-N'' class=``data-ref''>[+/-X.X\%]</a></td></tr>
-\item {} <tr><td>Gross Margin</td><td class=``num''><a href=``\#ref-N'' class=``data-ref''>[XX.X\%]</a></td><td class=``num''><a href=``\#ref-N'' class=``data-ref''>[XX.X\%]</a></td><td class=``num [pos|neg]''><a href=``\#ref-N'' class=``data-ref''>[+/-XXbps]</a></td></tr>
-\item {} <tr><td>Operating Income</td><td class=``num''><a href=``\#ref-N'' class=``data-ref''>\$[X.X]B</a></td><td class=``num''><a href=``\#ref-N'' class=``data-ref''>\$[X.X]B</a></td><td class=``num [pos|neg]''><a href=``\#ref-N'' class=``data-ref''>[+/-X.X\%]</a></td></tr>
-\item {} <!-- Add 2-3 company-specific KPIs below (e.g., comp sales, eComm growth, membership revenue) -->
-\item {} <tr><td>[Company KPI 1]</td><td class=``num''>[Value]</td><td class=``num''>[Value]</td><td class=``num [pos|neg]''>[Change]</td></tr>
-\item {} <tr><td>[Company KPI 2]</td><td class=``num''>[Value]</td><td class=``num''>[Value]</td><td class=``num [pos|neg]''>[Change]</td></tr>
-\item {} </tbody>
-\item {} </table>
-\item {} <div class=``source''>Source: Kensho, S\&P Capital IQ</div>
-\item {} <!-- Key Metrics Beyond Headline EPS -->
-\item {} <h3 class=``subsection-title''>Key Metrics Beyond Headline EPS</h3>
-\item {} <div class=``key-metrics''>
-\item {} <ul>
-\item {} <li><strong>[Metric 1]:</strong> [What consensus/management expects, why it matters. Be specific with numbers.]</li>
-\item {} <li><strong>[Metric 2]:</strong> [Details]</li>
-\item {} <li><strong>[Metric 3]:</strong> [Details]</li>
-\item {} <!-- 3-5 items -->
-\item {} </ul>
-\item {} </div>
-\item {} <!-- Themes to Watch -->
-\item {} <h3 class=``subsection-title''>Themes to Watch</h3>
-\item {} <div class=``themes''>
-\item {} <ul>
-\item {} <li><strong>[Theme 1]:</strong> [1-2 sentences max. Forward-looking, specific.]</li>
-\item {} <li><strong>[Theme 2]:</strong> [Details]</li>
-\item {} <li><strong>[Theme 3]:</strong> [Details]</li>
-\item {} <!-- 3-5 themes -->
-\item {} </ul>
-\item {} </div>
-\item {} <!-- Recent News \& Developments -->
-\item {} <h3 class=``subsection-title''>Recent News \& Developments</h3>
-\item {} <div class=``news-list''>
-\item {} <ul>
-\item {} <li><strong>[Date]:</strong> [Headline] — [Brief impact assessment, one line]</li>
-\item {} <li><strong>[Date]:</strong> [Headline] — [Impact]</li>
-\item {} <li><strong>[Date]:</strong> [Headline] — [Impact]</li>
-\item {} <!-- 3-5 material items from last 60 days -->
-\item {} </ul>
-\item {} </div>
-\item {} <div class=``source''>Source: Kensho</div>
-\item {} </div>
-\item {} <!-- -->
-\item {} <!-- PAGES 3-5: FIGURES -->
-\item {} <!-- All charts and tables, numbered sequentially -->
-\item {} <!-- -->
-\item {} <div class=``page-break''>
-\item {} <h2 class=``section-title''>Financial \& Competitive Analysis</h2>
-\item {} <!-- Figure 1: Quarterly Revenue \& Diluted EPS -->
-\item {} <div class=``chart-row''>
-\item {} <div class=``chart-container''>
-\item {} <h4 class=``figure-title''>Figure 1: Quarterly Revenue \& Diluted EPS</h4>
-\item {} <canvas id=``chart-rev-eps''></canvas>
-\item {} <div class=``source''>Source: S\&P Capital IQ</div>
-\item {} </div>
-\item {} <!-- Figure 2: Margin Trends -->
-\item {} <div class=``chart-container''>
-\item {} <h4 class=``figure-title''>Figure 2: Margin Trends (Gross \& Operating \%)</h4>
-\item {} <canvas id=``chart-margins''></canvas>
-\item {} <div class=``source''>Source: S\&P Capital IQ</div>
-\item {} </div>
-\item {} </div>
-\item {} <!-- Figure 3: Revenue Growth y/y \% -->
-\item {} <div class=``chart-row''>
-\item {} <div class=``chart-container chart-full''>
-\item {} <h4 class=``figure-title''>Figure 3: Revenue Growth y/y (\%)</h4>
-\item {} <canvas id=``chart-rev-growth'' style=``max-height: 200px;''></canvas>
-\item {} <div class=``source''>Source: S\&P Capital IQ</div>
-\item {} </div>
-\item {} </div>
-\item {} <!-- Figure 4: Business Segment Revenue -->
-\item {} <h4 class=``figure-title''>Figure 4: Business Segment Revenue</h4>
-\item {} <table>
-\item {} <thead>
-\item {} <tr>
-\item {} <th>Segment</th>
-\item {} <th class=``num''>Latest Q Rev (\$M)</th>
-\item {} <th class=``num''>\% of Total</th>
-\item {} <th class=``num''>y/y Change</th>
-\item {} </tr>
-\item {} </thead>
-\item {} <tbody>
-\item {} <!-- Populate from segment data. Color-code y/y change with pos/neg classes. -->
-\item {} </tbody>
-\item {} </table>
-\item {} <div class=``source''>Source: S\&P Capital IQ</div>
-\item {} </div>
-\item {} <!-- Page break for stock \& competitor charts -->
-\item {} <div class=``page-break''>
-\item {} <!-- Figure 5: 1-Year Stock Price with Earnings Dates -->
-\item {} <div class=``chart-row''>
-\item {} <div class=``chart-container chart-full''>
-\item {} <h4 class=``figure-title''>Figure 5: 1-Year Stock Price with Earnings Dates</h4>
-\item {} <canvas id=``chart-price-annotated'' style=``max-height: 300px;''></canvas>
-\item {} <div class=``source''>Source: S\&P Capital IQ</div>
-\item {} </div>
-\item {} </div>
-\item {} <!-- Figure 6: Stock Performance vs. Competitors (Indexed to 100) -->
-\item {} <div class=``chart-row''>
-\item {} <div class=``chart-container chart-full''>
-\item {} <h4 class=``figure-title''>Figure 6: Stock Performance vs. Competitors — 1 Year (Indexed to 100)</h4>
-\item {} <canvas id=``chart-comp-perf'' style=``max-height: 300px;''></canvas>
-\item {} <div class=``source''>Source: S\&P Capital IQ</div>
-\item {} </div>
-\item {} </div>
-\item {} </div>
-\item {} <div class=``page-break''>
-\item {} <!-- Figure 7: LTM P/E vs. Competitors -->
-\item {} <div class=``chart-row''>
-\item {} <div class=``chart-container chart-full''>
-\item {} <h4 class=``figure-title''>Figure 7: LTM P/E vs. Competitors</h4>
-\item {} <canvas id=``chart-pe-comp'' style=``max-height: 280px;''></canvas>
-\item {} <div class=``source''>Source: S\&P Capital IQ</div>
-\item {} </div>
-\item {} </div>
-\item {} <!-- Figure 8: Competitor Comparison Table -->
-\item {} <h4 class=``figure-title''>Figure 8: Competitor Comparison</h4>
-\item {} <table>
-\item {} <thead>
-\item {} <tr>
-\item {} <th>Ticker</th>
-\item {} <th>Company</th>
-\item {} <th class=``num''>Mkt Cap (\$B)</th>
-\item {} <th class=``num''>LTM P/E</th>
-\item {} <th class=``num''>NTM P/E</th>
-\item {} <th class=``num''>YTD \%</th>
-\item {} <th class=``num''>1-Yr \%</th>
-\item {} </tr>
-\item {} </thead>
-\item {} <tbody>
-\item {} <!-- Highlight the subject company row with class=``highlight-row'' -->
-\item {} </tbody>
-\item {} </table>
-\item {} <div class=``source''>Source: S\&P Capital IQ</div>
-\item {} </div>
-\item {} <!-- -->
-\item {} <!-- APPENDIX: DATA SOURCES \& CALCULATIONS -->
-\item {} <!-- -->
-\item {} <div class=``page-break appendix'' id=``appendix''>
-\item {} <div class=``ai-disclaimer''>Analysis is AI-generated — please confirm all outputs</div>
-\item {} <h2 class=``section-title''>Appendix: Data Sources \& Calculations</h2>
-\item {} <p style=``font-size: 11px; color: \#666; margin-bottom: 12px;''>
-\item {} Every claim in this report is hyperlinked to its entry below. Click any highlighted text to jump here.
-\item {} </p>
-\item {} <table>
-\item {} <thead>
-\item {} <tr>
-\item {} <th style=``width: 40px;''>Ref</th>
-\item {} <th style=``width: 170px;''>Fact</th>
-\item {} <th style=``width: 75px;''>Value</th>
-\item {} <th>Source \& Derivation</th>
-\item {} </tr>
-\item {} </thead>
-\item {} <tbody>
-\item {} <!-- Group: Quarterly Financials -->
-\item {} <tr><td colspan=``4'' class=``appendix-group''>Quarterly Financials</td></tr>
-\item {} <tr id=``ref-1''>
-\item {} <td class=``ref-id''>1</td>
-\item {} <td>[Q\# FY\#\#\#\# Revenue]</td>
-\item {} <td class=``num''>\$[XX.X]B</td>
-\item {} <td class=``source-detail''>
-\item {} <span class=``src-label''>S\&P Capital IQ</span> — get\_\allowbreak{}financial\_\allowbreak{}line\_\allowbreak{}item\_\allowbreak{}from\_\allowbreak{}identifiers(identifier='[TICKER]', line\_\allowbreak{}item='revenue', period\_\allowbreak{}type='quarterly', period='[Q\# FY\#\#\#\#]')
-\item {} </td>
-\item {} </tr>
-\item {} <tr id=``ref-2''>
-\item {} <td class=``ref-id''>2</td>
-\item {} <td>[Q\# FY\#\#\#\# Diluted EPS]</td>
-\item {} <td class=``num''>\$[X.XX]</td>
-\item {} <td class=``source-detail''>
-\item {} <span class=``src-label''>S\&P Capital IQ</span> — get\_\allowbreak{}financial\_\allowbreak{}line\_\allowbreak{}item\_\allowbreak{}from\_\allowbreak{}identifiers(identifier='[TICKER]', line\_\allowbreak{}item='diluted\_\allowbreak{}eps', period\_\allowbreak{}type='quarterly', period='[Q\# FY\#\#\#\#]')
-\item {} </td>
-\item {} </tr>
-\item {} <tr id=``ref-3''>
-\item {} <td class=``ref-id''>3</td>
-\item {} <td>[Q\# FY\#\#\#\# Gross Profit]</td>
-\item {} <td class=``num''>\$[XX.X]B</td>
-\item {} <td class=``source-detail''>
-\item {} <span class=``src-label''>S\&P Capital IQ</span> — get\_\allowbreak{}financial\_\allowbreak{}line\_\allowbreak{}item\_\allowbreak{}from\_\allowbreak{}identifiers(identifier='[TICKER]', line\_\allowbreak{}item='gross\_\allowbreak{}profit', period\_\allowbreak{}type='quarterly', period='[Q\# FY\#\#\#\#]')
-\item {} </td>
-\item {} </tr>
-\item {} <tr id=``ref-4''>
-\item {} <td class=``ref-id''>4</td>
-\item {} <td>[Q\# FY\#\#\#\# Gross Margin]</td>
-\item {} <td class=``num''>[XX.X\%]</td>
-\item {} <td class=``source-detail''>
-\item {} <span class=``formula''><a href=``\#ref-3'' class=``data-ref''>Gross Profit \$XX.XB</a> / <a href=``\#ref-1'' class=``data-ref''>Revenue \$XX.XB</a> = XX.X\%</span><br>
-\item {} <span class=``src-label''>S\&P Capital IQ</span> (calculated)
-\item {} </td>
-\item {} </tr>
-\item {} <tr id=``ref-5''>
-\item {} <td class=``ref-id''>5</td>
-\item {} <td>[Q\# FY\#\#\#\# Revenue y/y Growth]</td>
-\item {} <td class=``num''>[+/-X.X\%]</td>
-\item {} <td class=``source-detail''>
-\item {} <span class=``formula''>(<a href=``\#ref-1'' class=``data-ref''>[Q\# FY\#\# Rev \$XX.XB]</a> - <a href=``\#ref-N'' class=``data-ref''>[Q\# FY\#\# Rev \$XX.XB]</a>) / <a href=``\#ref-N'' class=``data-ref''>[Q\# FY\#\# Rev \$XX.XB]</a> = X.X\%</span><br>
-\item {} <span class=``src-label''>S\&P Capital IQ</span> (calculated)
-\item {} </td>
-\item {} </tr>
-\item {} <!-- Continue for all financial data points... -->
-\item {} <!-- Group: Valuation -->
-\item {} <tr><td colspan=``4'' class=``appendix-group''>Valuation</td></tr>
-\item {} <tr id=``ref-N''>
-\item {} <td class=``ref-id''>[N]</td>
-\item {} <td>Current Stock Price — [TICKER]</td>
-\item {} <td class=``num''>\$[XXX.XX]</td>
-\item {} <td class=``source-detail''>
-\item {} <span class=``src-label''>S\&P Capital IQ</span> — get\_\allowbreak{}prices\_\allowbreak{}from\_\allowbreak{}identifiers(identifier='[TICKER]', periodicity='day')
-\item {} </td>
-\item {} </tr>
-\item {} <tr id=``ref-N''>
-\item {} <td class=``ref-id''>[N]</td>
-\item {} <td>Market Cap — [TICKER]</td>
-\item {} <td class=``num''>\$[XXX.X]B</td>
-\item {} <td class=``source-detail''>
-\item {} <span class=``src-label''>S\&P Capital IQ</span> — get\_\allowbreak{}capitalization\_\allowbreak{}from\_\allowbreak{}identifiers(identifier='[TICKER]', capitalization='market\_\allowbreak{}cap')
-\item {} </td>
-\item {} </tr>
-\item {} <tr id=``ref-N''>
-\item {} <td class=``ref-id''>[N]</td>
-\item {} <td>LTM P/E — [TICKER]</td>
-\item {} <td class=``num''>[XX.X]x</td>
-\item {} <td class=``source-detail''>
-\item {} <span class=``formula''><a href=``\#ref-20'' class=``data-ref''>Price \$XXX.XX</a> / (<a href=``\#ref-8'' class=``data-ref''>Q1 EPS \$X.XX</a> + <a href=``\#ref-9'' class=``data-ref''>Q2 EPS \$X.XX</a> + <a href=``\#ref-10'' class=``data-ref''>Q3 EPS \$X.XX</a> + <a href=``\#ref-11'' class=``data-ref''>Q4 EPS \$X.XX</a>) = XX.Xx</span><br>
-\item {} <span class=``src-label''>S\&P Capital IQ</span> (calculated)
-\item {} </td>
-\item {} </tr>
-\item {} <tr id=``ref-N''>
-\item {} <td class=``ref-id''>[N]</td>
-\item {} <td>NTM P/E — [TICKER]</td>
-\item {} <td class=``num''>[XX.X]x</td>
-\item {} <td class=``source-detail''>
-\item {} <span class=``formula''><a href=``\#ref-20'' class=``data-ref''>Price \$XXX.XX</a> / (<a href=``\#ref-N'' class=``data-ref''>Q4'25E \$X.XX</a> + <a href=``\#ref-N'' class=``data-ref''>Q1'26E \$X.XX</a> + <a href=``\#ref-N'' class=``data-ref''>Q2'26E \$X.XX</a> + <a href=``\#ref-N'' class=``data-ref''>Q3'26E \$X.XX</a>) = XX.Xx</span><br>
-\item {} <span class=``src-label''>S\&P Capital IQ</span> — get\_\allowbreak{}consensus\_\allowbreak{}estimates\_\allowbreak{}from\_\allowbreak{}identifiers(identifier='[TICKER]', period\_\allowbreak{}type='quarterly', num\_\allowbreak{}periods\_\allowbreak{}forward=4). NTM EPS = sum of next 4 quarterly consensus mean EPS estimates.
-\item {} </td>
-\item {} </tr>
-\item {} <!-- Group: Transcript Claims -->
-\item {} <tr><td colspan=``4'' class=``appendix-group''>Transcript Claims</td></tr>
-\item {} <tr id=``ref-N''>
-\item {} <td class=``ref-id''>[N]</td>
-\item {} <td>[Fact, e.g., ``Management guided comp sales +3-4\%'']</td>
-\item {} <td class=``num''>N/A</td>
-\item {} <td class=``source-detail''>
-\item {} <span class=``excerpt''>``We expect comp sales growth of 3-4\% in Q4, driven by continued strength in grocery and health \&amp; wellness.''</span><br>
-\item {} <span class=``src-label''>Source:</span> <span class=``transcript-ref''>[Q\# FY\#\#\#\# Earnings Call Transcript]</span> (key\_\allowbreak{}dev\_\allowbreak{}id: [ID]) — [Speaker Name], [Title]
-\item {} </td>
-\item {} </tr>
-\item {} <!-- Group: Estimates \& Consensus -->
-\item {} <tr><td colspan=``4'' class=``appendix-group''>Estimates \& Consensus</td></tr>
-\item {} <tr id=``ref-N''>
-\item {} <td class=``ref-id''>[N]</td>
-\item {} <td>Consensus EPS — [Q\# FY\#\#\#\#]</td>
-\item {} <td class=``num''>\$[X.XX]</td>
-\item {} <td class=``source-detail''>
-\item {} <span class=``excerpt''>``Consensus EPS estimate of \$X.XX, revised up from \$X.XX over the past 90 days.''</span><br>
-\item {} <a href=``https://[source-url-from-kensho-search]'' target=``\_\allowbreak{}blank'' class=``src-url''>[Source Title / Publication Name]</a><br>
-\item {} <span class=``src-label''>Query:</span> search(``[TICKER] earnings estimates consensus EPS revenue upcoming quarter'')
-\item {} </td>
-\item {} </tr>
-\item {} <!-- Group: News \& Analyst Commentary -->
-\item {} <tr><td colspan=``4'' class=``appendix-group''>News \& Analyst Commentary</td></tr>
-\item {} <tr id=``ref-N''>
-\item {} <td class=``ref-id''>[N]</td>
-\item {} <td>[e.g., ``Barclays upgraded to Overweight'']</td>
-\item {} <td class=``num''>N/A</td>
-\item {} <td class=``source-detail''>
-\item {} <span class=``excerpt''>``Barclays upgraded WMT to Overweight with a \$210 price target, citing accelerating eCommerce momentum.''</span><br>
-\item {} <a href=``https://[source-url-from-kensho-search]'' target=``\_\allowbreak{}blank'' class=``src-url''>[Source Title / Publication, Date]</a><br>
-\item {} <span class=``src-label''>Query:</span> search(``[TICKER] analyst ratings price target upgrades downgrades'')
-\item {} </td>
-\item {} </tr>
-\item {} <!-- Group: Stock Performance -->
-\item {} <tr><td colspan=``4'' class=``appendix-group''>Stock Performance</td></tr>
-\item {} <tr id=``ref-N''>
-\item {} <td class=``ref-id''>[N]</td>
-\item {} <td>YTD Return — [TICKER]</td>
-\item {} <td class=``num''>[+/-X.X\%]</td>
-\item {} <td class=``source-detail''>
-\item {} <span class=``formula''>(<a href=``\#ref-N'' class=``data-ref''>Current \$XXX.XX</a> - <a href=``\#ref-N'' class=``data-ref''>Dec 31 Close \$XXX.XX</a>) / <a href=``\#ref-N'' class=``data-ref''>Dec 31 Close \$XXX.XX</a> = X.X\%</span><br>
-\item {} <span class=``src-label''>S\&P Capital IQ</span> (calculated from daily prices)
-\item {} </td>
-\item {} </tr>
-\item {} </tbody>
-\item {} </table>
-\item {} </div>
-\item {} <!-- -->
-\item {} <!-- FOOTER -->
-\item {} <!-- -->
-\item {} <div class=``page-footer''>
-\item {} <div class=``footer-disclaimer''>Analysis is AI-generated — please confirm all outputs</div>
-\item {} <div class=``footer-meta''>Data: S\&P Capital IQ, Kensho | [Month Day, Year]</div>
-\item {} </div>
-\item {} </div>
-\item {} <!-- -->
-\item {} <!-- CHART.JS SCRIPTS -->
-\item {} <!-- -->
-\item {} <script>
-\item {} // Register Annotation Plugin
-\item {} // The CDN-loaded annotation plugin must be explicitly registered.
-\item {} // It is available as a global after the script tag loads.
-\item {} if (window['chartjs-plugin-annotation']) \{
-\item {} Chart.register(window['chartjs-plugin-annotation']);
-\item {} \}
-\item {} // Chart Defaults
-\item {} Chart.defaults.font.family = ``'Arial Narrow', Arial, sans-serif'';
-\item {} Chart.defaults.font.size = 11;
-\item {} Chart.defaults.color = '\#555';
-\item {} Chart.defaults.plugins.legend.position = 'bottom';
-\item {} Chart.defaults.plugins.legend.labels.boxWidth = 12;
-\item {} // Color Palette
-\item {} const COLORS = \{
-\item {} navy: '\#1a1a4e',
-\item {} blue: '\#3366cc',
-\item {} teal: '\#0d9488',
-\item {} orange: '\#e67e22',
-\item {} red: '\#c0392b',
-\item {} green: '\#27ae60',
-\item {} purple: '\#8e44ad',
-\item {} gray: '\#7f8c8d',
-\item {} lightBlue:'\#85c1e9',
-\item {} gold: '\#f0b429',
-\item {} \};
-\item {} const COMP\_\allowbreak{}COLORS = [
-\item {} COLORS.navy, COLORS.blue, COLORS.teal,
-\item {} COLORS.orange, COLORS.red, COLORS.green,
-\item {} COLORS.purple, COLORS.gold
-\item {} ];
-\item {} // Helper: Revenue \& EPS Combo Chart
-\item {} function createRevEpsChart(canvasId, labels, revenueData, epsData, revLabel) \{
-\item {} const ctx = document.getElementById(canvasId);
-\item {} if (!ctx) return;
-\item {} new Chart(ctx, \{
-\item {} type: 'bar',
-\item {} data: \{
-\item {} labels: labels,
-\item {} datasets: [
-\item {} \{
-\item {} label: revLabel || 'Revenue (\$B)',
-\item {} data: revenueData,
-\item {} backgroundColor: COLORS.navy + 'cc',
-\item {} borderColor: COLORS.navy,
-\item {} borderWidth: 1,
-\item {} yAxisID: 'y',
-\item {} order: 2
-\item {} \},
-\item {} \{
-\item {} label: 'Diluted EPS',
-\item {} data: epsData,
-\item {} type: 'line',
-\item {} borderColor: COLORS.orange,
-\item {} backgroundColor: COLORS.orange,
-\item {} borderWidth: 2.5,
-\item {} pointRadius: 4,
-\item {} pointBackgroundColor: COLORS.orange,
-\item {} tension: 0.3,
-\item {} yAxisID: 'y1',
-\item {} order: 1
-\item {} \}
-\item {} ]
-\item {} \},
-\item {} options: \{
-\item {} responsive: true,
-\item {} interaction: \{ mode: 'index', intersect: false \},
-\item {} scales: \{
-\item {} y: \{
-\item {} position: 'left',
-\item {} title: \{ display: true, text: revLabel || 'Revenue (\$B)', font: \{ size: 11 \} \},
-\item {} grid: \{ color: '\#eee' \}
-\item {} \},
-\item {} y1: \{
-\item {} position: 'right',
-\item {} title: \{ display: true, text: 'EPS (\$)', font: \{ size: 11 \} \},
-\item {} grid: \{ drawOnChartArea: false \}
-\item {} \}
-\item {} \}
-\item {} \}
-\item {} \});
-\item {} \}
-\item {} // Helper: Margin Trend Chart
-\item {} function createMarginChart(canvasId, labels, grossMargins, opMargins) \{
-\item {} const ctx = document.getElementById(canvasId);
-\item {} if (!ctx) return;
-\item {} new Chart(ctx, \{
-\item {} type: 'line',
-\item {} data: \{
-\item {} labels: labels,
-\item {} datasets: [
-\item {} \{
-\item {} label: 'Gross Margin \%',
-\item {} data: grossMargins,
-\item {} borderColor: COLORS.blue,
-\item {} backgroundColor: COLORS.blue + '20',
-\item {} borderWidth: 2.5,
-\item {} pointRadius: 4,
-\item {} fill: false,
-\item {} tension: 0.3
-\item {} \},
-\item {} \{
-\item {} label: 'Operating Margin \%',
-\item {} data: opMargins,
-\item {} borderColor: COLORS.teal,
-\item {} backgroundColor: COLORS.teal + '20',
-\item {} borderWidth: 2.5,
-\item {} pointRadius: 4,
-\item {} fill: false,
-\item {} tension: 0.3
-\item {} \}
-\item {} ]
-\item {} \},
-\item {} options: \{
-\item {} responsive: true,
-\item {} scales: \{
-\item {} y: \{
-\item {} title: \{ display: true, text: 'Margin (\%)', font: \{ size: 11 \} \},
-\item {} grid: \{ color: '\#eee' \},
-\item {} ticks: \{ callback: v => v.toFixed(1) + '\%' \}
-\item {} \}
-\item {} \}
-\item {} \}
-\item {} \});
-\item {} \}
-\item {} // Helper: Revenue Growth Bar Chart
-\item {} function createRevGrowthChart(canvasId, labels, growthData) \{
-\item {} const ctx = document.getElementById(canvasId);
-\item {} if (!ctx) return;
-\item {} new Chart(ctx, \{
-\item {} type: 'bar',
-\item {} data: \{
-\item {} labels: labels,
-\item {} datasets: [\{
-\item {} label: 'Revenue Growth y/y \%',
-\item {} data: growthData,
-\item {} backgroundColor: growthData.map(v => v >= 0 ? COLORS.green + 'cc' : COLORS.red + 'cc'),
-\item {} borderColor: growthData.map(v => v >= 0 ? COLORS.green : COLORS.red),
-\item {} borderWidth: 1
-\item {} \}]
-\item {} \},
-\item {} options: \{
-\item {} responsive: true,
-\item {} scales: \{
-\item {} y: \{
-\item {} title: \{ display: true, text: 'Growth (\%)', font: \{ size: 11 \} \},
-\item {} grid: \{ color: '\#eee' \},
-\item {} ticks: \{ callback: v => v.toFixed(1) + '\%' \}
-\item {} \}
-\item {} \},
-\item {} plugins: \{ legend: \{ display: false \} \}
-\item {} \}
-\item {} \});
-\item {} \}
-\item {} // Helper: Earnings-Annotated Stock Price Chart
-\item {} function createAnnotatedPriceChart(canvasId, labels, prices, earningsDates, ticker) \{
-\item {} const ctx = document.getElementById(canvasId);
-\item {} if (!ctx) return;
-\item {} const annotations = \{\};
-\item {} earningsDates.forEach((ed, i) => \{
-\item {} let xValue = ed.date;
-\item {} const isNeg = ed.move.startsWith('-');
-\item {} annotations['earnings' + i] = \{
-\item {} type: 'line',
-\item {} xMin: xValue,
-\item {} xMax: xValue,
-\item {} borderColor: isNeg ? '\#c0392b' : '\#0d7a3e',
-\item {} borderWidth: 2,
-\item {} borderDash: [6, 4],
-\item {} label: \{
-\item {} display: true,
-\item {} content: ed.label + ' (' + ed.move + ')',
-\item {} position: i \% 2 === 0 ? 'start' : 'end',
-\item {} backgroundColor: isNeg ? '\#c0392b' : '\#0d7a3e',
-\item {} color: '\#fff',
-\item {} font: \{ size: 10, weight: 'bold' \},
-\item {} padding: \{ top: 3, bottom: 3, left: 6, right: 6 \},
-\item {} borderRadius: 3
-\item {} \}
-\item {} \};
-\item {} \});
-\item {} new Chart(ctx, \{
-\item {} type: 'line',
-\item {} data: \{
-\item {} labels: labels,
-\item {} datasets: [\{
-\item {} label: ticker + ' Close',
-\item {} data: prices,
-\item {} borderColor: COLORS.navy,
-\item {} backgroundColor: COLORS.navy + '15',
-\item {} borderWidth: 1.5,
-\item {} pointRadius: 0,
-\item {} pointHitRadius: 4,
-\item {} fill: true,
-\item {} tension: 0.1
-\item {} \}]
-\item {} \},
-\item {} options: \{
-\item {} responsive: true,
-\item {} interaction: \{ mode: 'index', intersect: false \},
-\item {} scales: \{
-\item {} x: \{ type: 'category', ticks: \{ maxTicksLimit: 12, font: \{ size: 10 \} \}, grid: \{ display: false \} \},
-\item {} y: \{ title: \{ display: true, text: 'Price (\$)', font: \{ size: 11 \} \}, grid: \{ color: '\#eee' \} \}
-\item {} \},
-\item {} plugins: \{
-\item {} annotation: \{ annotations: annotations \},
-\item {} tooltip: \{ callbacks: \{ label: ctx => ticker + ': \$' + ctx.raw.toFixed(2) \} \}
-\item {} \}
-\item {} \}
-\item {} \});
-\item {} \}
-\item {} // Helper: Competitor Indexed Performance Chart
-\item {} // datasets: [\{ label: 'TICKER', data: [price1, price2, ...], color: '\#xxx', isSubject: true/false \}, ...]
-\item {} function createCompPerfChart(canvasId, labels, datasets) \{
-\item {} const ctx = document.getElementById(canvasId);
-\item {} if (!ctx) return;
-\item {} const chartDatasets = datasets.map((ds, i) => \{
-\item {} const base = ds.data[0] || 1;
-\item {} return \{
-\item {} label: ds.label,
-\item {} data: ds.data.map(v => (v / base) * 100),
-\item {} borderColor: ds.color || COMP\_\allowbreak{}COLORS[i \% COMP\_\allowbreak{}COLORS.length],
-\item {} backgroundColor: 'transparent',
-\item {} borderWidth: ds.isSubject ? 3 : 1.5,
-\item {} borderDash: ds.isSubject ? [] : [4, 2],
-\item {} pointRadius: 0,
-\item {} tension: 0.2
-\item {} \};
-\item {} \});
-\item {} new Chart(ctx, \{
-\item {} type: 'line',
-\item {} data: \{ labels: labels, datasets: chartDatasets \},
-\item {} options: \{
-\item {} responsive: true,
-\item {} interaction: \{ mode: 'index', intersect: false \},
-\item {} scales: \{
-\item {} y: \{ title: \{ display: true, text: 'Indexed (100 = Start)', font: \{ size: 11 \} \}, grid: \{ color: '\#eee' \} \},
-\item {} x: \{ ticks: \{ maxTicksLimit: 12 \} \}
-\item {} \},
-\item {} plugins: \{
-\item {} tooltip: \{ callbacks: \{ label: ctx => ctx.dataset.label + ': ' + ctx.raw.toFixed(1) \} \}
-\item {} \}
-\item {} \}
-\item {} \});
-\item {} \}
-\item {} // Helper: LTM P/E Horizontal Bar Chart
-\item {} // companies: [\{ label: 'TICKER', pe: 25.3, isSubject: true/false \}, ...]
-\item {} function createPEChart(canvasId, companies) \{
-\item {} const ctx = document.getElementById(canvasId);
-\item {} if (!ctx) return;
-\item {} companies.sort((a, b) => b.pe - a.pe);
-\item {} new Chart(ctx, \{
-\item {} type: 'bar',
-\item {} data: \{
-\item {} labels: companies.map(c => c.label),
-\item {} datasets: [\{
-\item {} label: 'LTM P/E',
-\item {} data: companies.map(c => c.pe),
-\item {} backgroundColor: companies.map(c => c.isSubject ? COLORS.navy : COLORS.lightBlue),
-\item {} borderColor: companies.map(c => c.isSubject ? COLORS.navy : COLORS.blue),
-\item {} borderWidth: 1
-\item {} \}]
-\item {} \},
-\item {} options: \{
-\item {} indexAxis: 'y',
-\item {} responsive: true,
-\item {} scales: \{
-\item {} x: \{
-\item {} title: \{ display: true, text: 'LTM P/E', font: \{ size: 11 \} \},
-\item {} grid: \{ color: '\#eee' \}
-\item {} \},
-\item {} y: \{
-\item {} ticks: \{ font: \{ size: 12, weight: 'bold' \} \}
-\item {} \}
-\item {} \},
-\item {} plugins: \{
-\item {} legend: \{ display: false \},
-\item {} tooltip: \{
-\item {} callbacks: \{ label: ctx => 'P/E: ' + ctx.raw.toFixed(1) + 'x' \}
-\item {} \}
-\item {} \}
-\item {} \}
-\item {} \});
-\item {} \}
-\item {} //
-\item {} // HELPER FUNCTIONS DEFINED ABOVE — DO NOT REWRITE THEM.
-\item {} // Use ONLY these functions to create charts.
-\item {} // DO NOT write custom inline Chart.js code.
-\item {} //
-\item {} </script>
-\item {} <!-- -->
-\item {} <!-- CHART DATA — EACH CHART IN ITS OWN SCRIPT + TRY-CATCH -->
-\item {} <!-- A syntax error in one chart must NOT break the others. -->
-\item {} <!-- MANDATORY: Use the helper functions above. No custom code. -->
-\item {} <!-- -->
-\item {} <!-- Figure 1: Revenue \& EPS -->
-\item {} <script>
-\item {} try \{
-\item {} createRevEpsChart('chart-rev-eps',
-\item {} ['Q1 FY24','Q2 FY24','Q3 FY24','Q4 FY24','Q1 FY25','Q2 FY25','Q3 FY25','Q4 FY25'],
-\item {} [152.3, 161.6, 160.8, 173.4, 161.5, 169.3, 165.8, 178.0], // revenue in \$B
-\item {} [1.47, 1.84, 1.53, 1.80, 1.56, 1.92, 1.60, 1.90], // diluted EPS
-\item {} 'Revenue (\$B)'
-\item {} );
-\item {} \} catch(e) \{ console.error('Figure 1 error:', e); \}
-\item {} </script>
-\item {} <!-- Figure 2: Margin Trends -->
-\item {} <script>
-\item {} try \{
-\item {} createMarginChart('chart-margins',
-\item {} ['Q1 FY24','Q2 FY24','Q3 FY24','Q4 FY24','Q1 FY25','Q2 FY25','Q3 FY25','Q4 FY25'],
-\item {} [24.0, 24.4, 24.2, 23.8, 24.5, 24.8, 24.6, 24.1], // gross margin \%
-\item {} [4.2, 5.1, 4.5, 4.8, 4.6, 5.3, 4.7, 5.0] // operating margin \%
-\item {} );
-\item {} \} catch(e) \{ console.error('Figure 2 error:', e); \}
-\item {} </script>
-\item {} <!-- Figure 3: Revenue Growth y/y — ONLY quarters where y/y can be computed (most recent 4) -->
-\item {} <script>
-\item {} try \{
-\item {} createRevGrowthChart('chart-rev-growth',
-\item {} ['Q1 FY25','Q2 FY25','Q3 FY25','Q4 FY25'], // Only 4 labels — quarters with y/y data
-\item {} [6.0, 4.8, 3.1, 2.7] // y/y revenue growth \% for those 4 quarters
-\item {} );
-\item {} \} catch(e) \{ console.error('Figure 3 error:', e); \}
-\item {} </script>
-\item {} <!-- Figure 5: Annotated Stock Price -->
-\item {} <script>
-\item {} try \{
-\item {} createAnnotatedPriceChart('chart-price-annotated',
-\item {} ['2025-02-18','2025-02-19'], // ... daily date labels for 1 year
-\item {} [170.5, 171.2], // ... daily closing prices
-\item {} [
-\item {} \{ date: '2025-05-15', label: 'Q1 FY26', move: '+3.2\%' \},
-\item {} \{ date: '2025-08-15', label: 'Q2 FY26', move: '-1.8\%' \}
-\item {} ],
-\item {} 'WMT'
-\item {} );
-\item {} \} catch(e) \{ console.error('Figure 5 error:', e); \}
-\item {} </script>
-\item {} <!-- Figure 6: Competitor Indexed Performance -->
-\item {} <script>
-\item {} try \{
-\item {} createCompPerfChart('chart-comp-perf',
-\item {} ['2025-02-18','2025-03-18'], // ... date labels
-\item {} [
-\item {} \{ label: 'WMT', data: [170.5, 172.3], isSubject: true \},
-\item {} \{ label: 'COST', data: [580.2, 595.1], isSubject: false \},
-\item {} \{ label: 'TGT', data: [142.0, 138.5], isSubject: false \}
-\item {} ]
-\item {} );
-\item {} \} catch(e) \{ console.error('Figure 6 error:', e); \}
-\item {} </script>
-\item {} <!-- Figure 7: LTM P/E Comparison -->
-\item {} <script>
-\item {} try \{
-\item {} createPEChart('chart-pe-comp', [
-\item {} \{ label: 'COST', pe: 52.3, isSubject: false \},
-\item {} \{ label: 'WMT', pe: 28.1, isSubject: true \},
-\item {} \{ label: 'TGT', pe: 15.6, isSubject: false \},
-\item {} \{ label: 'BJ', pe: 22.4, isSubject: false \}
-\item {} ]);
-\item {} \} catch(e) \{ console.error('Figure 7 error:', e); \}
-\item {} </script>
-\item {} </body>
-\item {} </html>
+\item {} Includes a full HTML document scaffold (doctype, head, and body).
+\item {} Defines embedded CSS, including print-oriented layout and typography rules.
+\item {} Configures Chart.js usage, including plugin registration and chart rendering behavior.
+\item {} Implements reusable chart helper functions for consistent figure generation.
+\item {} Contains HTML table structures for presenting formatted metric outputs.
+\item {} Defines canvas placeholders for interactive chart components.
+\item {} Loads and runs JavaScript needed for dynamic report visuals.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \subparagraph{Chart.js Implementation Notes}\mbox{}\par
@@ -3815,30 +2809,30 @@ The report is a single self-contained HTML file with:
 
 \subparagraph{Hyperlinked Claims}\mbox{}\par
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Every factual claim in the report body — numbers AND qualitative statements — must be wrapped in \emph{<a href=``\#ref-N'' class=``data-ref''>CLAIM TEXT</a>}
+\item {} Every factual claim in the report body — numbers AND qualitative statements — must be wrapped in \emph{CLAIM TEXT}
 \item {} The \emph{ref-N} ID must match a row in the Appendix table
 \item {} This applies to: narrative text, bullet points, table cells, blockquotes — anywhere a fact appears
 \item {} Chart axis labels and tooltips do NOT need hyperlinks (only report body text)
 \item {} Assign reference IDs sequentially (\emph{ref-1}, \emph{ref-2}, ...) as you write the report
 \item {} Multiple references to the same underlying claim should share the same ref ID
-\item {} For qualitative claims, wrap the key phrase: \emph{<a href=``\#ref-25'' class=``data-ref''>management flagged tariff headwinds</a>}
+\item {} For qualitative claims, wrap the key phrase: \emph{management flagged tariff headwinds}
 \end{itemize}
 
 \subparagraph{Appendix}\mbox{}\par
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{MUST begin with}: \emph{<div class=``ai-disclaimer''>Analysis is AI-generated — please confirm all outputs</div>}
+\item {} \textbf{MUST begin with}: \emph{Analysis is AI-generated — please confirm all outputs}
 \item {} The Appendix is the final section of the report, after all figures
 \item {} \textbf{4 columns}: Ref \# | Fact | Value | Source \& Derivation
 \item {} One row per unique claim referenced in the report (numeric and non-numeric)
-\item {} \textbf{Every number in the report body must be a clickable @@TOKEN0@@ link to its appendix row. No exceptions.}
+\item {} \textbf{Every number in the report body must be a clickable `` link to its appendix row. No exceptions.}
 \item {} Group rows by category: Quarterly Financials, Valuation, Transcript Claims, Estimates \& Consensus, News \& Analyst Commentary, Stock Performance
 \item {} Use subheading rows (\emph{appendix-group} class) to separate groups
 \item {} \textbf{Source \& Derivation column} must include specific, detailed sourcing for EVERY row:
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} For raw S\&P data (revenue, EPS, prices, market cap, etc.): \emph{<span class=``src-label''>S\&P Capital IQ</span>} followed by the specific MCP function call with parameters (e.g., \emph{get\_\allowbreak{}financial\_\allowbreak{}line\_\allowbreak{}item\_\allowbreak{}from\_\allowbreak{}identifiers(identifier='WMT', line\_\allowbreak{}item='revenue', period\_\allowbreak{}type='quarterly', period='Q3 FY2026')}). \textbf{Never write just ``S\&P Capital IQ'' with no detail.}
-\item {} For calculated values (margins, growth rates, P/E, returns): the full formula with \emph{<a class=``data-ref''>} hyperlinks to each component row (use \emph{formula} CSS class). \textbf{Every number in the formula must be a clickable link to its own appendix row.}
+\item {} For raw S\&P data (revenue, EPS, prices, market cap, etc.): \emph{S\&P Capital IQ} followed by the specific MCP function call with parameters (e.g., \emph{get\_\allowbreak{}financial\_\allowbreak{}line\_\allowbreak{}item\_\allowbreak{}from\_\allowbreak{}identifiers(identifier='WMT', line\_\allowbreak{}item='revenue', period\_\allowbreak{}type='quarterly', period='Q3 FY2026')}). \textbf{Never write just ``S\&P Capital IQ'' with no detail.}
+\item {} For calculated values (margins, growth rates, P/E, returns): the full formula with `\emph{ hyperlinks to each component row (use }formula` CSS class). \textbf{Every number in the formula must be a clickable link to its own appendix row.}
 \item {} For transcript claims: the verbatim excerpt sentence in italics (\emph{excerpt} CSS class) + transcript name with \emph{transcript-ref} class + \emph{key\_\allowbreak{}dev\_\allowbreak{}id}
-\item {} For Kensho results: the key finding (\emph{excerpt} class) + \textbf{clickable source URL} as \emph{<a href=``[URL]'' target=``\_\allowbreak{}blank'' class=``src-url''>[Source Title]</a>} + the search query used. \textbf{Every Kensho-sourced claim must have a clickable URL to the original source.}
+\item {} For Kensho results: the key finding (\emph{excerpt} class) + \textbf{clickable source URL} as \emph{[Source Title]} + the search query used. \textbf{Every Kensho-sourced claim must have a clickable URL to the original source.}
 \end{itemize}
 \item {} Source labels use the \emph{src-label} CSS class (bold navy)
 \item {} External source URLs use the \emph{src-url} CSS class (blue, underlined, clickable)
@@ -3848,7 +2842,7 @@ The report is a single self-contained HTML file with:
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
 \item {} \textbf{NO EMOJIS} anywhere in the report. No emoji in headings, tables, chart labels, or body text. This is a professional research document.
 \item {} Font: Arial Narrow throughout (body, headings, tables, charts).
-\item {} Management quotes: Integrate as \emph{<blockquote>} elements within the executive thesis narrative. Never under a separate heading.
+\item {} Management quotes: Integrate as `` elements within the executive thesis narrative. Never under a separate heading.
 \item {} Keep all text concise. Target 4-5 printed pages total (appendix is additional).
 \end{itemize}
 
@@ -3922,7 +2916,7 @@ S\&P Global's identifier system resolves company names to legal entities. This w
 
 \begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
 \item {} \textbf{Did it resolve at all?} If the identifier returns empty/error, the name doesn't exist in S\&P Global. Try the alias from \emph{references/sector-seeds.md}, the legal entity name, or the \emph{company\_\allowbreak{}id} directly.
-\item {} \textbf{What is the @@TOKEN0@@ field?}
+\item {} \textbf{What is the \emph{status} field?}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
 \item {} \emph{``Operating''} → Safe to query for funding rounds.
 \item {} \emph{``Operating Subsidiary''} → The company exists but is owned by a parent. It will return \textbf{zero funding rounds}. Note this in the digest as context (e.g., ``acquired by [Parent]'') but do not query for funding.
@@ -4158,35 +3152,10 @@ The \emph{simple-icons} package bundles high-quality SVG icons for thousands of 
 \textbf{Lookup strategy:}
 
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} const si = require('simple-icons');
-\item {} const sharp = require('sharp');
-\item {} // Find an icon by exact title match (case-insensitive)
-\item {} function findSimpleIcon(companyName) \{
-\item {} // Try exact match first
-\item {} for (const [key, val] of Object.entries(si)) \{
-\item {} if (!key.startsWith('si') || !val || !val.title) continue;
-\item {} if (val.title.toLowerCase() === companyName.toLowerCase()) return val;
-\item {} \}
-\item {} // Try without common suffixes (AI, Inc., Corp.)
-\item {} const stripped = companyName.replace(/\textbackslash{}s*(AI|Inc\textbackslash{}.?|Corp\textbackslash{}.?|Ltd\textbackslash{}.?)\$/i, '').trim();
-\item {} if (stripped !== companyName) \{
-\item {} for (const [key, val] of Object.entries(si)) \{
-\item {} if (!key.startsWith('si') || !val || !val.title) continue;
-\item {} if (val.title.toLowerCase() === stripped.toLowerCase()) return val;
-\item {} \}
-\item {} \}
-\item {} return null;
-\item {} \}
-\item {} // Convert SVG to PNG with the brand's official color
-\item {} async function simpleIconToPng(icon, outputPath) \{
-\item {} const coloredSvg = icon.svg.replace('<svg', <svg fill=``\#\$\{icon.hex\}'');
-\item {} await sharp(Buffer.from(coloredSvg))
-\item {} .resize(128, 128, \{ fit: 'contain', background: \{ r: 255, g: 255, b: 255, alpha: 0 \} \})
-\item {} .png()
-\item {} .toFile(outputPath);
-\item {} \}
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \textbf{Coverage:} \textasciitilde{}43\% of typical deal flow companies (strong for major tech brands like Stripe, Anthropic, Databricks, Snowflake, Discord, Shopify, SpaceX, Mistral AI, Hugging Face; weaker for niche fintech, biotech, or early-stage companies).
@@ -4197,38 +3166,18 @@ The \emph{simple-icons} package bundles high-quality SVG icons for thousands of 
 For companies not found in \emph{simple-icons}, generate a clean initial-based logo as a PNG:
 
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} async function generateInitialLogo(companyName, outputPath) \{
-\item {} const initial = companyName.charAt(0).toUpperCase();
-\item {} const svg =
-\item {} <svg width=``128'' height=``128'' xmlns=``http://www.w3.org/2000/svg''>
-\item {} <circle cx=``64'' cy=``64'' r=``64'' fill=``\#BDBDBD''/>
-\item {} <text x=``64'' y=``64'' font-family=``Arial, Helvetica, sans-serif''
-\item {} font-size=``56'' font-weight=``bold'' fill=``\#FFFFFF''
-\item {} text-anchor=``middle'' dominant-baseline=``central''>\$\{initial\}</text>
-\item {} </svg>;
-\item {} await sharp(Buffer.from(svg)).png().toFile(outputPath);
-\item {} \}
+\item {} Defines embedded CSS, including print-oriented layout and typography rules.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \subparagraph{Complete Pipeline}\mbox{}\par
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} async function fetchLogo(companyName, outputDir) \{
-\item {} const fileName = companyName.toLowerCase().replace(/[\textbackslash{}s.]+/g, '-') + '.png';
-\item {} const outPath = path.join(outputDir, fileName);
-\item {} // Tier 1: Try simple-icons
-\item {} const icon = findSimpleIcon(companyName);
-\item {} if (icon) \{
-\item {} await simpleIconToPng(icon, outPath);
-\item {} return \{ path: outPath, source: 'simple-icons' \};
-\item {} \}
-\item {} // Tier 2: Generate initial-based fallback
-\item {} await generateInitialLogo(companyName, outPath);
-\item {} return \{ path: outPath, source: 'initial-fallback' \};
-\item {} \}
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \textbf{Logo guidelines:}
@@ -4329,7 +3278,7 @@ Create a \textbf{single-slide} PowerPoint using \emph{pptxgenjs}. The slide shou
 \item {} Compact table showing the 4–6 most notable deals
 \item {} Columns: Company, Type (Series X), Announced (date), Closed (date), Amount (\$M), Pre-Money (\$M), Post-Money (\$M), Lead Investor, Deal Link
 \item {} \textbf{Announced} and \textbf{Closed} columns show dates in \emph{MMM DD} format (e.g., ``Jan 15''). These columns are required and must always be present. If a date is not available, show ``—''.
-\item {} The \textbf{Deal Link} column contains a clickable ``View →'' text linking to Capital IQ: ``\emph{ https://www.capitaliq.spglobal.com/web/client?\#offering/capitalOfferingProfile?id=<transaction\_\allowbreak{}id> }`\emph{ where }<transaction\_\allowbreak{}id>\emph{ is the }transaction\_\allowbreak{}id\emph{ from }get\_\allowbreak{}rounds\_\allowbreak{}of\_\allowbreak{}funding\_\allowbreak{}from\_\allowbreak{}identifiers`.
+\item {} The \textbf{Deal Link} column contains a clickable ``View →'' text linking to Capital IQ: ``\emph{ https://www.capitaliq.spglobal.com/web/client?\#offering/capitalOfferingProfile?id= }`\emph{ where }\emph{ is the }transaction\_\allowbreak{}id\emph{ from }get\_\allowbreak{}rounds\_\allowbreak{}of\_\allowbreak{}funding\_\allowbreak{}from\_\allowbreak{}identifiers`.
 \item {} If pre-money or post-money valuation is not disclosed, show ``—'' in that cell
 \item {} Header row with near-black (\emph{1A1A1A}) fill and white text; alternating rows in \emph{F5F5F5} and \emph{FFFFFF}
 \item {} \textbf{Center the table horizontally} on the slide. Calculate the table's total width, then set \emph{x} so it is centered within the slide width: \emph{x = (slideWidth - tableWidth) / 2}. For a 16:9 layout (13.33`` wide), if the table is 12'' wide, use \emph{x = 0.67}. Never left-align the table to the slide edge.
@@ -4339,36 +3288,18 @@ Create a \textbf{single-slide} PowerPoint using \emph{pptxgenjs}. The slide shou
 
 \textbf{Deal Link Implementation (pptxgenjs):} In pptxgenjs, hyperlinks are added to table cells using the \emph{options.hyperlink} property on the cell object:
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} // Table cell with Capital IQ deal link
-\item {} \{
-\item {} text: ``View →'',
-\item {} options: \{
-\item {} hyperlink: \{
-\item {} url: https://www.capitaliq.spglobal.com/web/client?\#offering/capitalOfferingProfile?id=\$\{transactionId\}
-\item {} \},
-\item {} color: ``2B5797'',
-\item {} fontSize: 9,
-\item {} fontFace: ``Arial''
-\item {} \}
-\item {} \}
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \textbf{Table Centering (pptxgenjs):} Always center the deal table on the slide. Calculate the x position dynamically:
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} const SLIDE\_\allowbreak{}W = 13.33; // 16:9 slide width
-\item {} const TABLE\_\allowbreak{}W = 12.5; // total table width (sum of all column widths)
-\item {} const TABLE\_\allowbreak{}X = (SLIDE\_\allowbreak{}W - TABLE\_\allowbreak{}W) / 2; // ≈ 0.42``
-\item {} slide.addTable(tableRows, \{
-\item {} x: TABLE\_\allowbreak{}X,
-\item {} y: tableY,
-\item {} w: TABLE\_\allowbreak{}W,
-\item {} colW: [1.8, 0.9, 0.9, 0.9, 1.0, 1.1, 1.2, 1.6, 0.7], // Company, Type, Announced, Closed, Amount, Pre-\$, Post-\$, Lead, Link
-\item {} // ... other options
-\item {} \});
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 Adjust \emph{colW} values as needed, but always recompute \emph{TABLE\_\allowbreak{}X} from \emph{(SLIDE\_\allowbreak{}W - sum(colW)) / 2} to keep the table centered.
 
@@ -4391,21 +3322,10 @@ Adjust \emph{colW} values as needed, but always recompute \emph{TABLE\_\allowbre
 
 \subparagraph{Code Structure}\mbox{}\par
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} const pptxgen = require(``pptxgenjs'');
-\item {} const pres = new pptxgen();
-\item {} pres.layout = ``LAYOUT\_\allowbreak{}16x9'';
-\item {} pres.title = ``Deal Flow Digest'';
-\item {} const slide = pres.addSlide();
-\item {} const SLIDE\_\allowbreak{}W = 13.33; // 16:9 slide width in inches
-\item {} // 1. Dark header bar with title and period
-\item {} // 2. Stat cards row (4 cards: Total Raised, \# Rounds, Avg Pre-Money, Largest Round)
-\item {} // 3. Key takeaways section with logos (include valuation context)
-\item {} // 4. Top deals table with Announced, Closed, Pre-Money, Post-Money columns and Capital IQ deal links
-\item {} // - Center the table: x = (SLIDE\_\allowbreak{}W - tableWidth) / 2
-\item {} // 5. Footer
-\item {} pres.writeFile(\{ fileName: ``/home/claude/deal-flow-digest.pptx'' \});
+\item {} Contains implementation-level web template code for rendering the report.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 Use factory functions (not shared objects) for shadows and repeated styles per the pptxgenjs pitfalls guidance.
@@ -4443,8 +3363,8 @@ Follow the QA process from the PPTX skill:
 \item {} \textbf{Empty results for a known company:} First check \emph{get\_\allowbreak{}info\_\allowbreak{}from\_\allowbreak{}identifiers} — if that fails, try the alias from \emph{references/sector-seeds.md} or the \emph{company\_\allowbreak{}id} directly. Common brand→legal mismatches: Together AI → ``Together Computer, Inc.'', Character.ai → ``Character Technologies, Inc.'', Runway ML → ``Runway AI, Inc.''.
 \item {} \textbf{Subsidiary companies:} DeepMind, GitHub, Instagram, WhatsApp, YouTube, BeReal, etc. are subsidiaries — they have zero independent funding rounds. Note these as ``acquired/subsidiary'' in context but do not report them as ``no activity.''
 \item {} \textbf{Defunct companies:} Companies like Convoy (shut down Oct 2023) still resolve in S\&P Global but will never have new activity. The \emph{references/sector-seeds.md} file flags these — check it before including a company.
-\item {} \textbf{@@TOKEN0@@ errors or returns zeros:} Fall back to \emph{get\_\allowbreak{}rounds\_\allowbreak{}of\_\allowbreak{}funding\_\allowbreak{}from\_\allowbreak{}identifiers} — the summary tool is less reliable. Never rely on the summary tool as the sole data source.
-\item {} \textbf{Wrong @@TOKEN0@@ parameter:} If investor-perspective queries return empty, verify you're using \emph{company\_\allowbreak{}investing\_\allowbreak{}in\_\allowbreak{}round\_\allowbreak{}of\_\allowbreak{}funding}, not \emph{company\_\allowbreak{}raising\_\allowbreak{}funds} (and vice versa).
+\item {} \textbf{\emph{get\_\allowbreak{}funding\_\allowbreak{}summary\_\allowbreak{}from\_\allowbreak{}identifiers} errors or returns zeros:} Fall back to \emph{get\_\allowbreak{}rounds\_\allowbreak{}of\_\allowbreak{}funding\_\allowbreak{}from\_\allowbreak{}identifiers} — the summary tool is less reliable. Never rely on the summary tool as the sole data source.
+\item {} \textbf{Wrong \emph{role} parameter:} If investor-perspective queries return empty, verify you're using \emph{company\_\allowbreak{}investing\_\allowbreak{}in\_\allowbreak{}round\_\allowbreak{}of\_\allowbreak{}funding}, not \emph{company\_\allowbreak{}raising\_\allowbreak{}funds} (and vice versa).
 \end{itemize}
 
 \subparagraph{Data Quality Issues}\mbox{}\par
@@ -4751,223 +3671,10 @@ These are sensible defaults. To customize for your firm's brand, modify this sec
 \textbf{You MUST use these exact functions to create document elements. Do NOT write custom docx-js styling code.} Copy these functions into your generated Node script and call them. The Style Configuration prose above remains as documentation; these functions are the enforcement mechanism.
 
 
-\textbf{Structured Template}
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} const docx = require(``docx'');
-\item {} const \{
-\item {} Document, Paragraph, TextRun, Table, TableRow, TableCell,
-\item {} WidthType, AlignmentType, BorderStyle, ShadingType,
-\item {} Header, Footer, PageNumber, HeadingLevel, TableLayoutType,
-\item {} convertInchesToTwip
-\item {} \} = docx;
-\item {} // Color constants
-\item {} const COLORS = \{
-\item {} PRIMARY: ``1F3864'',
-\item {} ACCENT: ``2E75B6'',
-\item {} TABLE\_\allowbreak{}HEADER\_\allowbreak{}FILL: ``D6E4F0'',
-\item {} TABLE\_\allowbreak{}ALT\_\allowbreak{}ROW: ``F2F2F2'',
-\item {} TABLE\_\allowbreak{}BORDER: ``CCCCCC'',
-\item {} HEADER\_\allowbreak{}TEXT: ``FFFFFF'',
-\item {} FOOTER\_\allowbreak{}TEXT: ``666666'',
-\item {} \};
-\item {} const FONT = ``Arial'';
-\item {} // 1. createHeaderBanner
-\item {} // Returns an array of docx elements: [banner paragraph, key-value table]
-\item {} function createHeaderBanner(companyName, leftFields, rightFields) \{
-\item {} // leftFields / rightFields: arrays of \{ label: string, value: string \}
-\item {} const banner = new Paragraph(\{
-\item {} children: [
-\item {} new TextRun(\{
-\item {} text: companyName,
-\item {} bold: true,
-\item {} size: 36, // 18pt
-\item {} color: COLORS.HEADER\_\allowbreak{}TEXT,
-\item {} font: FONT,
-\item {} \}),
-\item {} ],
-\item {} shading: \{ type: ShadingType.CLEAR, color: ``auto'', fill: COLORS.PRIMARY \},
-\item {} spacing: \{ after: 0 \},
-\item {} alignment: AlignmentType.LEFT,
-\item {} \});
-\item {} function buildCellParagraphs(fields) \{
-\item {} return fields.map(
-\item {} (f) =>
-\item {} new Paragraph(\{
-\item {} children: [
-\item {} new TextRun(\{ text: f.label + `` '', bold: true, size: 18, font: FONT \}),
-\item {} new TextRun(\{ text: f.value, size: 18, font: FONT \}),
-\item {} ],
-\item {} spacing: \{ after: 40 \},
-\item {} \})
-\item {} );
-\item {} \}
-\item {} const noBorder = \{ style: BorderStyle.NONE, size: 0, color: ``FFFFFF'' \};
-\item {} const noBorders = \{ top: noBorder, bottom: noBorder, left: noBorder, right: noBorder \};
-\item {} const noShading = \{ type: ShadingType.CLEAR, color: ``auto'', fill: ``FFFFFF'' \};
-\item {} const kvTable = new Table(\{
-\item {} rows: [
-\item {} new TableRow(\{
-\item {} children: [
-\item {} new TableCell(\{
-\item {} children: buildCellParagraphs(leftFields),
-\item {} width: \{ size: 50, type: WidthType.PERCENTAGE \},
-\item {} borders: noBorders,
-\item {} shading: noShading,
-\item {} \}),
-\item {} new TableCell(\{
-\item {} children: buildCellParagraphs(rightFields),
-\item {} width: \{ size: 50, type: WidthType.PERCENTAGE \},
-\item {} borders: noBorders,
-\item {} shading: noShading,
-\item {} \}),
-\item {} ],
-\item {} \}),
-\item {} ],
-\item {} width: \{ size: 100, type: WidthType.PERCENTAGE \},
-\item {} \});
-\item {} return [banner, kvTable];
-\item {} \}
-\item {} // 2. createSectionHeader
-\item {} // Returns a single Paragraph with bottom border rule
-\item {} function createSectionHeader(text) \{
-\item {} return new Paragraph(\{
-\item {} children: [
-\item {} new TextRun(\{
-\item {} text: text,
-\item {} bold: true,
-\item {} size: 22, // 11pt
-\item {} color: COLORS.PRIMARY,
-\item {} font: FONT,
-\item {} \}),
-\item {} ],
-\item {} spacing: \{ before: 240, after: 0 \}, // 12pt before, 0pt after
-\item {} border: \{
-\item {} bottom: \{ style: BorderStyle.SINGLE, size: 1, color: COLORS.TABLE\_\allowbreak{}BORDER \},
-\item {} \},
-\item {} \});
-\item {} \}
-\item {} // 3. createTable
-\item {} // headers: string[], rows: string[][], options: \{ accentHeader?, fontSize? \}
-\item {} function createTable(headers, rows, options = \{\}) \{
-\item {} const fontSize = options.fontSize || 17; // 8.5pt default
-\item {} const headerFill = options.accentHeader ? COLORS.ACCENT : COLORS.TABLE\_\allowbreak{}HEADER\_\allowbreak{}FILL;
-\item {} const headerTextColor = options.accentHeader ? COLORS.HEADER\_\allowbreak{}TEXT : ``000000'';
-\item {} const cellBorders = \{
-\item {} top: \{ style: BorderStyle.SINGLE, size: 1, color: COLORS.TABLE\_\allowbreak{}BORDER \},
-\item {} bottom: \{ style: BorderStyle.SINGLE, size: 1, color: COLORS.TABLE\_\allowbreak{}BORDER \},
-\item {} left: \{ style: BorderStyle.SINGLE, size: 1, color: COLORS.TABLE\_\allowbreak{}BORDER \},
-\item {} right: \{ style: BorderStyle.SINGLE, size: 1, color: COLORS.TABLE\_\allowbreak{}BORDER \},
-\item {} \};
-\item {} const cellMargins = \{ top: 40, bottom: 40, left: 80, right: 80 \};
-\item {} function isNumeric(val) \{
-\item {} if (typeof val !== ``string'') return false;
-\item {} const cleaned = val.replace(/[,\$\%()]/g, ``'').trim();
-\item {} return cleaned !== ``'' \&\& !isNaN(cleaned);
-\item {} \}
-\item {} // Header row
-\item {} const headerRow = new TableRow(\{
-\item {} children: headers.map(
-\item {} (h) =>
-\item {} new TableCell(\{
-\item {} children: [
-\item {} new Paragraph(\{
-\item {} children: [
-\item {} new TextRun(\{
-\item {} text: h,
-\item {} bold: true,
-\item {} size: fontSize,
-\item {} color: headerTextColor,
-\item {} font: FONT,
-\item {} \}),
-\item {} ],
-\item {} \}),
-\item {} ],
-\item {} shading: \{ type: ShadingType.CLEAR, color: ``auto'', fill: headerFill \},
-\item {} borders: cellBorders,
-\item {} margins: cellMargins,
-\item {} \})
-\item {} ),
-\item {} \});
-\item {} // Data rows with alternating shading
-\item {} const dataRows = rows.map((row, rowIdx) => \{
-\item {} const fill = rowIdx \% 2 === 1 ? COLORS.TABLE\_\allowbreak{}ALT\_\allowbreak{}ROW : ``FFFFFF'';
-\item {} return new TableRow(\{
-\item {} children: row.map((cell, colIdx) => \{
-\item {} const align = colIdx > 0 \&\& isNumeric(cell)
-\item {} ? AlignmentType.RIGHT
-\item {} : AlignmentType.LEFT;
-\item {} return new TableCell(\{
-\item {} children: [
-\item {} new Paragraph(\{
-\item {} children: [
-\item {} new TextRun(\{ text: cell, size: fontSize, font: FONT \}),
-\item {} ],
-\item {} alignment: align,
-\item {} \}),
-\item {} ],
-\item {} shading: \{ type: ShadingType.CLEAR, color: ``auto'', fill: fill \},
-\item {} borders: cellBorders,
-\item {} margins: cellMargins,
-\item {} \});
-\item {} \}),
-\item {} \});
-\item {} \});
-\item {} return new Table(\{
-\item {} rows: [headerRow, ...dataRows],
-\item {} width: \{ size: 100, type: WidthType.PERCENTAGE \},
-\item {} \});
-\item {} \}
-\item {} // 4. createBulletList
-\item {} // items: string[], style: ``synthesis'' | ``informational''
-\item {} function createBulletList(items, style = ``synthesis'') \{
-\item {} const indent =
-\item {} style === ``synthesis''
-\item {} ? \{ left: 360, hanging: 180 \} // 360 DXA left, hanging indent for bullet
-\item {} : \{ left: 180 \}; // 180 DXA, no hanging
-\item {} return items.map(
-\item {} (item) =>
-\item {} new Paragraph(\{
-\item {} children: [
-\item {} new TextRun(\{ text: ``• '', font: FONT, size: 18 \}),
-\item {} new TextRun(\{ text: item, font: FONT, size: 18 \}),
-\item {} ],
-\item {} indent: indent,
-\item {} spacing: \{ after: 60 \},
-\item {} \})
-\item {} );
-\item {} \}
-\item {} // 5. createFooter
-\item {} // date: string (e.g., ``February 23, 2026'')
-\item {} function createFooter(date) \{
-\item {} return new Footer(\{
-\item {} children: [
-\item {} new Paragraph(\{
-\item {} children: [
-\item {} new TextRun(\{
-\item {} text: Data: S\&P Capital IQ via Kensho | Analysis: AI-generated | \$\{date\},
-\item {} italics: true,
-\item {} size: 14, // 7pt
-\item {} color: COLORS.FOOTER\_\allowbreak{}TEXT,
-\item {} font: FONT,
-\item {} \}),
-\item {} ],
-\item {} alignment: AlignmentType.CENTER,
-\item {} \}),
-\item {} new Paragraph(\{
-\item {} children: [
-\item {} new TextRun(\{
-\item {} text: ``For informational purposes only. Not investment advice.'',
-\item {} italics: true,
-\item {} size: 14,
-\item {} color: COLORS.FOOTER\_\allowbreak{}TEXT,
-\item {} font: FONT,
-\item {} \}),
-\item {} ],
-\item {} alignment: AlignmentType.CENTER,
-\item {} \}),
-\item {} ],
-\item {} \});
-\item {} \}
+\item {} Implements reusable chart helper functions for consistent figure generation.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
 \textbf{Usage in generated scripts:}

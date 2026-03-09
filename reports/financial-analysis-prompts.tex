@@ -30,7 +30,7 @@
 \newcommand{\CheckedBox}{$\blacksquare$}
 \title{Financial Analysis Prompt Library\\LaTeX Translation and Dependency Map}
 \author{financial-services-plugins repository}
-\date{Generated on 2026-03-05 09:31 }
+\date{Generated on 2026-03-06 02:50 }
 \newunicodechar{⚠}{{\EmojiGlyph{⚠}}}
 \newunicodechar{✅}{{\EmojiGlyph{✅}}}
 \newunicodechar{❌}{{\EmojiGlyph{❌}}}
@@ -1320,7 +1320,7 @@ The Balance Sheet check row (below Total Liabilities and Equity) uses conditiona
 \end{longtable}
 \endgroup
 
-\textbf{Implementation:} Apply custom number format \emph{[Red][<>0]0.00;[Red]@@TOKEN0@@;0.00} or use Excel conditional formatting with the rule ``Cell Value ≠ 0'' → Red font.
+\textbf{Implementation:} Apply custom number format \emph{[Red][<>0]0.00;[Red]\href{0.00}{<>0};0.00} or use Excel conditional formatting with the rule ``Cell Value ≠ 0'' → Red font.
 
 
 \subparagraph{Margin Row Formatting}\mbox{}\par
@@ -2465,8 +2465,8 @@ When the prompt specifies exact requirements, follow them verbatim:
 This skill includes reference files in the \emph{references/} folder. Use them as follows:
 
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{@@TOKEN0@@} — Table templates for M\&A transactions, scenario analysis, and slide structure. Reference when building financial tables or investment scenarios.
-\item {} \textbf{@@TOKEN0@@} — 2x2 matrix axis pairs by industry. Reference when choosing positioning visualization dimensions.
+\item {} \textbf{\emph{references/schemas.md}} — Table templates for M\&A transactions, scenario analysis, and slide structure. Reference when building financial tables or investment scenarios.
+\item {} \textbf{\emph{references/frameworks.md}} — 2x2 matrix axis pairs by industry. Reference when choosing positioning visualization dimensions.
 \end{itemize}
 
 \subparagraph{Source Quality Hierarchy}\mbox{}\par
@@ -2510,7 +2510,7 @@ When sources conflict, prioritize in this order:
 
 \subparagraph{Visual Reference}\mbox{}\par
 
-\textbf{Review @@TOKEN0@@ and match its professional quality:}
+\textbf{Review \emph{examples/Toast\_\allowbreak{}Embedded\_\allowbreak{}Payments\_\allowbreak{}Competitive\_\allowbreak{}Landscape\_\allowbreak{}v3.pptx} and match its professional quality:}
 
 
 \textbf{Spacing \& Overflow Prevention:}
@@ -4143,7 +4143,7 @@ Build \textbf{three sensitivity tables} at the bottom of the DCF sheet showing h
 \textbf{Implementation}: These are simple 2D grids (NOT Excel's ``Data Table'' feature) with formulas in each cell. Each cell must contain a full DCF recalculation for that specific assumption combination. See Critical Constraints section for detailed requirements on populating all 75 cells programmatically using openpyxl.
 
 
-<correct\_\allowbreak{}patterns>
+
 
 
 This section contains all the CORRECT patterns to follow when building DCF models.
@@ -4389,17 +4389,17 @@ The formula in B88 should recalculate the implied price using:
 \item {} for row\_\allowbreak{}idx, wacc\_\allowbreak{}value in enumerate(wacc\_\allowbreak{}range):
 \item {} for col\_\allowbreak{}idx, term\_\allowbreak{}growth\_\allowbreak{}value in enumerate(term\_\allowbreak{}growth\_\allowbreak{}range):
 \item {} \# Build formula that uses wacc\_\allowbreak{}value and term\_\allowbreak{}growth\_\allowbreak{}value
-\item {} formula = f``=<DCF recalc using \{wacc\_\allowbreak{}value\} and \{term\_\allowbreak{}growth\_\allowbreak{}value\}>''
+\item {} formula = f``=''
 \item {} ws.cell(row=start\_\allowbreak{}row+row\_\allowbreak{}idx, column=start\_\allowbreak{}col+col\_\allowbreak{}idx).value = formula
 \end{itemize}
 
 \textbf{The sensitivity tables must work immediately when the model is opened, with no manual steps required from the user.}
 
 
-</correct\_\allowbreak{}patterns>
 
 
-<common\_\allowbreak{}mistakes>
+
+
 
 
 This section contains all the WRONG patterns to avoid when building DCF models.
@@ -4633,12 +4633,12 @@ In addition, be aware of these errors:
 \textbf{These errors are the most common. Re-read this section before starting any DCF build.}
 
 
-</common\_\allowbreak{}mistakes>
+
 
 
 \subparagraph{Excel File Creation}\mbox{}\par
 
-\textbf{This skill uses the @@TOKEN0@@ skill for all spreadsheet operations.} The xlsx skill provides:
+\textbf{This skill uses the \emph{xlsx} skill for all spreadsheet operations.} The xlsx skill provides:
 
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
 \item {} Standardized formula construction rules
@@ -4875,7 +4875,7 @@ Per the xlsx skill, ALL hardcoded values must have cell comments documenting the
 \textbf{Section 3: DCF Scenario Assumptions}
 
 
-Create separate assumption blocks for each scenario (Bear, Base, Bull) with DCF-specific assumptions (Revenue Growth \%, EBIT Margin \%, Tax Rate \%, D\&A \% of Revenue, CapEx \% of Revenue, NWC Change \% of ΔRev, Terminal Growth Rate, WACC) laid out horizontally across projection years. Each block must include section header, column header row showing the projection years (FY1, FY2, etc.), and data rows. See \emph{<correct\_\allowbreak{}patterns>} section ``Correct Assumption Table Structure'' for the exact layout.
+Create separate assumption blocks for each scenario (Bear, Base, Bull) with DCF-specific assumptions (Revenue Growth \%, EBIT Margin \%, Tax Rate \%, D\&A \% of Revenue, CapEx \% of Revenue, NWC Change \% of ΔRev, Terminal Growth Rate, WACC) laid out horizontally across projection years. Each block must include section header, column header row showing the projection years (FY1, FY2, etc.), and data rows. See `` section ``Correct Assumption Table Structure'' for the exact layout.
 
 
 \textbf{Section 4: Historical \& Projected Financials}
@@ -5194,7 +5194,7 @@ This approach centralizes scenario logic, making the model easier to audit and m
 
 \subparagraph{Troubleshooting}\mbox{}\par
 
-\textbf{If you encounter errors or unreasonable results, read @@TOKEN0@@ for detailed debugging guidance.}
+\textbf{If you encounter errors or unreasonable results, read \href{./TROUBLESHOOTING.md}{TROUBLESHOOTING.md} for detailed debugging guidance.}
 
 
 \subparagraph{Workflow Integration}\mbox{}\par
@@ -6249,7 +6249,7 @@ Usage:
 
 \textbf{Structured Template}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} scripts/init\_\allowbreak{}skill.py <skill-name> --path <output-directory>
+\item {} scripts/init\_\allowbreak{}skill.py --path
 \end{itemize}
 
 The script:
@@ -6329,7 +6329,7 @@ Once development of the skill is complete, it must be packaged into a distributa
 
 \textbf{Structured Template}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} scripts/package\_\allowbreak{}skill.py <path/to/skill-folder>
+\item {} scripts/package\_\allowbreak{}skill.py
 \end{itemize}
 
 Optional output directory specification:
@@ -6337,7 +6337,7 @@ Optional output directory specification:
 
 \textbf{Structured Template}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} scripts/package\_\allowbreak{}skill.py <path/to/skill-folder> ./dist
+\item {} scripts/package\_\allowbreak{}skill.py ./dist
 \end{itemize}
 
 The packaging script will:
