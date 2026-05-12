@@ -1,0 +1,2053 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\newfontfamily\EmojiFont[Renderer=HarfBuzz]{Apple Color Emoji}
+\newfontfamily\SymbolFont{Arial Unicode MS}
+\newcommand{\EmojiGlyph}[1]{{\normalfont\EmojiFont #1}}
+\newcommand{\SymbolGlyph}[1]{{\normalfont\SymbolFont #1}}
+\usepackage{newunicodechar}
+\usepackage{microtype}
+\usepackage{setspace}
+\setstretch{1.08}
+\usepackage{hyperref}
+\usepackage{xurl}
+\urlstyle{same}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+\usepackage{enumitem}
+\setlist{leftmargin=*,itemsep=2pt,topsep=2pt}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{ragged2e}
+\renewcommand{\arraystretch}{1.15}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{3em}
+\sloppy
+\newcommand{\UncheckedBox}{$\square$}
+\newcommand{\CheckedBox}{$\blacksquare$}
+\title{Claude For Microsoft 365 Install Prompt Library\\Comprehensive Translation, Config Coverage, and Dependency Map}
+\author{financial-services-plugins repository}
+\date{Generated on 2026-05-12 10:03 }
+\newunicodechar{✓}{{\SymbolGlyph{✓}}}
+\newunicodechar{✗}{{\SymbolGlyph{✗}}}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Repository Structure Overview}
+
+\subsection{Inventory Summary}
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Metric} & \textbf{Count} \\
+\midrule
+{} Total included files & 15 \\
+{} Markdown or markdown-like files & 8 \\
+{} JSON config files & 1 \\
+{} YAML manifest files & 0 \\
+{} Scripts & 5 \\
+{} Other text files & 1 \\
+{} Commands & 6 \\
+{} Skills & 0 \\
+{} Plugin manifests & 1 \\
+{} Managed-agent manifests & 0 \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subsection{Folder Tree}
+\textbf{Root directory: claude-for-msft-365-install}
+\begin{itemize}[leftmargin=*,itemsep=1pt,topsep=2pt]
+\item \hspace*{0.0em}.claude-plugin
+\item \hspace*{0.0em}commands
+\item \hspace*{0.0em}examples
+\item \hspace*{0.0em}README.md
+\item \hspace*{0.0em}scripts
+\item \hspace*{0.9em}.claude-plugin/plugin.json
+\item \hspace*{0.9em}commands/bootstrap.md
+\item \hspace*{0.9em}commands/consent.md
+\item \hspace*{0.9em}commands/debug.md
+\item \hspace*{0.9em}commands/manifest.md
+\item \hspace*{0.9em}commands/setup.md
+\item \hspace*{0.9em}commands/update-user-attrs.md
+\item \hspace*{0.9em}examples/python-bootstrap
+\item \hspace*{0.9em}scripts/build-manifest.mjs
+\item \hspace*{1.8em}examples/python-bootstrap/app.py
+\item \hspace*{1.8em}examples/python-bootstrap/config.py
+\item \hspace*{1.8em}examples/python-bootstrap/get\_\allowbreak{}tenant\_\allowbreak{}id.py
+\item \hspace*{1.8em}examples/python-bootstrap/mint\_\allowbreak{}dev\_\allowbreak{}token.py
+\item \hspace*{1.8em}examples/python-bootstrap/README.md
+\item \hspace*{1.8em}examples/python-bootstrap/requirements.txt
+\end{itemize}
+
+\section{Prompt Dependency Structure}
+
+\newpage
+
+\section{Translated Prompt Corpus}
+
+This section translates the prompt, manifest, configuration, and script files under claude-for-msft-365-install into a print-oriented format that preserves structure while improving readability.
+
+\subsection{Directory: .claude-plugin}
+
+\subsection{Plugin Manifest: .claude-plugin}\label{file:claude-plugin-plugin-json}
+
+\paragraph{JSON Summary}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Key} & \textbf{Type} & \textbf{Summary} \\
+\midrule
+{} name & str & claude-for-msft-365-install \\
+{} description & str & Provision direct cloud access (Vertex AI, Bedrock, or LLM gateway) for the Claude Office add-in. Generates the customized add-in manifest, walks through Azure admin consent, and writes per-user config via Microsoft Graph extension attributes. \\
+{} version & str & 0.1.2 \\
+{} author & dict & object with 2 key(s) \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{Structured JSON Content}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \{
+\item {} ``name'': ``claude-for-msft-365-install'',
+\item {} ``description'': ``Provision direct cloud access (Vertex AI, Bedrock, or LLM gateway) for the Claude Office add-in. Generates the customized add-in manifest, walks through Azure admin consent, and writes per-user config via Microsoft Graph extension attributes.'',
+\item {} ``version'': ``0.1.2'',
+\item {} ``author'': \{
+\item {} ``name'': ``Anthropic'',
+\item {} ``email'': ``support@anthropic.com''
+\item {} \}
+\item {} \}
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Directory: commands}
+
+\subsection{Command: bootstrap.md}\label{file:commands-bootstrap-md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Build the bootstrap endpoint — per-user MCP servers, skills, dynamic config \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+\paragraph{Bootstrap endpoint}\mbox{}\par
+
+You host an HTTPS GET handler. The add-in calls it at startup with the user's Entra token, you return per-user JSON, the response overrides manifest and extension attrs for that user. This is how you push structured config — \emph{mcp\_\allowbreak{}servers}, \emph{skills} — that flat string attrs can't carry.
+
+
+\subparagraph{Ask first}\mbox{}\par
+
+Figure out which mode you're in before walking the spec:
+
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Just want to understand it?} Answer from the sections below. Common questions: what's the response shape, how does \emph{\{\{...\}\}} work, why is CORS biting me.
+\item {} \textbf{Building one?} Ask: new handler or editing an existing one? Lambda, Cloud Function, Express, Python, something else? Then jump to \href{\#scaffolding-a-handler}{Scaffolding} — the sections in between are the contract you're coding against.
+\end{itemize}
+
+\subparagraph{This vs extension attrs}\mbox{}\par
+
+Both deliver per-user config. Pick by what you're carrying.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{} & \textbf{\href{update-user-attrs.md}{Extension attrs}} & \textbf{Bootstrap endpoint} \\
+\midrule
+{} You write & \emph{az rest PATCH} per user & An HTTPS service \\
+{} Carries & Flat strings, ≤256 chars & Any JSON — arrays, nested, base64 \\
+{} Good for & Token rotation, region override & \emph{mcp\_\allowbreak{} servers}, \emph{skills}, anything structured \\
+{} Refresh & Token cache, \textasciitilde{}1hr lag & \emph{bootstrap\_\allowbreak{} expires\_\allowbreak{} at}, you control it \\
+{} Auth & Entra token claims (passive) & You validate the JWT (active) \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+If you only need to swap \emph{gateway\_\allowbreak{}token} per user, attrs are less work. The moment you want a Linear MCP server for one team and a Jira one for another, you're here.
+
+
+\subparagraph{Template interpolation}\mbox{}\par
+
+Any string value can contain \emph{\{\{key\}\}}. The add-in substitutes against the \textbf{merged config chain} — manifest params, then extension attrs, then this response, each layer overriding the last. You don't echo a value back just so a template can see it; if \emph{gateway\_\allowbreak{}token} is already in the manifest or an attr, \emph{\{\{gateway\_\allowbreak{}token\}\}} resolves.
+
+
+Two phases, because the request has to happen before the response exists:
+
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{\emph{bootstrap\_\allowbreak{}url} itself} resolves against manifest + attrs only. So the manifest can carry \emph{bootstrap\_\allowbreak{}url=https://config.internal/bootstrap?project=\{\{gcp\_\allowbreak{}project\_\allowbreak{}id\}\}} and you run one endpoint that branches on a query param instead of stamping per-team URLs into attrs.
+\item {} \textbf{Response fields} resolve against the full merge — manifest + attrs + whatever this response just returned. An \emph{mcp\_\allowbreak{}servers} entry can reference a \emph{gateway\_\allowbreak{}token} that lives three lines up in the same JSON.
+\end{enumerate}
+
+Unresolved \emph{\{\{key\}\}} (typo, key never set anywhere) is left as-is in the string — no error, no empty-substitution. If an MCP server isn't connecting, check the URL the add-in actually constructed.
+
+
+\subparagraph{CORS — every URL needs it}\mbox{}\par
+
+The add-in is a browser. Every fetch — \emph{bootstrap\_\allowbreak{}url}, every \emph{mcp\_\allowbreak{}servers[].url}, every \emph{skills[].url} — happens browser-side from inside the Office taskpane. Without \emph{Access-Control-Allow-Origin: https://pivot.claude.ai} on the response, the browser blocks it before the add-in sees a byte. The server returns 200, the add-in gets nothing, and nothing in the add-in's logs tells you why. This is the most common ``it's not working'' cause.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{URL} & \textbf{Where CORS lives} \\
+\midrule
+{} \emph{bootstrap\_\allowbreak{} url} & Your handler's response headers. Behind API Gateway /  Cloud Functions, also configure the \emph{OPTIONS} preflight — the browser sends one before any request with custom headers. See the recommended preflight response below. \\
+{} \emph{mcp\_\allowbreak{} servers[].url} & The MCP server itself. Public ones (Linear, Atlassian) already allow it. Internal ones almost certainly don't until you add it. \\
+{} \emph{skills[].url} & \textbf{The bucket, not the URL.} Presigned URLs auth the request — they don't grant CORS. S3 needs a bucket CORS config, GCS needs \emph{gsutil cors set}, Azure needs blob service CORS rules. \\
+{} \emph{otlp\_\allowbreak{} endpoint} & Your OTEL collector's HTTP receiver. Most collectors default to same-origin only — set \emph{cors.allowed\_\allowbreak{} origins} on the OTLP/ HTTP receiver. \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+For \emph{bootstrap\_\allowbreak{}url}, the recommended preflight response is:
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Access-Control-Allow-Origin: https://pivot.claude.ai
+\item {} Access-Control-Allow-Methods: GET
+\item {} Access-Control-Allow-Headers: Authorization, X-Claude-User-Agent, *
+\end{itemize}
+
+Allowing \emph{*} for request headers is safe here — security comes from the Entra token, not header filtering — and keeps preflights working if the add-in adds headers in future. Keep \emph{Allow-Origin} pinned to \emph{https://pivot.claude.ai}.
+
+
+The presigned-URL one bites hardest because \emph{curl} works (curl ignores CORS), the signature is valid, the object exists, and the skill still doesn't load. Set bucket CORS once:
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} // S3 — aws s3api put-bucket-cors --bucket --cors-configuration file://cors.json
+\item {} \{ ``CORSRules'': [\{ ``AllowedOrigins'': [``https://pivot.claude.ai''], ``AllowedMethods'': [``GET''], ``AllowedHeaders'': [``*''] \}] \}
+\end{itemize}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \# GCS — gsutil cors set cors.json gs://
+\item {} [\{``origin'': [``https://pivot.claude.ai''], ``method'': [``GET''], ``responseHeader'': [``*'']\}]
+\end{itemize}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \# Azure — az storage cors add --services b --methods GET --origins https://pivot.claude.ai --allowed-headers '*' --account-name
+\end{itemize}
+
+If you're debugging a CORS failure: open the browser devtools inside the taskpane (right-click → Inspect on Windows, or attach via Safari's Develop menu on Mac), look for the request in the Network tab. A CORS block shows as a failed request with no response body and a console error naming the origin.
+
+
+\subparagraph{Request}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} GET \# after interpolation
+\item {} Authorization: Bearer \# only if entra\_\allowbreak{}sso=1 in manifest
+\item {} X-Claude-User-Agent: claude-/ \# always sent
+\end{itemize}
+
+\emph{X-Claude-User-Agent} identifies which Office host the add-in is running in. `\emph{ is one of }word\emph{, }excel\emph{, or }powerpoint\emph{; }\emph{ is the add-in build (e.g. }claude-excel/1.4.2`). Use it to return different skills or MCP servers per Office product, or to gate the add-in to specific hosts for a user.
+
+
+Without \emph{entra\_\allowbreak{}sso=1} there's no Authorization header — the request is anonymous from the add-in's side. That's fine if the endpoint sits behind network isolation, mTLS, or another auth layer the add-in doesn't see.
+
+
+With \emph{entra\_\allowbreak{}sso=1}, validate the JWT before trusting it:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Claim} & \textbf{Check} \\
+\midrule
+{} \emph{aud} & \emph{c2995f31-11e7-4882-b7a7-ef9def0a0266} — the add-in's default app ID, or your own app's GUID if you set \emph{graph\_\allowbreak{} client\_\allowbreak{} id} in the \href{manifest.md\#entra-sso}{manifest}. Anything else means the token wasn't minted for this. \\
+{} \emph{iss} & \emph{https:/ / login.microsoftonline.com/ / v2.0} — your tenant. Reject other tenants. \\
+{} \emph{exp} & Not expired. Libraries handle this; don't hand-roll it. \\
+{} \emph{oid} & The user's stable object ID. This is your lookup key — email (\emph{upn}/ \emph{preferred\_\allowbreak{} username}) can change, \emph{oid} doesn't. \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+If you set \emph{entra\_\allowbreak{}scope} in the \href{manifest.md\#entra-sso}{manifest}, the Bearer is an \textbf{access token}, not an ID token. Validate \emph{aud} = your API's Application ID URI (\emph{api://}, not the client GUID) and check \emph{scp} contains the scope you defined. \emph{iss}, \emph{exp}, \emph{oid}, and signature verification are the same.
+
+
+Signature verification needs Microsoft's JWKS (\emph{https://login.microsoftonline.com//discovery/v2.0/keys}). Use a library — \emph{jose} (Node), \emph{PyJWT} + \emph{cryptography} (Python), \emph{Microsoft.IdentityModel.Tokens} (.NET). Hand-rolled JWT verification is where security bugs live.
+
+
+\subparagraph{Response}\mbox{}\par
+
+\emph{200 OK}, \emph{Content-Type: application/json}, CORS header per \href{\#cors--every-url-needs-it}{above}.
+
+
+The body is a flat object. Every field is optional — return only what differs for this user. Unknown keys are ignored, so you can add fields the current add-in version doesn't read yet and they'll light up when it ships.
+
+
+\subparagraph{Provider keys}\mbox{}\par
+
+Any of the cloud config keys from the \href{manifest.md\#keys-by-cloud}{manifest} table — \emph{gateway\_\allowbreak{}url}, \emph{gateway\_\allowbreak{}token}, \emph{aws\_\allowbreak{}role\_\allowbreak{}arn}, \emph{gcp\_\allowbreak{}region}, etc. Same names, same meanings, just per-user.
+
+
+If you return \emph{gateway\_\allowbreak{}api\_\allowbreak{}format: ``vertex''}, also return \emph{gcp\_\allowbreak{}project\_\allowbreak{}id} and \emph{gcp\_\allowbreak{}region} (or set them at a lower layer) — they're path segments in the Vertex \emph{:rawPredict} URL the add-in constructs. \emph{``bedrock''} needs no extras.
+
+
+\subparagraph{Telemetry}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ``otlp\_\allowbreak{}endpoint'': ``https://otel-collector.your-domain.com'',
+\item {} ``otlp\_\allowbreak{}headers'': ``Authorization=Bearer \{\{gateway\_\allowbreak{}token\}\}'',
+\item {} ``otlp\_\allowbreak{}resource\_\allowbreak{}attributes'': ``team.name=\{\{team\}\},deployment.environment=prod''
+\end{itemize}
+
+\emph{otlp\_\allowbreak{}endpoint} is the base HTTPS URL of an OpenTelemetry collector you operate; the add-in appends \emph{/v1/traces} and posts OTLP/HTTP. \emph{otlp\_\allowbreak{}headers} uses the standard \emph{key1=value1,key2=value2} format and interpolates like any other value. \emph{otlp\_\allowbreak{}resource\_\allowbreak{}attributes} uses the same format (matching the standard \emph{OTEL\_\allowbreak{}RESOURCE\_\allowbreak{}ATTRIBUTES} variable) and is merged into the OpenTelemetry Resource on every span — use it when your collector requires specific resource attributes for routing or attribution. The collector must allow CORS from the add-in origin — see \href{\#cors--every-url-needs-it}{above}.
+
+
+\subparagraph{\emph{inference\_\allowbreak{}headers}}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ``inference\_\allowbreak{}headers'': \{ ``x-application-id'': ``app123'' \}
+\end{itemize}
+
+Extra HTTP headers attached to every request the add-in sends to your gateway (\emph{gateway\_\allowbreak{}url}) — typically accounting tags the gateway uses for cost allocation. Applies only to gateway deployments; direct cloud connections ignore it. The add-in treats them as opaque pass-through; \emph{Authorization}, \emph{x-api-key}, \emph{Content-Type}, \emph{Host}, \emph{Content-Length}, \emph{User-Agent}, \emph{Cookie}, and any \emph{anthropic-*} / \emph{x-amz-*} / \emph{x-goog-*} header are reserved and dropped.
+
+
+\subparagraph{\emph{mcp\_\allowbreak{}servers}}\mbox{}\par
+
+Array of MCP servers the add-in connects to for this user.
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ``mcp\_\allowbreak{}servers'': [
+\item {} \{ ``url'': ``https://mcp.linear.app/sse'', ``label'': ``Linear'' \},
+\item {} \{
+\item {} ``url'': ``https://internal.yourcompany.com/mcp/risk'',
+\item {} ``label'': ``Risk Dashboard'',
+\item {} ``headers'': \{ ``Authorization'': ``Bearer \{\{gateway\_\allowbreak{}token\}\}'' \}
+\item {} \}
+\item {} ]
+\end{itemize}
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{} \\
+\midrule
+{} \emph{url} & MCP server endpoint. Interpolated. \\
+{} \emph{label} & Display name in the add-in UI. \\
+{} \emph{headers} & Optional. Sent on every request to that server. Values interpolated — this is how you thread a per-user token through without the endpoint ever seeing it. \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{\emph{skills}}\mbox{}\par
+
+Array of skills loaded for this user. Each is either inlined as base64 or fetched from a URL — set one or the other.
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ``skills'': [
+\item {} \{
+\item {} ``name'': ``deal-memo'',
+\item {} ``description'': ``Draft a deal memo from a term sheet'',
+\item {} ``url'': ``https://yourbucket.s3.amazonaws.com/skills/deal-memo.zip?X-Amz-...''
+\item {} \},
+\item {} \{
+\item {} ``name'': ``compliance-check'',
+\item {} ``content'': ``IyBDb21wbGlhbmNlIGNoZWNrCgpSZXZpZXcgdGhlIGRvY3VtZW50IGZvci4uLg==''
+\item {} \}
+\item {} ]
+\end{itemize}
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{} \\
+\midrule
+{} \emph{name} & Skill identifier. Interpolated. \\
+{} \emph{description} & Optional. Shown in the skill picker. \\
+{} \emph{content} & Base64 bytes. Either a zip (full skill bundle with \emph{SKILL.md} + assets) or the raw \emph{SKILL.md} text — the add-in sniffs which on decode. \\
+{} \emph{url} & Presigned URL (S3, GCS, Azure SAS). Bare GET, no auth headers added — bake auth into the signature. Response body sniffed the same way as \emph{content}. Interpolated. \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Inline \emph{content} is simplest for small text-only skills. Use \emph{url} once you're shipping zips with images or the base64 starts bloating the response.
+
+
+\subparagraph{\emph{disabled\_\allowbreak{}features}}\mbox{}\par
+
+JSON array of feature slugs to lock for this user. Same vocabulary as the \href{manifest.md\#disabled-features}{manifest key} — bootstrap is the per-user layer.
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ``disabled\_\allowbreak{}features'': [``skills.authoring'']
+\end{itemize}
+
+\subparagraph{\emph{bootstrap\_\allowbreak{}expires\_\allowbreak{}at}}\mbox{}\par
+
+Epoch timestamp (seconds or milliseconds — auto-detected) for when this config goes stale. The add-in re-fetches before expiry. Omit and the config lives until the taskpane reloads.
+
+
+Set this when you're vending short-lived tokens. Don't set it as a keepalive — if nothing in the response expires, the refetch is wasted.
+
+
+\subparagraph{Scaffolding a handler}\mbox{}\par
+
+A runnable Python/FastAPI reference with RBAC for \emph{skills} and \emph{mcp\_\allowbreak{}servers} lives at \href{../examples/python-bootstrap/}{\emph{examples/python-bootstrap/}} — point them there if they want something to copy.
+
+
+When they want one built, write it for them. The contract above is what you're coding against. Get these right:
+
+
+\textbf{JWT validation is the security boundary.} Verify signature against Microsoft's JWKS, check \emph{aud} and \emph{iss} exactly, pull \emph{oid} for the user lookup. A handler that skips this and trusts \emph{preferred\_\allowbreak{}username} from an unverified token is an open endpoint with extra steps.
+
+
+\textbf{CORS on every URL you return,} not just the handler — see the \href{\#cors--every-url-needs-it}{CORS section}. Easy to ship a working handler that returns presigned skill URLs from a bucket with no CORS config, and the skills never load.
+
+
+\textbf{User lookup is their business logic.} Leave a clear \emph{// TODO: look up config for oid} where the real work goes — DynamoDB, Postgres, a YAML file, whatever they have. Don't guess; ask what their source of truth is.
+
+
+\textbf{Return sparse.} Only the keys that differ from manifest defaults. An empty \emph{\{\}} is a valid response — means ``this user gets the org-wide config.''
+
+
+Ask before writing: Lambda + API Gateway, Cloud Function, plain Express, something else? And where does per-user config live — inline in the handler (fine for a pilot), or read from a store?
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: consent.md}\label{file:commands-consent-md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Azure admin consent URLs — one-time tenant approval for Entra SSO and Outlook Graph access \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+\paragraph{Azure admin consent}\mbox{}\par
+
+\textbf{Only needed when \emph{entra\_\allowbreak{}sso=1}} in the manifest. Gateway and Vertex setups with org-wide config don't use Entra and can skip this. If you set \emph{graph\_\allowbreak{}client\_\allowbreak{}id} (your own Entra app), this page doesn't apply either — you manage consent on your app directly.
+
+
+One-time per tenant. A Global Admin opens this URL, clicks Accept, done. Until they do, NAA sign-in inside the add-in fails for every user in the tenant.
+
+
+\subparagraph{The URL}\mbox{}\par
+
+Same URL for every customer — \emph{/organizations/} resolves the tenant from whoever signs in. No substitution needed.
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} https://login.microsoftonline.com/organizations/adminconsent?client\_\allowbreak{}id=c2995f31-11e7-4882-b7a7-ef9def0a0266\&redirect\_\allowbreak{}uri=https://pivot.claude.ai/auth/callback
+\end{itemize}
+
+Print it. Tell them: open in a browser where a \textbf{Global Admin} for their tenant is signed in. They'll see a permissions screen listing what the add-in reads (user profile, extension attributes). After they click \textbf{Accept}, they land on a confirmation page — ``Admin consent granted, you can close this tab.''
+
+
+\subparagraph{Verify}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} az ad sp show --id c2995f31-11e7-4882-b7a7-ef9def0a0266 --query appId -o tsv
+\end{itemize}
+
+If that returns the same GUID, the service principal exists in their tenant — consent worked. If it errors with ``does not exist'', consent didn't complete.
+
+
+\subparagraph{Outlook — Microsoft Graph consent}\mbox{}\par
+
+\textbf{Only needed when deploying the Outlook manifest.} Separate from \emph{entra\_\allowbreak{}sso} above; required even if \emph{entra\_\allowbreak{}sso} is off.
+
+
+Claude for Outlook reads mail and calendar through Microsoft Graph. The Graph token stays in the user's Outlook client and is never sent to the gateway or to Anthropic, so this consent is the same regardless of which cloud serves the model. A Global Admin opens the URL, clicks Accept, done.
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} https://login.microsoftonline.com/organizations/v2.0/adminconsent?client\_\allowbreak{}id=c2995f31-11e7-4882-b7a7-ef9def0a0266\&scope=https://graph.microsoft.com/Mail.ReadWrite\%20https://graph.microsoft.com/Calendars.Read\%20https://graph.microsoft.com/People.Read\%20https://graph.microsoft.com/User.Read\%20offline\_\allowbreak{}access\&redirect\_\allowbreak{}uri=https://pivot.claude.ai/auth/callback
+\end{itemize}
+
+Without this, every user hits a ``Need admin approval'' wall the first time Claude tries to read mail.
+
+
+\textbf{If their policy forbids consenting to a third-party app:} they can register their own single-tenant Entra app with the same delegated Graph permissions (Mail.ReadWrite, Calendars.Read, People.Read, User.Read, offline\_\allowbreak{}access), grant admin consent on it, and pass its client ID as \emph{graph\_\allowbreak{}client\_\allowbreak{}id} when generating the Outlook manifest. Same data flow; approval lives under their app instead of Anthropic's.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: debug.md}\label{file:commands-debug-md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Diagnose deployment issues (stale config, connect failures, missing add-in) \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+\paragraph{Debug a Claude Office deployment}\mbox{}\par
+
+You are helping an enterprise admin diagnose why the deployed add-in isn't working right. Start by asking \textbf{what's wrong}, then route.
+
+
+\subparagraph{Triage}\mbox{}\par
+
+Ask the admin to describe the symptom. Route by answer:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Symptom} & \textbf{Section} \\
+\midrule
+{} Updated the manifest but users still see old config & \href{\#stale-config-after-update}{Stale config after update} \\
+{} Add-in shows ``Connection failed'' & \href{\#read-the-error-paste}{Read the error paste} \\
+{} Add-in doesn't appear in Excel/ PowerPoint at all & \href{\#add-in-not-visible}{Add-in not visible} \\
+{} Sign-in popup fails or loops & \href{\#admin-consent}{Admin consent} \\
+{} Need to see the browser console & \href{\#opening-browser-devtools-on-the-add-in}{Opening browser devtools} \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+If they have an error paste from the add-in (the \textbf{Copy error details} button on the connect-failed screen), always start there. It carries everything.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Read the error paste}\mbox{}\par
+
+Paste structure:
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Claude for Office connection failed ()
+\item {} Build:
+\item {} Request:
+\item {} :
+\item {} ...
+\item {} Manifest params:
+\item {} :
+\item {} ...
+\item {} Raw error:
+\end{itemize}
+
+\textbf{What to check:}
+
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \emph{Request:} vs \emph{Manifest params:} delta. Keys are the same snake\_\allowbreak{}case names in both blocks, so diff directly. If they differ, the user typed override values into the form. If they match, the manifest values went through unchanged.
+\item {} \emph{Manifest params:} \emph{m} key is the version tag (e.g. \emph{unified-1.0.0.11}). If it's below what you last uploaded, the user is on a stale manifest. Go to \href{\#stale-config-after-update}{Stale config}.
+\item {} \emph{Raw error:} is the ground truth. Common patterns:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \emph{invalid\_\allowbreak{}client} (401, Google) → wrong \emph{google\_\allowbreak{}client\_\allowbreak{}secret} for that \emph{google\_\allowbreak{}client\_\allowbreak{}id}. Verify in GCP Console → Credentials.
+\item {} \emph{Load failed ()} → network blocked at the WebView layer. Firewall needs to allow that host.
+\item {} \emph{STS AssumeRoleWithWebIdentity failed} → AWS IAM OIDC provider misconfigured or role trust policy wrong.
+\item {} \emph{HTTP 401/403} (gateway) → bad token or gateway rejected the key.
+\end{itemize}
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Stale config after update}\mbox{}\par
+
+Two caches, two clocks:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{Layer} & \textbf{Who holds it} & \textbf{TTL} & \textbf{How to clear} \\
+\midrule
+{} Service & M365 Admin Center → Exchange Online → client & Up to \textbf{72h} for updates (24h for fresh deploys) & Wait, or redeploy with a fresh `` \\
+{} Client & Office app's Wef folder on each machine & Until app restart, sometimes longer & Delete the folder \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Microsoft's own FAQ:
+
+\begin{quote}
+``It can take up to 72 hours for add-in updates, changes from turn on or turn off to reflect for users. https://learn.microsoft.com/en-us/microsoft-365/admin/manage/centralized-deployment-faq''
+\end{quote}
+
+\subparagraph{Confirm what Admin Center is serving}\mbox{}\par
+
+Admin Center silently ignores re-uploads with the same ``. If you uploaded a fix without bumping the fourth segment, it never took. Open M365 Admin Center → Integrated apps → your add-in → check the listed version.
+
+
+\subparagraph{Force a client-side refresh}\mbox{}\par
+
+Quit Excel/PowerPoint first, then:
+
+
+\textbf{macOS:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} rm -rf \textasciitilde{}/Library/Containers/com.microsoft.Excel/Data/Library/Caches/
+\item {} rm -rf \textasciitilde{}/Library/Containers/com.microsoft.Powerpoint/Data/Library/Caches/
+\item {} rm -rf \textasciitilde{}/Library/Containers/com.microsoft.Excel/Data/Documents/wef
+\item {} rm -rf \textasciitilde{}/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef
+\end{itemize}
+
+\textbf{Windows:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} rd /s /q ``\%LOCALAPPDATA\%\textbackslash{}Microsoft\textbackslash{}Office\textbackslash{}16.0\textbackslash{}Wef''
+\end{itemize}
+
+Relaunch. If still stale, the service-side cache hasn't caught up. Wait, or use a fresh `` (below).
+
+
+Microsoft's cache-clear doc: https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache
+
+
+\subparagraph{Nuclear option: redeploy with a fresh Id}\mbox{}\par
+
+If 72h is unacceptable, a fresh `\emph{ UUID forces Admin Center and every client to treat it as a brand-new add-in (24h fresh-deploy SLA, usually much faster). Edit }manifest.xml\emph{, replace the text inside }\emph{ with a new UUID (}uuidgen\emph{ on mac/linux, }[guid]::NewGuid()` in PowerShell), re-upload.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Add-in not visible}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Not in the ribbon:} Check M365 Admin Center → Integrated apps → your add-in → Users tab. Is the user (or their group) assigned? Nested groups aren't supported.
+\item {} \textbf{Shows ``My Add-ins'' but not the ribbon button:} The manifest's `\emph{ may not include this app. Check both }\emph{ lists (top-level and under }`).
+\item {} \textbf{Fresh deploy, been <24h:} Normal. Microsoft's SLA is 24h for first-time deployment visibility.
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Admin consent}\mbox{}\par
+
+If the user sees a sign-in popup that closes immediately or loops, the tenant hasn't granted admin consent to the Claude app. Run \href{consent.md}{\emph{:consent}} to generate the consent URL for a Global Admin to approve. The symptom in error pastes: \emph{user\_\allowbreak{}canceled} in the raw error (the broker maps any unclassifiable close to that).
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Opening browser devtools on the add-in}\mbox{}\par
+
+When you need the WebView's console — JS errors, network tab, the add-in's debug logs — you have to attach the host OS's browser devtools. The add-in runs in an embedded WebView with no address bar and no built-in F12, so each OS has its own recipe.
+
+
+\subparagraph{macOS (Safari Web Inspector)}\mbox{}\par
+
+Three gates. \textbf{Gate 3 is the one everyone misses.}
+
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Office developer extras} — quit the app first, then: ``\emph{bash defaults write com.microsoft.Excel OfficeWebAddinDeveloperExtras -bool true defaults write com.microsoft.Powerpoint OfficeWebAddinDeveloperExtras -bool true defaults write com.microsoft.Word OfficeWebAddinDeveloperExtras -bool true }`` Makes right-click → \textbf{Inspect Element} appear inside the task pane.
+\item {} \textbf{Safari Develop menu} — Safari → Settings → Advanced → check \emph{Show features for web developers}.
+\item {} \textbf{macOS Developer Tools allowlist} (Sonoma and later) — System Settings → Privacy \& Security → Developer Tools → toggle \textbf{Terminal} on. Without this, Safari's Develop menu shows \emph{``No Inspectable Applications''} even with gates 1 and 2 open.
+\end{enumerate}
+
+With the task pane open, either right-click inside it → \textbf{Inspect Element}, or go to Safari → Develop → \emph{[your machine name]} → find the add-in host (\emph{pivot.claude.ai} in prod, your configured domain otherwise).
+
+
+\textbf{Gotchas:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Office updates silently reset gate 1.} If inspection worked last week and doesn't now, re-run the \emph{defaults write}.
+\item {} \emph{``No Inspectable Applications''} = gate 3 missing, or the Office app wasn't fully quit before \emph{defaults write}. \emph{pkill -f ``Microsoft Excel''} then relaunch.
+\item {} The task pane has to be \textbf{open} (not just the app) for it to appear under Safari's Develop menu.
+\end{itemize}
+
+\subparagraph{Windows (Edge DevTools)}\mbox{}\par
+
+Depends on which WebView engine Office is using. Current M365 on Win10/11 with the WebView2 runtime gets Chromium; older perpetual Office or machines without the runtime may still be on IE11/Trident.
+
+
+\textbf{WebView2 (Chromium — the common case):}
+
+
+Right-click inside the task pane → \textbf{Inspect}. That's it, no gates. If right-click doesn't show Inspect, install \textbf{Microsoft Edge DevTools Preview} from the Microsoft Store — it lists all attachable WebView2 targets including Office add-ins. Launch it, find the add-in's URL in the target list, click to attach.
+
+
+\textbf{IE11/Trident (legacy Office 2019/2021 perpetual):}
+
+
+Run the IEChooser from an admin PowerShell:
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \& ``C:\textbackslash{}Windows\textbackslash{}SysWOW64\textbackslash{}F12\textbackslash{}IEChooser.exe''
+\end{itemize}
+Pick the add-in's page from the list. If the list is empty, the task pane isn't open yet — open it first, then refresh IEChooser.
+
+
+Microsoft's walkthrough: https://learn.microsoft.com/en-us/office/dev/add-ins/testing/debug-add-ins-using-devtools-edge-chromium
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: manifest.md}\label{file:commands-manifest-md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Generate the add-in manifest XML with your cloud config baked in \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+\paragraph{Generate add-in manifest}\mbox{}\par
+
+The script fetches the canonical manifest and appends your config as URL query parameters. The add-in reads them at startup. Outlook uses a separate template because Microsoft's \emph{MailApp} schema is distinct from the \emph{TaskPaneApp} schema Excel/Word/PowerPoint share, so ask which apps they're deploying and generate one file per host.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Host arg} & \textbf{Apps} & \textbf{Template} \\
+\midrule
+{} \emph{office} & Excel, Word, PowerPoint & \emph{pivot.claude.ai/ manifest.xml} \\
+{} \emph{outlook} & Outlook (mail + calendar) & \emph{pivot.claude.ai/ manifest-outlook-3p.xml} \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Keys by cloud}\mbox{}\par
+
+Prompt only for the keys their cloud path needs. Don't ask for all eight.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Cloud} & \textbf{Keys} \\
+\midrule
+{} Vertex & \emph{gcp\_\allowbreak{} project\_\allowbreak{} id} \emph{gcp\_\allowbreak{} region} \emph{google\_\allowbreak{} client\_\allowbreak{} id} \emph{google\_\allowbreak{} client\_\allowbreak{} secret} \\
+{} Bedrock & \emph{aws\_\allowbreak{} role\_\allowbreak{} arn} \emph{aws\_\allowbreak{} region} \\
+{} Foundry & \emph{azure\_\allowbreak{} resource\_\allowbreak{} name} \emph{azure\_\allowbreak{} api\_\allowbreak{} key} \\
+{} Gateway & \emph{gateway\_\allowbreak{} url} \emph{gateway\_\allowbreak{} token} \emph{gateway\_\allowbreak{} auth\_\allowbreak{} header} \emph{gateway\_\allowbreak{} api\_\allowbreak{} format} \\
+{} Gateway (\emph{gateway\_\allowbreak{} api\_\allowbreak{} format=vertex}) & also \emph{gcp\_\allowbreak{} project\_\allowbreak{} id} \emph{gcp\_\allowbreak{} region} \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Amazon Bedrock is \textbf{not currently supported for the \emph{outlook} host}; the script exits with an error if you pass \emph{aws\_\allowbreak{}*} keys with \emph{outlook}.
+
+
+\subparagraph{Outlook — Microsoft Graph}\mbox{}\par
+
+Outlook reads the user's mailbox and calendar via Microsoft Graph, which requires a one-time tenant-wide admin consent regardless of which cloud serves the model. Run \href{consent.md\#outlook--microsoft-graph-consent}{consent} before deploying — otherwise every user hits ``Need admin approval'' on first open.
+
+
+If their policy forbids consenting to a third-party app, prompt for \emph{graph\_\allowbreak{}client\_\allowbreak{}id} (their own single-tenant Entra app's client ID with Mail.ReadWrite, Calendars.Read, People.Read, User.Read, offline\_\allowbreak{}access delegated permissions and admin consent granted). Otherwise leave it unset and the add-in uses Anthropic's multi-tenant app.
+
+
+\subparagraph{Entra SSO}\mbox{}\par
+
+\emph{entra\_\allowbreak{}sso=1} makes the add-in acquire an Entra ID token at startup. Set it when your deployment needs the user's Microsoft identity — Bedrock uses it as the STS web identity, the bootstrap endpoint uses it as Bearer auth, and per-user attrs (\href{update-user-attrs.md}{update-user-attrs}) ride inside it as \emph{extn.*} claims.
+
+
+\textbf{Admin consent is a prerequisite.} Without it, every user hits a Microsoft consent dialog on first open. Run \href{consent.md}{consent} first so \emph{entra\_\allowbreak{}sso=1} is silent for your users.
+
+
+If you don't need Entra — static gateway config, Vertex with Google OAuth — leave it off. Users won't see a Microsoft prompt for a setup that doesn't involve Microsoft.
+
+
+\textbf{Bring your own Entra app.} By default the token is requested as Anthropic's multi-tenant app (\emph{c2995f31-…}), so its \emph{aud} claim is that GUID. If your bootstrap endpoint or token-exchange service requires \emph{aud} to match an app registered in \emph{your} tenant, set \emph{graph\_\allowbreak{}client\_\allowbreak{}id=}. Register the app in Entra as a single-tenant \textbf{Single-page application} with redirect URI \emph{https://pivot.claude.ai/msal-redirect.html}. You handle consent on your own app — \href{consent.md}{consent} covers the default app only.
+
+
+\textbf{Send an access token instead of the ID token.} With \emph{graph\_\allowbreak{}client\_\allowbreak{}id} alone the add-in still sends an \emph{ID token} to your bootstrap endpoint — \emph{aud} is your app's GUID, but there's no \emph{scp} claim. If your endpoint is a standard OAuth2 protected resource that validates \emph{aud} + \emph{scp}, or an RFC 8693 token-exchange service, set \emph{entra\_\allowbreak{}scope=api:///} and the add-in requests an \emph{access token} for that scope instead. The Bearer it sends carries \emph{aud} = your API's App ID URI and \emph{scp} = the granted scope. In Entra, on your app registration: \textbf{Expose an API} (Application ID URI \emph{api://}), add a scope such as \emph{access\_\allowbreak{}as\_\allowbreak{}user}, and grant the same app delegated permission to it, then grant admin consent for the tenant. In the app manifest, set \emph{accessTokenAcceptedVersion: 2} so the issued token uses v2.0 claims (\emph{iss = login.microsoftonline.com//v2.0}, \emph{azp}, \emph{preferred\_\allowbreak{}username}); leave it unset and you get v1.0 tokens, which your validator may reject. \emph{/.default} (requests all consented scopes) also works.
+
+
+\emph{entra\_\allowbreak{}scope} requires \emph{graph\_\allowbreak{}client\_\allowbreak{}id} — the build script enforces this. Both are manifest-only: the add-in needs them to initialize NAA \emph{before} it can read extension attrs or call your bootstrap endpoint, so neither can arrive through those layers. Leave \emph{entra\_\allowbreak{}scope} unset and the ID token is sent.
+
+
+\subparagraph{Bootstrap endpoint}\mbox{}\par
+
+\emph{bootstrap\_\allowbreak{}url} points to an HTTPS endpoint you host. At startup the add-in fetches per-user JSON from it — provider keys, \emph{mcp\_\allowbreak{}servers}, \emph{skills} — and the response overrides manifest values for that user. The URL itself is \href{bootstrap.md\#template-interpolation}{interpolated} against manifest + attrs before the fetch, so one endpoint can branch on a query param.
+
+
+See \href{bootstrap.md}{bootstrap} for the request/response contract, JWT validation, and handler scaffolding.
+
+
+\subparagraph{MCP servers}\mbox{}\par
+
+\emph{mcp\_\allowbreak{}servers} is a JSON array of customer-hosted MCP servers the add-in connects to directly. Each entry is \emph{\{url, label, headers?, discover?\}} — \emph{headers} present means static auth; absent triggers OAuth discovery. Values interpolate other config keys via \emph{\{\{gateway\_\allowbreak{}url\}\}}-style templates.
+
+
+Setting it here applies one list org-wide; per-user lists belong in \href{bootstrap.md\#mcp\_\allowbreak{}servers}{bootstrap}, which also has the full schema. The value is JSON inside a shell arg — single-quote it:
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} mcp\_\allowbreak{}servers='[\{``url'':``\{\{gateway\_\allowbreak{}url\}\}/deepwiki/mcp'',``label'':``DeepWiki'',``headers'':\{``Authorization'':``Bearer \{\{gateway\_\allowbreak{}token\}\}''\}\}]'
+\end{itemize}
+
+\subparagraph{Telemetry}\mbox{}\par
+
+\emph{otlp\_\allowbreak{}endpoint} routes the add-in's OpenTelemetry traces to a collector you operate. Set it to the collector's base HTTPS URL — the add-in appends \emph{/v1/traces} and posts OTLP/HTTP. gRPC isn't supported (the add-in runs in a browser WebView). Leave it unset and no custom collector is configured.
+
+
+\emph{otlp\_\allowbreak{}headers} supplies authentication headers for that collector, in the same \emph{key1=value1,key2=value2} format as the standard \emph{OTEL\_\allowbreak{}EXPORTER\_\allowbreak{}OTLP\_\allowbreak{}HEADERS} variable. URL-encode the value in the manifest.
+
+
+\emph{otlp\_\allowbreak{}resource\_\allowbreak{}attributes} adds attributes to the OpenTelemetry Resource on every span, in the same \emph{key1=value1,key2=value2} format as the standard \emph{OTEL\_\allowbreak{}RESOURCE\_\allowbreak{}ATTRIBUTES} variable. Use this when your collector requires specific resource attributes for routing or attribution (e.g. \emph{team.name=platform,deployment.environment=prod}). The add-in already sets \emph{service.name}, \emph{service.version}, and \emph{git.sha}; values you provide here are merged on top.
+
+
+Setting these here applies one collector org-wide; per-user routing belongs in \href{bootstrap.md\#telemetry}{bootstrap} or extension attrs.
+
+
+\subparagraph{Inference headers}\mbox{}\par
+
+\emph{inference\_\allowbreak{}headers} is a JSON object of extra HTTP headers the add-in attaches to every request it sends to your gateway (\emph{gateway\_\allowbreak{}url}). Use it for accounting or cost-allocation tags your gateway expects — e.g., an internal application ID — so you don't need a header-injecting proxy in front of it. Applies only when using a gateway; direct cloud connections ignore it.
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} inference\_\allowbreak{}headers='\{``x-application-id'':``app123''\}'
+\end{itemize}
+
+The add-in treats the values as opaque. \emph{Authorization}, \emph{x-api-key}, \emph{Content-Type}, \emph{Host}, \emph{Content-Length}, \emph{User-Agent}, \emph{Cookie}, and any \emph{anthropic-*} / \emph{x-amz-*} / \emph{x-goog-*} header are reserved and silently dropped — they carry the add-in's own auth and protocol negotiation.
+
+
+Setting it here applies one header set org-wide; per-user values belong in \href{bootstrap.md\#inference\_\allowbreak{}headers}{bootstrap}.
+
+
+\subparagraph{Auto-connect}\mbox{}\par
+
+Default: when all fields for a provider are set, users skip the connection form and land straight in chat. Ask: should they instead see the form first (prefilled, one click)? Yes → \emph{auto\_\allowbreak{}connect=0}.
+
+
+\subparagraph{Allow Claude.ai sign-in}\mbox{}\par
+
+When any enterprise config key is present, users land on the enterprise connection screen and the \textbf{Back} button to Claude.ai sign-in is hidden (\emph{allow\_\allowbreak{}1p=0}, the default). Set \emph{allow\_\allowbreak{}1p=1} to keep the \textbf{Back} button.
+
+
+\subparagraph{Disabled features}\mbox{}\par
+
+\emph{disabled\_\allowbreak{}features} is a comma-separated list of feature slugs the admin wants locked for users. Slugs use \emph{.} form. Currently enforced:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Slug} & \textbf{Effect} \\
+\midrule
+{} \emph{skills.authoring} & Blocks creating, editing, and uploading skills (create/ update tools, \emph{/ skillify}, \emph{.skill} upload + drag-drop, skill editing UI). Running admin-provisioned skills is unaffected. \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} disabled\_\allowbreak{}features='skills.authoring'
+\end{itemize}
+
+Unknown slugs are ignored (forward-compatible). Setting it here applies one policy org-wide; per-user policy belongs in \href{bootstrap.md\#disabled\_\allowbreak{}features}{bootstrap} (JSON array) or extension attrs (comma-separated).
+
+
+\subparagraph{Version}\mbox{}\par
+
+M365 Admin Center caches by `\emph{ + }\emph{ — re-upload with the same version is silently ignored. After the script writes }manifest.xml\emph{, ask whether this replaces an existing deployment; if yes, edit }` to bump the fourth segment past their last deployed value. First deploy can leave the template's version as-is.
+
+
+\subparagraph{Run}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} node ``\$\{CLAUDE\_\allowbreak{}PLUGIN\_\allowbreak{}ROOT\}/scripts/build-manifest.mjs'' office manifest.xml \textbackslash{}
+\item {} gcp\_\allowbreak{}project\_\allowbreak{}id= \textbackslash{}
+\item {} gcp\_\allowbreak{}region= \textbackslash{}
+\item {} auto\_\allowbreak{}connect=0 \textbackslash{}
+\item {} ...
+\item {} \# and if they're also deploying Outlook:
+\item {} node ``\$\{CLAUDE\_\allowbreak{}PLUGIN\_\allowbreak{}ROOT\}/scripts/build-manifest.mjs'' outlook manifest-outlook.xml \textbackslash{}
+\item {} \textbackslash{}
+\item {} graph\_\allowbreak{}client\_\allowbreak{}id= \# only if NOT using Anthropic's app via the consent URL
+\end{itemize}
+
+The script validates key names (unknown keys fail hard) and shape-hints values (warns but doesn't block — their infra may look different).
+
+
+\subparagraph{Validate}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} npx --yes office-addin-manifest validate manifest.xml
+\end{itemize}
+
+If validation passes but M365 Admin Center still rejects or ignores the upload, match the symptom below. Edit \emph{manifest.xml} directly, then re-validate.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Symptom} & \textbf{Fix} \\
+\midrule
+{} ``An add-in with this ID already exists'' & Replace the text inside `` with a fresh UUID. The template carries the marketplace install's ID. \\
+{} Re-upload accepted but nothing changes & M365 caches by ID + version. Edit `\emph{ to a higher fourth segment (e.g. }1.0.0.9\emph{ → }1.0.0.10`) and re-validate. \\
+{} Only want Excel (not PowerPoint) & Remove `\emph{ elements for }Presentation\emph{. **Two parallel lists:** the top-level }\emph{ uses }Name=``Presentation''\emph{, the one under }\emph{ uses }xsi:type=``Presentation''\emph{ — both must go or the manifest is inconsistent. The }xsi:type\emph{ block is multi-line, delete the whole }...</ Host>`. \\
+{} Only want Excel/ PPT, not Outlook & Nothing to remove — Outlook is a separate file. Just don't generate it. \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: setup.md}\label{file:commands-setup-md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Setup wizard — provision Vertex/ Bedrock/ Foundry/ gateway, admin consent, generate manifest(s) \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+\paragraph{Claude in Office — Direct Cloud Setup}\mbox{}\par
+
+You are walking an enterprise admin through configuring the Claude Office add-in to call their own cloud instead of Anthropic's API. The output is a customized \emph{manifest.xml} they deploy via M365 Admin Center.
+
+
+\textbf{Before anything else:} the setup log lives at \emph{\textasciitilde{}/Desktop/claude-for-msft-365-install-setup.md} (resolve \emph{\textasciitilde{}} for their platform). If it exists, read it first — you may be resuming a prior run and can skip completed steps. Start a new \emph{\#\# Run — } section and append each command and its captured output (IDs, URLs) as you go.
+
+
+\textbf{Check for Node.js} — Steps 4 and 6 shell out to \emph{node} and \emph{npx}. Run \emph{node --version}. If it's missing, \textbf{ask before installing} — it's their machine. If they say yes, \emph{brew install node} (mac) / \emph{winget install OpenJS.NodeJS} (win) / whatever their package manager is. If no, stop here.
+
+
+\textbf{When capturing values from the admin} (IDs, URLs, secrets pasted back from a console) — don't use AskUserQuestion. That's a choice picker; they're holding a string. Just say ``paste the Client ID when you have it'' and read it from their next message. Use AskUserQuestion only for the actual branch points (gateway vs vertex, per-user vs org-wide).
+
+
+\subparagraph{Step 1 — How does the add-in reach Claude?}\mbox{}\par
+
+Ask this first, because it's the thing admins get wrong: \textbf{do you already run an LLM gateway (LiteLLM, Portkey, Kong, etc.)?}
+
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Yes → \emph{gateway}.} Even if the gateway routes to Vertex or Bedrock under the hood — the add-in talks to \emph{your gateway}, not to Google or AWS. You just need the gateway URL.
+\item {} \textbf{No → \emph{vertex} or \emph{bedrock}.} The add-in authenticates directly to the cloud provider. Pick where your infra lives.
+\end{itemize}
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{Path} & \textbf{What it means} & \textbf{Provisioning} & \textbf{Manifest keys} \\
+\midrule
+{} \emph{gateway} & Add-in → your gateway → (whatever) & None & \emph{gateway\_\allowbreak{} url} (+ \emph{gateway\_\allowbreak{} api\_\allowbreak{} format} if not \emph{/ v1/ messages}) \\
+{} \emph{vertex} & Add-in → Google Vertex AI, directly & Google OAuth client & \emph{gcp\_\allowbreak{} project\_\allowbreak{} id}, \emph{gcp\_\allowbreak{} region}, \emph{google\_\allowbreak{} client\_\allowbreak{} id}, \emph{google\_\allowbreak{} client\_\allowbreak{} secret} \\
+{} \emph{bedrock} & Add-in → AWS Bedrock, directly & IAM OIDC provider + role & \emph{aws\_\allowbreak{} role\_\allowbreak{} arn}, \emph{aws\_\allowbreak{} region} \\
+{} \emph{foundry} & Add-in → Azure AI Foundry, directly & Foundry resource + API key & \emph{azure\_\allowbreak{} resource\_\allowbreak{} name}, \emph{azure\_\allowbreak{} api\_\allowbreak{} key} \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Bedrock and per-user config (bootstrap endpoint or extension attrs) need \emph{entra\_\allowbreak{}sso=1} — the add-in acquires the user's Entra ID token to authenticate those flows. See the Entra SSO section in \href{manifest.md}{manifest}.
+
+
+\subparagraph{Step 1b — Which Office apps?}\mbox{}\par
+
+Ask: \textbf{Excel/Word/PowerPoint, Outlook, or both?} Outlook is a separate manifest and has one extra prerequisite.
+
+
+If they're deploying Outlook:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Bedrock is not currently supported for Outlook.} If they picked \emph{bedrock} in Step 1, Outlook is off the table for now — generate only the \emph{office} manifest.
+\item {} \textbf{Microsoft Graph admin consent is required.} Run \href{consent.md\#outlook--microsoft-graph-consent}{consent} — a Global Admin opens one URL and clicks Accept. Do this before generating the manifest so you can ask whether they're using Anthropic's app (no \emph{graph\_\allowbreak{}client\_\allowbreak{}id} needed) or their own Entra app (capture \emph{graph\_\allowbreak{}client\_\allowbreak{}id}).
+\end{itemize}
+
+Branch to the matching section below.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Vertex AI}\mbox{}\par
+
+\subparagraph{1a. Prerequisites}\mbox{}\par
+
+Confirm with the admin:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} GCP project ID (they should know this)
+\item {} Region with Claude model quota (typically \emph{us-east5})
+\end{itemize}
+
+\subparagraph{1b. Create the OAuth client}\mbox{}\par
+
+No \emph{gcloud} command exists for this. Open the console link (substitute their project ID), walk them through, they paste back the client ID and secret.
+
+
+\begin{quote}
+``Open: \emph{https://console.cloud.google.com/apis/credentials?project=} → \textbf{Create Credentials} → \textbf{OAuth client ID} - Application type: \textbf{Web application} - Name: \emph{Claude for Office} - Authorized redirect URI: \emph{https://pivot.claude.ai/auth/callback} → \textbf{Create} → copy the \textbf{Client ID} and \textbf{Client Secret}''
+\end{quote}
+
+Enable the Vertex API while they're there:
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} gcloud services enable aiplatform.googleapis.com --project=
+\end{itemize}
+
+Capture: \emph{gcp\_\allowbreak{}project\_\allowbreak{}id}, \emph{gcp\_\allowbreak{}region}, \emph{google\_\allowbreak{}client\_\allowbreak{}id}, \emph{google\_\allowbreak{}client\_\allowbreak{}secret}.
+
+
+Continue to \href{\#step-3--decide-whats-org-wide-vs-per-user}{Step 3}. Vertex uses Google OAuth, not Entra, so admin consent isn't needed unless you also opt into per-user config (in which case come back to Step 2 after deciding in Step 3).
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Bedrock}\mbox{}\par
+
+\subparagraph{1a. Prerequisites}\mbox{}\par
+
+Confirm with the admin:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} AWS account ID and a region with Claude model access (usually \emph{us-east-1})
+\item {} Their Azure tenant ID (from Entra admin center, or \emph{az account show --query tenantId})
+\item {} \emph{aws} CLI configured against the target account
+\end{itemize}
+
+\subparagraph{1b. Create OIDC provider + role}\mbox{}\par
+
+Three \emph{aws iam} calls. The trust policy's \emph{aud} condition is the security boundary — only tokens Azure minted for the Claude add-in can assume this role.
+
+
+Substitute their tenant ID and region:
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} TENANT\_\allowbreak{}ID=``''
+\item {} CLAUDE\_\allowbreak{}APP\_\allowbreak{}ID=``c2995f31-11e7-4882-b7a7-ef9def0a0266''
+\item {} AWS\_\allowbreak{}REGION=``us-east-1''
+\item {} ACCOUNT=\$(aws sts get-caller-identity --query Account --output text)
+\item {} ISSUER=``login.microsoftonline.com/\$\{TENANT\_\allowbreak{}ID\}/v2.0''
+\item {} \# OIDC identity provider. Thumbprint is required by the API; AWS validates
+\item {} \# major IdPs via its own trust store, but the param can't be omitted.
+\item {} THUMBPRINT=\$(openssl s\_\allowbreak{}client -servername login.microsoftonline.com \textbackslash{}
+\item {} -connect login.microsoftonline.com:443 /dev/null \textbackslash{}
+\item {} | openssl x509 -fingerprint -sha1 -noout | cut -d= -f2 | tr -d ':')
+\item {} aws iam create-open-id-connect-provider \textbackslash{}
+\item {} --url ``https://\$\{ISSUER\}'' \textbackslash{}
+\item {} --client-id-list ``\$\{CLAUDE\_\allowbreak{}APP\_\allowbreak{}ID\}'' \textbackslash{}
+\item {} --thumbprint-list ``\$\{THUMBPRINT\}''
+\item {} PROVIDER\_\allowbreak{}ARN=``arn:aws:iam::\$\{ACCOUNT\}:oidc-provider/\$\{ISSUER\}''
+\item {} \# Role with trust policy gated on aud.
+\item {} aws iam create-role --role-name ClaudeBedrockAccess \textbackslash{}
+\item {} --assume-role-policy-document '\{
+\item {} ``Version'': ``2012-10-17'',
+\item {} ``Statement'': [\{
+\item {} ``Effect'': ``Allow'',
+\item {} ``Principal'': \{``Federated'': ``'''\$\{PROVIDER\_\allowbreak{}ARN\}``'''\},
+\item {} ``Action'': ``sts:AssumeRoleWithWebIdentity'',
+\item {} ``Condition'': \{
+\item {} ``StringEquals'': \{``'''\$\{ISSUER\}``':aud'': ``'''\$\{CLAUDE\_\allowbreak{}APP\_\allowbreak{}ID\}``'''\}
+\item {} \}
+\item {} \}]
+\item {} \}'
+\item {} \# Bedrock invoke permissions.
+\item {} aws iam put-role-policy --role-name ClaudeBedrockAccess \textbackslash{}
+\item {} --policy-name BedrockInvoke \textbackslash{}
+\item {} --policy-document '\{
+\item {} ``Version'': ``2012-10-17'',
+\item {} ``Statement'': [\{
+\item {} ``Effect'': ``Allow'',
+\item {} ``Action'': [``bedrock:InvokeModel'', ``bedrock:InvokeModelWithResponseStream''],
+\item {} ``Resource'': [
+\item {} ``arn:aws:bedrock:\emph{::foundation-model/anthropic.}'',
+\item {} ``arn:aws:bedrock:\emph{:'``\$\{ACCOUNT\}''':inference-profile/us.anthropic.}''
+\item {} ]
+\item {} \}]
+\item {} \}'
+\item {} echo ``aws\_\allowbreak{}role\_\allowbreak{}arn: arn:aws:iam::\$\{ACCOUNT\}:role/ClaudeBedrockAccess''
+\end{itemize}
+
+If \emph{create-open-id-connect-provider} errors with \emph{EntityAlreadyExists}, a provider for that issuer already exists — that's fine, the role will trust it. The ARN is deterministic (\emph{arn:aws:iam:::oidc-provider/}).
+
+
+Capture: \emph{aws\_\allowbreak{}role\_\allowbreak{}arn}, \emph{aws\_\allowbreak{}region}. Add \emph{entra\_\allowbreak{}sso=1} when generating the manifest — Bedrock needs the Entra ID token as the STS web identity.
+
+
+Continue to \href{\#step-2--azure-admin-consent}{Step 2}.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Gateway}\mbox{}\par
+
+No provisioning. Ask for the gateway base URL (LiteLLM, Portkey, etc) and the token. If the token varies per user, it goes in \href{\#step-5--per-user-config}{Step 5} instead of the manifest.
+
+
+Capture: \emph{gateway\_\allowbreak{}url}, \emph{gateway\_\allowbreak{}token}.
+
+
+\textbf{API format.} Ask: does the gateway expose the Anthropic \emph{/v1/messages} API, or is it a pass-through to Bedrock (\emph{/model/\{id\}/invoke…}) or Vertex (\emph{…:rawPredict})? Almost always Anthropic — LiteLLM/Portkey/Kong default to it, and a unified \emph{/v1/messages} route is the point of running a gateway. Only set \emph{gateway\_\allowbreak{}api\_\allowbreak{}format} to \emph{bedrock} or \emph{vertex} if the gateway is a thin proxy that preserves the upstream wire format. If \emph{vertex}, also capture \emph{gcp\_\allowbreak{}project\_\allowbreak{}id} (their GCP project) and \emph{gcp\_\allowbreak{}region} (typically \emph{us-east5}) — they're path segments in the URL the add-in constructs. Point \emph{gateway\_\allowbreak{}url} at the pass-through path, e.g. \emph{https://litellm.acme.com/bedrock} or \emph{…/vertex\_\allowbreak{}ai/v1}.
+
+
+\textbf{Auth header scheme.} The add-in sends the token as \emph{x-api-key: } by default — this is what LiteLLM, Portkey, and Kong accept out of the box. If your gateway expects \emph{Authorization: Bearer } instead (common for custom/enterprise gateways), set \emph{gateway\_\allowbreak{}auth\_\allowbreak{}header=authorization}. If you're unsure, run the Step 6 smoke test with \emph{x-api-key} first — a 401 with ``no Authorization header'' in your gateway logs means you need \emph{authorization}.
+
+
+Continue to \href{\#step-3--decide-whats-org-wide-vs-per-user}{Step 3}. Gateway auth is token-based, not Entra, so admin consent isn't needed unless you also opt into per-user config (in which case come back to Step 2 after deciding in Step 3).
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Azure AI Foundry}\mbox{}\par
+
+\subparagraph{1a. Prerequisites}\mbox{}\par
+
+Confirm with the admin:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} An Azure AI Foundry resource with at least one Claude model deployed
+\item {} The resource name (the subdomain of the endpoint URL — e.g. \emph{contoso-foundry} from \emph{https://contoso-foundry.services.ai.azure.com})
+\end{itemize}
+
+\subparagraph{1b. Get the API key}\mbox{}\par
+
+Open the resource in the Azure Portal, then \textbf{Keys and Endpoint} → copy \textbf{KEY 1}. The add-in auto-detects which Claude models are deployed in the resource, so no model config is needed here.
+
+
+Capture: \emph{azure\_\allowbreak{}resource\_\allowbreak{}name}, \emph{azure\_\allowbreak{}api\_\allowbreak{}key}.
+
+
+Continue to \href{\#step-3--decide-whats-org-wide-vs-per-user}{Step 3}. Foundry auth is key-based, not Entra, so admin consent isn't needed unless you also opt into per-user config (in which case come back to Step 2 after deciding in Step 3).
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Step 2 — Azure admin consent}\mbox{}\par
+
+\textbf{Only required when \emph{entra\_\allowbreak{}sso=1}} — that is, Bedrock (the Entra token is the STS web identity) or per-user config via extension attrs/bootstrap. If neither applies, skip to Step 3.
+
+
+Read \emph{\$\{CLAUDE\_\allowbreak{}PLUGIN\_\allowbreak{}ROOT\}/commands/consent.md} and follow it.
+
+
+\subparagraph{Step 3 — Decide what's org-wide vs. per-user}\mbox{}\par
+
+The add-in reads per-user extension attributes first, falls back to manifest params. Any key can live at either layer. So the question is: \textbf{of the values captured in Step 1, do any vary per user?}
+
+
+Ask concretely — don't make them map it themselves:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Gateway: is it one URL for everyone? One token, or a token per user?
+\item {} Vertex: same project for everyone? Same region, or do some users need a different one for data residency?
+\item {} Bedrock: same role for everyone, or team-specific roles?
+\end{itemize}
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Answer} & \textbf{Split} \\
+\midrule
+{} Nothing varies & Everything → manifest. Skip Step 5. \\
+{} Unique per user (e.g. gateway token) & Unique key → Step 5, rest → manifest. \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Write the split into the setup log so Step 4 and Step 5 each know their subset.
+
+
+\subparagraph{Step 4 — Generate the manifest}\mbox{}\par
+
+Read \emph{\$\{CLAUDE\_\allowbreak{}PLUGIN\_\allowbreak{}ROOT\}/commands/manifest.md} and follow it with the \textbf{org-wide} values from Step 3. Generate one file per host from Step 1b:
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} node ``\$\{CLAUDE\_\allowbreak{}PLUGIN\_\allowbreak{}ROOT\}/scripts/build-manifest.mjs'' office manifest.xml = ...
+\item {} node ``\$\{CLAUDE\_\allowbreak{}PLUGIN\_\allowbreak{}ROOT\}/scripts/build-manifest.mjs'' outlook manifest-outlook.xml = ...
+\end{itemize}
+
+Then validate each:
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} npx -y office-addin-manifest validate manifest.xml
+\item {} npx -y office-addin-manifest validate manifest-outlook.xml
+\end{itemize}
+
+\subparagraph{Step 5 — Per-user config}\mbox{}\par
+
+Skip unless Step 3 routed something here. Otherwise pick a mechanism by what you're carrying:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Carrying} & \textbf{Use} & \textbf{Read} \\
+\midrule
+{} A string or two — token, region & Extension attrs & \emph{\$\{CLAUDE\_\allowbreak{} PLUGIN\_\allowbreak{} ROOT\}/ commands/ update-user-attrs.md} \\
+{} \emph{mcp\_\allowbreak{} servers}, \emph{skills}, anything structured & Bootstrap endpoint & \emph{\$\{CLAUDE\_\allowbreak{} PLUGIN\_\allowbreak{} ROOT\}/ commands/ bootstrap.md} \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Attrs are an \emph{az rest PATCH} per user — less work, but flat strings ≤256 chars only. Bootstrap is an HTTPS service you build — more work, no shape limits.
+
+
+\subparagraph{Step 6 — Verify a model is reachable}\mbox{}\par
+
+Before they deploy, confirm at least one of \textbf{Claude Sonnet 4.5} or \textbf{Claude Opus 4.5} (or newer) actually answers. A manifest that points at an unenabled model deploys fine and then fails silently at first user message.
+
+
+\textbf{Gateway:} probe with a 1-token request. 200 means it works. 404 means the gateway doesn't route that model name — try the other, or ask them to check their gateway config. 429 means auth works but no quota on that model — try the other. 401/403 means the token is wrong, which is a Step 1 problem.
+
+
+Pick the curl that matches \emph{gateway\_\allowbreak{}api\_\allowbreak{}format}. (Windows: swap \emph{/dev/null} for \emph{NUL}. If \emph{gateway\_\allowbreak{}auth\_\allowbreak{}header=x-api-key}, swap the auth header line for \emph{-H 'x-api-key: '}.)
+
+
+\emph{gateway\_\allowbreak{}api\_\allowbreak{}format=anthropic} (default):
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} curl -s -o /dev/null -w '\%\{http\_\allowbreak{}code\}\textbackslash{}n' ``/v1/messages'' \textbackslash{}
+\item {} -H 'content-type: application/json' -H 'authorization: Bearer ' \textbackslash{}
+\item {} -d '\{``model'':``claude-sonnet-4-5'',``max\_\allowbreak{}tokens'':1,``messages'':[\{``role'':``user'',``content'':``hi''\}]\}'
+\end{itemize}
+
+\emph{gateway\_\allowbreak{}api\_\allowbreak{}format=bedrock} — model goes in the path, \textbf{not} the body:
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} curl -s -o /dev/null -w '\%\{http\_\allowbreak{}code\}\textbackslash{}n' \textbackslash{}
+\item {} ``/model/anthropic.claude-sonnet-4-5-v1:0/invoke'' \textbackslash{}
+\item {} -H 'content-type: application/json' -H 'authorization: Bearer ' \textbackslash{}
+\item {} -d '\{``anthropic\_\allowbreak{}version'':``bedrock-2023-05-31'',``max\_\allowbreak{}tokens'':1,``messages'':[\{``role'':``user'',``content'':``hi''\}]\}'
+\end{itemize}
+
+\emph{gateway\_\allowbreak{}api\_\allowbreak{}format=vertex} — model, project, and region all go in the path:
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} curl -s -o /dev/null -w '\%\{http\_\allowbreak{}code\}\textbackslash{}n' \textbackslash{}
+\item {} ``/projects//locations//publishers/anthropic/models/claude-sonnet-4-5:rawPredict'' \textbackslash{}
+\item {} -H 'content-type: application/json' -H 'authorization: Bearer ' \textbackslash{}
+\item {} -d '\{``anthropic\_\allowbreak{}version'':``vertex-2023-10-16'',``max\_\allowbreak{}tokens'':1,``messages'':[\{``role'':``user'',``content'':``hi''\}]\}'
+\end{itemize}
+
+\textbf{Vertex:} model enablement is click-ops — the EULA accept has no API. Open the Model Garden page, confirm at least one model shows \textbf{Enabled} (not ``Request access'') for their region:
+
+
+\begin{quote}
+``\emph{https://console.cloud.google.com/vertex-ai/publishers/anthropic?project=}''
+\end{quote}
+
+If it says ``Request access'', they click through, accept terms, wait for enable. No API call until they confirm.
+
+
+\textbf{Bedrock:} same constraint — model access grant has no API. Open the model access page, confirm at least one Claude 4.5+ model shows \textbf{Access granted} (not ``Available to request''):
+
+
+\begin{quote}
+``\emph{https://console.aws.amazon.com/bedrock/home?region=\#/modelaccess}''
+\end{quote}
+
+If it says ``Available to request'', they request, accept terms, wait for grant (usually minutes, sometimes longer).
+
+
+Log the verified model name to the setup log. Don't proceed until you have a 200, a confirmed ``Enabled'', or a confirmed ``Access granted'' — whichever matches their path.
+
+
+\subparagraph{Step 7 — Deploy}\mbox{}\par
+
+Walk them through the upload — there are a few screens, and the user-assignment one is a real decision.
+
+
+\begin{quote}
+``Open: \emph{https://admin.cloud.microsoft/?\#/Settings/IntegratedApps} → \textbf{Upload custom apps} - App type: \textbf{Office Add-in} - Choose how: \textbf{Upload manifest file (.xml) from device} → select \emph{manifest.xml} - It validates on upload. If it errors here, Step 4's \emph{npx office-addin-manifest validate} should have caught it — re-run that.''
+\end{quote}
+
+\textbf{Users screen} — the decision point:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} If Step 5 was skipped (nothing varies per user) → \textbf{Entire organization} is fine.
+\item {} If Step 5 wrote per-user attrs → assign to \textbf{Specific users/groups} matching exactly who got PATCHed. Everyone else would open the add-in with no config.
+\item {} First deploy? Start with \textbf{Just me} or a pilot group, confirm it works, then widen. You can change assignment later without redeploying.
+\end{itemize}
+
+\begin{quote}
+``→ \textbf{Accept permissions} → \textbf{Finish deployment}''
+\end{quote}
+
+Propagation to users takes up to 24 hours (usually much faster). The add-in appears under \textbf{Home → Add-ins} in Excel/Word/PowerPoint once it lands.
+
+
+Append the final manifest path and the assignment scope to the setup log. Done.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Command: update-user-attrs.md}\label{file:commands-update-user-attrs-md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} description & Set per-user config (tokens, region overrides) via Azure AD extension attributes \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+\paragraph{Per-user config via extension attributes}\mbox{}\par
+
+The attributes are already registered on Anthropic's app (\emph{c2995f31-…}) — you don't create schema, you just write values. The add-in reads \emph{extension\_\allowbreak{}c2995f3111e74882b7a7ef9def0a0266\_\allowbreak{}} from the user's ID token.
+
+
+\textbf{Requires \emph{entra\_\allowbreak{}sso=1} in the manifest.} Without it the add-in never acquires an Entra token, so these attributes are never read — they silently do nothing.
+
+
+Any of the config keys can be set per-user — the add-in merges per-user attrs over manifest params, so whatever's here wins. All values are 256 chars max.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Key} & \textbf{Per-user use case} \\
+\midrule
+{} \emph{gateway\_\allowbreak{} token} & Per-user API key (rotation) \\
+{} \emph{gateway\_\allowbreak{} url} & Route different teams to different gateways \\
+{} \emph{gateway\_\allowbreak{} api\_\allowbreak{} format} & Gateway speaks Bedrock/ Vertex pass-through, not Anthropic \emph{/ v1/ messages} \\
+{} \emph{inference\_\allowbreak{} headers} & Per-user accounting tag for the gateway (JSON; mind the 256-char cap) \\
+{} \emph{bootstrap\_\allowbreak{} url} & Per-user credential-vending endpoint \\
+{} \emph{gcp\_\allowbreak{} project\_\allowbreak{} id} & Different teams on different GCP projects \\
+{} \emph{gcp\_\allowbreak{} region} & Data-residency override \\
+{} \emph{google\_\allowbreak{} client\_\allowbreak{} id} \emph{google\_\allowbreak{} client\_\allowbreak{} secret} & Different OAuth client per team (uncommon) \\
+{} \emph{aws\_\allowbreak{} role\_\allowbreak{} arn} \emph{aws\_\allowbreak{} region} & Different Bedrock roles by team \\
+{} \emph{otlp\_\allowbreak{} endpoint} \emph{otlp\_\allowbreak{} headers} \emph{otlp\_\allowbreak{} resource\_\allowbreak{} attributes} & Route telemetry to a team-specific OTEL collector /  tag spans with team-level resource attributes \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{One user}\mbox{}\par
+
+Substitute `\emph{ with the attribute name from the table. For non-secret keys (regions, project IDs) this is the normal path. For secrets (}gateway\_\allowbreak{}token\emph{, }google\_\allowbreak{}client\_\allowbreak{}secret`) the value lands in shell history and this conversation's transcript — use the bulk CSV path below if that's a problem.
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} az rest --method PATCH \textbackslash{}
+\item {} --uri ``https://graph.microsoft.com/v1.0/users/'' \textbackslash{}
+\item {} --body '\{``extension\_\allowbreak{}c2995f3111e74882b7a7ef9def0a0266\_\allowbreak{}'':``''\}'
+\end{itemize}
+
+Success is silent — PATCH returns 204 with an empty body. To verify:
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} az rest --method GET --uri ``https://graph.microsoft.com/v1.0/users/?\textbackslash{}\$select=extension\_\allowbreak{}c2995f3111e74882b7a7ef9def0a0266\_\allowbreak{}''
+\end{itemize}
+
+Graph reads are immediately consistent with the write — no lag. To dump every extension attr on a user (without knowing exact key names), use \emph{/beta/}:
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} az rest --method GET --uri ``https://graph.microsoft.com/beta/users/'' | jq 'to\_\allowbreak{}entries | map(select(.key | startswith(``extension''))) | from\_\allowbreak{}entries'
+\end{itemize}
+
+\subparagraph{Bulk (CSV, values never enter this chat)}\mbox{}\par
+
+Have the admin prepare \emph{users.csv}. First column is UPN; remaining column headers are the attribute keys. Empty cells skip that attr for that user.
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} upn,gateway\_\allowbreak{}token,gcp\_\allowbreak{}region
+\item {} alice@acme.com,sk-live-aaa,
+\item {} bob@acme.com,sk-live-bbb,europe-west4
+\item {} carol@acme.com,,europe-west4
+\end{itemize}
+
+\textbf{macOS/Linux} — write this to \emph{apply.sh} next to their CSV (the \emph{read -a} array syntax is bash-only; a bare paste into zsh breaks). They review it, then run \emph{bash apply.sh}. You only see ✓/✗ — don't \emph{cat} either file.
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \#!/bin/bash
+\item {} EXT=extension\_\allowbreak{}c2995f3111e74882b7a7ef9def0a0266\_\allowbreak{}
+\item {} \{
+\item {} IFS=, read -ra keys
+\item {} while IFS=, read -ra vals; do
+\item {} upn=``\$\{vals[0]\}''
+\item {} for i in ``\$\{!keys[@]\}''; do
+\item {} [ ``\$i'' -eq 0 ] || [ -z ``\$\{vals[\$i]\}'' ] \&\& continue
+\item {} az rest --method PATCH --uri ``https://graph.microsoft.com/v1.0/users/\$upn'' \textbackslash{}
+\item {} --body ``\{\textbackslash{}''\$\{EXT\}\$\{keys[\$i]\}\textbackslash{}``:\textbackslash{}''\$\{vals[\$i]\}\textbackslash{}``\}'' \textbackslash{}
+\item {} \&\& echo ``✓ \$upn \$\{keys[\$i]\}'' || echo ``✗ \$upn \$\{keys[\$i]\}''
+\item {} done
+\item {} done
+\item {} \} < users.csv
+\end{itemize}
+
+\textbf{Windows} — write this to \emph{apply.ps1} next to their CSV. \emph{Import-Csv} reads the header as the schema directly; they run \emph{.\textbackslash{}apply.ps1} in PowerShell.
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \$EXT = 'extension\_\allowbreak{}c2995f3111e74882b7a7ef9def0a0266\_\allowbreak{}'
+\item {} Import-Csv users.csv | ForEach-Object \{
+\item {} \$upn = \$\_\allowbreak{}.upn
+\item {} \$\_\allowbreak{}.PSObject.Properties | Where-Object \{ \$\_\allowbreak{}.Name -ne 'upn' -and \$\_\allowbreak{}.Value \} | ForEach-Object \{
+\item {} \$body = @\{ ``\$EXT\$(\$\_\allowbreak{}.Name)'' = \$\_\allowbreak{}.Value \} | ConvertTo-Json -Compress
+\item {} az rest --method PATCH --uri ``https://graph.microsoft.com/v1.0/users/\$upn'' --body \$body
+\item {} if (\$?) \{ ``OK \$upn \$(\$\_\allowbreak{}.Name)'' \} else \{ ``FAIL \$upn \$(\$\_\allowbreak{}.Name)'' \}
+\item {} \}
+\item {} \}
+\end{itemize}
+
+Report the ✓ and ✗ counts. 404 means the UPN is wrong; 403 means \emph{az login} lacks \emph{User.ReadWrite.All} — they need to re-consent or use an admin account.
+
+
+\subparagraph{Propagation delay}\mbox{}\par
+
+Graph writes succeed immediately, but the add-in reads these via the user's ID token at NAA sign-in — and Azure's STS caches token claims. Expect \textbf{up to an hour} before the new value appears for a given user. If they open the add-in right after the PATCH and it behaves as if unconfigured, that's the cache, not a failure. Tell them to wait and retry; quitting the Office app fully (not just closing the taskpane) forces a fresh NAA token on next launch.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Directory: examples}
+
+\subsection{Script File: examples/python-bootstrap/app.py}\label{file:examples-python-bootstrap-app-py}
+
+\paragraph{Script Summary}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Signal} & \textbf{Details} \\
+\midrule
+{} Imports & re, time, jwt  , config import , fastapi import FastAPI, Header, HTTPException, fastapi.middleware.cors import CORSMiddleware, jwt import PyJWKClient \\
+{} Functions & parse\_\allowbreak{} app, resolve, validate, bootstrap \\
+{} Entry point & Defines an executable main entry point \\
+{} Process execution & Invokes subprocesses or external commands \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{Normalized Script Content}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ``''``
+\item {} Claude in Office — Bootstrap endpoint reference implementation.
+\item {} The Office add-in calls GET /bootstrap with the user's Entra ID token.
+\item {} This server validates the token, decides which skills and MCP servers
+\item {} that employee is allowed to use, and returns them.
+\item {} All customer-editable settings live in config.py — edit that, not this file.
+\item {} ``''``
+\item {} import re
+\item {} import time
+\item {} import jwt \# PyJWT
+\item {} from config import (
+\item {} AUDIENCE,
+\item {} DEV\_\allowbreak{}JWKS\_\allowbreak{}PATH,
+\item {} HOST,
+\item {} ISSUER,
+\item {} JWKS\_\allowbreak{}URL,
+\item {} MCP\_\allowbreak{}SERVERS,
+\item {} PORT,
+\item {} RULES,
+\item {} SKILLS,
+\item {} )
+\item {} from fastapi import FastAPI, Header, HTTPException
+\item {} from fastapi.middleware.cors import CORSMiddleware
+\item {} from jwt import PyJWKClient
+\item {} \_\allowbreak{}UA\_\allowbreak{}RE = re.compile(r``\textasciicircum{}claude-(word|excel|powerpoint)/'', re.I)
+\item {} def parse\_\allowbreak{}app(user\_\allowbreak{}agent: str | None) -> str:
+\item {} m = \_\allowbreak{}UA\_\allowbreak{}RE.match(user\_\allowbreak{}agent or ``'')
+\item {} return m.group(1).lower() if m else ``''
+\item {} def resolve(oid: str, groups: set[str], app: str) -> dict:
+\item {} for r in RULES:
+\item {} w = r[``when'']
+\item {} if ``user'' in w and w[``user''] != oid:
+\item {} continue
+\item {} if ``group'' in w and w[``group''] not in groups:
+\item {} continue
+\item {} if ``app'' in w and w[``app''] != app:
+\item {} continue
+\item {} return \{
+\item {} ``skills'': [\{``name'': n, **SKILLS[n]\} for n in r.get(``skills'', [])],
+\item {} ``mcp\_\allowbreak{}servers'': [MCP\_\allowbreak{}SERVERS[n] for n in r.get(``mcp\_\allowbreak{}servers'', [])],
+\item {} \}
+\item {} return \{``skills'': [], ``mcp\_\allowbreak{}servers'': []\}
+\item {} \# Token validation
+\item {} \_\allowbreak{}jwks = PyJWKClient(JWKS\_\allowbreak{}URL) if not DEV\_\allowbreak{}JWKS\_\allowbreak{}PATH else None
+\item {} def validate(auth\_\allowbreak{}header: str) -> dict:
+\item {} if not auth\_\allowbreak{}header or not auth\_\allowbreak{}header.startswith(``Bearer ''):
+\item {} raise HTTPException(401, ``Missing bearer token'')
+\item {} token = auth\_\allowbreak{}header.removeprefix(``Bearer '').strip()
+\item {} if DEV\_\allowbreak{}JWKS\_\allowbreak{}PATH:
+\item {} import json
+\item {} with open(DEV\_\allowbreak{}JWKS\_\allowbreak{}PATH) as f:
+\item {} key = jwt.PyJWK(json.load(f)[``keys''][0]).key
+\item {} else:
+\item {} key = \_\allowbreak{}jwks.get\_\allowbreak{}signing\_\allowbreak{}key\_\allowbreak{}from\_\allowbreak{}jwt(token).key
+\item {} try:
+\item {} return jwt.decode(token, key, algorithms=[``RS256''], audience=AUDIENCE, issuer=ISSUER)
+\item {} except jwt.InvalidTokenError as e:
+\item {} raise HTTPException(401, f``Invalid token: \{e\}'')
+\item {} \# HTTP
+\item {} app = FastAPI()
+\item {} app.add\_\allowbreak{}middleware(
+\item {} CORSMiddleware,
+\item {} allow\_\allowbreak{}origins=[``https://pivot.claude.ai''],
+\item {} allow\_\allowbreak{}methods=[``GET''],
+\item {} allow\_\allowbreak{}headers=[``*''], \# FastAPI reflects the preflight's requested headers
+\item {} )
+\item {} @app.get(``/bootstrap'')
+\item {} def bootstrap(
+\item {} authorization: str = Header(None),
+\item {} x\_\allowbreak{}claude\_\allowbreak{}user\_\allowbreak{}agent: str = Header(None),
+\item {} ):
+\item {} claims = validate(authorization)
+\item {} oid = claims.get(``oid'', ``'')
+\item {} \# NOTE: We assume group membership arrives in the token's groups claim.
+\item {} \# If your tenant doesn't emit it (or you prefer your own RBAC), replace
+\item {} \# this line with a lookup against your IdP / HRIS — e.g.
+\item {} \# groups = fetch\_\allowbreak{}groups\_\allowbreak{}from\_\allowbreak{}graph(oid) or your\_\allowbreak{}iam.groups\_\allowbreak{}for(email)
+\item {} groups = set(claims.get(``groups'', []))
+\item {} config = resolve(oid, groups, parse\_\allowbreak{}app(x\_\allowbreak{}claude\_\allowbreak{}user\_\allowbreak{}agent))
+\item {} return \{**config, ``bootstrap\_\allowbreak{}expires\_\allowbreak{}at'': int(time.time()) + 3600\}
+\item {} if \_\allowbreak{}\_\allowbreak{}name\_\allowbreak{}\_\allowbreak{} == ``\_\allowbreak{}\_\allowbreak{}main\_\allowbreak{}\_\allowbreak{}'':
+\item {} import uvicorn
+\item {} uvicorn.run(app, host=HOST, port=PORT)
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Script File: examples/python-bootstrap/config.py}\label{file:examples-python-bootstrap-config-py}
+
+\paragraph{Script Summary}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Signal} & \textbf{Details} \\
+\midrule
+{} Imports & base64, os \\
+{} Functions & b64 \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{Normalized Script Content}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ``''``
+\item {} Edit this file to configure your bootstrap server. app.py should not need changes.
+\item {} ``''``
+\item {} import base64
+\item {} import os
+\item {} \# Config
+\item {} TENANT\_\allowbreak{}ID = os.environ[``TENANT\_\allowbreak{}ID''] \# your Entra tenant
+\item {} AUDIENCE = ``c2995f31-11e7-4882-b7a7-ef9def0a0266'' \# Claude in Office add-in app ID
+\item {} ISSUER = f``https://login.microsoftonline.com/\{TENANT\_\allowbreak{}ID\}/v2.0''
+\item {} JWKS\_\allowbreak{}URL = f``https://login.microsoftonline.com/\{TENANT\_\allowbreak{}ID\}/discovery/v2.0/keys''
+\item {} HOST = os.getenv(``HOST'', ``127.0.0.1'')
+\item {} PORT = int(os.getenv(``PORT'', ``8080''))
+\item {} \# Local-dev override: point at a self-issued JWKS instead of Entra.
+\item {} \# Signature verification still runs. Refuses to start on non-loopback.
+\item {} DEV\_\allowbreak{}JWKS\_\allowbreak{}PATH = os.getenv(``DEV\_\allowbreak{}JWKS\_\allowbreak{}PATH'')
+\item {} if DEV\_\allowbreak{}JWKS\_\allowbreak{}PATH and HOST != ``127.0.0.1'':
+\item {} raise SystemExit(``DEV\_\allowbreak{}JWKS\_\allowbreak{}PATH may only be used when HOST=127.0.0.1'')
+\item {} \# Catalog: every skill / MCP server you might hand out
+\item {} def b64(s: str) -> str:
+\item {} return base64.b64encode(s.encode()).decode()
+\item {} SKILLS = \{
+\item {} ``deal-memo'': \{
+\item {} ``description'': ``Draft a deal memo from a term sheet'',
+\item {} ``url'': ``https://your-bucket.s3.amazonaws.com/skills/deal-memo.zip?X-Amz-Signature=...'',
+\item {} \},
+\item {} ``compliance-check'': \{
+\item {} ``description'': ``Review a document for compliance issues'',
+\item {} ``content'': b64(``\# Compliance check\textbackslash{}n\textbackslash{}nReview the document for regulatory red flags...''),
+\item {} \},
+\item {} ``risk-dashboard'': \{
+\item {} ``description'': ``Summarize positions from the risk dashboard'',
+\item {} ``url'': ``https://your-bucket.s3.amazonaws.com/skills/risk.zip?X-Amz-Signature=...'',
+\item {} \},
+\item {} \}
+\item {} MCP\_\allowbreak{}SERVERS = \{
+\item {} ``linear'': \{``url'': ``https://mcp.linear.app/sse'', ``label'': ``Linear''\},
+\item {} ``risk-api'': \{
+\item {} ``url'': ``https://internal.example.com/mcp/risk'',
+\item {} ``label'': ``Risk Dashboard'',
+\item {} ``headers'': \{``Authorization'': ``Bearer \{\{gateway\_\allowbreak{}token\}\}''\},
+\item {} \},
+\item {} \}
+\item {} \# RBAC: first matching rule wins
+\item {} \# when conditions (all must match):
+\item {} \# group — value from the Entra token's groups claim
+\item {} \# user — Entra user oid
+\item {} \# app — Office host: ``word'' | ``excel'' | ``powerpoint''
+\item {} \# In production, group/user values are GUIDs — replace the names below
+\item {} \# with real Object IDs from Entra admin center.
+\item {} RULES = [
+\item {} \{``when'': \{``app'': ``word'', ``group'': ``investment-banking''\},
+\item {} ``skills'': [``deal-memo'', ``compliance-check''], ``mcp\_\allowbreak{}servers'': [``linear'']\},
+\item {} \{``when'': \{``group'': ``risk''\},
+\item {} ``skills'': [``risk-dashboard'', ``compliance-check''], ``mcp\_\allowbreak{}servers'': [``risk-api'']\},
+\item {} \{``when'': \{``user'': ``alice''\},
+\item {} ``skills'': [``deal-memo''], ``mcp\_\allowbreak{}servers'': []\},
+\item {} \{``when'': \{\}, ``skills'': [``compliance-check''], ``mcp\_\allowbreak{}servers'': []\}, \# default
+\item {} ]
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Script File: examples/python-bootstrap/get\_\allowbreak{}tenant\_\allowbreak{}id.py}\label{file:examples-python-bootstrap-get-tenant-id-py}
+
+\paragraph{Script Summary}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Signal} & \textbf{Details} \\
+\midrule
+{} Imports & json, subprocess, sys, urllib.request \\
+{} Functions & from\_\allowbreak{} domain, from\_\allowbreak{} az\_\allowbreak{} cli \\
+{} Entry point & Defines an executable main entry point \\
+{} Process execution & Invokes subprocesses or external commands \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{Normalized Script Content}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \#!/usr/bin/env python3
+\item {} ``''``
+\item {} Print your Entra (Azure AD) tenant ID.
+\item {} Usage:
+\item {} python get\_\allowbreak{}tenant\_\allowbreak{}id.py alice@yourcompany.com
+\item {} python get\_\allowbreak{}tenant\_\allowbreak{}id.py yourcompany.com
+\item {} python get\_\allowbreak{}tenant\_\allowbreak{}id.py \# tries az account show if Azure CLI is logged in
+\item {} Set the result as TENANT\_\allowbreak{}ID before running app.py.
+\item {} ``''``
+\item {} import json
+\item {} import subprocess
+\item {} import sys
+\item {} import urllib.request
+\item {} def from\_\allowbreak{}domain(domain: str) -> str:
+\item {} \# Entra publishes per-tenant OIDC metadata at this well-known URL.
+\item {} \# The issuer field is https://login.microsoftonline.com//v2.0
+\item {} url = f``https://login.microsoftonline.com/\{domain\}/v2.0/.well-known/openid-configuration''
+\item {} with urllib.request.urlopen(url, timeout=5) as r:
+\item {} issuer = json.load(r)[``issuer'']
+\item {} return issuer.rstrip(``/'').split(``/'')[-2]
+\item {} def from\_\allowbreak{}az\_\allowbreak{}cli() -> str:
+\item {} out = subprocess.run(
+\item {} [``az'', ``account'', ``show'', ``--query'', ``tenantId'', ``-o'', ``tsv''],
+\item {} capture\_\allowbreak{}output=True, text=True, check=True,
+\item {} )
+\item {} return out.stdout.strip()
+\item {} if \_\allowbreak{}\_\allowbreak{}name\_\allowbreak{}\_\allowbreak{} == ``\_\allowbreak{}\_\allowbreak{}main\_\allowbreak{}\_\allowbreak{}'':
+\item {} if len(sys.argv) > 1:
+\item {} arg = sys.argv[1]
+\item {} domain = arg.split(``@'', 1)[1] if ``@'' in arg else arg
+\item {} print(from\_\allowbreak{}domain(domain))
+\item {} else:
+\item {} try:
+\item {} print(from\_\allowbreak{}az\_\allowbreak{}cli())
+\item {} except Exception as e:
+\item {} sys.exit(f``Pass an email/domain, or run az login first (\{e\})'')
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Script File: examples/python-bootstrap/mint\_\allowbreak{}dev\_\allowbreak{}token.py}\label{file:examples-python-bootstrap-mint-dev-token-py}
+
+\paragraph{Script Summary}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Signal} & \textbf{Details} \\
+\midrule
+{} Imports & argparse, json, os, time, base64, jwt, cryptography.hazmat.primitives import serialization, cryptography.hazmat.primitives.asymmetric import rsa \\
+{} Functions & b64u \\
+{} CLI & Exposes command-line argument parsing \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{Normalized Script Content}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ``''``
+\item {} Mint a self-signed dev token for local testing of app.py.
+\item {} First run generates dev\_\allowbreak{}private.pem + dev\_\allowbreak{}jwks.json in the current directory.
+\item {} Subsequent runs reuse them.
+\item {} python mint\_\allowbreak{}dev\_\allowbreak{}token.py --oid alice --group --group
+\item {} ``''``
+\item {} import argparse, json, os, time, base64
+\item {} import jwt
+\item {} from cryptography.hazmat.primitives import serialization
+\item {} from cryptography.hazmat.primitives.asymmetric import rsa
+\item {} PRIV = ``dev\_\allowbreak{}private.pem''
+\item {} JWKS = ``dev\_\allowbreak{}jwks.json''
+\item {} AUDIENCE = ``c2995f31-11e7-4882-b7a7-ef9def0a0266''
+\item {} TENANT\_\allowbreak{}ID = os.getenv(``TENANT\_\allowbreak{}ID'', ``dev-tenant'')
+\item {} ISSUER = f``https://login.microsoftonline.com/\{TENANT\_\allowbreak{}ID\}/v2.0''
+\item {} def b64u(n: int) -> str:
+\item {} raw = n.to\_\allowbreak{}bytes((n.bit\_\allowbreak{}length() + 7) // 8, ``big'')
+\item {} return base64.urlsafe\_\allowbreak{}b64encode(raw).rstrip(b``='').decode()
+\item {} if not os.path.exists(PRIV):
+\item {} key = rsa.generate\_\allowbreak{}private\_\allowbreak{}key(public\_\allowbreak{}exponent=65537, key\_\allowbreak{}size=2048)
+\item {} with open(PRIV, ``wb'') as f:
+\item {} f.write(key.private\_\allowbreak{}bytes(
+\item {} serialization.Encoding.PEM,
+\item {} serialization.PrivateFormat.PKCS8,
+\item {} serialization.NoEncryption(),
+\item {} ))
+\item {} nums = key.public\_\allowbreak{}key().public\_\allowbreak{}numbers()
+\item {} jwk = \{``kty'': ``RSA'', ``kid'': ``dev'', ``alg'': ``RS256'', ``use'': ``sig'',
+\item {} ``n'': b64u(nums.n), ``e'': b64u(nums.e)\}
+\item {} with open(JWKS, ``w'') as f:
+\item {} json.dump(\{``keys'': [jwk]\}, f, indent=2)
+\item {} ap = argparse.ArgumentParser()
+\item {} ap.add\_\allowbreak{}argument(``--oid'', default=``alice'')
+\item {} ap.add\_\allowbreak{}argument(``--group'', action=``append'', default=[])
+\item {} args = ap.parse\_\allowbreak{}args()
+\item {} with open(PRIV, ``rb'') as f:
+\item {} priv = serialization.load\_\allowbreak{}pem\_\allowbreak{}private\_\allowbreak{}key(f.read(), password=None)
+\item {} claims = \{``aud'': AUDIENCE, ``iss'': ISSUER, ``oid'': args.oid,
+\item {} ``groups'': args.group, ``exp'': int(time.time()) + 3600\}
+\item {} print(jwt.encode(claims, priv, algorithm=``RS256'', headers=\{``kid'': ``dev''\}))
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{File: examples/python-bootstrap/README.md}\label{file:examples-python-bootstrap-README-md}
+
+\paragraph{Bootstrap endpoint — Python reference}\mbox{}\par
+
+A minimal FastAPI implementation of the Claude in Office \emph{/bootstrap} endpoint. It validates the caller's Entra ID token and returns per-employee \emph{skills} and \emph{mcp\_\allowbreak{}servers} based on a simple first-match RBAC table.
+
+
+\subparagraph{Run against your real Entra tenant}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} pip install -r requirements.txt
+\item {} \# Find your tenant ID:
+\item {} python get\_\allowbreak{}tenant\_\allowbreak{}id.py you@yourcompany.com
+\item {} export TENANT\_\allowbreak{}ID=
+\item {} python app.py
+\end{itemize}
+
+\subparagraph{Run locally with a fake token}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} pip install -r requirements.txt
+\item {} export TENANT\_\allowbreak{}ID=dev-tenant
+\item {} TOKEN=\$(python mint\_\allowbreak{}dev\_\allowbreak{}token.py --oid alice --group investment-banking)
+\item {} DEV\_\allowbreak{}JWKS\_\allowbreak{}PATH=dev\_\allowbreak{}jwks.json python app.py \&
+\item {} curl -H ``Authorization: Bearer \$TOKEN'' \textbackslash{}
+\item {} -H ``X-Claude-User-Agent: claude-word/1.0.0'' \textbackslash{}
+\item {} http://127.0.0.1:8080/bootstrap
+\end{itemize}
+
+\subparagraph{Customize}\mbox{}\par
+
+Everything you need to change lives in \textbf{\emph{config.py}} — \emph{app.py} should not need edits.
+
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Edit \emph{SKILLS} and \emph{MCP\_\allowbreak{}SERVERS} — the full catalog you can hand out.
+\item {} Edit \emph{RULES} — first matching rule wins; the empty \emph{when: \{\}} at the bottom is the default.
+\item {} Replace the placeholder group/user names in \emph{RULES} with your real Entra Object IDs (GUIDs).
+\item {} Group membership is read from the token's \emph{groups} claim. If your tenant doesn't emit it, swap the \emph{groups = ...} line in \emph{app.py} for a lookup against your internal directory.
+\item {} Rules can be scoped per Office host with \emph{``app'': ``word'' | ``excel'' | ``powerpoint''}, parsed from the \emph{X-Claude-User-Agent} header the add-in sends.
+\item {} The \emph{groups} claim is \textbf{not} in Entra tokens by default. Enable it under \emph{App registration → Token configuration → Add groups claim} for your app.
+\item {} Swap the in-memory \emph{RULES} for your real source of truth (DB, config service, etc.).
+\end{itemize}
+
+\subparagraph{Security}\mbox{}\par
+
+\emph{DEV\_\allowbreak{}JWKS\_\allowbreak{}PATH} lets the server trust a self-issued signing key instead of Microsoft's. It refuses to start unless bound to \emph{127.0.0.1}. \textbf{Never} set it in a deployed environment.
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{File: examples/python-bootstrap/requirements.txt}\label{file:examples-python-bootstrap-requirements-txt}
+
+\textbf{Structured File Content}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} fastapi
+\item {} uvicorn
+\item {} PyJWT[crypto]
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Directory: README.md}
+
+\subsection{File: README.md}\label{file:README-md}
+
+\paragraph{Claude for Office — Direct Cloud Setup}\mbox{}\par
+
+Admin tooling for configuring the Claude Office add-in to call your own cloud (Vertex AI, Bedrock, or an LLM gateway) instead of Anthropic's API.
+
+
+\subparagraph{Install}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} claude plugin marketplace add anthropics/financial-services-plugins
+\item {} claude plugin install claude-for-msft-365-install@financial-services-plugins
+\end{itemize}
+
+Then inside the session: \emph{/claude-for-msft-365-install:setup}
+
+
+\subparagraph{Commands}\mbox{}\par
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Command} & \textbf{What it does} \\
+\midrule
+{} \emph{/ claude-for-msft-365-install:setup} & Interactive wizard — provisions cloud resources, admin consent, writes manifest \\
+{} \emph{/ claude-for-msft-365-install:manifest} & Generate the customized add-in manifest XML \\
+{} \emph{/ claude-for-msft-365-install:consent} & Azure admin consent URL for the add-in's app registration \\
+{} \emph{/ claude-for-msft-365-install:update-user-attrs} & Write per-user config via Microsoft Graph extension attributes \\
+{} \emph{/ claude-for-msft-365-install:bootstrap} & Build the bootstrap endpoint — per-user MCP servers, skills, dynamic config \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Directory: scripts}
+
+\subsection{Script File: scripts/build-manifest.mjs}\label{file:scripts-build-manifest-mjs}
+
+\textbf{Normalized Script Content}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \#!/usr/bin/env node
+\item {} // Fetches the canonical add-in manifest and writes a customized copy with your
+\item {} // org's config baked into the taskpane URL as query parameters.
+\item {} //
+\item {} // Usage: node build-manifest.mjs key=value [key=value ...]
+\item {} // Example: node build-manifest.mjs office acme.xml gcp\_\allowbreak{}project\_\allowbreak{}id=acme gcp\_\allowbreak{}region=us-east5
+\item {} import \{ writeFileSync \} from ``node:fs'';
+\item {} const MANIFESTS = \{
+\item {} office: ``https://pivot.claude.ai/manifest.xml'', // Excel + Word + PowerPoint (TaskPaneApp)
+\item {} outlook: ``https://pivot.claude.ai/manifest-outlook-3p.xml'', // Outlook (MailApp — separate schema)
+\item {} \};
+\item {} // Every URL slot Office reads from must carry the same params. Outlook's MailApp
+\item {} // schema repeats Taskpane.Url across V1\_\allowbreak{}0 and V1\_\allowbreak{}1 VersionOverrides, hence /g.
+\item {} const URL\_\allowbreak{}SLOTS = [/(<SourceLocation\textbackslash{}s+DefaultValue=``)([\textasciicircum{}'']+)(``)/g, /(id=''Taskpane\textbackslash{}.Url``\textbackslash{}s+DefaultValue='')([\textasciicircum{}``]+)('')/g];
+\item {} // Recognized config keys. pattern is a shape hint — mismatches warn but don't block
+\item {} // (your infra may look different). secret keys warn louder: the manifest is an
+\item {} // org-wide file and its URL can land in deploy logs; per-user secrets typically go
+\item {} // in Azure extension attributes instead.
+\item {} const KEYS = \{
+\item {} gcp\_\allowbreak{}project\_\allowbreak{}id: \{ pattern: /\textasciicircum{}[a-z][a-z0-9-]\{4,28\}[a-z0-9]\$/, hint: ``GCP project ID'' \},
+\item {} gcp\_\allowbreak{}region: \{ pattern: /./, hint: ``GCP region, e.g. us-east5 or global'' \},
+\item {} google\_\allowbreak{}client\_\allowbreak{}id: \{ pattern: /\textbackslash{}.apps\textbackslash{}.googleusercontent\textbackslash{}.com\$/, hint: ``OAuth 2.0 client ID'' \},
+\item {} google\_\allowbreak{}client\_\allowbreak{}secret: \{ pattern: /\textasciicircum{}GOCSPX-/, hint: ``OAuth 2.0 client secret'' \},
+\item {} aws\_\allowbreak{}role\_\allowbreak{}arn: \{
+\item {} pattern: /\textasciicircum{}arn:aws:iam::\textbackslash{}d\{12\}:role\textbackslash{}//,
+\item {} hint: ``e.g. arn:aws:iam::123456789012:role/ClaudeBedrockAccess'',
+\item {} \},
+\item {} aws\_\allowbreak{}region: \{ pattern: /\textasciicircum{}[a-z]\{2\}-[a-z]+-\textbackslash{}d+\$/, hint: ``e.g. us-east-1'' \},
+\item {} azure\_\allowbreak{}resource\_\allowbreak{}name: \{
+\item {} pattern: /\textasciicircum{}[a-z0-9][a-z0-9-]\{1,62\}\$/,
+\item {} hint: ``Azure AI Foundry resource name — the subdomain of your endpoint URL, e.g. 'contoso-foundry' from https://contoso-foundry.services.ai.azure.com'',
+\item {} \},
+\item {} azure\_\allowbreak{}api\_\allowbreak{}key: \{
+\item {} pattern: /\textasciicircum{}[A-Za-z0-9]\{20,\}\$/,
+\item {} hint: ``From Azure Portal → your Foundry resource → Keys and Endpoint → KEY 1'',
+\item {} \},
+\item {} graph\_\allowbreak{}client\_\allowbreak{}id: \{
+\item {} pattern: /\textasciicircum{}[0-9a-f]\{8\}-[0-9a-f]\{4\}-[0-9a-f]\{4\}-[0-9a-f]\{4\}-[0-9a-f]\{12\}\$/i,
+\item {} hint: ``Entra app (client) ID for Microsoft Graph — Outlook only; omit to use Anthropic's multi-tenant app via the admin consent URL'',
+\item {} \},
+\item {} gateway\_\allowbreak{}url: \{ pattern: /\textasciicircum{}https:\textbackslash{}/\textbackslash{}//, hint: ``HTTPS base URL'' \},
+\item {} gateway\_\allowbreak{}token: \{ pattern: /./, hint: ``gateway API key'', secret: true \},
+\item {} gateway\_\allowbreak{}auth\_\allowbreak{}header: \{ pattern: /\textasciicircum{}(x-api-key|authorization)\$/i, hint: ``auth header scheme (default: x-api-key)'' \},
+\item {} gateway\_\allowbreak{}api\_\allowbreak{}format: \{ pattern: /\textasciicircum{}(anthropic|bedrock|vertex)\$/i, hint: ``anthropic | bedrock | vertex'' \},
+\item {} mcp\_\allowbreak{}servers: \{ pattern: /\textasciicircum{}\textbackslash{}[.*\textbackslash{}]\$/, hint: ``JSON array of \{url, label, headers?, discover?\}'' \},
+\item {} inference\_\allowbreak{}headers: \{ pattern: /\textasciicircum{}\textbackslash{}\{.*\textbackslash{}\}\$/, hint: ``JSON object of extra headers to attach to every model request'' \},
+\item {} bootstrap\_\allowbreak{}url: \{ pattern: /\textasciicircum{}https:\textbackslash{}/\textbackslash{}//, hint: ``HTTPS endpoint returning per-user config'' \},
+\item {} otlp\_\allowbreak{}endpoint: \{ pattern: /\textasciicircum{}https:\textbackslash{}/\textbackslash{}//, hint: ``OTLP/HTTP traces collector URL'' \},
+\item {} otlp\_\allowbreak{}headers: \{ pattern: /./, hint: ``comma-separated k=v pairs for the OTLP exporter'' \},
+\item {} otlp\_\allowbreak{}resource\_\allowbreak{}attributes: \{
+\item {} pattern: /\textasciicircum{}([\textasciicircum{}=,\textbackslash{}s]+=[\textasciicircum{},]\emph{)(,[\textasciicircum{}=,\textbackslash{}s]+=[\textasciicircum{},]})*\$/,
+\item {} hint: ``comma-separated k=v pairs added to the OTEL Resource (same format as OTEL\_\allowbreak{}RESOURCE\_\allowbreak{}ATTRIBUTES)'',
+\item {} \},
+\item {} auto\_\allowbreak{}connect: \{ pattern: /\textasciicircum{}[01]\$/, hint: ``0 shows form, 1 (or omit) auto-connects'' \},
+\item {} entra\_\allowbreak{}sso: \{ pattern: /\textasciicircum{}[01]\$/, hint: ``1 enables Entra SSO (required for aws\_\allowbreak{}role\_\allowbreak{}arn)'' \},
+\item {} graph\_\allowbreak{}client\_\allowbreak{}id: \{
+\item {} pattern: /\textasciicircum{}[0-9a-f]\{8\}-[0-9a-f]\{4\}-[0-9a-f]\{4\}-[0-9a-f]\{4\}-[0-9a-f]\{12\}\$/i,
+\item {} hint: ``your Entra app registration's Application (client) ID — overrides the default multi-tenant app'',
+\item {} \},
+\item {} entra\_\allowbreak{}scope: \{
+\item {} pattern: /\textasciicircum{}(api|https):\textbackslash{}/\textbackslash{}/\textbackslash{}S+\textbackslash{}/[\textbackslash{}w.-]+\$/i,
+\item {} hint: ``scope URI for your Entra-protected API, e.g. api:///.default — requires graph\_\allowbreak{}client\_\allowbreak{}id'',
+\item {} \},
+\item {} allow\_\allowbreak{}1p: \{
+\item {} pattern: /\textasciicircum{}[01]\$/,
+\item {} hint: ``1 allows Claude.ai OAuth alongside 3P (default: locked when other keys present)'',
+\item {} \},
+\item {} disabled\_\allowbreak{}features: \{
+\item {} pattern: /\textasciicircum{}[\textbackslash{}w.]+(,[\textbackslash{}w.]+)*\$/,
+\item {} hint: ``comma-separated feature slugs to lock for users, e.g. skills.authoring'',
+\item {} \},
+\item {} \};
+\item {} const NEEDS\_\allowbreak{}ENTRA = [``aws\_\allowbreak{}role\_\allowbreak{}arn'', ``graph\_\allowbreak{}client\_\allowbreak{}id'', ``entra\_\allowbreak{}scope''];
+\item {} async function main() \{
+\item {} const [host, out, ...pairs] = process.argv.slice(2);
+\item {} const manifestUrl = process.env.MANIFEST\_\allowbreak{}URL || MANIFESTS[host];
+\item {} if (!manifestUrl || !out || pairs.length === 0) \{
+\item {} console.error(``Usage: node build-manifest.mjs key=value [key=value ...]'');
+\item {} console.error(Keys: \$\{Object.keys(KEYS).join(``, '')\});
+\item {} process.exit(1);
+\item {} \}
+\item {} if (host === ``outlook'' \&\& pairs.some((p) => p.startsWith(``aws\_\allowbreak{}''))) \{
+\item {} console.error(``error: Amazon Bedrock (aws\_\allowbreak{}role\_\allowbreak{}arn/aws\_\allowbreak{}region) is not currently supported for Outlook'');
+\item {} process.exit(1);
+\item {} \}
+\item {} if (host !== ``outlook'' \&\& pairs.some((p) => p.startsWith(``graph\_\allowbreak{}client\_\allowbreak{}id=''))) \{
+\item {} console.warn(``note: graph\_\allowbreak{}client\_\allowbreak{}id only applies to Outlook; it has no effect in the office manifest'');
+\item {} \}
+\item {} const params = new URLSearchParams();
+\item {} for (const p of pairs) \{
+\item {} const eq = p.indexOf(``='');
+\item {} if (eq < 1) throw new Error(bad arg: \$\{p\} (expected key=value));
+\item {} const [k, v] = [p.slice(0, eq).trim(), p.slice(eq + 1).trim()];
+\item {} const spec = KEYS[k];
+\item {} if (!spec) throw new Error(unknown key: \$\{k\}\textbackslash{}n valid: \$\{Object.keys(KEYS).join(``, '')\});
+\item {} if (!v) throw new Error(empty value for \$\{k\});
+\item {} if (!spec.pattern.test(v)) console.warn(warn: \$\{k\}=\$\{v\} — expected \$\{spec.hint\});
+\item {} if (spec.secret) \{
+\item {} console.warn(
+\item {} note: \$\{k\} in the manifest applies to every user. If it varies per user, set it via update-user-attrs instead.,
+\item {} );
+\item {} \}
+\item {} params.set(k, v);
+\item {} \}
+\item {} const needsEntra = NEEDS\_\allowbreak{}ENTRA.find((k) => params.has(k));
+\item {} if (needsEntra \&\& params.get(``entra\_\allowbreak{}sso'') !== ``1'') \{
+\item {} throw new Error(\$\{needsEntra\} requires entra\_\allowbreak{}sso=1 (the add-in needs an Entra token to use it));
+\item {} \}
+\item {} if (params.has(``entra\_\allowbreak{}scope'') \&\& !params.has(``graph\_\allowbreak{}client\_\allowbreak{}id'')) \{
+\item {} throw new Error(``entra\_\allowbreak{}scope requires graph\_\allowbreak{}client\_\allowbreak{}id (the scope is requested as your own Entra app, not the default)'');
+\item {} \}
+\item {} // URLSearchParams joins with \&; XML attribute values need it escaped.
+\item {} const qs = params.toString().replaceAll(``\&'', ``\&'');
+\item {} const res = await fetch(manifestUrl);
+\item {} if (!res.ok) throw new Error(fetch \$\{manifestUrl\}: \$\{res.status\} \$\{res.statusText\});
+\item {} let xml = await res.text();
+\item {} for (const slot of URL\_\allowbreak{}SLOTS) \{
+\item {} slot.lastIndex = 0;
+\item {} if (!slot.test(xml)) throw new Error(manifest missing expected URL slot: \$\{slot.source\});
+\item {} slot.lastIndex = 0;
+\item {} // The template URL already carries ?m= — append with \& not a second ?
+\item {} xml = xml.replace(slot, (\_\allowbreak{}, pre, url, post) => pre + url + (url.includes(``?'') ? ``\&'' : ``?'') + qs + post);
+\item {} \}
+\item {} writeFileSync(out, xml);
+\item {} console.log(Wrote \$\{out\} (\$\{host\}, params: \$\{params\}));
+\item {} \}
+\item {} main().catch((err) => \{
+\item {} console.error(err.message || err);
+\item {} process.exit(1);
+\item {} \});
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\end{document}

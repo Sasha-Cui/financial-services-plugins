@@ -1,149 +1,233 @@
-# MCP Providers Used by the Claude Cowork Financial Services Plugins
+# MCP Providers Used by the Claude Financial Services Reports
 
-- **Facts layer (numbers, comps, consensus):** FactSet / Capital IQ / LSEG
-- **Words layer (what was said):** Aiera
-- **Now layer (what just happened):** MT Newswires
-- **Model-update layer (turn filings into spreadsheet inputs):** Daloopa
-- **Risk lens (credit):** Moody's
-- **Private markets (if relevant):** PitchBook / Chronograph
-- **Internal knowledge base:** Egnyte
+Date: May 12, 2026
 
-## At a Glance
+This document updates the earlier provider report for the May 2026 Anthropic `financial-services` release. It separates three different concepts that are easy to blur together:
 
-| Provider     | MCP key       | Endpoint host               | Primary modality                           | Typical payload shape                                                       |
-| ------------ | ------------- | --------------------------- | ------------------------------------------ | --------------------------------------------------------------------------- |
-| Daloopa      | `daloopa`     | `mcp.daloopa.com`           | Structured extracted financial data        | Normalized line items with document provenance                              |
-| Morningstar  | `morningstar` | `mcp.morningstar.com`       | Research plus investment data              | Security/fund attributes, analytics, ratings, research text                 |
-| S&P Global   | `sp-global`   | `kfinance.kensho.com`       | Structured company and market intelligence | Financials, prices, consensus, transactions, linked source records          |
-| FactSet      | `factset`     | `mcp.factset.com`           | Structured market and fundamentals data    | Standardized market data, fundamentals, estimates, screening results        |
-| Moody's      | `moodys`      | `api.moodys.com`            | Credit ratings and credit research         | Ratings, outlook/watch status, research and risk context                    |
-| MT Newswires | `mtnewswire`  | `vast-mcp.blueskyapi.com`   | Real-time news text                        | Timestamped headlines, briefs, and market-moving updates                    |
-| Aiera        | `aiera`       | `mcp-pub.aiera.com`         | Event and transcript data                  | Earnings events, speaker-tagged transcript text, playback-linked excerpts   |
-| LSEG         | `lseg`        | `api.analytics.lseg.com`    | Multi-asset market data and analytics      | Prices, curves, vol surfaces, fixed-income analytics, macro series          |
-| PitchBook    | `pitchbook`   | `premium.mcp.pitchbook.com` | Private markets intelligence               | Company, deal, fund, investor, and valuation records                        |
-| Chronograph  | `chronograph` | `ai.chronograph.pe`         | Private-capital portfolio data             | Portfolio metrics, valuations, reporting data, warehousing-oriented records |
-| Egnyte       | `egnyte`      | `mcp-server.egnyte.com`     | Enterprise documents and governance        | Files, folders, metadata, permissions, governance context                   |
+1. The shared MCP connectors explicitly wired into the open-source manifests
+2. The partner-built workflow packages shipped in the public repo
+3. The broader ecosystem partners announced in Anthropic's May 5, 2026 finance-agents article
 
-## What "data modality" means here
+## The Stable Shared Connector Baseline
 
-For this document, "data modality" means the shape of information Claude is likely to receive from the provider, not just the vendor category. In practice, these modalities fall into a few buckets:
+Both the local `financial-services-plugins` repo and the inspected upstream Anthropic `financial-services` repo expose the same 11 shared MCP connectors in the `financial-analysis` core plugin.
 
-- **Structured numeric and tabular data**: financial line items, prices, ratios, consensus estimates, curves, time series, transactions, portfolio metrics.
-- **Research and news text**: articles, briefs, ratings commentary, analyst-style writeups, summaries.
-- **Transcript and event text**: speaker-attributed earnings-call transcripts, event metadata, timestamps, playback-linked excerpts.
-- **Document-linked data**: numbers that are traceable back to filings, decks, or source documents.
-- **Enterprise content objects**: files, folders, permissions, governance metadata, and stored internal documents.
+| Provider | Manifest key | Primary role |
+| --- | --- | --- |
+| Daloopa | `daloopa` | Document-linked extraction of financial statement line items |
+| Morningstar | `morningstar` | Investment data, fund intelligence, and research context |
+| S&P Global | `sp-global` | Broad public-company, market, estimates, and transaction intelligence |
+| FactSet | `factset` | Structured fundamentals, market data, and screening |
+| Moody's | `moodys` | Credit ratings, outlooks, and risk commentary |
+| MT Newswires | `mtnewswire` | Real-time news and catalyst flow |
+| Aiera | `aiera` | Earnings events, transcripts, and management commentary |
+| LSEG | `lseg` | Multi-asset pricing, analytics, curves, and fixed-income tooling |
+| PitchBook | `pitchbook` | Private-market entities, deals, funds, and investors |
+| Chronograph | `chronograph` | Private-capital portfolio monitoring and reporting data |
+| Egnyte | `egnyte` | Internal documents, permissions, and enterprise knowledge access |
 
-Most of the providers in this repo are mixed-modality systems rather than pure single-format feeds, but each one has a clear primary shape.
+## What the 11-Connector Stack Actually Covers
+
+The connector set works best if viewed as a layered workflow stack rather than a flat vendor list.
+
+### Facts layer
+
+These providers answer the structured numerical questions:
+
+- FactSet
+- S&P Global
+- LSEG
+- Morningstar
+
+Typical use cases:
+
+- Trading comps
+- Valuation inputs
+- Consensus estimates
+- Screening and peer analysis
+- Historical pricing
+- Macro and market context
+
+### Transcript and event layer
+
+These providers answer what management, analysts, or the market actually said:
+
+- Aiera
+- MT Newswires
+
+Typical use cases:
+
+- Earnings-note drafting
+- Catalyst tracking
+- Morning notes
+- Post-event synthesis
+
+### Source-linked model update layer
+
+- Daloopa
+
+Typical use cases:
+
+- Turning filings into spreadsheet-ready inputs
+- Auditing whether a modeled number still ties to source support
+- Refreshing historical statement tabs
+
+### Credit and risk layer
+
+- Moody's
+
+Typical use cases:
+
+- Ratings-aware financing analysis
+- Capital-structure risk framing
+- Credit commentary in memo or diligence workflows
+
+### Private-markets layer
+
+- PitchBook
+- Chronograph
+
+Typical use cases:
+
+- Sponsor mapping
+- Private comps
+- Deal sourcing
+- Portfolio monitoring
+- LP and GP reporting support
+
+### Internal knowledge layer
+
+- Egnyte
+
+Typical use cases:
+
+- Pulling prior committee memos
+- Reusing internal templates
+- Accessing diligence archives
+- Referencing firm-specific process documents
 
 ## Provider-by-Provider Notes
 
 ### Daloopa
 
-Daloopa is best understood as a **document-linked financial data extraction layer** rather than a broad terminal-style market-data platform. Its strongest modality is structured numeric data pulled from filings, earnings materials, and other financial documents, with traceability back to the source. That means the payload is not just "revenue = X"; it is usually "revenue = X, from this filing or this table, with provenance you can audit."
-
-That makes Daloopa especially useful when Claude is updating a model or checking whether a number in a spreadsheet still ties back to the primary source. The modality is mostly tabular and numeric, but the critical secondary modality is **source linkage** to the underlying document.
+Daloopa is best treated as a provenance-heavy extraction layer, not just a generic fundamentals feed. Its value is that line items are tied back to actual filings and source documents. That makes it especially strong for 3-statement refreshes, model QA, and any workflow where auditability matters.
 
 ### Morningstar
 
-Morningstar is a **research-plus-data** provider. Compared with FactSet, S&P Global, or LSEG, its center of gravity is less "market plumbing" and more investment intelligence: fund and ETF data, security analysis, ratings, portfolio analytics, screening, and research content. The modality is therefore mixed: partly structured attributes and analytics, partly authored research and evaluation.
-
-Inside a Claude workflow, Morningstar is most useful when the user needs investor-facing interpretation, fund context, or portfolio analytics rather than just a raw reported number. If the task is "what do we know about this fund, this ETF, or this covered name, and how is it positioned?", Morningstar is usually a better fit than a pure pricing feed.
+Morningstar contributes a mixed research-plus-data modality. Compared with terminal-style public-market datasets, it is better for investor framing, fund and ETF context, ratings-style interpretation, and portfolio-aware discussions.
 
 ### S&P Global
 
-S&P Global in this repo shows up as the MCP key `sp-global`, but the configured endpoint is served from `kfinance.kensho.com`. The practical implication is important: **Kensho is the AI delivery layer, while the underlying provider is S&P Global data**, especially Capital IQ-style company, market, estimates, and transaction data.
-
-The repo's partner-built S&P materials make the expected modality very concrete. The skills reference structured function calls such as `get_financial_line_item_from_identifiers`, `get_prices_from_identifiers`, `get_capitalization_from_identifiers`, and `get_consensus_estimates_from_identifiers`, which strongly suggests a primary modality of **structured numeric financial and market intelligence**. In practice, that means company financials, prices, market cap, consensus estimates, transactions, and related metadata that can be cited down to the tool-call level.
-
-This is the connector you use when Claude needs a broad, institution-grade facts layer for tearsheets, earnings previews, comps, or market-mapping work.
+In the shared manifest, S&P Global is exposed through a Kensho-hosted integration endpoint. The practical effect is still a broad institutional facts layer: financials, prices, market cap, consensus, transactions, and related linked records. It is one of the main backbones for public-company coverage work.
 
 ### FactSet
 
-FactSet is another **broad structured financial data platform**. Its likely modality in an MCP context is standardized company fundamentals, market data, estimates, ownership, screening results, and related entity/security metadata. In other words, it is optimized for machine-usable financial facts rather than transcript-first or document-storage-first workflows.
-
-For Claude, FactSet is most valuable when the job is to establish a consistent numbers layer across public companies: price history, key metrics, consensus framing, peer comparisons, and screening outputs. Relative to Daloopa, the modality is less about source-document extraction and more about normalized financial datasets and workflow-ready market intelligence.
+FactSet is another core structured data layer. It is the normalized numbers engine for public-market tasks where consistency matters more than source-document extraction: screening, peer sets, estimate context, historical pricing, and market snapshots.
 
 ### Moody's
 
-Moody's brings a **credit modality** that the broader market-data providers do not emphasize in the same way. Its primary payloads are ratings, outlooks, watchlists, credit opinions, and credit research, plus broader risk and analytics content depending on entitlements.
-
-That means the useful shape of the data is partly discrete and stateful, such as a current rating or outlook, and partly narrative, such as a rationale for a downgrade risk or sector credit pressure. In earnings and financing workflows, Moody's is the risk lens you want when capital structure, refinancing, covenant headroom, or rating sensitivity matters as much as revenue or EBITDA.
+Moody's is the clearest credit-specialist layer in the shared stack. It becomes more important as the repo moves beyond equity research and investment banking into finance-ops, reconciliation, risk review, or compliance-adjacent workflows.
 
 ### MT Newswires
 
-MT Newswires is primarily a **real-time news text feed**. Its modality is not a fundamentals table or a document store; it is a stream of timestamped headlines and short market-oriented stories designed to be consumed quickly. The important payload characteristics are speed, timestamps, ticker/company tagging, and concise market-moving summaries.
-
-That makes it the connector for "what happened just now?" questions around earnings releases, guidance changes, analyst reactions, peer sympathy moves, management commentary, or other catalysts. If Claude needs to explain the immediate catalyst layer around a stock move, MT Newswires is a natural fit.
+MT Newswires is the immediate catalyst feed. It is less about archival depth and more about answering what just happened and why a name moved.
 
 ### Aiera
 
-Aiera is the clearest **transcript and investor-event modality** in the connector set. Its value is not simply that it covers earnings calls; it is that it turns those events into machine-usable artifacts such as event metadata, transcript text, timestamps, speaker attributions, search, and playback-linked excerpts.
-
-That gives Claude access to the "words layer" of the workflow: what management actually said, how guidance language changed, which topics dominated the Q&A, and how to cite a statement to a specific speaker or moment in the call. The modality is therefore a hybrid of event metadata and unstructured transcript text, sometimes paired with audio or replay controls on the vendor side.
+Aiera is the words layer for earnings and investor communications. Its most useful feature is not just transcript availability, but machine-usable event metadata, speaker attribution, and citation-ready call detail.
 
 ### LSEG
 
-LSEG is the broadest **multi-asset pricing and analytics** modality in the repo. The local partner-built [LSEG connector reference](../partner-built/lseg/CONNECTORS.md) shows a tool surface that includes bond pricing, FX spot and forwards, interest-rate and credit curves, swap pricing, options, volatility surfaces, historical equity prices, macroeconomic series, and YieldBook fixed-income analytics.
-
-That is more than "market data" in the narrow sense. The payloads here are often analytical objects: curves, surfaces, scenario outputs, Greeks, durations, cashflows, and risk measures. So the modality is structured numeric data, but in a quantitatively derived form suited for rates, FX, options, and fixed income workflows rather than just simple quote retrieval.
+LSEG is the broadest multi-asset and analytics-heavy provider in the public stack. It extends beyond simple quotes into curves, fixed-income analytics, options, FX carry, macro series, and YieldBook-style bond analysis.
 
 ### PitchBook
 
-PitchBook is a **private markets intelligence** provider. Its core modality is structured records about private companies, deals, investors, funds, rounds, valuations, and market activity in venture capital, private equity, and M&A-adjacent workflows. It also carries research and workflow tooling, but the most important MCP-ready shape is the linked record set around entities and transactions.
-
-In practice, PitchBook is what Claude should reach for when the universe is not limited to listed companies: sponsor mapping, private comps, prior financing rounds, investor ownership, deal history, or fund activity. The modality is structured private-market metadata with some research context around it.
+PitchBook covers the private-market landscape: companies, rounds, buyers, funds, investors, and transaction history. It matters when the universe is not confined to public issuers.
 
 ### Chronograph
 
-Chronograph is another private-markets source, but with a different center of gravity from PitchBook. Its modality is **portfolio monitoring, reporting, and valuation data for private capital workflows**, especially GP and LP operating processes. That means portfolio company metrics, periodic reporting data, valuation workflows, and data-management structures that are closer to internal operating records than to an external newswire.
-
-If PitchBook tells Claude about the market and transaction landscape, Chronograph is more about the ongoing measurement and reporting layer for owned assets and funds. It is especially relevant when the user is working on portfolio reviews, LP reporting, valuation support, or performance monitoring.
+Chronograph is less about market discovery and more about private-capital operating data: portfolio monitoring, valuation workflows, and recurring reporting support. It becomes more relevant once fund-admin and valuation-review flows are introduced.
 
 ### Egnyte
 
-Egnyte is the only connector in the main shared stack whose primary modality is **enterprise content rather than financial market data**. The useful payloads here are files, folders, previews, metadata, permissions, and governance controls across internal documents.
+Egnyte is the internal memory layer. It makes the difference between a generic analyst workflow and a firm-specific one because it can surface prior internal outputs, approved templates, and controlled diligence materials.
 
-That makes Egnyte the bridge between Claude and the firm's internal knowledge base: prior models, committee memos, templates, diligence files, client materials, and archived outputs. In modality terms, this is document retrieval and document governance, not market intelligence. It matters because many financial workflows combine external data with internal precedent and controlled document access.
+## Partner-Built Packages in the Public Repo
 
-## Important Repo Nuances
+The public Anthropic repo currently ships two partner-built packages on top of the shared connector set:
 
-### The core plugin owns the shared connectors
+| Partner package | Focus |
+| --- | --- |
+| LSEG | Bond RV, swap curves, FX carry, option vol, fixed-income portfolio review, macro-rates monitoring |
+| S&P Global | Tear sheets, earnings previews, and funding digests |
 
-The main architectural fact in this repo is that the shared connector list is centralized in [`financial-analysis/.mcp.json`](./.mcp.json). The workflow-specific plugins are mostly instructions and commands layered on top of that.
+These packages are not separate connector categories from the shared stack. They are deeper workflow wrappers around providers that are already part of the main connector baseline.
 
-### Kensho is a delivery layer here, not a separate shared provider
+## What Anthropic Announced on May 5, 2026 Beyond the Open Manifests
 
-It is reasonable to mention Kensho when discussing the S&P integration, because the S&P endpoint in this repo is hosted on `kfinance.kensho.com` and the partner-built S&P plugin is maintained by Kensho. But the underlying provider in the shared connector list is still best described as **S&P Global / Capital IQ-style data delivered through Kensho's integration surface**, not as a separate twelfth data provider.
+Anthropic's finance-agents announcement introduced a broader ecosystem story than the 11 wired connectors shown in the checked-in `.mcp.json` files.
 
-### LSEG and S&P also appear as partner-built plugins
+### Newly announced ecosystem partners
 
-The repo also includes vendor-specific packages for [LSEG](../partner-built/lseg/README.md) and [S&P Global](../partner-built/spglobal/README.md). Those do not add new provider categories to the shared core list; they package deeper vendor-specific workflows and prompt logic around providers that are already present in the main connector stack.
+| Partner | Stated value in the announcement |
+| --- | --- |
+| Dun & Bradstreet | Verified business identity and enterprise record-linking for AI workflows |
+| Fiscal AI | Real-time public-equity fundamentals and benchmarking |
+| Financial Modeling Prep | Quotes, fundamentals, statements, filings, and transcripts |
+| Guidepoint | Compliance-reviewed expert interview transcripts |
+| IBISWorld | Industry revenue, cost structure, risk, and forecast data |
+| SS&C Intralinks | DealCenter AI data rooms, diligence Q&A, and deal tracking |
+| Third Bridge | Expert interviews across companies, sectors, and value chains |
+| Verisk | Insurance underwriting, claims, and risk-analysis data |
 
-## Sources
+### Newly announced app surface
 
-### Repository sources
+| Surface | Stated role |
+| --- | --- |
+| Moody's MCP app | Interactive use of proprietary credit data plus coverage of 600M+ public and private companies |
 
-- [Root README](../README.md)
-- [Core MCP config](./.mcp.json)
-- [Investment banking MCP config](../investment-banking/.mcp.json)
-- [Private equity MCP config](../private-equity/.mcp.json)
-- [LSEG connector reference](../partner-built/lseg/CONNECTORS.md)
-- [LSEG partner-built plugin README](../partner-built/lseg/README.md)
-- [S&P Global partner-built plugin README](../partner-built/spglobal/README.md)
-- [S&P earnings preview skill](../partner-built/spglobal/skills/earnings-preview-beta/SKILL.md)
+## Important Distinction
 
-### Vendor sources
+As of May 12, 2026:
 
-- [Daloopa](https://daloopa.com/benefits/sec-filings-in-spreadsheets)
-- [Morningstar Direct Web Services](https://www.morningstar.com/business/products/direct-web-services)
-- [S&P Capital IQ Pro](https://www.spglobal.com/market-intelligence/en/solutions/products/sp-capital-iq-pro)
-- [FactSet](https://www.factset.com/)
-- [Moody's ratings and research](https://www.moodys.com/)
-- [MT Newswires](https://www.mtnewswires.com/)
-- [Aiera platform](https://aiera.com/platform/)
-- [Aiera Core Data MCP](https://aiera.readme.io/reference/getting-started-with-aiera-core-data-mcp)
-- [LSEG data and analytics](https://www.lseg.com/en/data-analytics)
-- [PitchBook](https://pitchbook.com/)
-- [Chronograph](https://www.chronograph.pe/general-partners/)
-- [Egnyte platform](https://www.egnyte.com/products/platform)
+- These additional partners are part of Anthropic's public narrative.
+- They are not yet reflected in the inspected upstream open-source connector manifests.
+- The open repo still centers on the stable 11-connector baseline plus two partner-built packages.
+
+That distinction matters for planning. A repo can be "aligned with the open manifests" while still not matching the full ecosystem breadth Anthropic is now marketing.
+
+## Implications for This Repo
+
+### What is already aligned
+
+- The shared 11-connector baseline
+- The LSEG partner-built package
+- The S&P Global partner-built package
+
+### What should be treated as next-wave connector opportunities
+
+| Partner | Best matching future workflow area |
+| --- | --- |
+| Dun & Bradstreet | Operations and KYC |
+| Guidepoint | Equity research and private equity diligence |
+| Third Bridge | Equity research and private equity diligence |
+| IBISWorld | Market-research and sector-primer workflows |
+| SS&C Intralinks | Investment banking and private-equity data-room workflows |
+| Verisk | Insurance and risk operations |
+| Financial Modeling Prep | Broader public-markets coverage or lower-cost data coverage cases |
+| Fiscal AI | Supplemental public-equity coverage workflows |
+| Moody's MCP app | Credit-heavy finance, risk, and onboarding workflows |
+
+## Bottom Line
+
+The connector story is more stable than the packaging story.
+
+- Packaging changed dramatically in May 2026: agents, cookbooks, and Microsoft 365 tooling
+- The open shared connector baseline did not
+
+That means the fastest way to modernize this repo is still to adopt the new workflow surfaces first, while treating the article-announced partner set as a second-wave roadmap rather than assuming those integrations are already represented in the open manifests.
+
+## Source Basis
+
+- Anthropic `financial-services` repo inspected on May 12, 2026
+- Anthropic "Agents for financial services" announcement published on May 5, 2026

@@ -28,9 +28,9 @@
 \sloppy
 \newcommand{\UncheckedBox}{$\square$}
 \newcommand{\CheckedBox}{$\blacksquare$}
-\title{Equity Research Prompt Library\\LaTeX Translation and Dependency Map}
+\title{Equity Research Prompt Library\\Comprehensive Translation, Config Coverage, and Dependency Map}
 \author{financial-services-plugins repository}
-\date{Generated on 2026-03-06 02:50 }
+\date{Generated on 2026-05-12 10:03 }
 \newunicodechar{⚠}{{\EmojiGlyph{⚠}}}
 \newunicodechar{✅}{{\EmojiGlyph{✅}}}
 \newunicodechar{❌}{{\EmojiGlyph{❌}}}
@@ -48,11 +48,36 @@
 
 \section{Repository Structure Overview}
 
+\subsection{Inventory Summary}
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Metric} & \textbf{Count} \\
+\midrule
+{} Total included files & 31 \\
+{} Markdown or markdown-like files & 29 \\
+{} JSON config files & 2 \\
+{} YAML manifest files & 0 \\
+{} Scripts & 0 \\
+{} Other text files & 0 \\
+{} Commands & 9 \\
+{} Skills & 9 \\
+{} Plugin manifests & 1 \\
+{} Managed-agent manifests & 0 \\
+\bottomrule
+\end{longtable}
+\endgroup
+
 \subsection{Folder Tree}
-\textbf{Root directory: equity-research}
+\textbf{Root directory: plugins/vertical-plugins/equity-research}
 \begin{itemize}[leftmargin=*,itemsep=1pt,topsep=2pt]
+\item \hspace*{0.0em}.claude-plugin
 \item \hspace*{0.0em}commands
+\item \hspace*{0.0em}hooks
 \item \hspace*{0.0em}skills
+\item \hspace*{0.9em}.claude-plugin/plugin.json
 \item \hspace*{0.9em}commands/catalysts.md
 \item \hspace*{0.9em}commands/earnings-preview.md
 \item \hspace*{0.9em}commands/earnings.md
@@ -62,6 +87,7 @@
 \item \hspace*{0.9em}commands/screen.md
 \item \hspace*{0.9em}commands/sector.md
 \item \hspace*{0.9em}commands/thesis.md
+\item \hspace*{0.9em}hooks/hooks.json
 \item \hspace*{0.9em}skills/catalyst-calendar
 \item \hspace*{0.9em}skills/earnings-analysis
 \item \hspace*{0.9em}skills/earnings-preview
@@ -166,11 +192,45 @@
 
 \section{Translated Prompt Corpus}
 
-This section translates every markdown prompt under the equity-research directory into LaTeX-native structure, preserving hierarchy and dependency flow.
+This section translates the prompt, manifest, configuration, and script files under plugins/vertical-plugins/equity-research into a print-oriented format that preserves structure while improving readability.
+
+\subsection{Directory: .claude-plugin}
+
+\subsection{Plugin Manifest: .claude-plugin}\label{file:claude-plugin-plugin-json}
+
+\paragraph{JSON Summary}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Key} & \textbf{Type} & \textbf{Summary} \\
+\midrule
+{} name & str & equity-research \\
+{} version & str & 0.1.0 \\
+{} description & str & Equity research tools: earnings analysis, initiating coverage reports, and research workflows \\
+{} author & dict & object with 1 key(s) \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{Structured JSON Content}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \{
+\item {} ``name'': ``equity-research'',
+\item {} ``version'': ``0.1.0'',
+\item {} ``description'': ``Equity research tools: earnings analysis, initiating coverage reports, and research workflows'',
+\item {} ``author'': \{
+\item {} ``name'': ``Anthropic FSI''
+\item {} \}
+\item {} \}
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
 
 \subsection{Directory: commands}
 
-\subsection{Command: catalysts.md}\label{file:commands-catalysts.md}
+\subsection{Command: catalysts.md}\label{file:commands-catalysts-md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -195,7 +255,7 @@ If a timeframe is provided, use it. Otherwise default to the next 2 weeks.
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: earnings-preview.md}\label{file:commands-earnings-preview.md}
+\subsection{Command: earnings-preview.md}\label{file:commands-earnings-preview-md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -220,7 +280,7 @@ If a ticker is provided, use it. Otherwise ask the user which company is reporti
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: earnings.md}\label{file:commands-earnings.md}
+\subsection{Command: earnings.md}\label{file:commands-earnings-md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -393,7 +453,7 @@ Before delivery:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: initiate.md}\label{file:commands-initiate.md}
+\subsection{Command: initiate.md}\label{file:commands-initiate-md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -418,7 +478,7 @@ If a ticker is provided, use it. Otherwise ask the user which company to initiat
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: model-update.md}\label{file:commands-model-update.md}
+\subsection{Command: model-update.md}\label{file:commands-model-update-md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -443,7 +503,7 @@ If a ticker is provided, use it. Otherwise ask the user which model to update an
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: morning-note.md}\label{file:commands-morning-note.md}
+\subsection{Command: morning-note.md}\label{file:commands-morning-note-md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -465,7 +525,7 @@ Load the \emph{morning-note} skill and draft a concise morning note covering ove
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: screen.md}\label{file:commands-screen.md}
+\subsection{Command: screen.md}\label{file:commands-screen-md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -490,7 +550,7 @@ If criteria are provided, use them. Otherwise ask the user what they're looking 
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: sector.md}\label{file:commands-sector.md}
+\subsection{Command: sector.md}\label{file:commands-sector-md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -515,7 +575,7 @@ If a sector is provided, use it. Otherwise ask the user which industry to cover.
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: thesis.md}\label{file:commands-thesis.md}
+\subsection{Command: thesis.md}\label{file:commands-thesis-md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -540,9 +600,32 @@ If a ticker is provided, use it. Otherwise ask the user which position to review
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
+\subsection{Directory: hooks}
+
+\subsection{Config File: hooks/hooks.json}\label{file:hooks-hooks-json}
+
+\paragraph{JSON Summary}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Item} & \textbf{Type} & \textbf{Summary} \\
+\midrule
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{Structured JSON Content}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} []
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
 \subsection{Directory: skills}
 
-\subsection{Skill: catalyst-calendar}\label{file:skills-catalyst-calendar-SKILL.md}
+\subsection{Skill: catalyst-calendar}\label{file:skills-catalyst-calendar-SKILL-md}
 
 \paragraph{Catalyst Calendar}\mbox{}\par
 
@@ -666,324 +749,7 @@ Each week, generate a forward-looking summary:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: earnings-analysis}\label{file:skills-earnings-analysis-SKILL.md}
-
-\paragraph{File Metadata}\mbox{}\par
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
-\toprule
-{} \textbf{Field} & \textbf{Value} \\
-\midrule
-{} name & earnings-analysis \\
-{} description & Create professional equity research earnings update reports (8-12 pages, 3,000-5,000 words) analyzing quarterly results for companies already under coverage. Fast-turnaround format focusing on beat/ miss analysis, key metrics, updated estimates, and revised thesis. Includes 1-3 summary tables and 8-12 charts. Use when user requests ``earnings update'', ``quarterly update'', ``earnings analysis'', ``Q1/ Q2/ Q3/ Q4 results'', or post-earnings report. \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-
-\paragraph{Equity Research Earnings Update}\mbox{}\par
-
-Create professional \textbf{EARNINGS UPDATE REPORTS} analyzing quarterly results for companies already under coverage, following institutional standards (JPMorgan, Goldman Sachs, Morgan Stanley format).
-
-
-\textbf{Key Characteristics:}
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Length}: 8-12 pages
-\item {} \textbf{Word Count}: 3,000-5,000 words
-\item {} \textbf{Tables}: 1-3 summary tables (NOT comprehensive)
-\item {} \textbf{Figures}: 8-12 charts
-\item {} \textbf{Turnaround}: 1-2 days (within 24-48 hours of earnings)
-\item {} \textbf{Audience}: Clients already familiar with the company
-\item {} \textbf{Focus}: What's NEW - beat/miss, updated estimates, thesis impact
-\item {} \textbf{Font}: Times New Roman throughout (unless user specifies otherwise)
-\end{itemize}
-
-\subparagraph{When to Use}\mbox{}\par
-
-Use when the user requests:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} ``Create an earnings update for [Company] Q3 2024''
-\item {} ``Analyze [Company]'s quarterly results''
-\item {} ``Post-earnings report for [Company]''
-\item {} ``Q1/Q2/Q3/Q4 update for [Company]''
-\end{itemize}
-
-\textbf{Do NOT use if:}
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} User requests ``initiation report'' → Use different skill
-\item {} User requests ``flash note'' or ``quick take'' → Different format
-\item {} Company is not already covered → Need initiation first
-\end{itemize}
-
-\subparagraph{Critical Requirements}\mbox{}\par
-
-\subparagraph{1. Speed \& Timeliness}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Publish within 24-48 hours of earnings release
-\item {} Focus on NEW information only
-\item {} Don't rehash company background extensively
-\end{itemize}
-
-\subparagraph{2. Beat/Miss Analysis}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Lead with whether company beat or missed estimates
-\item {} Quantify variances (e.g., ``Revenue beat by \$120M or 3\%'')
-\item {} Explain WHY results differed from expectations
-\end{itemize}
-
-\subparagraph{3. Summary Format}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Keep tables to 1-3 (summary only, not comprehensive)
-\item {} No full P\&L/Cash Flow/Balance Sheet (just key metrics)
-\item {} Assume reader has seen initiation report
-\end{itemize}
-
-\subparagraph{4. Citations \& Source Attribution ⭐⭐⭐ MANDATORY}\mbox{}\par
-
-\textbf{CRITICAL}: Properly cite all data with SPECIFIC sources and CLICKABLE HYPERLINKS.
-
-
-\textbf{Include specific citations WITH CLICKABLE LINKS in every figure and table:}
-
-
-\textbf{Structured Template}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Source: Q3 2024 10-Q filed November 8, 2024; Company earnings release
-\item {} [Hyperlink ``10-Q'' to: https://www.sec.gov/cgi-bin/viewer?accession=...]
-\item {} [Hyperlink ``earnings release'' to: https://investor.company.com/news/q3-2024]
-\end{itemize}
-
-\textbf{HOW HYPERLINKS SHOULD APPEAR IN WORD:}
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Document names appear as blue, underlined clickable links
-\item {} Reader can Ctrl+Click to open source directly
-\item {} Not plain text URLs - formatted hyperlinks with display text
-\end{itemize}
-
-\textbf{REQUIRED SOURCES LIST:}
-
-
-Cite in every earnings update:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} ✅ Earnings release (with date and URL)
-\item {} ✅ 10-Q filing (with filing date and EDGAR link)
-\item {} ✅ Earnings call transcript (with date)
-\item {} ✅ Investor presentation/supplemental materials (if available)
-\item {} ✅ Consensus estimates source (Bloomberg/FactSet/etc. with date)
-\item {} ✅ Prior guidance (from previous quarter's materials)
-\end{itemize}
-
-\textbf{REFERENCE SECTION WITH CLICKABLE HYPERLINKS:}
-
-
-Include ``Sources'' section at end of report:
-
-
-\textbf{Structured Template}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} SOURCES \& REFERENCES
-\item {} Earnings Materials (Q3 2024):
-\item {} • Earnings Release (November 7, 2024)
-\item {} [Hyperlink entire line to: https://investor.company.com/news/q3-2024-earnings]
-\item {} • Form 10-Q (Filed November 8, 2024)
-\item {} [Hyperlink to: https://www.sec.gov/cgi-bin/viewer?accession=...]
-\item {} • Earnings Call Transcript (November 7, 2024)
-\item {} [Hyperlink to: https://seekingalpha.com/article/...]
-\item {} • Investor Presentation (November 7, 2024)
-\item {} [Hyperlink to: https://investor.company.com/presentations/q3-2024.pdf]
-\end{itemize}
-
-\textbf{VERIFICATION CHECKLIST:}
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \UncheckedBox Every figure has source with specific document and date
-\item {} \UncheckedBox Every table has source with document reference
-\item {} \UncheckedBox Beat/miss analysis cites consensus source with date
-\item {} \UncheckedBox Guidance changes cite current and prior guidance sources
-\item {} \UncheckedBox Key statistics have footnotes
-\item {} \UncheckedBox Sources section lists all materials with URLs
-\item {} \UncheckedBox ALL URLs are CLICKABLE HYPERLINKS (not plain text)
-\item {} \UncheckedBox All SEC filings hyperlinked to EDGAR viewer
-\end{itemize}
-
-\subparagraph{5. Updated Estimates}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Update forward estimates based on results
-\item {} Show old vs. new estimates clearly
-\item {} Explain what changed and why
-\end{itemize}
-
-\subparagraph{High-Level Workflow}\mbox{}\par
-
-The earnings update process follows 5 phases:
-
-
-\subparagraph{Phase 1: Data Collection (30-60 minutes)}\mbox{}\par
-
-\textbf{🚨🚨🚨 CRITICAL: TRAINING DATA IS OUTDATED 🚨🚨🚨}
-
-
-\textbf{BEFORE STARTING - COMPLETE THESE 4 STEPS IN ORDER:}
-
-\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{CHECK TODAY'S DATE} - Write down the current date
-\item {} \textbf{SEARCH FOR LATEST} - Use web search: ``[Company] latest earnings results''
-\item {} \textbf{VERIFY THE DATE} - Confirm earnings release is within last 3 months
-\item {} \textbf{CHECK TRANSCRIPT DATE} - Verify transcript date matches release date
-\end{enumerate}
-
-\textbf{COMMON MISTAKE}: Using outdated earnings calls from training data instead of searching for the latest.
-
-
-\textbf{REQUIREMENTS:}
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} ✅ Search for latest earnings - do NOT rely on training data
-\item {} ✅ Write down today's date and the release date found
-\item {} ✅ Verify release date is within 3 months of today
-\item {} ✅ Verify transcript date matches release date
-\item {} ✅ If dates don't match or are old (>3 months), search again
-\end{itemize}
-
-\textbf{See \href{references/workflow.md}{references/workflow.md}} for detailed search procedures and verification steps.
-
-
-\subparagraph{Phase 2: Analysis (2-3 hours)}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Beat/miss analysis for each key metric
-\item {} Segment/geographic/product breakdown
-\item {} Margin and guidance analysis
-\item {} Update financial model and estimates
-\end{itemize}
-
-\textbf{See \href{references/workflow.md}{references/workflow.md}} for detailed analysis framework.
-
-
-\subparagraph{Phase 3: Chart Generation (1-2 hours)}\mbox{}\par
-Create 8-12 charts focusing on quarterly trends and what's new:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Quarterly revenue progression
-\item {} Quarterly EPS progression
-\item {} Quarterly margin trends
-\item {} Revenue by segment/geography
-\item {} Key operating metrics
-\item {} Beat/miss summary
-\item {} Estimate revisions
-\item {} Valuation charts
-\end{itemize}
-
-\textbf{See \href{references/workflow.md}{references/workflow.md}} for chart specifications.
-
-
-\subparagraph{Phase 4: Report Creation (2-3 hours)}\mbox{}\par
-Create 8-12 page DOCX report with specific structure.
-
-
-\textbf{See \href{references/report-structure.md}{references/report-structure.md}} for complete page-by-page templates and formatting requirements.
-
-
-\textbf{High-level structure:}
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Page 1: Earnings summary with rating and price target
-\item {} Pages 2-3: Detailed results analysis
-\item {} Pages 4-5: Key metrics \& guidance
-\item {} Pages 6-7: Updated investment thesis
-\item {} Pages 8-10: Valuation \& estimates
-\item {} Pages 11-12: Appendix (optional)
-\end{itemize}
-
-\subparagraph{Phase 5: Quality Check \& Delivery (30 minutes)}\mbox{}\par
-Verify content, formatting, accuracy, and timeliness before delivery.
-
-
-\textbf{See \href{references/best-practices.md}{references/best-practices.md}} for quality checklist and common mistakes to avoid.
-
-
-\subparagraph{Output Specification}\mbox{}\par
-
-\textbf{Primary Deliverable}: DOCX report (8-12 pages) \textbf{File Name}: \emph{[Company]\_\allowbreak{}Q[Quarter]\_\allowbreak{}[Year]\_\allowbreak{}Earnings\_\allowbreak{}Update.docx} \textbf{Example}: \emph{Nike\_\allowbreak{}Q2\_\allowbreak{}FY24\_\allowbreak{}Earnings\_\allowbreak{}Update.docx}
-
-
-\textbf{Contents:}
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Page 1: Summary with rating, price target, key takeaways
-\item {} Pages 2-3: Detailed results analysis
-\item {} Pages 4-5: Key metrics and guidance
-\item {} Pages 6-7: Updated thesis assessment
-\item {} Pages 8-10: Valuation and estimates
-\item {} Pages 11-12: Appendix (optional)
-\item {} 8-12 embedded charts
-\item {} 1-3 summary tables
-\item {} Complete sources section with clickable hyperlinks
-\end{itemize}
-
-\textbf{Optional Deliverable}: XLS model update (optional for earnings updates)
-
-
-\subparagraph{Key Differences from Initiation Report}\mbox{}\par
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
-\toprule
-{} \textbf{Aspect} & \textbf{Earnings Update} & \textbf{Initiation Report} \\
-\midrule
-{} \textbf{Length} & 8-12 pages & 30-50 pages \\
-{} \textbf{Words} & 3,000-5,000 & 10,000-15,000 \\
-{} \textbf{Tables} & 1-3 summary & 12-20 comprehensive \\
-{} \textbf{Figures} & 8-12 & 25-35 \\
-{} \textbf{Turnaround} & 1-2 days & 3-6 weeks \\
-{} \textbf{Scope} & Quarterly results & Complete company \\
-{} \textbf{Focus} & What's NEW & Everything \\
-{} \textbf{Company Background} & Brief mention & 6-10 pages \\
-{} \textbf{XLS Model} & Optional & Required \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-\subparagraph{Resources}\mbox{}\par
-
-\subparagraph{references/workflow.md}\mbox{}\par
-Detailed Phase 1-5 instructions with step-by-step procedures for data collection, analysis, chart generation, and report creation.
-
-
-\subparagraph{references/report-structure.md}\mbox{}\par
-Complete page-by-page templates, table formats, and formatting requirements for the DOCX report.
-
-
-\subparagraph{references/best-practices.md}\mbox{}\par
-Examples of good/bad headlines, tips for success, common mistakes to avoid, and comprehensive quality checklist.
-
-
-\subparagraph{Dependencies}\mbox{}\par
-
-\textbf{Required:}
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Python (matplotlib, pandas, seaborn) for chart generation
-\item {} DOCX skill for report creation
-\end{itemize}
-
-\textbf{Optional:}
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} XLS skill for model updates (not required for earnings updates)
-\end{itemize}
-
-\vspace{0.8em}\hrule\vspace{0.8em}
-
-\subsection{Skill Resource: skills/earnings-analysis/references/best-practices.md}\label{file:skills-earnings-analysis-references-best-practices.md}
+\subsection{Skill Resource: skills/earnings-analysis/references/best-practices.md}\label{file:skills-earnings-analysis-references-best-practices-md}
 
 \paragraph{Best Practices, Examples, and Quality Guidelines}\mbox{}\par
 
@@ -1300,7 +1066,7 @@ When delivering the completed report to the user, provide this summary:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill Resource: skills/earnings-analysis/references/report-structure.md}\label{file:skills-earnings-analysis-references-report-structure.md}
+\subsection{Skill Resource: skills/earnings-analysis/references/report-structure.md}\label{file:skills-earnings-analysis-references-report-structure-md}
 
 \paragraph{Report Structure and Templates}\mbox{}\par
 
@@ -1712,7 +1478,7 @@ Provide updated estimates for at least current year and next year:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill Resource: skills/earnings-analysis/references/workflow.md}\label{file:skills-earnings-analysis-references-workflow.md}
+\subsection{Skill Resource: skills/earnings-analysis/references/workflow.md}\label{file:skills-earnings-analysis-references-workflow-md}
 
 \paragraph{Detailed Workflow for Earnings Updates}\mbox{}\par
 
@@ -2428,7 +2194,324 @@ Provide user with:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: earnings-preview}\label{file:skills-earnings-preview-SKILL.md}
+\subsection{Skill: earnings-analysis}\label{file:skills-earnings-analysis-SKILL-md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} name & earnings-analysis \\
+{} description & Create professional equity research earnings update reports (8-12 pages, 3,000-5,000 words) analyzing quarterly results for companies already under coverage. Fast-turnaround format focusing on beat/ miss analysis, key metrics, updated estimates, and revised thesis. Includes 1-3 summary tables and 8-12 charts. Use when user requests ``earnings update'', ``quarterly update'', ``earnings analysis'', ``Q1/ Q2/ Q3/ Q4 results'', or post-earnings report. \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+\paragraph{Equity Research Earnings Update}\mbox{}\par
+
+Create professional \textbf{EARNINGS UPDATE REPORTS} analyzing quarterly results for companies already under coverage, following institutional standards (JPMorgan, Goldman Sachs, Morgan Stanley format).
+
+
+\textbf{Key Characteristics:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Length}: 8-12 pages
+\item {} \textbf{Word Count}: 3,000-5,000 words
+\item {} \textbf{Tables}: 1-3 summary tables (NOT comprehensive)
+\item {} \textbf{Figures}: 8-12 charts
+\item {} \textbf{Turnaround}: 1-2 days (within 24-48 hours of earnings)
+\item {} \textbf{Audience}: Clients already familiar with the company
+\item {} \textbf{Focus}: What's NEW - beat/miss, updated estimates, thesis impact
+\item {} \textbf{Font}: Times New Roman throughout (unless user specifies otherwise)
+\end{itemize}
+
+\subparagraph{When to Use}\mbox{}\par
+
+Use when the user requests:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ``Create an earnings update for [Company] Q3 2024''
+\item {} ``Analyze [Company]'s quarterly results''
+\item {} ``Post-earnings report for [Company]''
+\item {} ``Q1/Q2/Q3/Q4 update for [Company]''
+\end{itemize}
+
+\textbf{Do NOT use if:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} User requests ``initiation report'' → Use different skill
+\item {} User requests ``flash note'' or ``quick take'' → Different format
+\item {} Company is not already covered → Need initiation first
+\end{itemize}
+
+\subparagraph{Critical Requirements}\mbox{}\par
+
+\subparagraph{1. Speed \& Timeliness}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Publish within 24-48 hours of earnings release
+\item {} Focus on NEW information only
+\item {} Don't rehash company background extensively
+\end{itemize}
+
+\subparagraph{2. Beat/Miss Analysis}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Lead with whether company beat or missed estimates
+\item {} Quantify variances (e.g., ``Revenue beat by \$120M or 3\%'')
+\item {} Explain WHY results differed from expectations
+\end{itemize}
+
+\subparagraph{3. Summary Format}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Keep tables to 1-3 (summary only, not comprehensive)
+\item {} No full P\&L/Cash Flow/Balance Sheet (just key metrics)
+\item {} Assume reader has seen initiation report
+\end{itemize}
+
+\subparagraph{4. Citations \& Source Attribution ⭐⭐⭐ MANDATORY}\mbox{}\par
+
+\textbf{CRITICAL}: Properly cite all data with SPECIFIC sources and CLICKABLE HYPERLINKS.
+
+
+\textbf{Include specific citations WITH CLICKABLE LINKS in every figure and table:}
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Source: Q3 2024 10-Q filed November 8, 2024; Company earnings release
+\item {} [Hyperlink ``10-Q'' to: https://www.sec.gov/cgi-bin/viewer?accession=...]
+\item {} [Hyperlink ``earnings release'' to: https://investor.company.com/news/q3-2024]
+\end{itemize}
+
+\textbf{HOW HYPERLINKS SHOULD APPEAR IN WORD:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Document names appear as blue, underlined clickable links
+\item {} Reader can Ctrl+Click to open source directly
+\item {} Not plain text URLs - formatted hyperlinks with display text
+\end{itemize}
+
+\textbf{REQUIRED SOURCES LIST:}
+
+
+Cite in every earnings update:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ✅ Earnings release (with date and URL)
+\item {} ✅ 10-Q filing (with filing date and EDGAR link)
+\item {} ✅ Earnings call transcript (with date)
+\item {} ✅ Investor presentation/supplemental materials (if available)
+\item {} ✅ Consensus estimates source (Bloomberg/FactSet/etc. with date)
+\item {} ✅ Prior guidance (from previous quarter's materials)
+\end{itemize}
+
+\textbf{REFERENCE SECTION WITH CLICKABLE HYPERLINKS:}
+
+
+Include ``Sources'' section at end of report:
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} SOURCES \& REFERENCES
+\item {} Earnings Materials (Q3 2024):
+\item {} • Earnings Release (November 7, 2024)
+\item {} [Hyperlink entire line to: https://investor.company.com/news/q3-2024-earnings]
+\item {} • Form 10-Q (Filed November 8, 2024)
+\item {} [Hyperlink to: https://www.sec.gov/cgi-bin/viewer?accession=...]
+\item {} • Earnings Call Transcript (November 7, 2024)
+\item {} [Hyperlink to: https://seekingalpha.com/article/...]
+\item {} • Investor Presentation (November 7, 2024)
+\item {} [Hyperlink to: https://investor.company.com/presentations/q3-2024.pdf]
+\end{itemize}
+
+\textbf{VERIFICATION CHECKLIST:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Every figure has source with specific document and date
+\item {} \UncheckedBox Every table has source with document reference
+\item {} \UncheckedBox Beat/miss analysis cites consensus source with date
+\item {} \UncheckedBox Guidance changes cite current and prior guidance sources
+\item {} \UncheckedBox Key statistics have footnotes
+\item {} \UncheckedBox Sources section lists all materials with URLs
+\item {} \UncheckedBox ALL URLs are CLICKABLE HYPERLINKS (not plain text)
+\item {} \UncheckedBox All SEC filings hyperlinked to EDGAR viewer
+\end{itemize}
+
+\subparagraph{5. Updated Estimates}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Update forward estimates based on results
+\item {} Show old vs. new estimates clearly
+\item {} Explain what changed and why
+\end{itemize}
+
+\subparagraph{High-Level Workflow}\mbox{}\par
+
+The earnings update process follows 5 phases:
+
+
+\subparagraph{Phase 1: Data Collection (30-60 minutes)}\mbox{}\par
+
+\textbf{🚨🚨🚨 CRITICAL: TRAINING DATA IS OUTDATED 🚨🚨🚨}
+
+
+\textbf{BEFORE STARTING - COMPLETE THESE 4 STEPS IN ORDER:}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{CHECK TODAY'S DATE} - Write down the current date
+\item {} \textbf{SEARCH FOR LATEST} - Use web search: ``[Company] latest earnings results''
+\item {} \textbf{VERIFY THE DATE} - Confirm earnings release is within last 3 months
+\item {} \textbf{CHECK TRANSCRIPT DATE} - Verify transcript date matches release date
+\end{enumerate}
+
+\textbf{COMMON MISTAKE}: Using outdated earnings calls from training data instead of searching for the latest.
+
+
+\textbf{REQUIREMENTS:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ✅ Search for latest earnings - do NOT rely on training data
+\item {} ✅ Write down today's date and the release date found
+\item {} ✅ Verify release date is within 3 months of today
+\item {} ✅ Verify transcript date matches release date
+\item {} ✅ If dates don't match or are old (>3 months), search again
+\end{itemize}
+
+\textbf{See \href{references/workflow.md}{references/workflow.md}} for detailed search procedures and verification steps.
+
+
+\subparagraph{Phase 2: Analysis (2-3 hours)}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Beat/miss analysis for each key metric
+\item {} Segment/geographic/product breakdown
+\item {} Margin and guidance analysis
+\item {} Update financial model and estimates
+\end{itemize}
+
+\textbf{See \href{references/workflow.md}{references/workflow.md}} for detailed analysis framework.
+
+
+\subparagraph{Phase 3: Chart Generation (1-2 hours)}\mbox{}\par
+Create 8-12 charts focusing on quarterly trends and what's new:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Quarterly revenue progression
+\item {} Quarterly EPS progression
+\item {} Quarterly margin trends
+\item {} Revenue by segment/geography
+\item {} Key operating metrics
+\item {} Beat/miss summary
+\item {} Estimate revisions
+\item {} Valuation charts
+\end{itemize}
+
+\textbf{See \href{references/workflow.md}{references/workflow.md}} for chart specifications.
+
+
+\subparagraph{Phase 4: Report Creation (2-3 hours)}\mbox{}\par
+Create 8-12 page DOCX report with specific structure.
+
+
+\textbf{See \href{references/report-structure.md}{references/report-structure.md}} for complete page-by-page templates and formatting requirements.
+
+
+\textbf{High-level structure:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Page 1: Earnings summary with rating and price target
+\item {} Pages 2-3: Detailed results analysis
+\item {} Pages 4-5: Key metrics \& guidance
+\item {} Pages 6-7: Updated investment thesis
+\item {} Pages 8-10: Valuation \& estimates
+\item {} Pages 11-12: Appendix (optional)
+\end{itemize}
+
+\subparagraph{Phase 5: Quality Check \& Delivery (30 minutes)}\mbox{}\par
+Verify content, formatting, accuracy, and timeliness before delivery.
+
+
+\textbf{See \href{references/best-practices.md}{references/best-practices.md}} for quality checklist and common mistakes to avoid.
+
+
+\subparagraph{Output Specification}\mbox{}\par
+
+\textbf{Primary Deliverable}: DOCX report (8-12 pages) \textbf{File Name}: \emph{[Company]\_\allowbreak{}Q[Quarter]\_\allowbreak{}[Year]\_\allowbreak{}Earnings\_\allowbreak{}Update.docx} \textbf{Example}: \emph{Nike\_\allowbreak{}Q2\_\allowbreak{}FY24\_\allowbreak{}Earnings\_\allowbreak{}Update.docx}
+
+
+\textbf{Contents:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Page 1: Summary with rating, price target, key takeaways
+\item {} Pages 2-3: Detailed results analysis
+\item {} Pages 4-5: Key metrics and guidance
+\item {} Pages 6-7: Updated thesis assessment
+\item {} Pages 8-10: Valuation and estimates
+\item {} Pages 11-12: Appendix (optional)
+\item {} 8-12 embedded charts
+\item {} 1-3 summary tables
+\item {} Complete sources section with clickable hyperlinks
+\end{itemize}
+
+\textbf{Optional Deliverable}: XLS model update (optional for earnings updates)
+
+
+\subparagraph{Key Differences from Initiation Report}\mbox{}\par
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Aspect} & \textbf{Earnings Update} & \textbf{Initiation Report} \\
+\midrule
+{} \textbf{Length} & 8-12 pages & 30-50 pages \\
+{} \textbf{Words} & 3,000-5,000 & 10,000-15,000 \\
+{} \textbf{Tables} & 1-3 summary & 12-20 comprehensive \\
+{} \textbf{Figures} & 8-12 & 25-35 \\
+{} \textbf{Turnaround} & 1-2 days & 3-6 weeks \\
+{} \textbf{Scope} & Quarterly results & Complete company \\
+{} \textbf{Focus} & What's NEW & Everything \\
+{} \textbf{Company Background} & Brief mention & 6-10 pages \\
+{} \textbf{XLS Model} & Optional & Required \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Resources}\mbox{}\par
+
+\subparagraph{references/workflow.md}\mbox{}\par
+Detailed Phase 1-5 instructions with step-by-step procedures for data collection, analysis, chart generation, and report creation.
+
+
+\subparagraph{references/report-structure.md}\mbox{}\par
+Complete page-by-page templates, table formats, and formatting requirements for the DOCX report.
+
+
+\subparagraph{references/best-practices.md}\mbox{}\par
+Examples of good/bad headlines, tips for success, common mistakes to avoid, and comprehensive quality checklist.
+
+
+\subparagraph{Dependencies}\mbox{}\par
+
+\textbf{Required:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Python (matplotlib, pandas, seaborn) for chart generation
+\item {} DOCX skill for report creation
+\end{itemize}
+
+\textbf{Optional:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} XLS skill for model updates (not required for earnings updates)
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: earnings-preview}\label{file:skills-earnings-preview-SKILL-md}
 
 \paragraph{Earnings Preview}\mbox{}\par
 
@@ -2533,7 +2616,7 @@ One-page earnings preview with:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: idea-generation}\label{file:skills-idea-generation-SKILL.md}
+\subsection{Skill: idea-generation}\label{file:skills-idea-generation-SKILL-md}
 
 \paragraph{Idea Generation}\mbox{}\par
 
@@ -2695,1009 +2778,7 @@ For each idea that passes the screen, present:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: initiating-coverage}\label{file:skills-initiating-coverage-SKILL.md}
-
-\paragraph{File Metadata}\mbox{}\par
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
-\toprule
-{} \textbf{Field} & \textbf{Value} \\
-\midrule
-{} name & initiating-coverage \\
-{} description & Create institutional-quality equity research initiation reports through a 5-task workflow. Tasks must be executed individually with verified prerequisites - (1) company research, (2) financial modeling, (3) valuation analysis, (4) chart generation, (5) final report assembly. Each task produces specific deliverables (markdown docs, Excel models, charts, or DOCX reports). Tasks 3-5 have dependencies on earlier tasks. \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-
-\paragraph{Initiating Coverage}\mbox{}\par
-
-Create institutional-quality equity research initiation reports through a structured 5-task workflow. Each task must be executed separately with verified inputs.
-
-
-\subparagraph{Overview}\mbox{}\par
-
-This skill produces comprehensive first-time coverage reports following institutional standards (JPMorgan, Goldman Sachs, Morgan Stanley format). Tasks are executed individually, each verifying prerequisites before proceeding.
-
-
-\textbf{Default Font}: Times New Roman throughout all documents (unless user specifies otherwise).
-
-
-\vspace{0.5em}\hrule\vspace{0.5em}
-
-\subparagraph{⚠ CRITICAL: One Task at a Time}\mbox{}\par
-
-\textbf{THIS SKILL OPERATES IN SINGLE-TASK MODE ONLY.}
-
-
-\subparagraph{If User Requests Full Pipeline}\mbox{}\par
-
-When user requests:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} ``Create a coverage initiation report for [Company]''
-\item {} ``Write an initiation report for [Company]''
-\item {} ``Do the entire equity research process for [Company]''
-\item {} ``Complete all 5 tasks for [Company]''
-\item {} Any request that implies running multiple tasks or the entire workflow
-\end{itemize}
-
-\textbf{REQUIRED RESPONSE:}
-
-
-\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Ask which specific task to perform:} ``` I can help you create an equity research initiation report for [Company]. This involves 5 separate tasks that need to be completed individually:
-\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Company Research - Research business, management, industry
-\item {} Financial Modeling - Build projection model
-\item {} Valuation Analysis - DCF and comparable companies
-\item {} Chart Generation - Create 25-35 charts
-\item {} Report Assembly - Compile final report Which task would you like to start with? ```
-\end{enumerate}
-\item {} \textbf{When user explicitly requests all tasks together:} ``\emph{ I understand you'd like to complete the entire initiation report pipeline. Currently, this skill supports executing one task at a time, which allows for better quality control and review at each stage. We're working on a seamless end-to-end workflow that will make this process more automated, but for now, we'll need to complete each task separately. Would you like to start with Task 1 (Company Research)? }``
-\item {} \textbf{Never automatically assume which task to start} - always ask user to confirm.
-\item {} \textbf{Never execute multiple tasks in sequence} - complete one task, deliver outputs, then wait for next user request.
-\end{enumerate}
-
-\subparagraph{Task Execution Rules}\mbox{}\par
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} ✅ Execute exactly ONE task per user request
-\item {} ✅ Always verify prerequisites before starting a task
-\item {} ✅ Deliver task outputs and confirm completion
-\item {} ✅ Wait for user to explicitly request the next task
-\item {} ❌ Never chain multiple tasks together automatically
-\item {} ❌ Never assume user wants to proceed to next task
-\item {} ❌ Never execute Tasks 3-5 without verifying required inputs exist
-\end{itemize}
-
-\subparagraph{⚠ Deliverables Policy: NO SHORTCUTS}\mbox{}\par
-
-\textbf{DELIVER ONLY THE SPECIFIED OUTPUTS. DO NOT CREATE EXTRA DOCUMENTS.}
-
-
-Each task specifies exact deliverables. Do NOT create:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} ❌ ``Completion summaries''
-\item {} ❌ ``Executive summaries''
-\item {} ❌ ``Quick reference guides''
-\item {} ❌ ``Next steps documents''
-\item {} ❌ ``Task completion reports''
-\item {} ❌ Any other ``helpful'' documentation not explicitly specified
-\end{itemize}
-
-\textbf{Why}: These extras waste context and are not part of the professional workflow.
-
-
-\textbf{What TO deliver}:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} ✅ Task 1: Research document (.md) — \textbf{NOTHING ELSE}
-\item {} ✅ Task 2: Financial model (.xlsx) — \textbf{NOTHING ELSE}
-\item {} ✅ Task 3: Valuation analysis (.md) + Excel tabs added to Task 2 file — \textbf{NOTHING ELSE}
-\item {} ✅ Task 4: Charts zip file (.zip) — \textbf{NOTHING ELSE}
-\item {} ✅ Task 5: Final report (.docx) — \textbf{NOTHING ELSE}
-\end{itemize}
-
-\textbf{If a deliverable is not listed above, DO NOT CREATE IT.}
-
-
-\vspace{0.5em}\hrule\vspace{0.5em}
-
-\subparagraph{Task Selection}\mbox{}\par
-
-Select which task to execute:
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
-\toprule
-{} \textbf{Task} & \textbf{Name} & \textbf{Prerequisites} & \textbf{Output} \\
-\midrule
-{} \textbf{1} & Company Research & Company name/ ticker & 6-8K word document \\
-{} \textbf{2} & Financial Modeling & 10-K or financials access & Excel model (6 tabs) \\
-{} \textbf{3} & Valuation Analysis & Financial model (Task 2) & Valuation + price target \\
-{} \textbf{4} & Chart Generation & Tasks 1, 2, 3 + external data & 25-35 PNG/ JPG charts \\
-{} \textbf{5} & Report Assembly & ALL previous tasks (1-4) & 30-50 page DOCX report \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-\vspace{0.5em}\hrule\vspace{0.5em}
-
-\subparagraph{How to Use This Skill}\mbox{}\par
-
-\subparagraph{User Request Patterns and Responses}\mbox{}\par
-
-\textbf{Pattern 1: User specifies a specific task}
-
-\textbf{Structured Template}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} User: ``Use initiating-coverage, Task 1 for Tesla''
-\item {} Response: ✅ Execute Task 1 immediately
-\end{itemize}
-
-\textbf{Pattern 2: User asks for ``initiation report'' or ``full pipeline''}
-
-\textbf{Structured Template}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} User: ``Create a coverage initiation report for Tesla''
-\item {} Response: ❌ DO NOT start any task automatically
-\item {} ✅ Ask which task to start with (see template above)
-\end{itemize}
-
-\textbf{Pattern 3: User wants to do ``all tasks'' or ``entire workflow''}
-
-\textbf{Structured Template}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} User: ``I want to complete all 5 tasks for Tesla''
-\item {} Response: ❌ DO NOT chain tasks together
-\item {} ✅ Explain one-at-a-time limitation (see template above)
-\item {} ✅ Ask if they want to start with Task 1
-\end{itemize}
-
-\subparagraph{Correct Usage Examples}\mbox{}\par
-
-\textbf{Executing a single task:}
-
-\textbf{Structured Template}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} ``Use initiating-coverage skill, Task 1 for Tesla''
-\item {} ``Do Task 2 of initiating-coverage for Tesla''
-\item {} ``Run Task 3 for Tesla using the initiating-coverage skill''
-\end{itemize}
-
-\textbf{Completing full report (requires 5 separate requests):}
-
-\textbf{Structured Template}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Request 1: ``Do Task 1 for Tesla'' → Complete → Deliver outputs
-\item {} Request 2: ``Do Task 2 for Tesla'' → Complete → Deliver outputs
-\item {} Request 3: ``Do Task 3 for Tesla'' → Complete → Deliver outputs
-\item {} Request 4: ``Do Task 4 for Tesla'' → Complete → Deliver outputs
-\item {} Request 5: ``Do Task 5 for Tesla'' → Complete → Deliver outputs
-\end{itemize}
-
-\subparagraph{Task Execution Order}\mbox{}\par
-
-For a complete initiation report, tasks must be executed in separate user requests following this order:
-
-
-\textbf{Structured Template}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Request 1: Task 1 - Company Research (independent)
-\item {} ↓ [User reviews outputs and requests next task]
-\item {} Request 2: Task 2 - Financial Modeling (independent)
-\item {} ↓ [User reviews outputs and requests next task]
-\item {} Request 3: Task 3 - Valuation Analysis (requires Task 2 output)
-\item {} ↓ [User reviews outputs and requests next task]
-\item {} Request 4: Task 4 - Chart Generation (requires Tasks 2 \& 3 outputs)
-\item {} ↓ [User reviews outputs and requests next task]
-\item {} Request 5: Task 5 - Report Assembly (requires ALL previous task outputs)
-\end{itemize}
-
-\textbf{Note}: Tasks 1 and 2 can be run in any order. Tasks 3-5 have strict dependencies and must verify inputs before proceeding.
-
-
-\vspace{0.5em}\hrule\vspace{0.5em}
-
-\subparagraph{Task 1: Company Research}\mbox{}\par
-
-\textbf{Purpose}: Research company's business, management, competitive position, industry, and risks.
-
-
-\textbf{Prerequisites}: ✅ None (fully independent)
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Company name or ticker symbol
-\end{itemize}
-
-\textbf{Process}:
-
-\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Verify company name/ticker provided
-\item {} Load detailed instructions from references/task1-company-research.md
-\item {} Execute qualitative research workflow
-\item {} Deliver research document
-\end{enumerate}
-
-\textbf{Output}: Company Research Document (6,000-8,000 words)
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Company overview \& history
-\item {} Management bios (300-400 words × 3-4 execs)
-\item {} Products \& services analysis
-\item {} Industry overview
-\item {} Competitive analysis (5-10 competitors)
-\item {} TAM sizing
-\item {} Risk assessment (8-12 risks)
-\end{itemize}
-
-\textbf{File name}: \emph{[Company]\_\allowbreak{}Research\_\allowbreak{}Document\_\allowbreak{}[Date].md}
-
-
-\textbf{⚠ DELIVER ONLY THIS 1 FILE. NO completion summaries, no extra documents.}
-
-
-\textbf{⚠ DO NOT TAKE SHORTCUTS:}
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} ✅ Write full 6,000-8,000 words (not summaries)
-\item {} ✅ Complete 300-400 word bios for ALL 3-4 executives
-\item {} ✅ Analyze ALL 5-10 competitors thoroughly
-\item {} ✅ Cover all 8-12 risks across 4 categories
-\item {} ❌ Do not abbreviate sections to save time
-\item {} ❌ Do not skip any required sections
-\end{itemize}
-
-\textbf{Verification before proceeding}: None required for this task.
-
-
-\vspace{0.5em}\hrule\vspace{0.5em}
-
-\subparagraph{Task 2: Financial Modeling}\mbox{}\par
-
-\textbf{Purpose}: Extract historical financials and build comprehensive Excel financial model with projections and scenarios.
-
-
-\textbf{Prerequisites}: ⚠ Verify before starting
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Required}: Access to company financial data
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} For public companies: Latest 10-K from SEC EDGAR
-\item {} For private companies: Financial statements or available estimates
-\item {} OR: Pre-extracted historical financials provided by user
-\end{itemize}
-\item {} \textbf{Optional}: Company research (Task 1) for business context
-\end{itemize}
-
-\textbf{Input Verification}:
-
-\textbf{Structured Template}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} BEFORE STARTING - Select approach:
-\item {} Option A: Extract financials (most common)
-\item {} - [ ] Have access to 10-K or financial statements?
-\item {} - [ ] Ready to extract 3-5 years of data?
-\item {} Option B: User provided pre-extracted financials
-\item {} - [ ] Historical financials file received?
-\item {} - [ ] Contains income statement, cash flow, balance sheet (3-5 years)?
-\item {} Optional:
-\item {} - [ ] Company research (Task 1) complete for context?
-\end{itemize}
-
-\textbf{Process}:
-
-\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Verify access to financial data
-\item {} Load detailed instructions from references/task2-financial-modeling.md
-\item {} \textbf{Step 1}: Extract historical financials (if needed)
-\item {} \textbf{Step 2+}: Build projection model with 6 essential tabs
-\item {} Deliver Excel model
-\end{enumerate}
-
-\textbf{Output}: Excel Financial Model (.xlsx)
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} 6 essential tabs:
-\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Revenue Model} - Product breakdown (20-30 rows) + Geography breakdown (15-20 rows)
-\item {} \textbf{Income Statement} - Full P\&L with 40-50 line items, historical (3-5 years) + projected (5 years)
-\item {} \textbf{Cash Flow Statement} - Operating/Investing/Financing activities, historical + projected
-\item {} \textbf{Balance Sheet} - Assets/Liabilities/Equity, historical + projected
-\item {} \textbf{Scenarios} - Bull/Base/Bear comparison table
-\item {} \textbf{DCF Inputs} - Prepared for Task 3 valuation
-\end{enumerate}
-\end{itemize}
-
-\textbf{File name}: \emph{[Company]\_\allowbreak{}Financial\_\allowbreak{}Model\_\allowbreak{}[Date].xlsx}
-
-
-\textbf{⚠ DELIVER ONLY THIS 1 FILE. NO completion summaries, no extra documents.}
-
-
-\textbf{⚠ DO NOT TAKE SHORTCUTS:}
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} ✅ If extracting financials: Extract ALL line items from 3 financial statements (3-5 years)
-\item {} ✅ Build ALL 6 projection tabs completely with full detail
-\item {} ✅ Create detailed revenue model with 20-30 product rows AND 15-20 geography rows
-\item {} ✅ Build complete income statement with 40-50 line items (not abbreviated)
-\item {} ✅ Include full cash flow statement and balance sheet with all line items
-\item {} ✅ Complete ALL three scenarios (Bull/Base/Bear) with different parameters
-\item {} ❌ Do not create simplified/abbreviated versions
-\item {} ❌ Do not skip any of the 6 essential tabs
-\item {} ❌ Do not skip historical financials extraction if needed
-\end{itemize}
-
-\textbf{Verification before proceeding to Task 3}:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \UncheckedBox Historical financials extracted (if needed) or provided
-\item {} \UncheckedBox Excel file created and can be opened
-\item {} \UncheckedBox Model has all 6 essential tabs (Revenue Model, Income Statement, Cash Flow, Balance Sheet, Scenarios, DCF Inputs)
-\item {} \UncheckedBox Historical data (3-5 years) incorporated
-\item {} \UncheckedBox Projections complete (5 years forward)
-\item {} \UncheckedBox Scenarios complete (Bull/Base/Bear)
-\end{itemize}
-
-\vspace{0.5em}\hrule\vspace{0.5em}
-
-\subparagraph{Task 3: Valuation Analysis}\mbox{}\par
-
-\textbf{Purpose}: Perform comprehensive valuation using DCF, comparables, and precedent transactions.
-
-
-\textbf{Prerequisites}: ⚠ Verify before starting
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Required}: Financial model from Task 2
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Projected income statements
-\item {} Projected cash flows
-\item {} Revenue and EBITDA forecasts
-\item {} DCF inputs (unlevered FCF)
-\end{itemize}
-\end{itemize}
-
-\textbf{⚠ CRITICAL: DO NOT START THIS TASK UNLESS TASK 2 IS COMPLETE}
-
-
-This task requires the financial model from Task 2. Starting without it will result in incomplete work.
-
-
-\textbf{IF TASK 2 IS NOT COMPLETE}: Stop immediately and inform the user that Task 2 (Financial Modeling) must be completed first. Do not attempt to proceed or create placeholder valuations.
-
-
-\textbf{Input Verification}:
-
-\textbf{Structured Template}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} BEFORE STARTING:
-\item {} - [ ] Task 2 complete? (Financial model exists)
-\item {} - [ ] Model file path/location known?
-\item {} - [ ] Can access projected financials from model?
-\item {} Required from model:
-\item {} - [ ] Projected FCF (5 years)
-\item {} - [ ] Revenue projections
-\item {} - [ ] EBITDA projections
-\item {} - [ ] Terminal year metrics
-\end{itemize}
-
-\textbf{Process}:
-
-\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Verify financial model is accessible
-\item {} Load detailed instructions from references/task3-valuation.md
-\item {} Execute valuation workflow
-\item {} Deliver valuation analysis
-\end{enumerate}
-
-\textbf{Output}: Valuation Analysis (4-6 pages + Excel tabs)
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} DCF analysis with sensitivity tables
-\item {} Comparable companies (5-10 peers with statistical summary)
-\item {} Precedent transactions (if applicable)
-\item {} Valuation football field
-\item {} \textbf{Price target}: \$XX.XX
-\item {} \textbf{Recommendation}: BUY/HOLD/SELL
-\item {} \textbf{Upside}: XX\%
-\item {} Key catalysts (3-5)
-\end{itemize}
-
-\textbf{Files}:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \emph{[Company]\_\allowbreak{}Valuation\_\allowbreak{}Analysis\_\allowbreak{}[Date].md} (written analysis document)
-\item {} Excel tabs added to \emph{[Company]\_\allowbreak{}Financial\_\allowbreak{}Model\_\allowbreak{}[Date].xlsx} (from Task 2)
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} DCF tab with calculations
-\item {} Sensitivity analysis tab
-\item {} Comparable companies tab
-\item {} Valuation summary tab
-\end{itemize}
-\end{itemize}
-
-\textbf{⚠ DELIVER ONLY: 1 markdown file + 4 tabs added to existing Excel. NO completion summaries, no extra documents.}
-
-
-\textbf{⚠ DO NOT TAKE SHORTCUTS:}
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} ✅ Complete full DCF analysis with sensitivity matrix (not simplified)
-\item {} ✅ Analyze ALL 5-10 comparable companies with full data
-\item {} ✅ Include statistical summary in comps table (max/75th/median/25th/min)
-\item {} ✅ Create complete sensitivity analysis tab with multiple WACC and terminal growth scenarios
-\item {} ✅ Write full 4-6 pages of valuation analysis (not abbreviated)
-\item {} ✅ Research and justify price target with specific methodology
-\item {} ❌ Do not skip comparable company analysis
-\item {} ❌ Do not create simplified DCF without sensitivity
-\end{itemize}
-
-\textbf{Verification before proceeding to Task 4}:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \UncheckedBox Price target determined
-\item {} \UncheckedBox Valuation uses multiple methods (DCF + Comps minimum)
-\item {} \UncheckedBox DCF sensitivity table complete
-\item {} \UncheckedBox Comparable companies table includes statistical summary
-\end{itemize}
-
-\vspace{0.5em}\hrule\vspace{0.5em}
-
-\subparagraph{Task 4: Chart Generation}\mbox{}\par
-
-\textbf{Purpose}: Generate 25-35 professional financial charts for the report.
-
-
-\textbf{Prerequisites}: ⚠ Verify before starting
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Required}: Company research from Task 1
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Company history and milestones (for timeline charts)
-\item {} Management team and org structure (for org charts)
-\item {} Product portfolio (for product charts)
-\item {} Customer segmentation (for customer charts)
-\item {} Competitive landscape (for competitive charts)
-\item {} TAM analysis (for market size charts)
-\end{itemize}
-\item {} \textbf{Required}: Financial model from Task 2 (with Task 3 valuation tabs added)
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Revenue by product/geography data (Task 2 tabs)
-\item {} Margin trends (Task 2 tabs)
-\item {} Scenario comparison data (Task 2 tabs)
-\item {} DCF sensitivity table (Task 3 tab in same Excel file)
-\item {} Comparable companies data (Task 3 tab in same Excel file)
-\item {} Valuation ranges (Task 3 tab in same Excel file)
-\end{itemize}
-\item {} \textbf{Required}: External market data
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Historical stock price data (Yahoo Finance, Bloomberg, etc.)
-\item {} Historical valuation multiples (for historical trend charts)
-\end{itemize}
-\end{itemize}
-
-\textbf{⚠ CRITICAL: DO NOT START THIS TASK UNLESS TASKS 1, 2, AND 3 ARE COMPLETE}
-
-
-This task requires outputs from all three previous tasks. Starting without them will result in incomplete charts.
-
-
-\textbf{IF ANY OF TASKS 1, 2, OR 3 ARE NOT COMPLETE}: Stop immediately and inform the user which tasks need to be completed first. The specific requirements are:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Task 1: Company research document (for 9 charts)
-\item {} Task 2: Financial model with all 6 tabs (for 8 charts)
-\item {} Task 3: Valuation tabs added to the model (for 6 charts)
-\item {} External data access (for 2 charts)
-\end{itemize}
-
-Do not attempt to create placeholder charts or skip charts due to missing data.
-
-
-\textbf{Input Verification}:
-
-\textbf{Structured Template}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} BEFORE STARTING:
-\item {} - [ ] Task 1 complete? (Company research exists)
-\item {} - [ ] Task 2 complete? (Financial model exists)
-\item {} - [ ] Task 3 complete? (Valuation analysis exists)
-\item {} - [ ] Can access external market data sources?
-\item {} Required from Task 1:
-\item {} - [ ] Company history and milestones (for charts 05, 06)
-\item {} - [ ] Management team structure (for chart 07)
-\item {} - [ ] Product portfolio details (for chart 08)
-\item {} - [ ] Customer segmentation data (for chart 09)
-\item {} - [ ] Competitive landscape analysis (for charts 16, 17, 18)
-\item {} - [ ] TAM sizing and market data (for chart 15)
-\item {} Required from Task 2:
-\item {} - [ ] Revenue by product (historical + projected) - for chart 03 ⭐
-\item {} - [ ] Revenue by geography (historical + projected) - for chart 04 ⭐
-\item {} - [ ] Income statement with margins (for charts 02, 10, 11)
-\item {} - [ ] Cash flow statement (for chart 12)
-\item {} - [ ] Scenario comparison data (for chart 14)
-\item {} Required from Task 3:
-\item {} - [ ] DCF sensitivity matrix - for chart 28 ⭐
-\item {} - [ ] DCF components (for chart 29)
-\item {} - [ ] Comparable companies data (for charts 30, 31)
-\item {} - [ ] Valuation ranges - for chart 32 ⭐
-\item {} Required from External Sources:
-\item {} - [ ] Historical stock price data (for chart 01)
-\item {} - [ ] Historical valuation multiples (for chart 34)
-\end{itemize}
-
-\textbf{Process}:
-
-\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Verify model and valuation outputs are accessible
-\item {} Load detailed instructions from references/task4-chart-generation.md
-\item {} Execute chart generation workflow
-\item {} Package all charts into a zip file
-\item {} Deliver zip file
-\end{enumerate}
-
-\textbf{Output}: 25-35 Professional Chart Files (PNG/JPG, 300 DPI) packaged in zip
-
-
-\textbf{4 MANDATORY Charts} (must be present) ⭐:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} chart\_\allowbreak{}03: Revenue by product (stacked area)
-\item {} chart\_\allowbreak{}04: Revenue by geography (stacked bar)
-\item {} chart\_\allowbreak{}28: DCF sensitivity (2-way heatmap)
-\item {} chart\_\allowbreak{}32: Valuation football field (horizontal bars)
-\end{itemize}
-
-\textbf{25 REQUIRED Charts} (specific list):
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Investment Summary: chart\_\allowbreak{}01
-\item {} Financial Performance: charts 02, 03⭐, 04⭐, 10, 11, 12, 14
-\item {} Company 101: charts 05, 06, 07, 08, 09, 15, 16
-\item {} Competitive/Market: charts 17, 18
-\item {} Scenario Analysis: chart 13
-\item {} Valuation: charts 28⭐, 29, 30, 31, 32⭐, 33, 34
-\end{itemize}
-
-\textbf{10 OPTIONAL Charts} (for 26-35 range):
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} charts 19-27, 35 (customer acquisition, unit economics, product roadmap, etc.)
-\end{itemize}
-
-\textbf{IMPORTANT}: Task 5 embeds ALL charts created (25-35) for visual density (1 chart per 200-300 words).
-
-
-\textbf{File naming}: \emph{chart\_\allowbreak{}01\_\allowbreak{}description.png}, \emph{chart\_\allowbreak{}02\_\allowbreak{}description.png}, etc.
-
-
-\textbf{Deliverable}: \emph{[Company]\_\allowbreak{}Charts\_\allowbreak{}[Date].zip} containing all 25-35 chart files + chart\_\allowbreak{}index.txt
-
-
-\textbf{⚠ DELIVER ONLY THIS 1 ZIP FILE. NO completion summaries, no separate chart lists, no extra documents.}
-
-
-\textbf{⚠ DO NOT TAKE SHORTCUTS:}
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} ✅ Create ALL 25 required charts minimum (specific list provided in task4-chart-generation.md)
-\item {} ✅ Include ALL 4 mandatory charts:
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} chart\_\allowbreak{}03: Revenue by product (stacked area) ⭐
-\item {} chart\_\allowbreak{}04: Revenue by geography (stacked bar) ⭐
-\item {} chart\_\allowbreak{}28: DCF sensitivity (heatmap) ⭐
-\item {} chart\_\allowbreak{}32: Valuation football field ⭐
-\end{itemize}
-\item {} ✅ Optional: Add 1-10 more charts to reach 26-35 total for greater visual density
-\item {} ✅ Generate professional-quality charts at 300 DPI (not low-res placeholders)
-\item {} ✅ Create unique, well-formatted charts for each visualization
-\item {} ✅ Package all charts in zip file with chart index
-\item {} ❌ Do not create only 10-15 charts (minimum is 25)
-\item {} ❌ Do not skip any of the 4 mandatory charts
-\item {} ❌ Do not use low-quality/placeholder images
-\end{itemize}
-
-\textbf{Verification before proceeding to Task 5}:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \UncheckedBox Minimum 25 chart files created (required)
-\item {} \UncheckedBox All 4 mandatory charts present:
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \UncheckedBox chart\_\allowbreak{}03: Revenue by product ⭐
-\item {} \UncheckedBox chart\_\allowbreak{}04: Revenue by geography ⭐
-\item {} \UncheckedBox chart\_\allowbreak{}28: DCF sensitivity ⭐
-\item {} \UncheckedBox chart\_\allowbreak{}32: Valuation football field ⭐
-\end{itemize}
-\item {} \UncheckedBox All charts open and display correctly
-\item {} \UncheckedBox Charts saved at 300 DPI (print quality)
-\item {} \UncheckedBox Chart index created listing all files with categories
-\item {} \UncheckedBox All charts packaged in zip file
-\item {} \UncheckedBox File naming follows convention: chart\_\allowbreak{}\#\#\_\allowbreak{}description.png
-\end{itemize}
-
-\vspace{0.5em}\hrule\vspace{0.5em}
-
-\subparagraph{Task 5: Report Assembly}\mbox{}\par
-
-\textbf{Purpose}: Write and assemble the comprehensive final DOCX report.
-
-
-\textbf{Prerequisites}: ⚠ Verify before starting
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Required}: Company research from Task 1
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} All 6-8K words of content
-\item {} Management bios
-\item {} Competitive analysis
-\item {} Risk assessment
-\end{itemize}
-\item {} \textbf{Required}: Financial model from Task 2
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Excel workbook
-\item {} All projections and scenarios
-\end{itemize}
-\item {} \textbf{Required}: Valuation analysis from Task 3
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Price target and recommendation
-\item {} DCF, comps, precedent transactions
-\item {} All valuation data
-\end{itemize}
-\item {} \textbf{Required}: Chart files from Task 4
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Zip file containing all 25-35 PNG/JPG files
-\item {} Chart index included in zip
-\end{itemize}
-\end{itemize}
-
-\textbf{⚠ CRITICAL: DO NOT START THIS TASK UNLESS ALL TASKS 1-4 ARE COMPLETE}
-
-
-This is the final assembly task. It cannot be completed without all previous work products.
-
-
-\textbf{IF ANY OF TASKS 1, 2, 3, OR 4 ARE NOT COMPLETE}: Stop immediately and inform the user which tasks need to be completed first. The specific requirements are:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Task 1: Company research document (6-8K words)
-\item {} Task 2: Financial model with all 6 tabs
-\item {} Task 3: Valuation analysis with price target and recommendation
-\item {} Task 4: Charts zip file with 25-35 charts
-\end{itemize}
-
-Do not attempt to create placeholder content, substitute missing sections, or assemble an incomplete report. The report requires ALL inputs to be publication-ready.
-
-
-\textbf{Input Verification}:
-
-\textbf{Structured Template}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} BEFORE STARTING - ALL TASKS MUST BE COMPLETE:
-\item {} Task 1 Verification:
-\item {} - [ ] Company research document exists? (6-8K words)
-\item {} - [ ] Management bios complete? (300-400 words × 3-4 execs)
-\item {} - [ ] Competitive analysis complete? (5-10 competitors)
-\item {} - [ ] Risk assessment complete? (8-12 risks)
-\item {} Task 2 Verification:
-\item {} - [ ] Financial model exists and can be opened?
-\item {} - [ ] Model has projections (5 years)?
-\item {} - [ ] Scenarios exist (Bull/Base/Bear)?
-\item {} Task 3 Verification:
-\item {} - [ ] Valuation analysis complete?
-\item {} - [ ] Price target determined?
-\item {} - [ ] Recommendation set? (BUY/HOLD/SELL)
-\item {} - [ ] DCF and comps complete?
-\item {} Task 4 Verification:
-\item {} - [ ] Chart zip file exists?
-\item {} - [ ] Can extract/access all 25-35 chart files from zip?
-\item {} - [ ] All 4 mandatory charts present?
-\item {} - [ ] Revenue by product (stacked area)
-\item {} - [ ] Revenue by geography (stacked bar)
-\item {} - [ ] DCF sensitivity (heatmap)
-\item {} - [ ] Valuation football field
-\item {} - [ ] Chart files accessible and can be opened?
-\item {} IF ANY VERIFICATION FAILS: Stop and complete missing task first.
-\end{itemize}
-
-\textbf{Process}:
-
-\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{CRITICAL}: Verify ALL prerequisites before starting
-\item {} Load detailed instructions from references/task5-report-assembly.md
-\item {} Execute report assembly workflow using Claude's built-in skills:
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Use DOCX skill} to create and manipulate the Word document
-\item {} \textbf{Use XLSX skill} to read Excel data from Task 2/3
-\item {} \textbf{Use Read tool} to read Task 1 and Task 3 markdown files
-\item {} Read Task 1 .md file → Convert to Word formatting → Insert charts inline
-\item {} Read Task 2 .xlsx file → Extract tables → Write quantitative analysis
-\item {} Read Task 3 .md file + Excel tabs → Copy/adapt valuation analysis
-\item {} Insert Task 4 .png chart files throughout using DOCX skill
-\item {} Create text-dense report with charts interspersed every 200-300 words
-\end{itemize}
-\item {} Save and deliver final DOCX report
-\end{enumerate}
-
-\textbf{Key Principles}:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Use Claude's DOCX and XLSX skills (NOT Python libraries)
-\item {} Use actual file operations (read .md/.xlsx/.png files, write .docx file)
-\item {} Good equity research reports are text-dense with lots of illustrating images (60-80\% page coverage, 1+ chart per page)
-\end{itemize}
-
-\textbf{🔥 CRITICAL: GO ALL OUT ON THIS TASK}
-
-
-\textbf{THIS IS THE FINAL DELIVERABLE. DO NOT TAKE SHORTCUTS.}
-
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} ✅ \textbf{Use full token budget} - This is the culmination of all previous work
-\item {} ✅ \textbf{Write every section completely} - Do not summarize or abbreviate
-\item {} ✅ \textbf{Hit ALL minimum requirements} - 30+ pages, 10,000+ words, 25+ charts, 12+ tables
-\item {} ✅ \textbf{Be thorough on projection assumptions} - 2,000-3,000 words with product-by-product detail
-\item {} ✅ \textbf{Be comprehensive on scenarios} - 1,500-2,000 words with specific Bull/Base/Bear parameters
-\item {} ✅ \textbf{Insert ALL charts from Task 4} - Not just a few, ALL 25-35 charts throughout
-\item {} ✅ \textbf{Create ALL tables from Task 2/3} - Extract every financial table, don't skip any
-\item {} ✅ \textbf{Use Task 1 content verbatim} - Copy/paste full Company 101 sections (6-8K words)
-\item {} ✅ \textbf{Professional quality only} - This must be indistinguishable from JPMorgan/Goldman Sachs research
-\end{itemize}
-
-\textbf{NEVER:}
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} ❌ ``This section would include...'' - WRITE THE ACTUAL SECTION
-\item {} ❌ ``Charts would be inserted here...'' - INSERT THE ACTUAL CHARTS
-\item {} ❌ ``See financial model for details...'' - EXTRACT AND INCLUDE THE DETAILS
-\item {} ❌ Skip sections due to length - Every section MUST be complete
-\item {} ❌ Abbreviate for token conservation - Use whatever tokens are needed
-\end{itemize}
-
-\textbf{This is publication-ready institutional research. Spare no effort, tokens, or detail.}
-
-
-\textbf{Output}: Comprehensive Equity Research Report (.docx)
-
-
-\textbf{Specifications}:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Length}: 30-50 pages (MINIMUM 30)
-\item {} \textbf{Word count}: 10,000-15,000 words (MINIMUM 10,000)
-\item {} \textbf{Charts}: 25-35 embedded images
-\item {} \textbf{Tables}: 12-20 comprehensive tables
-\item {} \textbf{Format}: Professional DOCX with clickable hyperlinks
-\end{itemize}
-
-\textbf{Structure}:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Page 1: Investment Summary (INITIATING COVERAGE format)
-\item {} Pages 2-5: Investment thesis \& risks
-\item {} Pages 6-17: Company 101
-\item {} Pages 18-30: Financial analysis \& projections
-\item {} Pages 31-40: Valuation analysis
-\item {} Pages 41-50: Appendices
-\end{itemize}
-
-\textbf{File name}: \emph{[Company]\_\allowbreak{}Initiation\_\allowbreak{}Report\_\allowbreak{}[Date].docx}
-
-
-\textbf{⚠ DELIVER ONLY THIS 1 DOCX FILE. NO executive summaries, no ``highlights'' documents, no extra files.}
-
-
-\textbf{Final Verification}:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \UncheckedBox Report is 30-50 pages
-\item {} \UncheckedBox Word count is 10,000-15,000
-\item {} \UncheckedBox 25-35 charts embedded
-\item {} \UncheckedBox 12-20 tables included
-\item {} \UncheckedBox All citations are clickable hyperlinks
-\item {} \UncheckedBox Numbers match financial model exactly
-\end{itemize}
-
-\vspace{0.5em}\hrule\vspace{0.5em}
-
-\subparagraph{Input Verification Protocol}\mbox{}\par
-
-\subparagraph{Why Input Verification Matters}\mbox{}\par
-
-Each task has strict prerequisites. Running a task without required inputs will:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Waste time with incomplete work
-\item {} Produce low-quality outputs
-\item {} Require rework
-\end{itemize}
-
-\textbf{Always verify inputs before starting a task.}
-
-
-\subparagraph{Verification Checklist by Task}\mbox{}\par
-
-\textbf{Task 1}: ✅ No verification needed (independent)
-
-
-\textbf{Task 2}: Check historical financials available
-
-
-\textbf{Task 3}: Check financial model exists and is accessible
-
-
-\textbf{Task 4}: Check both model (Task 2) AND valuation (Task 3) exist
-
-
-\textbf{Task 5}: Check ALL previous tasks complete (1, 2, 3, 4)
-
-
-\subparagraph{What to Do if Verification Fails}\mbox{}\par
-
-\textbf{Structured Template}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} IF prerequisites are missing:
-\item {} 1. Stop the current task
-\item {} 2. Identify which prerequisite task(s) need to be completed
-\item {} 3. Execute the missing task(s) first
-\item {} 4. Return to current task once prerequisites are met
-\end{itemize}
-
-\subparagraph{Example Verification Dialogue}\mbox{}\par
-
-\textbf{Structured Template}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} User: ``Use initiating-coverage, Task 5 for Tesla''
-\item {} Claude: ``Starting Task 5: Report Assembly for Tesla
-\item {} VERIFICATION - Checking prerequisites:
-\item {} - Task 1 (Company research)... ❌ NOT FOUND
-\item {} - Task 2 (Financial model)... ❌ NOT FOUND
-\item {} - Task 3 (Valuation)... ❌ NOT FOUND
-\item {} - Task 4 (Charts)... ❌ NOT FOUND
-\item {} ⚠ VERIFICATION FAILED
-\item {} Task 5 requires ALL previous tasks to be complete.
-\item {} To proceed:
-\item {} 1. Complete Task 1: Company Research
-\item {} 2. Complete Task 2: Financial Modeling
-\item {} 3. Complete Task 3: Valuation Analysis
-\item {} 4. Complete Task 4: Chart Generation
-\item {} 5. Then return to Task 5
-\item {} Would you like to start with Task 1 first?``
-\end{itemize}
-
-\vspace{0.5em}\hrule\vspace{0.5em}
-
-\subparagraph{Task Reference Files}\mbox{}\par
-
-Detailed instructions for each task are in separate reference files to keep this skill lean:
-
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{references/task1-company-research.md} - Company research workflow
-\item {} \textbf{references/task2-financial-modeling.md} - Financial modeling workflow
-\item {} \textbf{references/task3-valuation.md} - Valuation methodology
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Also see: references/valuation-methodologies.md for DCF/comps deep dive
-\end{itemize}
-\item {} \textbf{references/task4-chart-generation.md} - Chart generation workflow
-\item {} \textbf{references/task5-report-assembly.md} - Report writing workflow
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Also see: assets/report-template.md for report structure
-\item {} Also see: assets/quality-checklist.md for quality checks
-\end{itemize}
-\end{itemize}
-
-\textbf{When to load reference files}: Load ONLY the reference file associated with the specific task being performed. These files are very large - do not load multiple reference files at once. Read the appropriate task reference file at the start of the task for detailed step-by-step instructions.
-
-
-\vspace{0.5em}\hrule\vspace{0.5em}
-
-\subparagraph{Quality Standards}\mbox{}\par
-
-All outputs meet institutional standards from leading investment banks (JPMorgan, Goldman Sachs, Morgan Stanley):
-
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Comprehensive}: Meet all minimum requirements
-\item {} \textbf{Detailed}: Specific data and examples, not generic statements
-\item {} \textbf{Quantified}: Lead with numbers and metrics
-\item {} \textbf{Cited}: Proper sources with clickable hyperlinks
-\item {} \textbf{Professional}: Institutional-quality formatting
-\item {} \textbf{Accurate}: All numbers verified and cross-checked
-\end{itemize}
-
-\vspace{0.5em}\hrule\vspace{0.5em}
-
-\subparagraph{Important Notes}\mbox{}\par
-
-\subparagraph{Task Independence}\mbox{}\par
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Task 1} can run anytime (no dependencies)
-\item {} \textbf{Task 2} can run anytime (just needs historical data)
-\item {} \textbf{Tasks 1 \& 2} can run in parallel
-\item {} \textbf{Task 3} requires Task 2
-\item {} \textbf{Task 4} requires Tasks 2 \& 3
-\item {} \textbf{Task 5} requires Tasks 1, 2, 3, \& 4
-\end{itemize}
-
-\subparagraph{Session Management}\mbox{}\par
-
-\textbf{Same session}: Outputs automatically available to subsequent tasks
-
-
-\textbf{Different sessions}: Reference previous task outputs explicitly
-
-\textbf{Structured Template}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} ``Use Task 3 with the model from yesterday at [path]''
-\item {} ``Use Task 5 with the research document at [path]''
-\end{itemize}
-
-\subparagraph{File Organization}\mbox{}\par
-
-Recommended structure during workflow:
-
-\textbf{Structured Template}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} ProjectFolder/
-\item {} Task1\_\allowbreak{}Research/
-\item {} [Company]\_\allowbreak{}Research\_\allowbreak{}Document.md
-\item {} Task2\_\allowbreak{}Model/
-\item {} [Company]\_\allowbreak{}Financial\_\allowbreak{}Model.xlsx
-\item {} Task3\_\allowbreak{}Valuation/
-\item {} [Company]\_\allowbreak{}Valuation\_\allowbreak{}Analysis.pdf
-\item {} Task4\_\allowbreak{}Charts/
-\item {} chart\_\allowbreak{}01.png
-\item {} ... (25-35 files)
-\item {} Task5\_\allowbreak{}Report/
-\item {} [Company]\_\allowbreak{}Initiation\_\allowbreak{}Report.docx
-\end{itemize}
-
-\subparagraph{No End-to-End Execution}\mbox{}\par
-
-This skill does \textbf{NOT} support running all tasks automatically in sequence. Each task must be explicitly requested and verified.
-
-
-\textbf{Why}: This ensures:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Quality control at each stage
-\item {} Ability to review outputs before proceeding
-\item {} Flexibility to pause/resume workflow
-\item {} Clear verification of prerequisites
-\end{itemize}
-
-\vspace{0.5em}\hrule\vspace{0.5em}
-
-\subparagraph{Success Criteria}\mbox{}\par
-
-A successful initiation report workflow should:
-
-\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Complete all 5 tasks in order
-\item {} Pass all input verifications
-\item {} Meet all quality standards
-\item {} Produce all required deliverables
-\item {} Numbers cross-check between outputs
-\item {} Final report is publication-ready
-\end{enumerate}
-
-\textbf{Output quality}: Institutional (JPMorgan/Goldman/Morgan Stanley level) \textbf{Use case}: First-time comprehensive coverage of a company
-
-
-\vspace{0.8em}\hrule\vspace{0.8em}
-
-\subsection{Skill Resource: skills/initiating-coverage/assets/quality-checklist.md}\label{file:skills-initiating-coverage-assets-quality-checklist.md}
+\subsection{Skill Resource: skills/initiating-coverage/assets/quality-checklist.md}\label{file:skills-initiating-coverage-assets-quality-checklist-md}
 
 \paragraph{Quality Control Checklist for Initiation Reports}\mbox{}\par
 
@@ -4043,7 +3124,7 @@ If any count is below minimum, STOP and add content before delivery.
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill Resource: skills/initiating-coverage/assets/report-template.md}\label{file:skills-initiating-coverage-assets-report-template.md}
+\subsection{Skill Resource: skills/initiating-coverage/assets/report-template.md}\label{file:skills-initiating-coverage-assets-report-template-md}
 
 \paragraph{Equity Research Initiation Report Template}\mbox{}\par
 
@@ -5045,7 +4126,7 @@ CRITICAL FORMAT: Football field must be a horizontal bar chart showing all valua
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill Resource: skills/initiating-coverage/references/task1-company-research.md}\label{file:skills-initiating-coverage-references-task1-company-research.md}
+\subsection{Skill Resource: skills/initiating-coverage/references/task1-company-research.md}\label{file:skills-initiating-coverage-references-task1-company-research-md}
 
 \paragraph{Task 1: Company Research - Detailed Workflow}\mbox{}\par
 
@@ -5584,7 +4665,7 @@ After completing Task 1, the research document will be used:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill Resource: skills/initiating-coverage/references/task2-financial-modeling.md}\label{file:skills-initiating-coverage-references-task2-financial-modeling.md}
+\subsection{Skill Resource: skills/initiating-coverage/references/task2-financial-modeling.md}\label{file:skills-initiating-coverage-references-task2-financial-modeling-md}
 
 \paragraph{Task 2: Financial Modeling - Detailed Workflow}\mbox{}\par
 
@@ -6336,7 +5417,7 @@ After completing Task 2, the financial model will be used for:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill Resource: skills/initiating-coverage/references/task3-valuation.md}\label{file:skills-initiating-coverage-references-task3-valuation.md}
+\subsection{Skill Resource: skills/initiating-coverage/references/task3-valuation.md}\label{file:skills-initiating-coverage-references-task3-valuation-md}
 
 \paragraph{Task 3: Valuation Analysis - Detailed Workflow}\mbox{}\par
 
@@ -7084,7 +6165,7 @@ The price target and recommendation are the foundation of the final investment r
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill Resource: skills/initiating-coverage/references/task4-chart-generation.md}\label{file:skills-initiating-coverage-references-task4-chart-generation.md}
+\subsection{Skill Resource: skills/initiating-coverage/references/task4-chart-generation.md}\label{file:skills-initiating-coverage-references-task4-chart-generation-md}
 
 \paragraph{Task 4: Chart Generation - Detailed Workflow}\mbox{}\par
 
@@ -8093,7 +7174,7 @@ The 4 mandatory charts are critical for the valuation and financial analysis sec
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill Resource: skills/initiating-coverage/references/task5-report-assembly.md}\label{file:skills-initiating-coverage-references-task5-report-assembly.md}
+\subsection{Skill Resource: skills/initiating-coverage/references/task5-report-assembly.md}\label{file:skills-initiating-coverage-references-task5-report-assembly-md}
 
 \paragraph{Task 5: Report Assembly - Detailed Workflow}\mbox{}\par
 
@@ -9780,7 +8861,7 @@ This represents the complete professional work product. Deliver institutional-qu
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill Resource: skills/initiating-coverage/references/valuation-methodologies.md}\label{file:skills-initiating-coverage-references-valuation-methodologies.md}
+\subsection{Skill Resource: skills/initiating-coverage/references/valuation-methodologies.md}\label{file:skills-initiating-coverage-references-valuation-methodologies-md}
 
 \paragraph{Valuation Methodologies for Equity Research}\mbox{}\par
 
@@ -10357,7 +9438,1009 @@ The key is to understand the assumptions driving each method and to present a we
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: model-update}\label{file:skills-model-update-SKILL.md}
+\subsection{Skill: initiating-coverage}\label{file:skills-initiating-coverage-SKILL-md}
+
+\paragraph{File Metadata}\mbox{}\par
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Value} \\
+\midrule
+{} name & initiating-coverage \\
+{} description & Create institutional-quality equity research initiation reports through a 5-task workflow. Tasks must be executed individually with verified prerequisites - (1) company research, (2) financial modeling, (3) valuation analysis, (4) chart generation, (5) final report assembly. Each task produces specific deliverables (markdown docs, Excel models, charts, or DOCX reports). Tasks 3-5 have dependencies on earlier tasks. \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+
+\paragraph{Initiating Coverage}\mbox{}\par
+
+Create institutional-quality equity research initiation reports through a structured 5-task workflow. Each task must be executed separately with verified inputs.
+
+
+\subparagraph{Overview}\mbox{}\par
+
+This skill produces comprehensive first-time coverage reports following institutional standards (JPMorgan, Goldman Sachs, Morgan Stanley format). Tasks are executed individually, each verifying prerequisites before proceeding.
+
+
+\textbf{Default Font}: Times New Roman throughout all documents (unless user specifies otherwise).
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{⚠ CRITICAL: One Task at a Time}\mbox{}\par
+
+\textbf{THIS SKILL OPERATES IN SINGLE-TASK MODE ONLY.}
+
+
+\subparagraph{If User Requests Full Pipeline}\mbox{}\par
+
+When user requests:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ``Create a coverage initiation report for [Company]''
+\item {} ``Write an initiation report for [Company]''
+\item {} ``Do the entire equity research process for [Company]''
+\item {} ``Complete all 5 tasks for [Company]''
+\item {} Any request that implies running multiple tasks or the entire workflow
+\end{itemize}
+
+\textbf{REQUIRED RESPONSE:}
+
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Ask which specific task to perform:} ``` I can help you create an equity research initiation report for [Company]. This involves 5 separate tasks that need to be completed individually:
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Company Research - Research business, management, industry
+\item {} Financial Modeling - Build projection model
+\item {} Valuation Analysis - DCF and comparable companies
+\item {} Chart Generation - Create 25-35 charts
+\item {} Report Assembly - Compile final report Which task would you like to start with? ```
+\end{enumerate}
+\item {} \textbf{When user explicitly requests all tasks together:} ``\emph{ I understand you'd like to complete the entire initiation report pipeline. Currently, this skill supports executing one task at a time, which allows for better quality control and review at each stage. We're working on a seamless end-to-end workflow that will make this process more automated, but for now, we'll need to complete each task separately. Would you like to start with Task 1 (Company Research)? }``
+\item {} \textbf{Never automatically assume which task to start} - always ask user to confirm.
+\item {} \textbf{Never execute multiple tasks in sequence} - complete one task, deliver outputs, then wait for next user request.
+\end{enumerate}
+
+\subparagraph{Task Execution Rules}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ✅ Execute exactly ONE task per user request
+\item {} ✅ Always verify prerequisites before starting a task
+\item {} ✅ Deliver task outputs and confirm completion
+\item {} ✅ Wait for user to explicitly request the next task
+\item {} ❌ Never chain multiple tasks together automatically
+\item {} ❌ Never assume user wants to proceed to next task
+\item {} ❌ Never execute Tasks 3-5 without verifying required inputs exist
+\end{itemize}
+
+\subparagraph{⚠ Deliverables Policy: NO SHORTCUTS}\mbox{}\par
+
+\textbf{DELIVER ONLY THE SPECIFIED OUTPUTS. DO NOT CREATE EXTRA DOCUMENTS.}
+
+
+Each task specifies exact deliverables. Do NOT create:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ❌ ``Completion summaries''
+\item {} ❌ ``Executive summaries''
+\item {} ❌ ``Quick reference guides''
+\item {} ❌ ``Next steps documents''
+\item {} ❌ ``Task completion reports''
+\item {} ❌ Any other ``helpful'' documentation not explicitly specified
+\end{itemize}
+
+\textbf{Why}: These extras waste context and are not part of the professional workflow.
+
+
+\textbf{What TO deliver}:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ✅ Task 1: Research document (.md) — \textbf{NOTHING ELSE}
+\item {} ✅ Task 2: Financial model (.xlsx) — \textbf{NOTHING ELSE}
+\item {} ✅ Task 3: Valuation analysis (.md) + Excel tabs added to Task 2 file — \textbf{NOTHING ELSE}
+\item {} ✅ Task 4: Charts zip file (.zip) — \textbf{NOTHING ELSE}
+\item {} ✅ Task 5: Final report (.docx) — \textbf{NOTHING ELSE}
+\end{itemize}
+
+\textbf{If a deliverable is not listed above, DO NOT CREATE IT.}
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Task Selection}\mbox{}\par
+
+Select which task to execute:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{Task} & \textbf{Name} & \textbf{Prerequisites} & \textbf{Output} \\
+\midrule
+{} \textbf{1} & Company Research & Company name/ ticker & 6-8K word document \\
+{} \textbf{2} & Financial Modeling & 10-K or financials access & Excel model (6 tabs) \\
+{} \textbf{3} & Valuation Analysis & Financial model (Task 2) & Valuation + price target \\
+{} \textbf{4} & Chart Generation & Tasks 1, 2, 3 + external data & 25-35 PNG/ JPG charts \\
+{} \textbf{5} & Report Assembly & ALL previous tasks (1-4) & 30-50 page DOCX report \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{How to Use This Skill}\mbox{}\par
+
+\subparagraph{User Request Patterns and Responses}\mbox{}\par
+
+\textbf{Pattern 1: User specifies a specific task}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} User: ``Use initiating-coverage, Task 1 for Tesla''
+\item {} Response: ✅ Execute Task 1 immediately
+\end{itemize}
+
+\textbf{Pattern 2: User asks for ``initiation report'' or ``full pipeline''}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} User: ``Create a coverage initiation report for Tesla''
+\item {} Response: ❌ DO NOT start any task automatically
+\item {} ✅ Ask which task to start with (see template above)
+\end{itemize}
+
+\textbf{Pattern 3: User wants to do ``all tasks'' or ``entire workflow''}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} User: ``I want to complete all 5 tasks for Tesla''
+\item {} Response: ❌ DO NOT chain tasks together
+\item {} ✅ Explain one-at-a-time limitation (see template above)
+\item {} ✅ Ask if they want to start with Task 1
+\end{itemize}
+
+\subparagraph{Correct Usage Examples}\mbox{}\par
+
+\textbf{Executing a single task:}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ``Use initiating-coverage skill, Task 1 for Tesla''
+\item {} ``Do Task 2 of initiating-coverage for Tesla''
+\item {} ``Run Task 3 for Tesla using the initiating-coverage skill''
+\end{itemize}
+
+\textbf{Completing full report (requires 5 separate requests):}
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Request 1: ``Do Task 1 for Tesla'' → Complete → Deliver outputs
+\item {} Request 2: ``Do Task 2 for Tesla'' → Complete → Deliver outputs
+\item {} Request 3: ``Do Task 3 for Tesla'' → Complete → Deliver outputs
+\item {} Request 4: ``Do Task 4 for Tesla'' → Complete → Deliver outputs
+\item {} Request 5: ``Do Task 5 for Tesla'' → Complete → Deliver outputs
+\end{itemize}
+
+\subparagraph{Task Execution Order}\mbox{}\par
+
+For a complete initiation report, tasks must be executed in separate user requests following this order:
+
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Request 1: Task 1 - Company Research (independent)
+\item {} ↓ [User reviews outputs and requests next task]
+\item {} Request 2: Task 2 - Financial Modeling (independent)
+\item {} ↓ [User reviews outputs and requests next task]
+\item {} Request 3: Task 3 - Valuation Analysis (requires Task 2 output)
+\item {} ↓ [User reviews outputs and requests next task]
+\item {} Request 4: Task 4 - Chart Generation (requires Tasks 2 \& 3 outputs)
+\item {} ↓ [User reviews outputs and requests next task]
+\item {} Request 5: Task 5 - Report Assembly (requires ALL previous task outputs)
+\end{itemize}
+
+\textbf{Note}: Tasks 1 and 2 can be run in any order. Tasks 3-5 have strict dependencies and must verify inputs before proceeding.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Task 1: Company Research}\mbox{}\par
+
+\textbf{Purpose}: Research company's business, management, competitive position, industry, and risks.
+
+
+\textbf{Prerequisites}: ✅ None (fully independent)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Company name or ticker symbol
+\end{itemize}
+
+\textbf{Process}:
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Verify company name/ticker provided
+\item {} Load detailed instructions from references/task1-company-research.md
+\item {} Execute qualitative research workflow
+\item {} Deliver research document
+\end{enumerate}
+
+\textbf{Output}: Company Research Document (6,000-8,000 words)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Company overview \& history
+\item {} Management bios (300-400 words × 3-4 execs)
+\item {} Products \& services analysis
+\item {} Industry overview
+\item {} Competitive analysis (5-10 competitors)
+\item {} TAM sizing
+\item {} Risk assessment (8-12 risks)
+\end{itemize}
+
+\textbf{File name}: \emph{[Company]\_\allowbreak{}Research\_\allowbreak{}Document\_\allowbreak{}[Date].md}
+
+
+\textbf{⚠ DELIVER ONLY THIS 1 FILE. NO completion summaries, no extra documents.}
+
+
+\textbf{⚠ DO NOT TAKE SHORTCUTS:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ✅ Write full 6,000-8,000 words (not summaries)
+\item {} ✅ Complete 300-400 word bios for ALL 3-4 executives
+\item {} ✅ Analyze ALL 5-10 competitors thoroughly
+\item {} ✅ Cover all 8-12 risks across 4 categories
+\item {} ❌ Do not abbreviate sections to save time
+\item {} ❌ Do not skip any required sections
+\end{itemize}
+
+\textbf{Verification before proceeding}: None required for this task.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Task 2: Financial Modeling}\mbox{}\par
+
+\textbf{Purpose}: Extract historical financials and build comprehensive Excel financial model with projections and scenarios.
+
+
+\textbf{Prerequisites}: ⚠ Verify before starting
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Required}: Access to company financial data
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} For public companies: Latest 10-K from SEC EDGAR
+\item {} For private companies: Financial statements or available estimates
+\item {} OR: Pre-extracted historical financials provided by user
+\end{itemize}
+\item {} \textbf{Optional}: Company research (Task 1) for business context
+\end{itemize}
+
+\textbf{Input Verification}:
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} BEFORE STARTING - Select approach:
+\item {} Option A: Extract financials (most common)
+\item {} - [ ] Have access to 10-K or financial statements?
+\item {} - [ ] Ready to extract 3-5 years of data?
+\item {} Option B: User provided pre-extracted financials
+\item {} - [ ] Historical financials file received?
+\item {} - [ ] Contains income statement, cash flow, balance sheet (3-5 years)?
+\item {} Optional:
+\item {} - [ ] Company research (Task 1) complete for context?
+\end{itemize}
+
+\textbf{Process}:
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Verify access to financial data
+\item {} Load detailed instructions from references/task2-financial-modeling.md
+\item {} \textbf{Step 1}: Extract historical financials (if needed)
+\item {} \textbf{Step 2+}: Build projection model with 6 essential tabs
+\item {} Deliver Excel model
+\end{enumerate}
+
+\textbf{Output}: Excel Financial Model (.xlsx)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} 6 essential tabs:
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Revenue Model} - Product breakdown (20-30 rows) + Geography breakdown (15-20 rows)
+\item {} \textbf{Income Statement} - Full P\&L with 40-50 line items, historical (3-5 years) + projected (5 years)
+\item {} \textbf{Cash Flow Statement} - Operating/Investing/Financing activities, historical + projected
+\item {} \textbf{Balance Sheet} - Assets/Liabilities/Equity, historical + projected
+\item {} \textbf{Scenarios} - Bull/Base/Bear comparison table
+\item {} \textbf{DCF Inputs} - Prepared for Task 3 valuation
+\end{enumerate}
+\end{itemize}
+
+\textbf{File name}: \emph{[Company]\_\allowbreak{}Financial\_\allowbreak{}Model\_\allowbreak{}[Date].xlsx}
+
+
+\textbf{⚠ DELIVER ONLY THIS 1 FILE. NO completion summaries, no extra documents.}
+
+
+\textbf{⚠ DO NOT TAKE SHORTCUTS:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ✅ If extracting financials: Extract ALL line items from 3 financial statements (3-5 years)
+\item {} ✅ Build ALL 6 projection tabs completely with full detail
+\item {} ✅ Create detailed revenue model with 20-30 product rows AND 15-20 geography rows
+\item {} ✅ Build complete income statement with 40-50 line items (not abbreviated)
+\item {} ✅ Include full cash flow statement and balance sheet with all line items
+\item {} ✅ Complete ALL three scenarios (Bull/Base/Bear) with different parameters
+\item {} ❌ Do not create simplified/abbreviated versions
+\item {} ❌ Do not skip any of the 6 essential tabs
+\item {} ❌ Do not skip historical financials extraction if needed
+\end{itemize}
+
+\textbf{Verification before proceeding to Task 3}:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Historical financials extracted (if needed) or provided
+\item {} \UncheckedBox Excel file created and can be opened
+\item {} \UncheckedBox Model has all 6 essential tabs (Revenue Model, Income Statement, Cash Flow, Balance Sheet, Scenarios, DCF Inputs)
+\item {} \UncheckedBox Historical data (3-5 years) incorporated
+\item {} \UncheckedBox Projections complete (5 years forward)
+\item {} \UncheckedBox Scenarios complete (Bull/Base/Bear)
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Task 3: Valuation Analysis}\mbox{}\par
+
+\textbf{Purpose}: Perform comprehensive valuation using DCF, comparables, and precedent transactions.
+
+
+\textbf{Prerequisites}: ⚠ Verify before starting
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Required}: Financial model from Task 2
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Projected income statements
+\item {} Projected cash flows
+\item {} Revenue and EBITDA forecasts
+\item {} DCF inputs (unlevered FCF)
+\end{itemize}
+\end{itemize}
+
+\textbf{⚠ CRITICAL: DO NOT START THIS TASK UNLESS TASK 2 IS COMPLETE}
+
+
+This task requires the financial model from Task 2. Starting without it will result in incomplete work.
+
+
+\textbf{IF TASK 2 IS NOT COMPLETE}: Stop immediately and inform the user that Task 2 (Financial Modeling) must be completed first. Do not attempt to proceed or create placeholder valuations.
+
+
+\textbf{Input Verification}:
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} BEFORE STARTING:
+\item {} - [ ] Task 2 complete? (Financial model exists)
+\item {} - [ ] Model file path/location known?
+\item {} - [ ] Can access projected financials from model?
+\item {} Required from model:
+\item {} - [ ] Projected FCF (5 years)
+\item {} - [ ] Revenue projections
+\item {} - [ ] EBITDA projections
+\item {} - [ ] Terminal year metrics
+\end{itemize}
+
+\textbf{Process}:
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Verify financial model is accessible
+\item {} Load detailed instructions from references/task3-valuation.md
+\item {} Execute valuation workflow
+\item {} Deliver valuation analysis
+\end{enumerate}
+
+\textbf{Output}: Valuation Analysis (4-6 pages + Excel tabs)
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} DCF analysis with sensitivity tables
+\item {} Comparable companies (5-10 peers with statistical summary)
+\item {} Precedent transactions (if applicable)
+\item {} Valuation football field
+\item {} \textbf{Price target}: \$XX.XX
+\item {} \textbf{Recommendation}: BUY/HOLD/SELL
+\item {} \textbf{Upside}: XX\%
+\item {} Key catalysts (3-5)
+\end{itemize}
+
+\textbf{Files}:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \emph{[Company]\_\allowbreak{}Valuation\_\allowbreak{}Analysis\_\allowbreak{}[Date].md} (written analysis document)
+\item {} Excel tabs added to \emph{[Company]\_\allowbreak{}Financial\_\allowbreak{}Model\_\allowbreak{}[Date].xlsx} (from Task 2)
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} DCF tab with calculations
+\item {} Sensitivity analysis tab
+\item {} Comparable companies tab
+\item {} Valuation summary tab
+\end{itemize}
+\end{itemize}
+
+\textbf{⚠ DELIVER ONLY: 1 markdown file + 4 tabs added to existing Excel. NO completion summaries, no extra documents.}
+
+
+\textbf{⚠ DO NOT TAKE SHORTCUTS:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ✅ Complete full DCF analysis with sensitivity matrix (not simplified)
+\item {} ✅ Analyze ALL 5-10 comparable companies with full data
+\item {} ✅ Include statistical summary in comps table (max/75th/median/25th/min)
+\item {} ✅ Create complete sensitivity analysis tab with multiple WACC and terminal growth scenarios
+\item {} ✅ Write full 4-6 pages of valuation analysis (not abbreviated)
+\item {} ✅ Research and justify price target with specific methodology
+\item {} ❌ Do not skip comparable company analysis
+\item {} ❌ Do not create simplified DCF without sensitivity
+\end{itemize}
+
+\textbf{Verification before proceeding to Task 4}:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Price target determined
+\item {} \UncheckedBox Valuation uses multiple methods (DCF + Comps minimum)
+\item {} \UncheckedBox DCF sensitivity table complete
+\item {} \UncheckedBox Comparable companies table includes statistical summary
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Task 4: Chart Generation}\mbox{}\par
+
+\textbf{Purpose}: Generate 25-35 professional financial charts for the report.
+
+
+\textbf{Prerequisites}: ⚠ Verify before starting
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Required}: Company research from Task 1
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Company history and milestones (for timeline charts)
+\item {} Management team and org structure (for org charts)
+\item {} Product portfolio (for product charts)
+\item {} Customer segmentation (for customer charts)
+\item {} Competitive landscape (for competitive charts)
+\item {} TAM analysis (for market size charts)
+\end{itemize}
+\item {} \textbf{Required}: Financial model from Task 2 (with Task 3 valuation tabs added)
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Revenue by product/geography data (Task 2 tabs)
+\item {} Margin trends (Task 2 tabs)
+\item {} Scenario comparison data (Task 2 tabs)
+\item {} DCF sensitivity table (Task 3 tab in same Excel file)
+\item {} Comparable companies data (Task 3 tab in same Excel file)
+\item {} Valuation ranges (Task 3 tab in same Excel file)
+\end{itemize}
+\item {} \textbf{Required}: External market data
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Historical stock price data (Yahoo Finance, Bloomberg, etc.)
+\item {} Historical valuation multiples (for historical trend charts)
+\end{itemize}
+\end{itemize}
+
+\textbf{⚠ CRITICAL: DO NOT START THIS TASK UNLESS TASKS 1, 2, AND 3 ARE COMPLETE}
+
+
+This task requires outputs from all three previous tasks. Starting without them will result in incomplete charts.
+
+
+\textbf{IF ANY OF TASKS 1, 2, OR 3 ARE NOT COMPLETE}: Stop immediately and inform the user which tasks need to be completed first. The specific requirements are:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Task 1: Company research document (for 9 charts)
+\item {} Task 2: Financial model with all 6 tabs (for 8 charts)
+\item {} Task 3: Valuation tabs added to the model (for 6 charts)
+\item {} External data access (for 2 charts)
+\end{itemize}
+
+Do not attempt to create placeholder charts or skip charts due to missing data.
+
+
+\textbf{Input Verification}:
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} BEFORE STARTING:
+\item {} - [ ] Task 1 complete? (Company research exists)
+\item {} - [ ] Task 2 complete? (Financial model exists)
+\item {} - [ ] Task 3 complete? (Valuation analysis exists)
+\item {} - [ ] Can access external market data sources?
+\item {} Required from Task 1:
+\item {} - [ ] Company history and milestones (for charts 05, 06)
+\item {} - [ ] Management team structure (for chart 07)
+\item {} - [ ] Product portfolio details (for chart 08)
+\item {} - [ ] Customer segmentation data (for chart 09)
+\item {} - [ ] Competitive landscape analysis (for charts 16, 17, 18)
+\item {} - [ ] TAM sizing and market data (for chart 15)
+\item {} Required from Task 2:
+\item {} - [ ] Revenue by product (historical + projected) - for chart 03 ⭐
+\item {} - [ ] Revenue by geography (historical + projected) - for chart 04 ⭐
+\item {} - [ ] Income statement with margins (for charts 02, 10, 11)
+\item {} - [ ] Cash flow statement (for chart 12)
+\item {} - [ ] Scenario comparison data (for chart 14)
+\item {} Required from Task 3:
+\item {} - [ ] DCF sensitivity matrix - for chart 28 ⭐
+\item {} - [ ] DCF components (for chart 29)
+\item {} - [ ] Comparable companies data (for charts 30, 31)
+\item {} - [ ] Valuation ranges - for chart 32 ⭐
+\item {} Required from External Sources:
+\item {} - [ ] Historical stock price data (for chart 01)
+\item {} - [ ] Historical valuation multiples (for chart 34)
+\end{itemize}
+
+\textbf{Process}:
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Verify model and valuation outputs are accessible
+\item {} Load detailed instructions from references/task4-chart-generation.md
+\item {} Execute chart generation workflow
+\item {} Package all charts into a zip file
+\item {} Deliver zip file
+\end{enumerate}
+
+\textbf{Output}: 25-35 Professional Chart Files (PNG/JPG, 300 DPI) packaged in zip
+
+
+\textbf{4 MANDATORY Charts} (must be present) ⭐:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} chart\_\allowbreak{}03: Revenue by product (stacked area)
+\item {} chart\_\allowbreak{}04: Revenue by geography (stacked bar)
+\item {} chart\_\allowbreak{}28: DCF sensitivity (2-way heatmap)
+\item {} chart\_\allowbreak{}32: Valuation football field (horizontal bars)
+\end{itemize}
+
+\textbf{25 REQUIRED Charts} (specific list):
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Investment Summary: chart\_\allowbreak{}01
+\item {} Financial Performance: charts 02, 03⭐, 04⭐, 10, 11, 12, 14
+\item {} Company 101: charts 05, 06, 07, 08, 09, 15, 16
+\item {} Competitive/Market: charts 17, 18
+\item {} Scenario Analysis: chart 13
+\item {} Valuation: charts 28⭐, 29, 30, 31, 32⭐, 33, 34
+\end{itemize}
+
+\textbf{10 OPTIONAL Charts} (for 26-35 range):
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} charts 19-27, 35 (customer acquisition, unit economics, product roadmap, etc.)
+\end{itemize}
+
+\textbf{IMPORTANT}: Task 5 embeds ALL charts created (25-35) for visual density (1 chart per 200-300 words).
+
+
+\textbf{File naming}: \emph{chart\_\allowbreak{}01\_\allowbreak{}description.png}, \emph{chart\_\allowbreak{}02\_\allowbreak{}description.png}, etc.
+
+
+\textbf{Deliverable}: \emph{[Company]\_\allowbreak{}Charts\_\allowbreak{}[Date].zip} containing all 25-35 chart files + chart\_\allowbreak{}index.txt
+
+
+\textbf{⚠ DELIVER ONLY THIS 1 ZIP FILE. NO completion summaries, no separate chart lists, no extra documents.}
+
+
+\textbf{⚠ DO NOT TAKE SHORTCUTS:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ✅ Create ALL 25 required charts minimum (specific list provided in task4-chart-generation.md)
+\item {} ✅ Include ALL 4 mandatory charts:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} chart\_\allowbreak{}03: Revenue by product (stacked area) ⭐
+\item {} chart\_\allowbreak{}04: Revenue by geography (stacked bar) ⭐
+\item {} chart\_\allowbreak{}28: DCF sensitivity (heatmap) ⭐
+\item {} chart\_\allowbreak{}32: Valuation football field ⭐
+\end{itemize}
+\item {} ✅ Optional: Add 1-10 more charts to reach 26-35 total for greater visual density
+\item {} ✅ Generate professional-quality charts at 300 DPI (not low-res placeholders)
+\item {} ✅ Create unique, well-formatted charts for each visualization
+\item {} ✅ Package all charts in zip file with chart index
+\item {} ❌ Do not create only 10-15 charts (minimum is 25)
+\item {} ❌ Do not skip any of the 4 mandatory charts
+\item {} ❌ Do not use low-quality/placeholder images
+\end{itemize}
+
+\textbf{Verification before proceeding to Task 5}:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Minimum 25 chart files created (required)
+\item {} \UncheckedBox All 4 mandatory charts present:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox chart\_\allowbreak{}03: Revenue by product ⭐
+\item {} \UncheckedBox chart\_\allowbreak{}04: Revenue by geography ⭐
+\item {} \UncheckedBox chart\_\allowbreak{}28: DCF sensitivity ⭐
+\item {} \UncheckedBox chart\_\allowbreak{}32: Valuation football field ⭐
+\end{itemize}
+\item {} \UncheckedBox All charts open and display correctly
+\item {} \UncheckedBox Charts saved at 300 DPI (print quality)
+\item {} \UncheckedBox Chart index created listing all files with categories
+\item {} \UncheckedBox All charts packaged in zip file
+\item {} \UncheckedBox File naming follows convention: chart\_\allowbreak{}\#\#\_\allowbreak{}description.png
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Task 5: Report Assembly}\mbox{}\par
+
+\textbf{Purpose}: Write and assemble the comprehensive final DOCX report.
+
+
+\textbf{Prerequisites}: ⚠ Verify before starting
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Required}: Company research from Task 1
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} All 6-8K words of content
+\item {} Management bios
+\item {} Competitive analysis
+\item {} Risk assessment
+\end{itemize}
+\item {} \textbf{Required}: Financial model from Task 2
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Excel workbook
+\item {} All projections and scenarios
+\end{itemize}
+\item {} \textbf{Required}: Valuation analysis from Task 3
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Price target and recommendation
+\item {} DCF, comps, precedent transactions
+\item {} All valuation data
+\end{itemize}
+\item {} \textbf{Required}: Chart files from Task 4
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Zip file containing all 25-35 PNG/JPG files
+\item {} Chart index included in zip
+\end{itemize}
+\end{itemize}
+
+\textbf{⚠ CRITICAL: DO NOT START THIS TASK UNLESS ALL TASKS 1-4 ARE COMPLETE}
+
+
+This is the final assembly task. It cannot be completed without all previous work products.
+
+
+\textbf{IF ANY OF TASKS 1, 2, 3, OR 4 ARE NOT COMPLETE}: Stop immediately and inform the user which tasks need to be completed first. The specific requirements are:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Task 1: Company research document (6-8K words)
+\item {} Task 2: Financial model with all 6 tabs
+\item {} Task 3: Valuation analysis with price target and recommendation
+\item {} Task 4: Charts zip file with 25-35 charts
+\end{itemize}
+
+Do not attempt to create placeholder content, substitute missing sections, or assemble an incomplete report. The report requires ALL inputs to be publication-ready.
+
+
+\textbf{Input Verification}:
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} BEFORE STARTING - ALL TASKS MUST BE COMPLETE:
+\item {} Task 1 Verification:
+\item {} - [ ] Company research document exists? (6-8K words)
+\item {} - [ ] Management bios complete? (300-400 words × 3-4 execs)
+\item {} - [ ] Competitive analysis complete? (5-10 competitors)
+\item {} - [ ] Risk assessment complete? (8-12 risks)
+\item {} Task 2 Verification:
+\item {} - [ ] Financial model exists and can be opened?
+\item {} - [ ] Model has projections (5 years)?
+\item {} - [ ] Scenarios exist (Bull/Base/Bear)?
+\item {} Task 3 Verification:
+\item {} - [ ] Valuation analysis complete?
+\item {} - [ ] Price target determined?
+\item {} - [ ] Recommendation set? (BUY/HOLD/SELL)
+\item {} - [ ] DCF and comps complete?
+\item {} Task 4 Verification:
+\item {} - [ ] Chart zip file exists?
+\item {} - [ ] Can extract/access all 25-35 chart files from zip?
+\item {} - [ ] All 4 mandatory charts present?
+\item {} - [ ] Revenue by product (stacked area)
+\item {} - [ ] Revenue by geography (stacked bar)
+\item {} - [ ] DCF sensitivity (heatmap)
+\item {} - [ ] Valuation football field
+\item {} - [ ] Chart files accessible and can be opened?
+\item {} IF ANY VERIFICATION FAILS: Stop and complete missing task first.
+\end{itemize}
+
+\textbf{Process}:
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{CRITICAL}: Verify ALL prerequisites before starting
+\item {} Load detailed instructions from references/task5-report-assembly.md
+\item {} Execute report assembly workflow using Claude's built-in skills:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Use DOCX skill} to create and manipulate the Word document
+\item {} \textbf{Use XLSX skill} to read Excel data from Task 2/3
+\item {} \textbf{Use Read tool} to read Task 1 and Task 3 markdown files
+\item {} Read Task 1 .md file → Convert to Word formatting → Insert charts inline
+\item {} Read Task 2 .xlsx file → Extract tables → Write quantitative analysis
+\item {} Read Task 3 .md file + Excel tabs → Copy/adapt valuation analysis
+\item {} Insert Task 4 .png chart files throughout using DOCX skill
+\item {} Create text-dense report with charts interspersed every 200-300 words
+\end{itemize}
+\item {} Save and deliver final DOCX report
+\end{enumerate}
+
+\textbf{Key Principles}:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Use Claude's DOCX and XLSX skills (NOT Python libraries)
+\item {} Use actual file operations (read .md/.xlsx/.png files, write .docx file)
+\item {} Good equity research reports are text-dense with lots of illustrating images (60-80\% page coverage, 1+ chart per page)
+\end{itemize}
+
+\textbf{🔥 CRITICAL: GO ALL OUT ON THIS TASK}
+
+
+\textbf{THIS IS THE FINAL DELIVERABLE. DO NOT TAKE SHORTCUTS.}
+
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ✅ \textbf{Use full token budget} - This is the culmination of all previous work
+\item {} ✅ \textbf{Write every section completely} - Do not summarize or abbreviate
+\item {} ✅ \textbf{Hit ALL minimum requirements} - 30+ pages, 10,000+ words, 25+ charts, 12+ tables
+\item {} ✅ \textbf{Be thorough on projection assumptions} - 2,000-3,000 words with product-by-product detail
+\item {} ✅ \textbf{Be comprehensive on scenarios} - 1,500-2,000 words with specific Bull/Base/Bear parameters
+\item {} ✅ \textbf{Insert ALL charts from Task 4} - Not just a few, ALL 25-35 charts throughout
+\item {} ✅ \textbf{Create ALL tables from Task 2/3} - Extract every financial table, don't skip any
+\item {} ✅ \textbf{Use Task 1 content verbatim} - Copy/paste full Company 101 sections (6-8K words)
+\item {} ✅ \textbf{Professional quality only} - This must be indistinguishable from JPMorgan/Goldman Sachs research
+\end{itemize}
+
+\textbf{NEVER:}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ❌ ``This section would include...'' - WRITE THE ACTUAL SECTION
+\item {} ❌ ``Charts would be inserted here...'' - INSERT THE ACTUAL CHARTS
+\item {} ❌ ``See financial model for details...'' - EXTRACT AND INCLUDE THE DETAILS
+\item {} ❌ Skip sections due to length - Every section MUST be complete
+\item {} ❌ Abbreviate for token conservation - Use whatever tokens are needed
+\end{itemize}
+
+\textbf{This is publication-ready institutional research. Spare no effort, tokens, or detail.}
+
+
+\textbf{Output}: Comprehensive Equity Research Report (.docx)
+
+
+\textbf{Specifications}:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Length}: 30-50 pages (MINIMUM 30)
+\item {} \textbf{Word count}: 10,000-15,000 words (MINIMUM 10,000)
+\item {} \textbf{Charts}: 25-35 embedded images
+\item {} \textbf{Tables}: 12-20 comprehensive tables
+\item {} \textbf{Format}: Professional DOCX with clickable hyperlinks
+\end{itemize}
+
+\textbf{Structure}:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Page 1: Investment Summary (INITIATING COVERAGE format)
+\item {} Pages 2-5: Investment thesis \& risks
+\item {} Pages 6-17: Company 101
+\item {} Pages 18-30: Financial analysis \& projections
+\item {} Pages 31-40: Valuation analysis
+\item {} Pages 41-50: Appendices
+\end{itemize}
+
+\textbf{File name}: \emph{[Company]\_\allowbreak{}Initiation\_\allowbreak{}Report\_\allowbreak{}[Date].docx}
+
+
+\textbf{⚠ DELIVER ONLY THIS 1 DOCX FILE. NO executive summaries, no ``highlights'' documents, no extra files.}
+
+
+\textbf{Final Verification}:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \UncheckedBox Report is 30-50 pages
+\item {} \UncheckedBox Word count is 10,000-15,000
+\item {} \UncheckedBox 25-35 charts embedded
+\item {} \UncheckedBox 12-20 tables included
+\item {} \UncheckedBox All citations are clickable hyperlinks
+\item {} \UncheckedBox Numbers match financial model exactly
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Input Verification Protocol}\mbox{}\par
+
+\subparagraph{Why Input Verification Matters}\mbox{}\par
+
+Each task has strict prerequisites. Running a task without required inputs will:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Waste time with incomplete work
+\item {} Produce low-quality outputs
+\item {} Require rework
+\end{itemize}
+
+\textbf{Always verify inputs before starting a task.}
+
+
+\subparagraph{Verification Checklist by Task}\mbox{}\par
+
+\textbf{Task 1}: ✅ No verification needed (independent)
+
+
+\textbf{Task 2}: Check historical financials available
+
+
+\textbf{Task 3}: Check financial model exists and is accessible
+
+
+\textbf{Task 4}: Check both model (Task 2) AND valuation (Task 3) exist
+
+
+\textbf{Task 5}: Check ALL previous tasks complete (1, 2, 3, 4)
+
+
+\subparagraph{What to Do if Verification Fails}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} IF prerequisites are missing:
+\item {} 1. Stop the current task
+\item {} 2. Identify which prerequisite task(s) need to be completed
+\item {} 3. Execute the missing task(s) first
+\item {} 4. Return to current task once prerequisites are met
+\end{itemize}
+
+\subparagraph{Example Verification Dialogue}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} User: ``Use initiating-coverage, Task 5 for Tesla''
+\item {} Claude: ``Starting Task 5: Report Assembly for Tesla
+\item {} VERIFICATION - Checking prerequisites:
+\item {} - Task 1 (Company research)... ❌ NOT FOUND
+\item {} - Task 2 (Financial model)... ❌ NOT FOUND
+\item {} - Task 3 (Valuation)... ❌ NOT FOUND
+\item {} - Task 4 (Charts)... ❌ NOT FOUND
+\item {} ⚠ VERIFICATION FAILED
+\item {} Task 5 requires ALL previous tasks to be complete.
+\item {} To proceed:
+\item {} 1. Complete Task 1: Company Research
+\item {} 2. Complete Task 2: Financial Modeling
+\item {} 3. Complete Task 3: Valuation Analysis
+\item {} 4. Complete Task 4: Chart Generation
+\item {} 5. Then return to Task 5
+\item {} Would you like to start with Task 1 first?``
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Task Reference Files}\mbox{}\par
+
+Detailed instructions for each task are in separate reference files to keep this skill lean:
+
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{references/task1-company-research.md} - Company research workflow
+\item {} \textbf{references/task2-financial-modeling.md} - Financial modeling workflow
+\item {} \textbf{references/task3-valuation.md} - Valuation methodology
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Also see: references/valuation-methodologies.md for DCF/comps deep dive
+\end{itemize}
+\item {} \textbf{references/task4-chart-generation.md} - Chart generation workflow
+\item {} \textbf{references/task5-report-assembly.md} - Report writing workflow
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Also see: assets/report-template.md for report structure
+\item {} Also see: assets/quality-checklist.md for quality checks
+\end{itemize}
+\end{itemize}
+
+\textbf{When to load reference files}: Load ONLY the reference file associated with the specific task being performed. These files are very large - do not load multiple reference files at once. Read the appropriate task reference file at the start of the task for detailed step-by-step instructions.
+
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Quality Standards}\mbox{}\par
+
+All outputs meet institutional standards from leading investment banks (JPMorgan, Goldman Sachs, Morgan Stanley):
+
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Comprehensive}: Meet all minimum requirements
+\item {} \textbf{Detailed}: Specific data and examples, not generic statements
+\item {} \textbf{Quantified}: Lead with numbers and metrics
+\item {} \textbf{Cited}: Proper sources with clickable hyperlinks
+\item {} \textbf{Professional}: Institutional-quality formatting
+\item {} \textbf{Accurate}: All numbers verified and cross-checked
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Important Notes}\mbox{}\par
+
+\subparagraph{Task Independence}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Task 1} can run anytime (no dependencies)
+\item {} \textbf{Task 2} can run anytime (just needs historical data)
+\item {} \textbf{Tasks 1 \& 2} can run in parallel
+\item {} \textbf{Task 3} requires Task 2
+\item {} \textbf{Task 4} requires Tasks 2 \& 3
+\item {} \textbf{Task 5} requires Tasks 1, 2, 3, \& 4
+\end{itemize}
+
+\subparagraph{Session Management}\mbox{}\par
+
+\textbf{Same session}: Outputs automatically available to subsequent tasks
+
+
+\textbf{Different sessions}: Reference previous task outputs explicitly
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ``Use Task 3 with the model from yesterday at [path]''
+\item {} ``Use Task 5 with the research document at [path]''
+\end{itemize}
+
+\subparagraph{File Organization}\mbox{}\par
+
+Recommended structure during workflow:
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} ProjectFolder/
+\item {} Task1\_\allowbreak{}Research/
+\item {} [Company]\_\allowbreak{}Research\_\allowbreak{}Document.md
+\item {} Task2\_\allowbreak{}Model/
+\item {} [Company]\_\allowbreak{}Financial\_\allowbreak{}Model.xlsx
+\item {} Task3\_\allowbreak{}Valuation/
+\item {} [Company]\_\allowbreak{}Valuation\_\allowbreak{}Analysis.pdf
+\item {} Task4\_\allowbreak{}Charts/
+\item {} chart\_\allowbreak{}01.png
+\item {} ... (25-35 files)
+\item {} Task5\_\allowbreak{}Report/
+\item {} [Company]\_\allowbreak{}Initiation\_\allowbreak{}Report.docx
+\end{itemize}
+
+\subparagraph{No End-to-End Execution}\mbox{}\par
+
+This skill does \textbf{NOT} support running all tasks automatically in sequence. Each task must be explicitly requested and verified.
+
+
+\textbf{Why}: This ensures:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Quality control at each stage
+\item {} Ability to review outputs before proceeding
+\item {} Flexibility to pause/resume workflow
+\item {} Clear verification of prerequisites
+\end{itemize}
+
+\vspace{0.5em}\hrule\vspace{0.5em}
+
+\subparagraph{Success Criteria}\mbox{}\par
+
+A successful initiation report workflow should:
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Complete all 5 tasks in order
+\item {} Pass all input verifications
+\item {} Meet all quality standards
+\item {} Produce all required deliverables
+\item {} Numbers cross-check between outputs
+\item {} Final report is publication-ready
+\end{enumerate}
+
+\textbf{Output quality}: Institutional (JPMorgan/Goldman/Morgan Stanley level) \textbf{Use case}: First-time comprehensive coverage of a company
+
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill: model-update}\label{file:skills-model-update-SKILL-md}
 
 \paragraph{Model Update}\mbox{}\par
 
@@ -10504,7 +10587,7 @@ Recalculate valuation with updated estimates:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: morning-note}\label{file:skills-morning-note-SKILL.md}
+\subsection{Skill: morning-note}\label{file:skills-morning-note-SKILL-md}
 
 \paragraph{Morning Note}\mbox{}\par
 
@@ -10634,7 +10717,7 @@ If a coverage company reported, provide a quick reaction:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: sector-overview}\label{file:skills-sector-overview-SKILL.md}
+\subsection{Skill: sector-overview}\label{file:skills-sector-overview-SKILL-md}
 
 \paragraph{Sector Overview}\mbox{}\par
 
@@ -10761,7 +10844,7 @@ For each company, brief profile:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: thesis-tracker}\label{file:skills-thesis-tracker-SKILL.md}
+\subsection{Skill: thesis-tracker}\label{file:skills-thesis-tracker-SKILL-md}
 
 \paragraph{Thesis Tracker}\mbox{}\par
 

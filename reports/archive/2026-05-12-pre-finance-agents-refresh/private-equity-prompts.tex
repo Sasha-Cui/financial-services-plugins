@@ -28,9 +28,9 @@
 \sloppy
 \newcommand{\UncheckedBox}{$\square$}
 \newcommand{\CheckedBox}{$\blacksquare$}
-\title{Private Equity Prompt Library\\Comprehensive Translation, Config Coverage, and Dependency Map}
+\title{Private Equity Prompt Library\\LaTeX Translation and Dependency Map}
 \author{financial-services-plugins repository}
-\date{Generated on 2026-05-12 10:03 }
+\date{Generated on 2026-03-06 02:50 }
 \begin{document}
 \maketitle
 \tableofcontents
@@ -38,38 +38,11 @@
 
 \section{Repository Structure Overview}
 
-\subsection{Inventory Summary}
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
-\toprule
-{} \textbf{Metric} & \textbf{Count} \\
-\midrule
-{} Total included files & 23 \\
-{} Markdown or markdown-like files & 20 \\
-{} JSON config files & 3 \\
-{} YAML manifest files & 0 \\
-{} Scripts & 0 \\
-{} Other text files & 0 \\
-{} Commands & 10 \\
-{} Skills & 10 \\
-{} Plugin manifests & 1 \\
-{} Managed-agent manifests & 0 \\
-\bottomrule
-\end{longtable}
-\endgroup
-
 \subsection{Folder Tree}
-\textbf{Root directory: plugins/vertical-plugins/private-equity}
+\textbf{Root directory: private-equity}
 \begin{itemize}[leftmargin=*,itemsep=1pt,topsep=2pt]
-\item \hspace*{0.0em}.claude-plugin
-\item \hspace*{0.0em}.mcp.json
 \item \hspace*{0.0em}commands
-\item \hspace*{0.0em}hooks
 \item \hspace*{0.0em}skills
-\item \hspace*{0.9em}.claude-plugin/plugin.json
-\item \hspace*{0.9em}commands/ai-readiness.md
 \item \hspace*{0.9em}commands/dd-checklist.md
 \item \hspace*{0.9em}commands/dd-prep.md
 \item \hspace*{0.9em}commands/ic-memo.md
@@ -79,8 +52,6 @@
 \item \hspace*{0.9em}commands/source.md
 \item \hspace*{0.9em}commands/unit-economics.md
 \item \hspace*{0.9em}commands/value-creation.md
-\item \hspace*{0.9em}hooks/hooks.json
-\item \hspace*{0.9em}skills/ai-readiness
 \item \hspace*{0.9em}skills/dd-checklist
 \item \hspace*{0.9em}skills/dd-meeting-prep
 \item \hspace*{0.9em}skills/deal-screening
@@ -90,7 +61,6 @@
 \item \hspace*{0.9em}skills/returns-analysis
 \item \hspace*{0.9em}skills/unit-economics
 \item \hspace*{0.9em}skills/value-creation-plan
-\item \hspace*{1.8em}skills/ai-readiness/SKILL.md
 \item \hspace*{1.8em}skills/dd-checklist/SKILL.md
 \item \hspace*{1.8em}skills/dd-meeting-prep/SKILL.md
 \item \hspace*{1.8em}skills/deal-screening/SKILL.md
@@ -113,7 +83,6 @@
 \toprule
 {} \textbf{Command Prompt} & \textbf{Loaded Skill Prompt} \\
 \midrule
-{} commands/ ai-readiness.md & skills/ ai-readiness/ SKILL.md \\
 {} commands/ dd-checklist.md & skills/ dd-checklist/ SKILL.md \\
 {} commands/ dd-prep.md & skills/ dd-meeting-prep/ SKILL.md \\
 {} commands/ ic-memo.md & skills/ ic-memo/ SKILL.md \\
@@ -131,107 +100,11 @@
 
 \section{Translated Prompt Corpus}
 
-This section translates the prompt, manifest, configuration, and script files under plugins/vertical-plugins/private-equity into a print-oriented format that preserves structure while improving readability.
-
-\subsection{Directory: .claude-plugin}
-
-\subsection{Plugin Manifest: .claude-plugin}\label{file:claude-plugin-plugin-json}
-
-\paragraph{JSON Summary}\mbox{}\par
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
-\toprule
-{} \textbf{Key} & \textbf{Type} & \textbf{Summary} \\
-\midrule
-{} name & str & private-equity \\
-{} version & str & 0.1.0 \\
-{} description & str & Private equity deal sourcing and workflow tools: company discovery, CRM integration, and founder outreach \\
-{} author & dict & object with 1 key(s) \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-\textbf{Structured JSON Content}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \{
-\item {} ``name'': ``private-equity'',
-\item {} ``version'': ``0.1.0'',
-\item {} ``description'': ``Private equity deal sourcing and workflow tools: company discovery, CRM integration, and founder outreach'',
-\item {} ``author'': \{
-\item {} ``name'': ``Anthropic FSI''
-\item {} \}
-\item {} \}
-\end{itemize}
-
-\vspace{0.8em}\hrule\vspace{0.8em}
-
-\subsection{Directory: .mcp.json}
-
-\subsection{MCP Configuration: .}\label{file:mcp-json}
-
-\paragraph{JSON Summary}\mbox{}\par
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
-\toprule
-{} \textbf{Key} & \textbf{Type} & \textbf{Summary} \\
-\midrule
-{} mcpServers & dict & object with 0 key(s) \\
-\bottomrule
-\end{longtable}
-\endgroup
-\paragraph{MCP Server Inventory}\mbox{}\par
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
-\toprule
-{} \textbf{Connector} & \textbf{Type} & \textbf{URL} \\
-\midrule
-\bottomrule
-\end{longtable}
-\endgroup
-
-\textbf{Structured JSON Content}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \{
-\item {} ``mcpServers'': \{\}
-\item {} \}
-\end{itemize}
-
-\vspace{0.8em}\hrule\vspace{0.8em}
+This section translates every markdown prompt under the private-equity directory into LaTeX-native structure, preserving hierarchy and dependency flow.
 
 \subsection{Directory: commands}
 
-\subsection{Command: ai-readiness.md}\label{file:commands-ai-readiness-md}
-
-\paragraph{File Metadata}\mbox{}\par
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
-\toprule
-{} \textbf{Field} & \textbf{Value} \\
-\midrule
-{} description & Scan the portfolio for the highest-leverage AI opportunities \\
-{} argument-hint & [path to quarterly materials folder, or company names] \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-
-Load the \emph{ai-readiness} skill and scan portfolio companies for AI leverage — per-company go / no-go gate, quick wins ranked by EBITDA impact across the portfolio, and replays that hit multiple companies at once.
-
-
-If a folder or company list is provided, use it. Otherwise ask which companies to include and for their latest quarterly materials.
-
-
-\vspace{0.8em}\hrule\vspace{0.8em}
-
-\subsection{Command: dd-checklist.md}\label{file:commands-dd-checklist-md}
+\subsection{Command: dd-checklist.md}\label{file:commands-dd-checklist.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -256,7 +129,7 @@ If a company name is provided, use it. Otherwise ask the user for the target com
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: dd-prep.md}\label{file:commands-dd-prep-md}
+\subsection{Command: dd-prep.md}\label{file:commands-dd-prep.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -281,7 +154,7 @@ If details are provided, use them. Otherwise ask for the company, meeting type (
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: ic-memo.md}\label{file:commands-ic-memo-md}
+\subsection{Command: ic-memo.md}\label{file:commands-ic-memo.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -306,7 +179,7 @@ If a company name is provided, use it. Otherwise ask the user for the target and
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: portfolio.md}\label{file:commands-portfolio-md}
+\subsection{Command: portfolio.md}\label{file:commands-portfolio.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -331,7 +204,7 @@ If a company name or file is provided, use it. Otherwise ask the user for the po
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: returns.md}\label{file:commands-returns-md}
+\subsection{Command: returns.md}\label{file:commands-returns.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -356,7 +229,7 @@ If deal parameters are provided, use them. Otherwise ask the user for entry EBIT
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: screen-deal.md}\label{file:commands-screen-deal-md}
+\subsection{Command: screen-deal.md}\label{file:commands-screen-deal.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -381,7 +254,7 @@ If a file path is provided, use it. Otherwise ask the user for the deal material
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: source.md}\label{file:commands-source-md}
+\subsection{Command: source.md}\label{file:commands-source.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -406,7 +279,7 @@ If criteria are provided, use them. Otherwise ask the user for sector, size, geo
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: unit-economics.md}\label{file:commands-unit-economics-md}
+\subsection{Command: unit-economics.md}\label{file:commands-unit-economics.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -431,7 +304,7 @@ If a company or file is provided, use it. Otherwise ask the user for the target 
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: value-creation.md}\label{file:commands-value-creation-md}
+\subsection{Command: value-creation.md}\label{file:commands-value-creation.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -456,178 +329,9 @@ If a company name is provided, use it. Otherwise ask the user for the target com
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Directory: hooks}
-
-\subsection{Config File: hooks/hooks.json}\label{file:hooks-hooks-json}
-
-\paragraph{JSON Summary}\mbox{}\par
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
-\toprule
-{} \textbf{Item} & \textbf{Type} & \textbf{Summary} \\
-\midrule
-\bottomrule
-\end{longtable}
-\endgroup
-
-\textbf{Structured JSON Content}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} []
-\end{itemize}
-
-\vspace{0.8em}\hrule\vspace{0.8em}
-
 \subsection{Directory: skills}
 
-\subsection{Skill: ai-readiness}\label{file:skills-ai-readiness-SKILL-md}
-
-\paragraph{Portfolio AI Readiness}\mbox{}\par
-
-description: Scan the portfolio for the highest-leverage AI opportunities and rank where to deploy operating-partner time. Ingests quarterly updates and financials across multiple portfolio companies, identifies quick wins at each, and stacks them into a single ranked action list. Use during quarterly portfolio reviews, annual planning, or when deciding which companies get AI investment first. Triggers on ``AI readiness'', ``AI opportunity scan'', ``where should we deploy AI'', ``AI across the portfolio'', ``AI quick wins'', or ``which portcos are ready for AI''.
-
-
-\subparagraph{Workflow}\mbox{}\par
-
-\subparagraph{Step 1: Connect to Portfolio Data}\mbox{}\par
-
-First, ask the user where the portfolio materials live. Don't assume — offer the options:
-
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{MCP servers} — data room, SharePoint, Google Drive, or a portfolio-ops database if one is connected
-\item {} \textbf{Local files} — a folder path on disk with quarterly decks, financials, board packs
-\item {} \textbf{File uploads} — drag PDFs, PowerPoint, or Excel directly into the conversation
-\end{itemize}
-
-Once connected, pull quarterly updates, board decks, and financials for the portfolio (or a subset). For each company, extract: sector, revenue, headcount by function, tech stack mentioned, and any AI/automation initiatives already in flight.
-
-
-If the user provides a single company, still run the scan but skip the cross-portfolio ranking.
-
-
-Ask up front if not obvious from materials:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Hold period remaining per company (AI payback matters less 12 months from exit)
-\item {} Whether any portco has already deployed something that worked
-\end{itemize}
-
-\subparagraph{Step 2: Per-Company Scan}\mbox{}\par
-
-For each company, answer three gate questions. All three yes → \textbf{Go}. Any no → \textbf{Wait} with a note on what unblocks it.
-
-
-\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Is the data there?} Can they produce a clean input for the use case — customer list, invoice feed, contract repository — without a 6-month data project first?
-\item {} \textbf{Is there an owner?} Someone on the management team who will drive this, not a sponsor who will ``support'' it.
-\item {} \textbf{Can we pilot in 30 days?} One team, one workflow, off-the-shelf tooling. If the answer starts with ``first we'd need to...'', it's not a quick win.
-\end{enumerate}
-
-Then identify the top 2-3 leverage points. Look for these patterns in the cost structure and operations:
-
-
-\textbf{Back Office (usually fastest to pilot)}
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Invoice processing, AP/AR matching, expense categorization
-\item {} Contract abstraction — vendor agreements, leases, customer MSAs
-\item {} Month-end close: reconciliations, flux commentary, lender reporting first drafts
-\end{itemize}
-
-\textbf{Revenue / Front Office}
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} RFP and proposal first drafts — big lever if revenue is project-based
-\item {} Sales call summaries and CRM hygiene
-\item {} Customer support ticket triage and first-response drafting
-\item {} Quoting for configured / complex products
-\end{itemize}
-
-\textbf{Operations (sector-dependent)}
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} SOP and quality documentation generation
-\item {} Scheduling and dispatch (field services, logistics)
-\item {} Code generation and review (software portcos)
-\end{itemize}
-
-For each leverage point, capture in one line: what it replaces, FTE-hours/week saved (assume 30-50\%, not 100\%), and whether it's buy-off-the-shelf or needs a light build.
-
-
-\subparagraph{Step 3: Rank Across the Portfolio}\mbox{}\par
-
-Stack every leverage point from every company into one list. Rank by:
-
-
-\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Dollar impact} — annualized EBITDA contribution (cost out + revenue lift, net of tool cost)
-\item {} \textbf{Speed to value} — months to first measurable result
-\item {} \textbf{Probability} — discount for data quality, change management risk, management team capability
-\end{enumerate}
-
-Tiebreaker: favor opportunities with <18 months of hold period remaining — those need to move now or not at all.
-
-
-Output the stack:
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.131\textwidth}}
-\toprule
-{} \textbf{Rank} & \textbf{Company} & \textbf{Opportunity} & \textbf{Est. EBITDA (\$)} & \textbf{Months to Value} & \textbf{Gate} & \textbf{First Step} \\
-\midrule
-{} 1 &  &  &  &  & Go &  \\
-{} 2 &  &  &  &  & Go &  \\
-{} 3 &  &  &  &  & Wait — [blocker] &  \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-\subparagraph{Step 4: Find the Replays}\mbox{}\par
-
-The highest-leverage move in a portfolio is running one successful play at multiple companies. Scan for:
-
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Same sector, same function} — two healthcare services portcos with manual prior-auth? One implementation, two deployments.
-\item {} \textbf{Same tool, different company} — if one portco already has a working invoice-processing setup, flag every other portco with >\$Xm in AP volume as a fast follower.
-\item {} \textbf{Shared vendor leverage} — three portcos buying the same tool is a pricing conversation.
-\end{itemize}
-
-List each replay with the lead company (who proves it) and follower companies (who copy it).
-
-
-\subparagraph{Step 5: Output}\mbox{}\par
-
-One page for the operating partner, structured for a portfolio review:
-
-
-\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Top 5 across the portfolio} — the ranked table from Step 3, with owner and 30-day first step
-\item {} \textbf{Replays} — 2-3 playbooks that hit multiple companies at once
-\item {} \textbf{Go / Wait by company} — one line each; for Waits, what unblocks them
-\item {} \textbf{What we're NOT doing} — the opportunities that looked good on paper but failed a gate; saves the operating partner from relitigating them every quarter
-\item {} \textbf{Aggregate EBITDA contribution} — total portfolio-wide AI opportunity, split Year 1 quick wins vs. Years 2-3 scale
-\end{enumerate}
-
-\subparagraph{Important Notes}\mbox{}\par
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Rank by dollars, not excitement.} A boring AP automation that saves \$400k at a \$40m revenue company beats a flashy customer-facing chatbot every time.
-\item {} \textbf{The binding constraint is almost always data, not models.} If a company can't produce a clean customer list, AI isn't the first project — a data cleanup is. Say so plainly.
-\item {} \textbf{Off-the-shelf first.} Custom builds are slow, expensive, and fragile for companies without engineering depth. Favor tools they can buy and deploy.
-\item {} \textbf{Ownership is the real gate.} A quick win with no internal owner dies in 90 days. If no one on the management team wants it, mark it Wait regardless of the dollar size.
-\item {} \textbf{Hold period drives urgency.} A company 3 years from exit can afford a foundational data project. A company 12 months out needs something that shows up in the LTM EBITDA for the CIM — or skip it.
-\item {} \textbf{Failed pilots are signal.} If management already tried something and it didn't stick, find out why before proposing the same thing again.
-\end{itemize}
-
-\vspace{0.8em}\hrule\vspace{0.8em}
-
-\subsection{Skill: dd-checklist}\label{file:skills-dd-checklist-SKILL-md}
+\subsection{Skill: dd-checklist}\label{file:skills-dd-checklist-SKILL.md}
 
 \paragraph{Due Diligence Checklist}\mbox{}\par
 
@@ -792,7 +496,7 @@ Automatically add relevant items based on sector:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: dd-meeting-prep}\label{file:skills-dd-meeting-prep-SKILL-md}
+\subsection{Skill: dd-meeting-prep}\label{file:skills-dd-meeting-prep-SKILL.md}
 
 \paragraph{Diligence Meeting Prep}\mbox{}\par
 
@@ -935,7 +639,7 @@ One-page meeting prep doc:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: deal-screening}\label{file:skills-deal-screening-SKILL-md}
+\subsection{Skill: deal-screening}\label{file:skills-deal-screening-SKILL.md}
 
 \paragraph{Deal Screening}\mbox{}\par
 
@@ -1016,7 +720,7 @@ One-page screening memo suitable for sharing with partners or an IC quick screen
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: deal-sourcing}\label{file:skills-deal-sourcing-SKILL-md}
+\subsection{Skill: deal-sourcing}\label{file:skills-deal-sourcing-SKILL.md}
 
 \paragraph{Deal Sourcing}\mbox{}\par
 
@@ -1107,7 +811,7 @@ Draft personalized cold emails to founders/CEOs:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: ic-memo}\label{file:skills-ic-memo-SKILL-md}
+\subsection{Skill: ic-memo}\label{file:skills-ic-memo-SKILL.md}
 
 \paragraph{Investment Committee Memo}\mbox{}\par
 
@@ -1233,7 +937,7 @@ Standard IC memo format:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: portfolio-monitoring}\label{file:skills-portfolio-monitoring-SKILL-md}
+\subsection{Skill: portfolio-monitoring}\label{file:skills-portfolio-monitoring-SKILL.md}
 
 \paragraph{Portfolio Monitoring}\mbox{}\par
 
@@ -1315,7 +1019,7 @@ If multiple periods are provided:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: returns-analysis}\label{file:skills-returns-analysis-SKILL-md}
+\subsection{Skill: returns-analysis}\label{file:skills-returns-analysis-SKILL.md}
 
 \paragraph{Returns Analysis}\mbox{}\par
 
@@ -1495,7 +1199,7 @@ Build 3 scenarios:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: unit-economics}\label{file:skills-unit-economics-SKILL-md}
+\subsection{Skill: unit-economics}\label{file:skills-unit-economics-SKILL.md}
 
 \paragraph{Unit Economics Analysis}\mbox{}\par
 
@@ -1630,7 +1334,7 @@ Synthesize into a revenue quality assessment:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: value-creation-plan}\label{file:skills-value-creation-plan-SKILL-md}
+\subsection{Skill: value-creation-plan}\label{file:skills-value-creation-plan-SKILL.md}
 
 \paragraph{Value Creation Plan}\mbox{}\par
 

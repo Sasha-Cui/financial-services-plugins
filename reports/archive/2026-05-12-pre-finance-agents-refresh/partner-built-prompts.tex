@@ -28,9 +28,9 @@
 \sloppy
 \newcommand{\UncheckedBox}{$\square$}
 \newcommand{\CheckedBox}{$\blacksquare$}
-\title{Partner Built Prompt Library\\Comprehensive Translation, Config Coverage, and Dependency Map}
+\title{Partner Built Prompt Library\\LaTeX Translation and Dependency Map}
 \author{financial-services-plugins repository}
-\date{Generated on 2026-05-12 10:03 }
+\date{Generated on 2026-03-06 02:51 }
 \newunicodechar{⚠}{{\EmojiGlyph{⚠}}}
 \newunicodechar{✅}{{\EmojiGlyph{✅}}}
 \newunicodechar{❌}{{\EmojiGlyph{❌}}}
@@ -44,44 +44,17 @@
 
 \section{Repository Structure Overview}
 
-\subsection{Inventory Summary}
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
-\toprule
-{} \textbf{Metric} & \textbf{Count} \\
-\midrule
-{} Total included files & 32 \\
-{} Markdown or markdown-like files & 28 \\
-{} JSON config files & 4 \\
-{} YAML manifest files & 0 \\
-{} Scripts & 0 \\
-{} Other text files & 0 \\
-{} Commands & 8 \\
-{} Skills & 11 \\
-{} Plugin manifests & 2 \\
-{} Managed-agent manifests & 0 \\
-\bottomrule
-\end{longtable}
-\endgroup
-
 \subsection{Folder Tree}
-\textbf{Root directory: plugins/partner-built}
+\textbf{Root directory: partner-built}
 \begin{itemize}[leftmargin=*,itemsep=1pt,topsep=2pt]
 \item \hspace*{0.0em}lseg
 \item \hspace*{0.0em}spglobal
-\item \hspace*{0.9em}lseg/.claude-plugin
-\item \hspace*{0.9em}lseg/.mcp.json
 \item \hspace*{0.9em}lseg/commands
 \item \hspace*{0.9em}lseg/CONNECTORS.md
 \item \hspace*{0.9em}lseg/README.md
 \item \hspace*{0.9em}lseg/skills
-\item \hspace*{0.9em}spglobal/.claude-plugin
-\item \hspace*{0.9em}spglobal/.mcp.json
 \item \hspace*{0.9em}spglobal/README.md
 \item \hspace*{0.9em}spglobal/skills
-\item \hspace*{1.8em}lseg/.claude-plugin/plugin.json
 \item \hspace*{1.8em}lseg/commands/analyze-bond-basis.md
 \item \hspace*{1.8em}lseg/commands/analyze-bond-rv.md
 \item \hspace*{1.8em}lseg/commands/analyze-fx-carry.md
@@ -98,7 +71,6 @@
 \item \hspace*{1.8em}lseg/skills/macro-rates-monitor
 \item \hspace*{1.8em}lseg/skills/option-vol-analysis
 \item \hspace*{1.8em}lseg/skills/swap-curve-strategy
-\item \hspace*{1.8em}spglobal/.claude-plugin/plugin.json
 \item \hspace*{1.8em}spglobal/skills/earnings-preview-beta
 \item \hspace*{1.8em}spglobal/skills/funding-digest
 \item \hspace*{1.8em}spglobal/skills/tear-sheet
@@ -148,84 +120,202 @@
 
 \section{Translated Prompt Corpus}
 
-This section translates the prompt, manifest, configuration, and script files under plugins/partner-built into a print-oriented format that preserves structure while improving readability.
+This section translates every markdown prompt under the partner-built directory into LaTeX-native structure, preserving hierarchy and dependency flow.
 
 \subsection{Directory: lseg}
 
-\subsection{Plugin Manifest: lseg/.claude-plugin}\label{file:lseg-claude-plugin-plugin-json}
+\subsection{File: lseg/CONNECTORS.md}\label{file:lseg-CONNECTORS.md}
 
-\paragraph{JSON Summary}\mbox{}\par
+\paragraph{Connectors}\mbox{}\par
+
+This plugin connects to the \textbf{LFA MCP Server}, which provides financial analytics tools from LSEG (London Stock Exchange Group). All tools are served by a single MCP server — no additional connectors are needed.
+
+
+\subparagraph{How Commands Reference Tools}\mbox{}\par
+
+Commands in this plugin reference MCP tools by their exact tool name (e.g., \emph{bond\_\allowbreak{}price}, \emph{interest\_\allowbreak{}rate\_\allowbreak{}curve}). The tools are organized into categories for clarity:
+
+
+\subparagraph{Tool Categories}\mbox{}\par
+
 \begingroup
 \small
 \setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
 \toprule
-{} \textbf{Key} & \textbf{Type} & \textbf{Summary} \\
+{} \textbf{Category} & \textbf{Placeholder} & \textbf{Tools} & \textbf{Description} \\
 \midrule
-{} name & str & lseg \\
-{} version & str & 1.0.0 \\
-{} description & str & Price bonds, analyze yield curves, evaluate FX carry trades, value options, and build macro dashboards using LSEG financial data and analytics. \\
-{} author & dict & object with 1 key(s) \\
+{} Bond Pricing & \emph{\textasciitilde{}\textasciitilde{}bond-pricing} & \emph{bond\_\allowbreak{} price}, \emph{bond\_\allowbreak{} future\_\allowbreak{} price} & Price bonds and bond futures with full analytics \\
+{} FX Pricing & \emph{\textasciitilde{}\textasciitilde{}fx-pricing} & \emph{fx\_\allowbreak{} spot\_\allowbreak{} price}, \emph{fx\_\allowbreak{} forward\_\allowbreak{} price} & FX spot and forward rate pricing \\
+{} Interest Rate Curves & \emph{\textasciitilde{}\textasciitilde{}ir-curves} & \emph{interest\_\allowbreak{} rate\_\allowbreak{} curve}, \emph{inflation\_\allowbreak{} curve} & Government yield curves and inflation breakevens \\
+{} Credit Curves & \emph{\textasciitilde{}\textasciitilde{}credit-curves} & \emph{credit\_\allowbreak{} curve} & Credit spread curves by issuer type \\
+{} FX Curves & \emph{\textasciitilde{}\textasciitilde{}fx-curves} & \emph{fx\_\allowbreak{} forward\_\allowbreak{} curve} & FX forward point curves \\
+{} Options & \emph{\textasciitilde{}\textasciitilde{}options} & \emph{option\_\allowbreak{} value}, \emph{option\_\allowbreak{} template\_\allowbreak{} list} & Option valuation with Greeks \\
+{} Swaps & \emph{\textasciitilde{}\textasciitilde{}swaps} & \emph{ir\_\allowbreak{} swap} & Interest rate swap pricing \\
+{} Volatility Surfaces & \emph{\textasciitilde{}\textasciitilde{}volatility} & \emph{fx\_\allowbreak{} vol\_\allowbreak{} surface}, \emph{equity\_\allowbreak{} vol\_\allowbreak{} surface} & FX and equity implied vol surfaces \\
+{} Quantitative Analytics & \emph{\textasciitilde{}\textasciitilde{}qa} & \emph{qa\_\allowbreak{} ibes\_\allowbreak{} consensus}, \emph{qa\_\allowbreak{} company\_\allowbreak{} fundamentals}, \emph{qa\_\allowbreak{} historical\_\allowbreak{} equity\_\allowbreak{} price}, \emph{qa\_\allowbreak{} macroeconomic} & Analyst estimates, fundamentals, prices, macro data \\
+{} Time Series & \emph{\textasciitilde{}\textasciitilde{}time-series} & \emph{tscc\_\allowbreak{} historical\_\allowbreak{} pricing\_\allowbreak{} summaries} & Historical pricing summaries (interday/ intraday) \\
+{} Fixed Income Analytics & \emph{\textasciitilde{}\textasciitilde{}yieldbook} & \emph{yieldbook\_\allowbreak{} bond\_\allowbreak{} reference}, \emph{yieldbook\_\allowbreak{} cashflow}, \emph{yieldbook\_\allowbreak{} scenario}, \emph{fixed\_\allowbreak{} income\_\allowbreak{} risk\_\allowbreak{} analytics} & Bond reference data, cashflows, scenarios, OAS/ duration \\
 \bottomrule
 \end{longtable}
 \endgroup
 
-\textbf{Structured JSON Content}
+\subparagraph{Complete Tool Reference}\mbox{}\par
+
+\subparagraph{Bond Domain}\mbox{}\par
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \{
-\item {} ``name'': ``lseg'',
-\item {} ``version'': ``1.0.0'',
-\item {} ``description'': ``Price bonds, analyze yield curves, evaluate FX carry trades, value options, and build macro dashboards using LSEG financial data and analytics.'',
-\item {} ``author'': \{
-\item {} ``name'': ``LSEG''
-\item {} \}
-\item {} \}
+\item {} \textbf{\emph{bond\_\allowbreak{}price}} — Calculate bond pricing, valuation, and analytics. Accepts ISIN, RIC, CUSIP, or AssetId. Returns yield, duration, convexity, DV01, accrued interest. Supports what-if scenarios via price/yield overrides.
+\item {} \textbf{\emph{bond\_\allowbreak{}future\_\allowbreak{}price}} — Calculate bond future pricing and analytics. Returns fair value, cheapest-to-deliver identification, delivery basket, conversion factors, and contract DV01.
+\end{itemize}
+
+\subparagraph{FX Domain}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{\emph{fx\_\allowbreak{}spot\_\allowbreak{}price}} — FX spot rate pricing for ISO currency pairs. Returns mid/bid/ask rates.
+\item {} \textbf{\emph{fx\_\allowbreak{}forward\_\allowbreak{}price}} — FX forward rate pricing at specific tenors or dates. Returns forward points, outright rates, and carry.
+\end{itemize}
+
+\subparagraph{Curves Domain}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{\emph{interest\_\allowbreak{}rate\_\allowbreak{}curve}} — Government yield curves. Two-phase: list available curves, then calculate curve points. Returns par/zero rates, discount factors, forward rates.
+\item {} \textbf{\emph{credit\_\allowbreak{}curve}} — Credit spread curves. Search by country and issuer type (Corporate, Sovereign, Agency, etc.), then calculate spread term structure.
+\item {} \textbf{\emph{inflation\_\allowbreak{}curve}} — Inflation breakeven curves. Search by country/currency, then calculate breakeven rates and real yields.
+\item {} \textbf{\emph{fx\_\allowbreak{}forward\_\allowbreak{}curve}} — FX forward point curves. List curves, then calculate forward points across all standard tenors.
+\end{itemize}
+
+\subparagraph{Swaps Domain}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{\emph{ir\_\allowbreak{}swap}} — Interest rate swap pricing. Two-phase: list templates by currency/index, then price swaps at specified tenors. Returns par rates, DV01, NPV.
+\end{itemize}
+
+\subparagraph{Options Domain}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{\emph{option\_\allowbreak{}value}} — Option valuation supporting vanilla, barrier, binary, and Asian options. Returns premium, full Greeks (delta, gamma, vega, theta, rho), and risk metrics.
+\item {} \textbf{\emph{option\_\allowbreak{}template\_\allowbreak{}list}} — List available option templates for pricing.
+\end{itemize}
+
+\subparagraph{Volatility Domain}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{\emph{fx\_\allowbreak{}vol\_\allowbreak{}surface}} — FX volatility surface generation using SABR model. Returns vol surface across tenors and delta strikes.
+\item {} \textbf{\emph{equity\_\allowbreak{}vol\_\allowbreak{}surface}} — Equity implied volatility surface. Supports equities/indices via RIC and futures via RICROOT.
+\end{itemize}
+
+\subparagraph{Quantitative Analytics Domain}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{\emph{qa\_\allowbreak{}ibes\_\allowbreak{}consensus}} — IBES analyst consensus estimates (EPS, revenue, EBITDA, DPS). Forward-looking estimates with analyst count, dispersion, and high/low ranges.
+\item {} \textbf{\emph{qa\_\allowbreak{}company\_\allowbreak{}fundamentals}} — Reported company financials (income statement, balance sheet metrics). Historical fiscal year data.
+\item {} \textbf{\emph{qa\_\allowbreak{}historical\_\allowbreak{}equity\_\allowbreak{}price}} — Historical equity prices with OHLCV, total returns, and beta.
+\item {} \textbf{\emph{qa\_\allowbreak{}macroeconomic}} — Macroeconomic indicators database. Search by mnemonic or description, retrieve latest values or time series.
+\end{itemize}
+
+\subparagraph{Time Series Domain}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{\emph{tscc\_\allowbreak{}historical\_\allowbreak{}pricing\_\allowbreak{}summaries}} — Historical pricing summaries for any RIC. Supports interday (daily, weekly, monthly) and intraday (1min to 1hr) intervals.
+\end{itemize}
+
+\subparagraph{Fixed Income Analytics (YieldBook) Domain}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{\emph{yieldbook\_\allowbreak{}bond\_\allowbreak{}reference}} — Bond reference data: security type, sector, ratings, coupon, maturity, issuer.
+\item {} \textbf{\emph{yieldbook\_\allowbreak{}cashflow}} — Bond cashflow projections: future coupon and principal payment schedules.
+\item {} \textbf{\emph{yieldbook\_\allowbreak{}scenario}} — Bond scenario analysis: price/yield under parallel rate shifts.
+\item {} \textbf{\emph{fixed\_\allowbreak{}income\_\allowbreak{}risk\_\allowbreak{}analytics}} — Bond risk analytics: OAS, effective duration, key rate durations, convexity.
 \end{itemize}
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{MCP Configuration: lseg}\label{file:lseg-mcp-json}
+\subsection{File: lseg/README.md}\label{file:lseg-README.md}
 
-\paragraph{JSON Summary}\mbox{}\par
+\paragraph{LSEG Financial Analytics Plugin}\mbox{}\par
+
+Price bonds, analyze yield curves, evaluate FX carry trades, value options, and build macro dashboards using LSEG financial data and analytics.
+
+
+\subparagraph{What This Plugin Does}\mbox{}\par
+
+This plugin packages LSEG's financial analytics MCP tools into 8 high-level workflows that stitch together multiple tool calls for common financial analysis tasks. Instead of calling individual tools one at a time, each command orchestrates 4-5 tools into a cohesive analysis.
+
+
+\subparagraph{Commands}\mbox{}\par
+
 \begingroup
 \small
 \setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
 \toprule
-{} \textbf{Key} & \textbf{Type} & \textbf{Summary} \\
+{} \textbf{Command} & \textbf{Description} \\
 \midrule
-{} mcpServers & dict & object with 1 key(s) \\
-\bottomrule
-\end{longtable}
-\endgroup
-\paragraph{MCP Server Inventory}\mbox{}\par
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
-\toprule
-{} \textbf{Connector} & \textbf{Type} & \textbf{URL} \\
-\midrule
-{} lseg & http & https:/ / api.analytics.lseg.com/ lfa/ mcp/ server-cl \\
+{} \emph{/ analyze-bond-rv} & Analyze bond relative value with spread decomposition and scenario stress testing \\
+{} \emph{/ analyze-fx-carry} & Evaluate FX carry trade opportunities with spot, forwards, vol surface, and historical context \\
+{} \emph{/ research-equity} & Generate equity research snapshot with consensus estimates, fundamentals, and price performance \\
+{} \emph{/ analyze-swap-curve} & Analyze the swap curve with government and inflation overlays for curve trade ideas \\
+{} \emph{/ analyze-option-vol} & Analyze option volatility with vol surface, Greeks, and implied vs realized comparison \\
+{} \emph{/ review-fi-portfolio} & Review a fixed income portfolio with pricing, cashflows, and scenario analysis \\
+{} \emph{/ macro-rates} & Build a macro and rates dashboard with economic indicators, yield curves, and swap spreads \\
+{} \emph{/ analyze-bond-basis} & Analyze bond futures basis with CTD identification and implied repo rate \\
 \bottomrule
 \end{longtable}
 \endgroup
 
-\textbf{Structured JSON Content}
+\subparagraph{Skills}\mbox{}\par
+
+Each command is backed by a corresponding skill that provides deep domain knowledge:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Skill} & \textbf{Domain Knowledge} \\
+\midrule
+{} \emph{bond-relative-value} & Spread frameworks, G-spread/ Z-spread/ OAS, rich-cheap analysis \\
+{} \emph{fx-carry-trade} & Carry mechanics, carry-to-vol ratios, G10 and EM carry dynamics \\
+{} \emph{equity-research} & IBES consensus interpretation, fundamental analysis, valuation metrics \\
+{} \emph{swap-curve-strategy} & Swap curve construction, curve trades, real rate analysis \\
+{} \emph{option-vol-analysis} & Vol surface interpretation, SABR model, Greeks, implied vs realized vol \\
+{} \emph{fixed-income-portfolio} & Portfolio analytics, key rate duration, cashflow analysis, scenario testing \\
+{} \emph{macro-rates-monitor} & Macro indicators, yield curve shapes, real rates, financial conditions \\
+{} \emph{bond-futures-basis} & CTD mechanics, basis calculation, implied repo, delivery options \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Integrations}\mbox{}\par
+
+This plugin connects to the \textbf{LFA MCP Server} which provides access to LSEG financial data and analytics across these domains:
+
+
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \{
-\item {} ``mcpServers'': \{
-\item {} ``lseg'': \{
-\item {} ``type'': ``http'',
-\item {} ``url'': ``https://api.analytics.lseg.com/lfa/mcp/server-cl''
-\item {} \}
-\item {} \}
-\item {} \}
+\item {} \textbf{Bond Pricing} — Bond and bond future valuation
+\item {} \textbf{FX Pricing} — Spot and forward rates
+\item {} \textbf{Curves} — Interest rate, credit, inflation, and FX forward curves
+\item {} \textbf{Swaps} — Interest rate swap pricing
+\item {} \textbf{Options} — Option valuation with full Greeks
+\item {} \textbf{Volatility} — FX and equity implied volatility surfaces
+\item {} \textbf{Quantitative Analytics} — Analyst estimates, company fundamentals, equity prices, macro data
+\item {} \textbf{Time Series} — Historical pricing summaries
+\item {} \textbf{YieldBook} — Fixed income reference data, cashflows, scenarios, and risk analytics
+\end{itemize}
+
+See \href{CONNECTORS.md}{CONNECTORS.md} for the complete tool reference.
+
+
+\subparagraph{Installation}\mbox{}\par
+
+\textbf{Structured Template}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} claude plugins add LSEG
+\end{itemize}
+
+\subparagraph{Requirements}\mbox{}\par
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Access to the LSEG MCP Server with valid credentials
+\item {} LSEG data entitlements for the relevant product offerings
 \end{itemize}
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: analyze-bond-basis.md}\label{file:lseg-commands-analyze-bond-basis-md}
+\subsection{Command: analyze-bond-basis.md}\label{file:lseg-commands-analyze-bond-basis.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -317,7 +407,7 @@ Lead with the basis trade assessment (long/short/neutral) and implied repo compa
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: analyze-bond-rv.md}\label{file:lseg-commands-analyze-bond-rv-md}
+\subsection{Command: analyze-bond-rv.md}\label{file:lseg-commands-analyze-bond-rv.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -408,7 +498,7 @@ Lead with the rich/cheap assessment and supporting evidence. Follow with spread 
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: analyze-fx-carry.md}\label{file:lseg-commands-analyze-fx-carry-md}
+\subsection{Command: analyze-fx-carry.md}\label{file:lseg-commands-analyze-fx-carry.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -504,7 +594,7 @@ Lead with the carry-to-vol ratio and overall assessment (attractive / moderate /
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: analyze-option-vol.md}\label{file:lseg-commands-analyze-option-vol-md}
+\subsection{Command: analyze-option-vol.md}\label{file:lseg-commands-analyze-option-vol.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -598,7 +688,7 @@ Lead with the key vol finding (implied rich/cheap vs realized). Follow with the 
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: analyze-swap-curve.md}\label{file:lseg-commands-analyze-swap-curve-md}
+\subsection{Command: analyze-swap-curve.md}\label{file:lseg-commands-analyze-swap-curve.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -689,7 +779,7 @@ Lead with curve shape summary and key metrics (2s10s, butterfly). Follow with de
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: macro-rates.md}\label{file:lseg-commands-macro-rates-md}
+\subsection{Command: macro-rates.md}\label{file:lseg-commands-macro-rates.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -791,7 +881,7 @@ Present as a dashboard with clearly labeled sections. Lead with the overall macr
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: research-equity.md}\label{file:lseg-commands-research-equity-md}
+\subsection{Command: research-equity.md}\label{file:lseg-commands-research-equity.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -888,7 +978,7 @@ Present as a structured research note. Lead with the investment thesis summary (
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Command: review-fi-portfolio.md}\label{file:lseg-commands-review-fi-portfolio-md}
+\subsection{Command: review-fi-portfolio.md}\label{file:lseg-commands-review-fi-portfolio.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -988,198 +1078,7 @@ Lead with the portfolio summary metrics, then detail composition, cashflows, and
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{File: lseg/CONNECTORS.md}\label{file:lseg-CONNECTORS-md}
-
-\paragraph{Connectors}\mbox{}\par
-
-This plugin connects to the \textbf{LFA MCP Server}, which provides financial analytics tools from LSEG (London Stock Exchange Group). All tools are served by a single MCP server — no additional connectors are needed.
-
-
-\subparagraph{How Commands Reference Tools}\mbox{}\par
-
-Commands in this plugin reference MCP tools by their exact tool name (e.g., \emph{bond\_\allowbreak{}price}, \emph{interest\_\allowbreak{}rate\_\allowbreak{}curve}). The tools are organized into categories for clarity:
-
-
-\subparagraph{Tool Categories}\mbox{}\par
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
-\toprule
-{} \textbf{Category} & \textbf{Placeholder} & \textbf{Tools} & \textbf{Description} \\
-\midrule
-{} Bond Pricing & \emph{\textasciitilde{}\textasciitilde{}bond-pricing} & \emph{bond\_\allowbreak{} price}, \emph{bond\_\allowbreak{} future\_\allowbreak{} price} & Price bonds and bond futures with full analytics \\
-{} FX Pricing & \emph{\textasciitilde{}\textasciitilde{}fx-pricing} & \emph{fx\_\allowbreak{} spot\_\allowbreak{} price}, \emph{fx\_\allowbreak{} forward\_\allowbreak{} price} & FX spot and forward rate pricing \\
-{} Interest Rate Curves & \emph{\textasciitilde{}\textasciitilde{}ir-curves} & \emph{interest\_\allowbreak{} rate\_\allowbreak{} curve}, \emph{inflation\_\allowbreak{} curve} & Government yield curves and inflation breakevens \\
-{} Credit Curves & \emph{\textasciitilde{}\textasciitilde{}credit-curves} & \emph{credit\_\allowbreak{} curve} & Credit spread curves by issuer type \\
-{} FX Curves & \emph{\textasciitilde{}\textasciitilde{}fx-curves} & \emph{fx\_\allowbreak{} forward\_\allowbreak{} curve} & FX forward point curves \\
-{} Options & \emph{\textasciitilde{}\textasciitilde{}options} & \emph{option\_\allowbreak{} value}, \emph{option\_\allowbreak{} template\_\allowbreak{} list} & Option valuation with Greeks \\
-{} Swaps & \emph{\textasciitilde{}\textasciitilde{}swaps} & \emph{ir\_\allowbreak{} swap} & Interest rate swap pricing \\
-{} Volatility Surfaces & \emph{\textasciitilde{}\textasciitilde{}volatility} & \emph{fx\_\allowbreak{} vol\_\allowbreak{} surface}, \emph{equity\_\allowbreak{} vol\_\allowbreak{} surface} & FX and equity implied vol surfaces \\
-{} Quantitative Analytics & \emph{\textasciitilde{}\textasciitilde{}qa} & \emph{qa\_\allowbreak{} ibes\_\allowbreak{} consensus}, \emph{qa\_\allowbreak{} company\_\allowbreak{} fundamentals}, \emph{qa\_\allowbreak{} historical\_\allowbreak{} equity\_\allowbreak{} price}, \emph{qa\_\allowbreak{} macroeconomic} & Analyst estimates, fundamentals, prices, macro data \\
-{} Time Series & \emph{\textasciitilde{}\textasciitilde{}time-series} & \emph{tscc\_\allowbreak{} historical\_\allowbreak{} pricing\_\allowbreak{} summaries} & Historical pricing summaries (interday/ intraday) \\
-{} Fixed Income Analytics & \emph{\textasciitilde{}\textasciitilde{}yieldbook} & \emph{yieldbook\_\allowbreak{} bond\_\allowbreak{} reference}, \emph{yieldbook\_\allowbreak{} cashflow}, \emph{yieldbook\_\allowbreak{} scenario}, \emph{fixed\_\allowbreak{} income\_\allowbreak{} risk\_\allowbreak{} analytics} & Bond reference data, cashflows, scenarios, OAS/ duration \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-\subparagraph{Complete Tool Reference}\mbox{}\par
-
-\subparagraph{Bond Domain}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{\emph{bond\_\allowbreak{}price}} — Calculate bond pricing, valuation, and analytics. Accepts ISIN, RIC, CUSIP, or AssetId. Returns yield, duration, convexity, DV01, accrued interest. Supports what-if scenarios via price/yield overrides.
-\item {} \textbf{\emph{bond\_\allowbreak{}future\_\allowbreak{}price}} — Calculate bond future pricing and analytics. Returns fair value, cheapest-to-deliver identification, delivery basket, conversion factors, and contract DV01.
-\end{itemize}
-
-\subparagraph{FX Domain}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{\emph{fx\_\allowbreak{}spot\_\allowbreak{}price}} — FX spot rate pricing for ISO currency pairs. Returns mid/bid/ask rates.
-\item {} \textbf{\emph{fx\_\allowbreak{}forward\_\allowbreak{}price}} — FX forward rate pricing at specific tenors or dates. Returns forward points, outright rates, and carry.
-\end{itemize}
-
-\subparagraph{Curves Domain}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{\emph{interest\_\allowbreak{}rate\_\allowbreak{}curve}} — Government yield curves. Two-phase: list available curves, then calculate curve points. Returns par/zero rates, discount factors, forward rates.
-\item {} \textbf{\emph{credit\_\allowbreak{}curve}} — Credit spread curves. Search by country and issuer type (Corporate, Sovereign, Agency, etc.), then calculate spread term structure.
-\item {} \textbf{\emph{inflation\_\allowbreak{}curve}} — Inflation breakeven curves. Search by country/currency, then calculate breakeven rates and real yields.
-\item {} \textbf{\emph{fx\_\allowbreak{}forward\_\allowbreak{}curve}} — FX forward point curves. List curves, then calculate forward points across all standard tenors.
-\end{itemize}
-
-\subparagraph{Swaps Domain}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{\emph{ir\_\allowbreak{}swap}} — Interest rate swap pricing. Two-phase: list templates by currency/index, then price swaps at specified tenors. Returns par rates, DV01, NPV.
-\end{itemize}
-
-\subparagraph{Options Domain}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{\emph{option\_\allowbreak{}value}} — Option valuation supporting vanilla, barrier, binary, and Asian options. Returns premium, full Greeks (delta, gamma, vega, theta, rho), and risk metrics.
-\item {} \textbf{\emph{option\_\allowbreak{}template\_\allowbreak{}list}} — List available option templates for pricing.
-\end{itemize}
-
-\subparagraph{Volatility Domain}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{\emph{fx\_\allowbreak{}vol\_\allowbreak{}surface}} — FX volatility surface generation using SABR model. Returns vol surface across tenors and delta strikes.
-\item {} \textbf{\emph{equity\_\allowbreak{}vol\_\allowbreak{}surface}} — Equity implied volatility surface. Supports equities/indices via RIC and futures via RICROOT.
-\end{itemize}
-
-\subparagraph{Quantitative Analytics Domain}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{\emph{qa\_\allowbreak{}ibes\_\allowbreak{}consensus}} — IBES analyst consensus estimates (EPS, revenue, EBITDA, DPS). Forward-looking estimates with analyst count, dispersion, and high/low ranges.
-\item {} \textbf{\emph{qa\_\allowbreak{}company\_\allowbreak{}fundamentals}} — Reported company financials (income statement, balance sheet metrics). Historical fiscal year data.
-\item {} \textbf{\emph{qa\_\allowbreak{}historical\_\allowbreak{}equity\_\allowbreak{}price}} — Historical equity prices with OHLCV, total returns, and beta.
-\item {} \textbf{\emph{qa\_\allowbreak{}macroeconomic}} — Macroeconomic indicators database. Search by mnemonic or description, retrieve latest values or time series.
-\end{itemize}
-
-\subparagraph{Time Series Domain}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{\emph{tscc\_\allowbreak{}historical\_\allowbreak{}pricing\_\allowbreak{}summaries}} — Historical pricing summaries for any RIC. Supports interday (daily, weekly, monthly) and intraday (1min to 1hr) intervals.
-\end{itemize}
-
-\subparagraph{Fixed Income Analytics (YieldBook) Domain}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{\emph{yieldbook\_\allowbreak{}bond\_\allowbreak{}reference}} — Bond reference data: security type, sector, ratings, coupon, maturity, issuer.
-\item {} \textbf{\emph{yieldbook\_\allowbreak{}cashflow}} — Bond cashflow projections: future coupon and principal payment schedules.
-\item {} \textbf{\emph{yieldbook\_\allowbreak{}scenario}} — Bond scenario analysis: price/yield under parallel rate shifts.
-\item {} \textbf{\emph{fixed\_\allowbreak{}income\_\allowbreak{}risk\_\allowbreak{}analytics}} — Bond risk analytics: OAS, effective duration, key rate durations, convexity.
-\end{itemize}
-
-\vspace{0.8em}\hrule\vspace{0.8em}
-
-\subsection{File: lseg/README.md}\label{file:lseg-README-md}
-
-\paragraph{LSEG Financial Analytics Plugin}\mbox{}\par
-
-Price bonds, analyze yield curves, evaluate FX carry trades, value options, and build macro dashboards using LSEG financial data and analytics.
-
-
-\subparagraph{What This Plugin Does}\mbox{}\par
-
-This plugin packages LSEG's financial analytics MCP tools into 8 high-level workflows that stitch together multiple tool calls for common financial analysis tasks. Instead of calling individual tools one at a time, each command orchestrates 4-5 tools into a cohesive analysis.
-
-
-\subparagraph{Commands}\mbox{}\par
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
-\toprule
-{} \textbf{Command} & \textbf{Description} \\
-\midrule
-{} \emph{/ analyze-bond-rv} & Analyze bond relative value with spread decomposition and scenario stress testing \\
-{} \emph{/ analyze-fx-carry} & Evaluate FX carry trade opportunities with spot, forwards, vol surface, and historical context \\
-{} \emph{/ research-equity} & Generate equity research snapshot with consensus estimates, fundamentals, and price performance \\
-{} \emph{/ analyze-swap-curve} & Analyze the swap curve with government and inflation overlays for curve trade ideas \\
-{} \emph{/ analyze-option-vol} & Analyze option volatility with vol surface, Greeks, and implied vs realized comparison \\
-{} \emph{/ review-fi-portfolio} & Review a fixed income portfolio with pricing, cashflows, and scenario analysis \\
-{} \emph{/ macro-rates} & Build a macro and rates dashboard with economic indicators, yield curves, and swap spreads \\
-{} \emph{/ analyze-bond-basis} & Analyze bond futures basis with CTD identification and implied repo rate \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-\subparagraph{Skills}\mbox{}\par
-
-Each command is backed by a corresponding skill that provides deep domain knowledge:
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
-\toprule
-{} \textbf{Skill} & \textbf{Domain Knowledge} \\
-\midrule
-{} \emph{bond-relative-value} & Spread frameworks, G-spread/ Z-spread/ OAS, rich-cheap analysis \\
-{} \emph{fx-carry-trade} & Carry mechanics, carry-to-vol ratios, G10 and EM carry dynamics \\
-{} \emph{equity-research} & IBES consensus interpretation, fundamental analysis, valuation metrics \\
-{} \emph{swap-curve-strategy} & Swap curve construction, curve trades, real rate analysis \\
-{} \emph{option-vol-analysis} & Vol surface interpretation, SABR model, Greeks, implied vs realized vol \\
-{} \emph{fixed-income-portfolio} & Portfolio analytics, key rate duration, cashflow analysis, scenario testing \\
-{} \emph{macro-rates-monitor} & Macro indicators, yield curve shapes, real rates, financial conditions \\
-{} \emph{bond-futures-basis} & CTD mechanics, basis calculation, implied repo, delivery options \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-\subparagraph{Integrations}\mbox{}\par
-
-This plugin connects to the \textbf{LFA MCP Server} which provides access to LSEG financial data and analytics across these domains:
-
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Bond Pricing} — Bond and bond future valuation
-\item {} \textbf{FX Pricing} — Spot and forward rates
-\item {} \textbf{Curves} — Interest rate, credit, inflation, and FX forward curves
-\item {} \textbf{Swaps} — Interest rate swap pricing
-\item {} \textbf{Options} — Option valuation with full Greeks
-\item {} \textbf{Volatility} — FX and equity implied volatility surfaces
-\item {} \textbf{Quantitative Analytics} — Analyst estimates, company fundamentals, equity prices, macro data
-\item {} \textbf{Time Series} — Historical pricing summaries
-\item {} \textbf{YieldBook} — Fixed income reference data, cashflows, scenarios, and risk analytics
-\end{itemize}
-
-See \href{CONNECTORS.md}{CONNECTORS.md} for the complete tool reference.
-
-
-\subparagraph{Installation}\mbox{}\par
-
-\textbf{Structured Template}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} claude plugins add LSEG
-\end{itemize}
-
-\subparagraph{Requirements}\mbox{}\par
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Access to the LSEG MCP Server with valid credentials
-\item {} LSEG data entitlements for the relevant product offerings
-\end{itemize}
-
-\vspace{0.8em}\hrule\vspace{0.8em}
-
-\subsection{Skill: bond-futures-basis}\label{file:lseg-skills-bond-futures-basis-SKILL-md}
+\subsection{Skill: bond-futures-basis}\label{file:lseg-skills-bond-futures-basis-SKILL.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -1299,7 +1198,7 @@ Lead with the basis trade assessment (long/short/neutral) and implied repo compa
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: bond-relative-value}\label{file:lseg-skills-bond-relative-value-SKILL-md}
+\subsection{Skill: bond-relative-value}\label{file:lseg-skills-bond-relative-value-SKILL.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -1388,7 +1287,7 @@ State the primary spread metric, its historical context (percentile, comparison 
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: equity-research}\label{file:lseg-skills-equity-research-SKILL-md}
+\subsection{Skill: equity-research}\label{file:lseg-skills-equity-research-SKILL.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -1491,7 +1390,7 @@ Conclude with: recommendation (buy/hold/sell), fair value range, key bull case (
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: fixed-income-portfolio}\label{file:lseg-skills-fixed-income-portfolio-SKILL-md}
+\subsection{Skill: fixed-income-portfolio}\label{file:lseg-skills-fixed-income-portfolio-SKILL.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -1596,7 +1495,7 @@ Present sector, rating, and maturity bucket distributions as percentage tables. 
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: fx-carry-trade}\label{file:lseg-skills-fx-carry-trade-SKILL-md}
+\subsection{Skill: fx-carry-trade}\label{file:lseg-skills-fx-carry-trade-SKILL.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -1685,7 +1584,7 @@ For each recommended trade: pair and direction, tenor, annualized carry, carry-t
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: macro-rates-monitor}\label{file:lseg-skills-macro-rates-monitor-SKILL-md}
+\subsection{Skill: macro-rates-monitor}\label{file:lseg-skills-macro-rates-monitor-SKILL.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -1801,7 +1700,7 @@ Present yields at key tenors (3M, 2Y, 5Y, 10Y, 30Y). Highlight 2s10s and 3M-10Y 
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: option-vol-analysis}\label{file:lseg-skills-option-vol-analysis-SKILL-md}
+\subsection{Skill: option-vol-analysis}\label{file:lseg-skills-option-vol-analysis-SKILL.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -1907,7 +1806,7 @@ State the vol regime (low/normal/elevated/crisis), whether implied is rich or ch
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: swap-curve-strategy}\label{file:lseg-skills-swap-curve-strategy-SKILL-md}
+\subsection{Skill: swap-curve-strategy}\label{file:lseg-skills-swap-curve-strategy-SKILL.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -2012,108 +1911,7 @@ For each trade: structure (e.g., 2s10s steepener), legs, DV01-neutral notionals,
 
 \subsection{Directory: spglobal}
 
-\subsection{Plugin Manifest: spglobal/.claude-plugin}\label{file:spglobal-claude-plugin-plugin-json}
-
-\paragraph{JSON Summary}\mbox{}\par
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
-\toprule
-{} \textbf{Key} & \textbf{Type} & \textbf{Summary} \\
-\midrule
-{} name & str & sp-global \\
-{} description & str & S\&P Global - Financial data and analytics skills including company tearsheets, earnings previews, and transaction summaries \\
-{} version & str & 1.0.0 \\
-{} author & dict & object with 2 key(s) \\
-{} homepage & str & https:/ / www.marketplace.spglobal.com/ en/ solutions/ kensho-llm-ready-api-\%28a156fe9f-5564-4f60-a624-95d8645dc98f\%29 \\
-{} repository & str & https:/ / github.com/ kensho-technologies/ spglobal-agent-skills \\
-{} license & str & Apache-2.0 \\
-{} keywords & list & list with 7 item(s) \\
-{} mcpServers & dict & object with 1 key(s) \\
-\bottomrule
-\end{longtable}
-\endgroup
-\paragraph{MCP Server Inventory}\mbox{}\par
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
-\toprule
-{} \textbf{Connector} & \textbf{Type} & \textbf{URL} \\
-\midrule
-{} spglobal & http & https:/ / kfinance.kensho.com/ integrations/ mcp \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-\textbf{Structured JSON Content}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \{
-\item {} ``name'': ``sp-global'',
-\item {} ``description'': ``S\&P Global - Financial data and analytics skills including company tearsheets, earnings previews, and transaction summaries'',
-\item {} ``version'': ``1.0.0'',
-\item {} ``author'': \{
-\item {} ``name'': ``Kensho Technologies'',
-\item {} ``email'': ``spglobal-agent-skills-maintainers@kensho.com''
-\item {} \},
-\item {} ``homepage'': ``https://www.marketplace.spglobal.com/en/solutions/kensho-llm-ready-api-\%28a156fe9f-5564-4f60-a624-95d8645dc98f\%29'',
-\item {} ``repository'': ``https://github.com/kensho-technologies/spglobal-agent-skills'',
-\item {} ``license'': ``Apache-2.0'',
-\item {} ``keywords'': [``sp-global'', ``finance'', ``capital-iq'', ``tearsheets'', ``earnings'', ``transactions'', ``excel''],
-\item {} ``mcpServers'': \{
-\item {} ``spglobal'': \{
-\item {} ``type'': ``http'',
-\item {} ``url'': ``https://kfinance.kensho.com/integrations/mcp''
-\item {} \}
-\item {} \}
-\item {} \}
-\end{itemize}
-
-\vspace{0.8em}\hrule\vspace{0.8em}
-
-\subsection{MCP Configuration: spglobal}\label{file:spglobal-mcp-json}
-
-\paragraph{JSON Summary}\mbox{}\par
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
-\toprule
-{} \textbf{Key} & \textbf{Type} & \textbf{Summary} \\
-\midrule
-{} mcpServers & dict & object with 1 key(s) \\
-\bottomrule
-\end{longtable}
-\endgroup
-\paragraph{MCP Server Inventory}\mbox{}\par
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
-\toprule
-{} \textbf{Connector} & \textbf{Type} & \textbf{URL} \\
-\midrule
-{} spglobal & http & https:/ / kfinance.kensho.com/ integrations/ mcp \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-\textbf{Structured JSON Content}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \{
-\item {} ``mcpServers'': \{
-\item {} ``spglobal'': \{
-\item {} ``type'': ``http'',
-\item {} ``url'': ``https://kfinance.kensho.com/integrations/mcp''
-\item {} \}
-\item {} \}
-\item {} \}
-\end{itemize}
-
-\vspace{0.8em}\hrule\vspace{0.8em}
-
-\subsection{File: spglobal/README.md}\label{file:spglobal-README-md}
+\subsection{File: spglobal/README.md}\label{file:spglobal-README.md}
 
 \paragraph{S\&P Global Plugin}\mbox{}\par
 
@@ -2238,178 +2036,7 @@ Copyright 2026-present Kensho Technologies, LLC. The present date is determined 
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill Resource: spglobal/skills/earnings-preview-beta/report-template.md}\label{file:spglobal-skills-earnings-preview-beta-report-template-md}
-
-\paragraph{HTML Report Template Reference}\mbox{}\par
-
-Use this template as the foundation for the single-company earnings preview HTML report. Customize the data, charts, and narrative content based on the research gathered in Phases 1-5.
-
-
-\subparagraph{HTML Structure}\mbox{}\par
-
-The report is a single self-contained HTML file with:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Embedded CSS (no external stylesheets)
-\item {} Chart.js loaded from CDN for interactive charts
-\item {} Print-friendly styles via \emph{@media print}
-\item {} Responsive layout that works on screens and in print
-\item {} Target: 4-5 printed pages
-\end{itemize}
-
-\subparagraph{Complete Template}\mbox{}\par
-
-\textbf{Web Template Summary}
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Includes a full HTML document scaffold (doctype, head, and body).
-\item {} Defines embedded CSS, including print-oriented layout and typography rules.
-\item {} Configures Chart.js usage, including plugin registration and chart rendering behavior.
-\item {} Implements reusable chart helper functions for consistent figure generation.
-\item {} Contains HTML table structures for presenting formatted metric outputs.
-\item {} Defines canvas placeholders for interactive chart components.
-\item {} Loads and runs JavaScript needed for dynamic report visuals.
-\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
-\end{itemize}
-
-\subparagraph{Chart.js Implementation Notes}\mbox{}\par
-
-\subparagraph{Figure 2: Revenue \& EPS Chart}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Type}: Combo bar + line
-\item {} \textbf{Bars}: Quarterly revenue on left y-axis
-\item {} \textbf{Line}: Diluted EPS on right y-axis
-\item {} \textbf{Labels}: Quarter identifiers (e.g., ``Q1 FY24'')
-\item {} Use 8 quarters of data
-\end{itemize}
-
-\subparagraph{Figure 3: Margin Trend Chart}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Type}: Dual line chart
-\item {} \textbf{Lines}: Gross margin \% and operating margin \%
-\item {} \textbf{Y-axis}: Percentage with 1 decimal place
-\end{itemize}
-
-\subparagraph{Figure 3: Revenue Growth Chart}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Type}: Bar chart with conditional coloring
-\item {} \textbf{Green bars}: Positive growth quarters
-\item {} \textbf{Red bars}: Negative growth quarters
-\item {} \textbf{IMPORTANT}: Only include quarters where y/y growth can be computed (i.e., where both the current quarter AND the year-ago quarter exist in \emph{financials.csv}). With 8 quarters of raw data, this typically yields 4 bars — NOT 8. Do not pass labels for quarters without y/y data.
-\item {} No legend needed (self-explanatory)
-\end{itemize}
-
-\subparagraph{Figure 4: Business Segment Revenue}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Use HTML table (not a chart)
-\item {} Columns: Segment | Latest Q Rev (\$M) | \% of Total | y/y Change
-\item {} Color-code y/y change cells with pos/neg classes
-\end{itemize}
-
-\subparagraph{Figure 5: Earnings-Annotated Stock Price Chart}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Type}: Line chart with annotation plugin vertical lines
-\item {} \textbf{Data}: 1 year of daily closing prices
-\item {} \textbf{Annotations}: Vertical dashed lines at each earnings date
-\item {} \textbf{Labels}: Quarter name + 1-day post-earnings stock move
-\item {} \textbf{Colors}: Green for positive reactions, red for negative
-\item {} \textbf{Calculating the 1-day move}: Compare closing price on earnings date to next trading day close
-\item {} \textbf{CRITICAL}: The annotation plugin MUST be registered before creating charts: \emph{Chart.register(window['chartjs-plugin-annotation'])} — this is already in the template script block
-\end{itemize}
-
-\subparagraph{Figure 7: Competitor Indexed Performance Chart}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Type}: Multi-line chart, rebased to 100
-\item {} \textbf{Subject company}: Solid thick line (borderWidth: 3)
-\item {} \textbf{Competitors}: Thinner dashed lines (borderWidth: 1.5, borderDash)
-\item {} This visual hierarchy makes the subject company immediately identifiable
-\end{itemize}
-
-\subparagraph{Figure 8: LTM P/E Comparison Chart}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Type}: Horizontal bar chart
-\item {} \textbf{Subject company}: Highlighted in navy (\#1a1a4e)
-\item {} \textbf{Competitors}: Light blue (\#85c1e9)
-\item {} \textbf{Sorted}: Descending by P/E
-\item {} Shows at a glance whether the company trades at a premium or discount to peers
-\end{itemize}
-
-\subparagraph{Figure 8: Competitor Comparison Table}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} HTML table with highlight-row for subject company
-\item {} Columns: Ticker | Company | Mkt Cap (\$B) | LTM P/E | NTM P/E | YTD \% | 1-Yr \%
-\item {} Color-code returns with pos/neg classes
-\end{itemize}
-
-\subparagraph{Formatting Conventions}\mbox{}\par
-
-\subparagraph{Numbers}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Revenue: 1 decimal place for \$B (e.g., ``\$152.3B''), no decimals for \$M (e.g., ``\$4,521M'')
-\item {} EPS: 2 decimal places (e.g., ``\$1.47'')
-\item {} Margins: 1 decimal place with \% sign (e.g., ``24.5\%'')
-\item {} Growth rates: 1 decimal place with +/- sign (e.g., ``+5.2\%'', ``-3.1\%'')
-\item {} Market cap: 1 decimal place for \$B (e.g., ``\$562.1B'')
-\item {} Stock prices: 2 decimal places (e.g., ``\$172.35'')
-\item {} P/E ratios: 1 decimal place with 'x' suffix (e.g., ``25.3x'')
-\end{itemize}
-
-\subparagraph{Color Coding}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Positive values: \emph{class=``pos''} -- green (\#0d7a3e)
-\item {} Negative values: \emph{class=``neg''} -- red (\#c0392b)
-\item {} Neutral/flat: \emph{class=``neutral''} -- gray (\#555)
-\item {} Subject company row: \emph{class=``highlight-row''} -- light blue background
-\end{itemize}
-
-\subparagraph{Figure Labels}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Number all figures sequentially: ``Figure 1:'', ``Figure 2:'', etc.
-\item {} Figures 1-8 are on Pages 3-5 (the Consensus Estimates table on Page 2 is not numbered)
-\item {} Include source attribution under every chart and table: ``Source: S\&P Capital IQ''
-\end{itemize}
-
-\subparagraph{Hyperlinked Claims}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Every factual claim in the report body — numbers AND qualitative statements — must be wrapped in \emph{CLAIM TEXT}
-\item {} The \emph{ref-N} ID must match a row in the Appendix table
-\item {} This applies to: narrative text, bullet points, table cells, blockquotes — anywhere a fact appears
-\item {} Chart axis labels and tooltips do NOT need hyperlinks (only report body text)
-\item {} Assign reference IDs sequentially (\emph{ref-1}, \emph{ref-2}, ...) as you write the report
-\item {} Multiple references to the same underlying claim should share the same ref ID
-\item {} For qualitative claims, wrap the key phrase: \emph{management flagged tariff headwinds}
-\end{itemize}
-
-\subparagraph{Appendix}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{MUST begin with}: \emph{Analysis is AI-generated — please confirm all outputs}
-\item {} The Appendix is the final section of the report, after all figures
-\item {} \textbf{4 columns}: Ref \# | Fact | Value | Source \& Derivation
-\item {} One row per unique claim referenced in the report (numeric and non-numeric)
-\item {} \textbf{Every number in the report body must be a clickable `` link to its appendix row. No exceptions.}
-\item {} Group rows by category: Quarterly Financials, Valuation, Transcript Claims, Estimates \& Consensus, News \& Analyst Commentary, Stock Performance
-\item {} Use subheading rows (\emph{appendix-group} class) to separate groups
-\item {} \textbf{Source \& Derivation column} must include specific, detailed sourcing for EVERY row:
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} For raw S\&P data (revenue, EPS, prices, market cap, etc.): \emph{S\&P Capital IQ} followed by the specific MCP function call with parameters (e.g., \emph{get\_\allowbreak{}financial\_\allowbreak{}line\_\allowbreak{}item\_\allowbreak{}from\_\allowbreak{}identifiers(identifier='WMT', line\_\allowbreak{}item='revenue', period\_\allowbreak{}type='quarterly', period='Q3 FY2026')}). \textbf{Never write just ``S\&P Capital IQ'' with no detail.}
-\item {} For calculated values (margins, growth rates, P/E, returns): the full formula with `\emph{ hyperlinks to each component row (use }formula` CSS class). \textbf{Every number in the formula must be a clickable link to its own appendix row.}
-\item {} For transcript claims: the verbatim excerpt sentence in italics (\emph{excerpt} CSS class) + transcript name with \emph{transcript-ref} class + \emph{key\_\allowbreak{}dev\_\allowbreak{}id}
-\item {} For Kensho results: the key finding (\emph{excerpt} class) + \textbf{clickable source URL} as \emph{[Source Title]} + the search query used. \textbf{Every Kensho-sourced claim must have a clickable URL to the original source.}
-\end{itemize}
-\item {} Source labels use the \emph{src-label} CSS class (bold navy)
-\item {} External source URLs use the \emph{src-url} CSS class (blue, underlined, clickable)
-\end{itemize}
-
-\subparagraph{Style Rules}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{NO EMOJIS} anywhere in the report. No emoji in headings, tables, chart labels, or body text. This is a professional research document.
-\item {} Font: Arial Narrow throughout (body, headings, tables, charts).
-\item {} Management quotes: Integrate as `` elements within the executive thesis narrative. Never under a separate heading.
-\item {} Keep all text concise. Target 4-5 printed pages total (appendix is additional).
-\end{itemize}
-
-\vspace{0.8em}\hrule\vspace{0.8em}
-
-\subsection{Skill: earnings-preview-beta}\label{file:spglobal-skills-earnings-preview-beta-SKILL-md}
+\subsection{Skill: earnings-preview-beta}\label{file:spglobal-skills-earnings-preview-beta-SKILL.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -3050,164 +2677,178 @@ Group the appendix rows by section (Financials, Valuation, Estimates \& Consensu
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill Resource: spglobal/skills/funding-digest/references/sector-seeds.md}\label{file:spglobal-skills-funding-digest-references-sector-seeds-md}
+\subsection{Skill Resource: spglobal/skills/earnings-preview-beta/report-template.md}\label{file:spglobal-skills-earnings-preview-beta-report-template.md}
 
-\paragraph{Sector Seed Companies Reference}\mbox{}\par
+\paragraph{HTML Report Template Reference}\mbox{}\par
 
-When the user specifies a sector but not specific companies, use these seed lists to bootstrap the company universe. These are starting points — always expand via \emph{get\_\allowbreak{}competitors\_\allowbreak{}from\_\allowbreak{}identifiers} and validate with \emph{get\_\allowbreak{}info\_\allowbreak{}from\_\allowbreak{}identifiers}.
-
-
-\begin{quote}
-``\textbf{All seeds below have been validated against S\&P Global's identifier system.} If a seed fails to resolve, try the alias listed in parentheses before dropping it.''
-\end{quote}
-
-\subparagraph{Technology / Software}\mbox{}\par
-
-\subparagraph{AI / Machine Learning}\mbox{}\par
-Seeds: OpenAI, Anthropic, Databricks, Scale AI, Cohere, Hugging Face, Mistral AI, xAI, Perplexity AI, Runway ML (alias: ``Runway AI, Inc.''), Together AI (alias: ``Together Computer, Inc.''), Character.ai (alias: ``Character Technologies, Inc.''), Groq, Stability AI, Aleph Alpha, Magic AI
+Use this template as the foundation for the single-company earnings preview HTML report. Customize the data, charts, and narrative content based on the research gathered in Phases 1-5.
 
 
-⚠ \textbf{Excluded (do not use as seeds):}
+\subparagraph{HTML Structure}\mbox{}\par
+
+The report is a single self-contained HTML file with:
 
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \emph{Inflection AI} — Core team absorbed by Microsoft (Mar 2024). Historical rounds exist but no new activity.
-\item {} \emph{Adept AI} — Largely absorbed by Amazon (2024). Same as above.
-\item {} \emph{DeepMind} — Subsidiary of Alphabet. No independent funding rounds.
+\item {} Embedded CSS (no external stylesheets)
+\item {} Chart.js loaded from CDN for interactive charts
+\item {} Print-friendly styles via \emph{@media print}
+\item {} Responsive layout that works on screens and in print
+\item {} Target: 4-5 printed pages
 \end{itemize}
 
-\subparagraph{Cybersecurity}\mbox{}\par
-Seeds: CrowdStrike, Palo Alto Networks, Wiz, Snyk, SentinelOne, Abnormal Security, Netskope
+\subparagraph{Complete Template}\mbox{}\par
 
-
-\subparagraph{Cloud Infrastructure / DevTools}\mbox{}\par
-Seeds: Snowflake, HashiCorp, Datadog, Confluent, Vercel, Supabase, PlanetScale
-
-
-\subparagraph{Fintech}\mbox{}\par
-Seeds: Stripe, Plaid, Brex, Ramp, Mercury, Affirm, Marqeta, Navan
-
-
-\subparagraph{Vertical SaaS}\mbox{}\par
-Seeds: ServiceTitan, Toast, Procore, Veeva Systems, Blend Labs
-
-
-\subparagraph{Healthcare / Life Sciences}\mbox{}\par
-
-\subparagraph{Biotech / Pharma}\mbox{}\par
-Seeds: Moderna, BioNTech, Recursion Pharmaceuticals, Tempus AI, Insitro, AbCellera
-
-
-\subparagraph{Digital Health}\mbox{}\par
-Seeds: Teladoc, Hims \& Hers, Ro, Noom, Color Health
-
-
-⚠ \textbf{Excluded (do not use as seeds):}
-
+\textbf{Web Template Summary}
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \emph{Cerebral} — Still operating but has faced significant regulatory issues; include only if the user specifically requests it.
+\item {} Includes a full HTML document scaffold (doctype, head, and body).
+\item {} Defines embedded CSS, including print-oriented layout and typography rules.
+\item {} Configures Chart.js usage, including plugin registration and chart rendering behavior.
+\item {} Implements reusable chart helper functions for consistent figure generation.
+\item {} Contains HTML table structures for presenting formatted metric outputs.
+\item {} Defines canvas placeholders for interactive chart components.
+\item {} Loads and runs JavaScript needed for dynamic report visuals.
+\item {} HTML/CSS/JavaScript implementation lines are intentionally omitted in print output for readability.
 \end{itemize}
 
-\subparagraph{Medical Devices}\mbox{}\par
-Seeds: Intuitive Surgical, Butterfly Network, Outset Medical
+\subparagraph{Chart.js Implementation Notes}\mbox{}\par
 
-
-⚠ \textbf{Excluded (do not use as seeds):}
-
+\subparagraph{Figure 2: Revenue \& EPS Chart}\mbox{}\par
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \emph{Shockwave Medical} — Acquired by Johnson \& Johnson (May 2024). Now a subsidiary with no independent funding rounds.
+\item {} \textbf{Type}: Combo bar + line
+\item {} \textbf{Bars}: Quarterly revenue on left y-axis
+\item {} \textbf{Line}: Diluted EPS on right y-axis
+\item {} \textbf{Labels}: Quarter identifiers (e.g., ``Q1 FY24'')
+\item {} Use 8 quarters of data
 \end{itemize}
 
-\subparagraph{Energy / Climate}\mbox{}\par
-
-\subparagraph{Climate Tech}\mbox{}\par
-Seeds: Redwood Materials, Form Energy, Commonwealth Fusion, Sila Nanotechnologies, Climeworks
-
-
-\subparagraph{Clean Energy}\mbox{}\par
-Seeds: Enphase Energy, First Solar, Rivian, QuantumScape, Sunnova
-
-
-\subparagraph{Consumer}\mbox{}\par
-
-\subparagraph{E-Commerce / Marketplace}\mbox{}\par
-Seeds: Shopify, Faire, Whatnot, Fanatics
-
-
-⚠ \textbf{Excluded (do not use as seeds):}
-
+\subparagraph{Figure 3: Margin Trend Chart}\mbox{}\par
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \emph{Temu (PDD Holdings)} — PDD Holdings is a massive public conglomerate; its funding activity is captured via equity markets, not venture rounds.
+\item {} \textbf{Type}: Dual line chart
+\item {} \textbf{Lines}: Gross margin \% and operating margin \%
+\item {} \textbf{Y-axis}: Percentage with 1 decimal place
 \end{itemize}
 
-\subparagraph{Consumer Social / Media}\mbox{}\par
-Seeds: Discord, Reddit, Substack
-
-
-⚠ \textbf{Excluded (do not use as seeds):}
-
+\subparagraph{Figure 3: Revenue Growth Chart}\mbox{}\par
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \emph{BeReal} — Acquired by Voodoo (Jun 2024). Now a subsidiary.
-\item {} \emph{Lemon8} — The brand name ``Lemon8'' resolves in S\&P Global to a small Dutch company (Lemon8 B.V.), \textbf{not} the ByteDance social media app. ByteDance's apps are subsidiaries and do not have independent funding rounds. Do not use.
+\item {} \textbf{Type}: Bar chart with conditional coloring
+\item {} \textbf{Green bars}: Positive growth quarters
+\item {} \textbf{Red bars}: Negative growth quarters
+\item {} \textbf{IMPORTANT}: Only include quarters where y/y growth can be computed (i.e., where both the current quarter AND the year-ago quarter exist in \emph{financials.csv}). With 8 quarters of raw data, this typically yields 4 bars — NOT 8. Do not pass labels for quarters without y/y data.
+\item {} No legend needed (self-explanatory)
 \end{itemize}
 
-\subparagraph{Industrials / Logistics}\mbox{}\par
-
-\subparagraph{Logistics / Supply Chain}\mbox{}\par
-Seeds: Flexport, Samsara, Project44, FourKites
-
-
-⚠ \textbf{Excluded (do not use as seeds):}
-
+\subparagraph{Figure 4: Business Segment Revenue}\mbox{}\par
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \emph{Convoy} — Shut down operations (Oct 2023). The identifier still resolves and historical rounds are available, but no new activity will appear.
+\item {} Use HTML table (not a chart)
+\item {} Columns: Segment | Latest Q Rev (\$M) | \% of Total | y/y Change
+\item {} Color-code y/y change cells with pos/neg classes
 \end{itemize}
 
-\subparagraph{Robotics / Automation}\mbox{}\par
-Seeds: Figure AI, Agility Robotics, Locus Robotics, Symbotic, Covariant
-
-
-\subparagraph{Space / Aerospace}\mbox{}\par
-Seeds: SpaceX, Relativity Space, Rocket Lab, Planet Labs, Astra
-
-
-\subparagraph{Identifier Alias Reference}\mbox{}\par
-
-Some well-known brand names don't match S\&P Global's legal entity names. If a brand name returns empty results from \emph{get\_\allowbreak{}info\_\allowbreak{}from\_\allowbreak{}identifiers}, try the alias:
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
-\toprule
-{} \textbf{Brand Name} & \textbf{S\&P Global Legal Name} & \textbf{company\_\allowbreak{} id} \\
-\midrule
-{} Together AI & Together Computer, Inc. & C\_\allowbreak{} 1860042219 \\
-{} Character.ai & Character Technologies, Inc. & C\_\allowbreak{} 1829047235 \\
-{} Runway ML & Runway AI, Inc. & C\_\allowbreak{} 633706980 \\
-{} Adept AI & Adept AI Labs Inc. & C\_\allowbreak{} 1780739313 \\
-{} xAI & X.AI LLC & C\_\allowbreak{} 1863863313 \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-\begin{quote}
-``\textbf{Tip:} When a brand name fails, try \emph{get\_\allowbreak{}info\_\allowbreak{}from\_\allowbreak{}identifiers} with the legal name. If that also fails, the company may not be indexed yet. As a last resort, use the \emph{company\_\allowbreak{}id} directly as the identifier.''
-\end{quote}
-
-\subparagraph{Notes}\mbox{}\par
-
+\subparagraph{Figure 5: Earnings-Annotated Stock Price Chart}\mbox{}\par
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} These lists skew toward US-based companies. For geographic filtering (Europe, Asia, etc.), the competitor expansion step is especially important.
-\item {} For niche sub-sectors not listed here, ask the user for 2–3 example companies to use as seeds.
-\item {} Always validate seeds are still active/relevant — companies pivot, merge, or shut down.
-\item {} \textbf{Refresh cadence:} These seeds should be reviewed quarterly. AI sector seeds in particular change rapidly due to acquisitions and new entrants.
-\item {} Seeds marked as subsidiaries or acquired will still resolve in \emph{get\_\allowbreak{}info\_\allowbreak{}from\_\allowbreak{}identifiers} (status = ``Operating Subsidiary'') but will return zero funding rounds. Skip these for funding queries.
+\item {} \textbf{Type}: Line chart with annotation plugin vertical lines
+\item {} \textbf{Data}: 1 year of daily closing prices
+\item {} \textbf{Annotations}: Vertical dashed lines at each earnings date
+\item {} \textbf{Labels}: Quarter name + 1-day post-earnings stock move
+\item {} \textbf{Colors}: Green for positive reactions, red for negative
+\item {} \textbf{Calculating the 1-day move}: Compare closing price on earnings date to next trading day close
+\item {} \textbf{CRITICAL}: The annotation plugin MUST be registered before creating charts: \emph{Chart.register(window['chartjs-plugin-annotation'])} — this is already in the template script block
+\end{itemize}
+
+\subparagraph{Figure 7: Competitor Indexed Performance Chart}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Type}: Multi-line chart, rebased to 100
+\item {} \textbf{Subject company}: Solid thick line (borderWidth: 3)
+\item {} \textbf{Competitors}: Thinner dashed lines (borderWidth: 1.5, borderDash)
+\item {} This visual hierarchy makes the subject company immediately identifiable
+\end{itemize}
+
+\subparagraph{Figure 8: LTM P/E Comparison Chart}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Type}: Horizontal bar chart
+\item {} \textbf{Subject company}: Highlighted in navy (\#1a1a4e)
+\item {} \textbf{Competitors}: Light blue (\#85c1e9)
+\item {} \textbf{Sorted}: Descending by P/E
+\item {} Shows at a glance whether the company trades at a premium or discount to peers
+\end{itemize}
+
+\subparagraph{Figure 8: Competitor Comparison Table}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} HTML table with highlight-row for subject company
+\item {} Columns: Ticker | Company | Mkt Cap (\$B) | LTM P/E | NTM P/E | YTD \% | 1-Yr \%
+\item {} Color-code returns with pos/neg classes
+\end{itemize}
+
+\subparagraph{Formatting Conventions}\mbox{}\par
+
+\subparagraph{Numbers}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Revenue: 1 decimal place for \$B (e.g., ``\$152.3B''), no decimals for \$M (e.g., ``\$4,521M'')
+\item {} EPS: 2 decimal places (e.g., ``\$1.47'')
+\item {} Margins: 1 decimal place with \% sign (e.g., ``24.5\%'')
+\item {} Growth rates: 1 decimal place with +/- sign (e.g., ``+5.2\%'', ``-3.1\%'')
+\item {} Market cap: 1 decimal place for \$B (e.g., ``\$562.1B'')
+\item {} Stock prices: 2 decimal places (e.g., ``\$172.35'')
+\item {} P/E ratios: 1 decimal place with 'x' suffix (e.g., ``25.3x'')
+\end{itemize}
+
+\subparagraph{Color Coding}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Positive values: \emph{class=``pos''} -- green (\#0d7a3e)
+\item {} Negative values: \emph{class=``neg''} -- red (\#c0392b)
+\item {} Neutral/flat: \emph{class=``neutral''} -- gray (\#555)
+\item {} Subject company row: \emph{class=``highlight-row''} -- light blue background
+\end{itemize}
+
+\subparagraph{Figure Labels}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Number all figures sequentially: ``Figure 1:'', ``Figure 2:'', etc.
+\item {} Figures 1-8 are on Pages 3-5 (the Consensus Estimates table on Page 2 is not numbered)
+\item {} Include source attribution under every chart and table: ``Source: S\&P Capital IQ''
+\end{itemize}
+
+\subparagraph{Hyperlinked Claims}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Every factual claim in the report body — numbers AND qualitative statements — must be wrapped in \emph{CLAIM TEXT}
+\item {} The \emph{ref-N} ID must match a row in the Appendix table
+\item {} This applies to: narrative text, bullet points, table cells, blockquotes — anywhere a fact appears
+\item {} Chart axis labels and tooltips do NOT need hyperlinks (only report body text)
+\item {} Assign reference IDs sequentially (\emph{ref-1}, \emph{ref-2}, ...) as you write the report
+\item {} Multiple references to the same underlying claim should share the same ref ID
+\item {} For qualitative claims, wrap the key phrase: \emph{management flagged tariff headwinds}
+\end{itemize}
+
+\subparagraph{Appendix}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{MUST begin with}: \emph{Analysis is AI-generated — please confirm all outputs}
+\item {} The Appendix is the final section of the report, after all figures
+\item {} \textbf{4 columns}: Ref \# | Fact | Value | Source \& Derivation
+\item {} One row per unique claim referenced in the report (numeric and non-numeric)
+\item {} \textbf{Every number in the report body must be a clickable `` link to its appendix row. No exceptions.}
+\item {} Group rows by category: Quarterly Financials, Valuation, Transcript Claims, Estimates \& Consensus, News \& Analyst Commentary, Stock Performance
+\item {} Use subheading rows (\emph{appendix-group} class) to separate groups
+\item {} \textbf{Source \& Derivation column} must include specific, detailed sourcing for EVERY row:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} For raw S\&P data (revenue, EPS, prices, market cap, etc.): \emph{S\&P Capital IQ} followed by the specific MCP function call with parameters (e.g., \emph{get\_\allowbreak{}financial\_\allowbreak{}line\_\allowbreak{}item\_\allowbreak{}from\_\allowbreak{}identifiers(identifier='WMT', line\_\allowbreak{}item='revenue', period\_\allowbreak{}type='quarterly', period='Q3 FY2026')}). \textbf{Never write just ``S\&P Capital IQ'' with no detail.}
+\item {} For calculated values (margins, growth rates, P/E, returns): the full formula with `\emph{ hyperlinks to each component row (use }formula` CSS class). \textbf{Every number in the formula must be a clickable link to its own appendix row.}
+\item {} For transcript claims: the verbatim excerpt sentence in italics (\emph{excerpt} CSS class) + transcript name with \emph{transcript-ref} class + \emph{key\_\allowbreak{}dev\_\allowbreak{}id}
+\item {} For Kensho results: the key finding (\emph{excerpt} class) + \textbf{clickable source URL} as \emph{[Source Title]} + the search query used. \textbf{Every Kensho-sourced claim must have a clickable URL to the original source.}
+\end{itemize}
+\item {} Source labels use the \emph{src-label} CSS class (bold navy)
+\item {} External source URLs use the \emph{src-url} CSS class (blue, underlined, clickable)
+\end{itemize}
+
+\subparagraph{Style Rules}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{NO EMOJIS} anywhere in the report. No emoji in headings, tables, chart labels, or body text. This is a professional research document.
+\item {} Font: Arial Narrow throughout (body, headings, tables, charts).
+\item {} Management quotes: Integrate as `` elements within the executive thesis narrative. Never under a separate heading.
+\item {} Keep all text concise. Target 4-5 printed pages total (appendix is additional).
 \end{itemize}
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill: funding-digest}\label{file:spglobal-skills-funding-digest-SKILL-md}
+\subsection{Skill: funding-digest}\label{file:spglobal-skills-funding-digest-SKILL.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -3749,357 +3390,129 @@ Follow the QA process from the PPTX skill:
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill Resource: spglobal/skills/tear-sheet/references/corp-dev.md}\label{file:spglobal-skills-tear-sheet-references-corp-dev-md}
+\subsection{Skill Resource: spglobal/skills/funding-digest/references/sector-seeds.md}\label{file:spglobal-skills-funding-digest-references-sector-seeds.md}
 
-\paragraph{Corporate Development Tear Sheet}\mbox{}\par
+\paragraph{Sector Seed Companies Reference}\mbox{}\par
 
-\subparagraph{Purpose}\mbox{}\par
-A target evaluation profile for an internal Corp Dev team assessing a potential acquisition. Unlike the IB/M\&A profile (which tells a strategic \emph{story} for a pitch), this is an analytical document focused on strategic fit: how the target's products, customers, technology, and operations overlap with or complement the acquirer's. The Corp Dev audience already knows their own company — they need to understand the target through the lens of ``should we buy this, and what would integration look like?''
-
-
-\textbf{Default page length:} 1-2 pages. Corp Dev teams are comfortable with denser profiles and won't penalize a second page if the content is substantive.
+When the user specifies a sector but not specific companies, use these seed lists to bootstrap the company universe. These are starting points — always expand via \emph{get\_\allowbreak{}competitors\_\allowbreak{}from\_\allowbreak{}identifiers} and validate with \emph{get\_\allowbreak{}info\_\allowbreak{}from\_\allowbreak{}identifiers}.
 
 
-\subparagraph{Query Plan}\mbox{}\par
+\begin{quote}
+``\textbf{All seeds below have been validated against S\&P Global's identifier system.} If a seed fails to resolve, try the alias listed in parentheses before dropping it.''
+\end{quote}
 
-Start with these queries. Break apart and follow up if results are incomplete.
+\subparagraph{Technology / Software}\mbox{}\par
 
-
-\textbf{Query 1 — Target profile:} ``[Company] business description products services technology platform headquarters founded employees sector industry'' → Header, Business \& Product Overview → \textbf{Immediately write} to \emph{/tmp/tear-sheet/company-profile.txt}
-
-
-\textbf{Query 2 — Financials:} ``[Company] annual income statement revenue gross profit EBITDA operating income net income capex free cash flow R\&D expense total debt cash and equivalents last 4 fiscal years'' → Financial Summary (pull 4 years; display 3; use the earliest year only for YoY growth computation. R\&D is especially important for Corp Dev — they want to understand the target's investment in IP) → \textbf{Immediately write} raw values to \emph{/tmp/tear-sheet/financials.csv}
-
-
-\textbf{Query 3 — Segments + customers:} ``[Company] revenue by segment business unit last 2 fiscal years key customers end markets customer concentration'' → Revenue Mix (need 2 years for YoY growth), Customer Analysis → \textbf{Immediately write} segment data to \emph{/tmp/tear-sheet/segments.csv} (skip if no segment data returned)
+\subparagraph{AI / Machine Learning}\mbox{}\par
+Seeds: OpenAI, Anthropic, Databricks, Scale AI, Cohere, Hugging Face, Mistral AI, xAI, Perplexity AI, Runway ML (alias: ``Runway AI, Inc.''), Together AI (alias: ``Together Computer, Inc.''), Character.ai (alias: ``Character Technologies, Inc.''), Groq, Stability AI, Aleph Alpha, Magic AI
 
 
-\textbf{Query 4 — Relationships + competitive landscape:} ``[Company] key customers suppliers partners competitors business relationships technology vendors'' → Strategic Fit Analysis, Ecosystem Map → \textbf{Immediately write} to \emph{/tmp/tear-sheet/relationships.txt}
-
-
-\textbf{Query 5 — Valuation + peers:} If user provided specific comps: ``[Comp company] enterprise value EV/Revenue EV/EBITDA revenue growth EBITDA margin'' Otherwise: Use the competitors tool to identify 3-5 public peers, then pull EV/Revenue (NTM), EV/EBITDA (NTM), revenue growth \%, and EBITDA margin \% for each. Also: ``[Company] enterprise value market capitalization valuation multiples'' → Valuation Context → \textbf{Immediately write} company multiples to \emph{/tmp/tear-sheet/valuation.csv} → \textbf{Immediately write} peer data to \emph{/tmp/tear-sheet/peer-comps.csv}
-
-
-\textbf{Query 6 — Ownership (data permitting):} ``[Company] ownership structure investors institutional ownership insider ownership'' → Ownership snapshot (no intermediate file — included in company-profile.txt if available)
-
-
-\subparagraph{Sections}\mbox{}\par
-
-Listed in priority order. See ``Page Budget \& Cut Order'' below for explicit cut guidance.
-
-
-\subparagraph{1. Company Header}\mbox{}\par
-Similar to IB/M\&A but adds a ``Strategic Relevance'' tagline.
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
-\toprule
-{} \textbf{Field} & \textbf{Notes} \\
-\midrule
-{} Company name & Large, bold \\
-{} Ticker \& Exchange & If public; omit for private \\
-{} HQ Location &  \\
-{} Founded /  Employees &  \\
-{} Enterprise Value & Market cap for public; latest valuation for private \\
-{} Ownership & Public /  PE-backed /  Founder-led /  etc. \\
-{} \textbf{Strategic Relevance} & One sentence: why this target is attractive to an acquirer (synthesized from data) \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-The ``Strategic Relevance'' line is unique to Corp Dev. Write from a neutral analytical perspective, not from the target's marketing language. Frame what an acquirer \emph{gets} — not what the target \emph{is}. Good: ``Dominant position in commodity price benchmarks with regulatory moat and 70\%+ gross margins — a capital-light, high-barrier data asset.'' Bad: ``The world's leading provider of financial data and analytics.'' The former tells a corp dev team why this is attractive; the latter is a press release.
-
-
-\subparagraph{2. Business \& Product Overview}\mbox{}\par
-\textbf{Do not paste the CIQ company summary.} Rewrite in 4-6 sentences (one paragraph, not two) with a product and technology focus — this audience evaluates acquisitions, not investments:
+⚠ \textbf{Excluded (do not use as seeds):}
 
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Core products/services and what problem they solve
-\item {} Technology or platform architecture (at a high level)
-\item {} Key differentiators and competitive moat
-\item {} Customer segments — who buys this and why
-\item {} Current strategic direction
+\item {} \emph{Inflection AI} — Core team absorbed by Microsoft (Mar 2024). Historical rounds exist but no new activity.
+\item {} \emph{Adept AI} — Largely absorbed by Amazon (2024). Same as above.
+\item {} \emph{DeepMind} — Subsidiary of Alphabet. No independent funding rounds.
 \end{itemize}
 
-Write with an acquirer's lens. The reader is thinking: ``How would this fit with what we already have?'' The description should make it easy to spot overlaps and complements.
+\subparagraph{Cybersecurity}\mbox{}\par
+Seeds: CrowdStrike, Palo Alto Networks, Wiz, Snyk, SentinelOne, Abnormal Security, Netskope
 
 
-\subparagraph{3. Revenue Mix \& Customer Profile}\mbox{}\par
-Two sub-sections:
+\subparagraph{Cloud Infrastructure / DevTools}\mbox{}\par
+Seeds: Snowflake, HashiCorp, Datadog, Confluent, Vercel, Supabase, PlanetScale
 
 
-\textbf{a) Revenue by Segment} (if available):
+\subparagraph{Fintech}\mbox{}\par
+Seeds: Stripe, Plaid, Brex, Ramp, Mercury, Affirm, Marqeta, Navan
 
 
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
-\toprule
-{} \textbf{Segment} & \textbf{Revenue (\$M)} & \textbf{\% of Total} & \textbf{YoY Growth} \\
-\midrule
-\bottomrule
-\end{longtable}
-\endgroup
+\subparagraph{Vertical SaaS}\mbox{}\par
+Seeds: ServiceTitan, Toast, Procore, Veeva Systems, Blend Labs
 
-\textbf{b) Customer Analysis:} Below the segment table (or in place of it if segments aren't available), write a qualitative paragraph covering:
+
+\subparagraph{Healthcare / Life Sciences}\mbox{}\par
+
+\subparagraph{Biotech / Pharma}\mbox{}\par
+Seeds: Moderna, BioNTech, Recursion Pharmaceuticals, Tempus AI, Insitro, AbCellera
+
+
+\subparagraph{Digital Health}\mbox{}\par
+Seeds: Teladoc, Hims \& Hers, Ro, Noom, Color Health
+
+
+⚠ \textbf{Excluded (do not use as seeds):}
 
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Customer concentration: are the top 5 customers >30\% of revenue? (Critical for acquisition risk)
-\item {} Customer type: enterprise vs. SMB vs. consumer
-\item {} Contract structure: subscription vs. transactional vs. license (if known)
-\item {} Geographic mix
+\item {} \emph{Cerebral} — Still operating but has faced significant regulatory issues; include only if the user specifically requests it.
 \end{itemize}
 
-Customer concentration is the single most important signal here — if the tools return any data on top customers or revenue concentration, highlight it prominently. If data is sparse, write what you can infer from the business description and relationships. Keep this to 2-3 sentences — it's context for the segment table, not a standalone analysis.
+\subparagraph{Medical Devices}\mbox{}\par
+Seeds: Intuitive Surgical, Butterfly Network, Outset Medical
 
 
-\subparagraph{4. Strategic Fit Analysis}\mbox{}\par
-\textbf{This is the signature section of the Corp Dev tear sheet.} It is required — do not skip or compress it. It uses the Business Relationships data from S\&P Capital IQ to map overlaps and complements.
-
-
-Organize as three buckets. \textbf{Each bucket must be 2-3 sentences of analytical reasoning, not a list of company names.} Listing ``Customers: Microsoft, JPMorgan, Google'' without context is useless. Instead, explain \emph{what the overlap or complement means} for an acquisition.
-
-
-\textbf{Customer Overlap:} Do the target's customers also buy from the acquirer (or the acquirer's industry)? Shared customers = easier cross-sell, but also risk of channel conflict. Name shared relationships and explain the implications.
-
-
-\textbf{Technology / Product Complement:} Does the target fill a gap in the acquirer's portfolio? What does their tech stack look like? Who are their technology vendors? If they're already using the acquirer's technology, explain why that's a strong integration signal.
-
-
-\textbf{Competitive Displacement:} Is the target a competitor, or does acquiring them remove a competitor from the market? Name the target's key competitors and explain how the competitive landscape would change post-acquisition.
-
-
-This section requires synthesis — combine relationship data with the business overview to draw connections. If the user has told you who the acquirer is, tailor to that acquirer. If not, write it generically but still analytically.
-
-
-\textbf{Length discipline:} The 2-3 sentence target per bucket above is a hard constraint, not a suggestion. Each bullet should front-load the insight, then support with one specific data point. The actual outputs frequently balloon to 5-7 sentences per bullet — this is the primary driver of page 3 spillover. If you find yourself writing more than 3 sentences, move the excess detail to Integration Considerations.
-
-
-\subparagraph{5. Financial Summary (3-Year)}\mbox{}\par
-Similar to IB/M\&A but with added emphasis on R\&D and capital efficiency.
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
-\toprule
-{} \textbf{Metric (\$M)} & \textbf{FY20XX} & \textbf{FY20XX} & \textbf{FY20XX} \\
-\midrule
-{} Revenue &  &  &  \\
-{} Revenue Growth \% &  &  &  \\
-{} Gross Margin \% &  &  &  \\
-{} EBITDA &  &  &  \\
-{} EBITDA Margin \% &  &  &  \\
-{} R\&D Expense &  &  &  \\
-{} R\&D as \% of Revenue &  &  &  \\
-{} Capex &  &  &  \\
-{} Free Cash Flow &  &  &  \\
-{} FCF Conversion (FCF/ EBITDA) &  &  &  \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-R\&D intensity signals how much of the target's value is in IP vs. services. FCF conversion signals integration complexity — high-capex businesses are harder to integrate. If R\&D expense isn't separately reported, note ``Not separately disclosed'' in the row rather than ``N/A'' — this itself is informative (suggests R\&D may be embedded in COGS or SG\&A).
-
-
-\textbf{Capital Structure} (compact sub-table below the financial summary):
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
-\toprule
-{} \textbf{Metric} & \textbf{Value} \\
-\midrule
-{} Total Debt & \$XXM \\
-{} Cash \& Equivalents & \$XXM \\
-{} Net Debt & \$XXM \\
-{} Net Debt /  EBITDA & X.Xx \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-Frame for acquisition context: below the table, include one sentence interpreting leverage (e.g., ``Net debt of \$X represents Y.Yx EBITDA leverage, which is manageable for an investment-grade acquirer but would compound leverage in an LBO scenario.''). Pull from the balance sheet data already retrieved.
-
-
-\subparagraph{6. Valuation Context}\mbox{}\par
-\textbf{This section is required for public companies.} Corp Dev teams need market context to frame a potential bid. If the tools return valuation multiples, this section must appear. Do not cut it for space — cut Ownership Snapshot (Section 7) first.
-
-
-Not a formal valuation — Corp Dev teams do their own DCFs. This provides market context.
-
-
-\textbf{a) Trading multiples} (if public):
-
-
-\textbf{Peer context is essential, not optional.} If the user provided comps, show each in its own column. If no comps were provided, use the competitors tool to identify 3-5 public peers, then pull EV/Revenue (NTM), EV/EBITDA (NTM), revenue growth \%, and EBITDA margin \% for each.
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
-\toprule
-{} \textbf{Metric} & \textbf{[Company]} & \textbf{[Peer 1]} & \textbf{[Peer 2]} & \textbf{[Peer 3]} & \textbf{Peer Median} \\
-\midrule
-{} EV/ Revenue (NTM) &  &  &  &  &  \\
-{} EV/ EBITDA (NTM) &  &  &  &  &  \\
-{} Revenue Growth \% &  &  &  &  &  \\
-{} EBITDA Margin \% &  &  &  &  &  \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-A company's multiples in isolation tell a corp dev team nothing — they need relative context to assess whether the target is cheap or rich vs. the peer set. This is the minimum viable valuation context for a target profile.
-
-
-If peer multiples are unavailable from the tools, show the company's own multiples and list selected peer names below the table for the reader's reference.
-
-
-\textbf{b) Precedent transactions (data permitting):} If the M\&A tools return recent transactions involving the company's peers or within the same sub-sector, display them:
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
-\toprule
-{} \textbf{Date} & \textbf{Target} & \textbf{Acquirer} & \textbf{EV (\$M)} & \textbf{EV/ Rev} & \textbf{EV/ EBITDA} \\
-\midrule
-\bottomrule
-\end{longtable}
-\endgroup
-
-Frame as context: ``Recent transactions in [sub-sector] have valued targets at X–Yx revenue.''
-
-
-If precedent transaction data is not available from the tools, note ``Precedent transaction data not available from data source'' rather than omitting silently. Do not fabricate precedent multiples.
-
-
-For private companies, skip trading multiples. Precedent transactions (data permitting) are still useful.
-
-
-\subparagraph{7. Ownership Snapshot (data permitting — omit if tools return nothing)}\mbox{}\par
-If the tools return ownership data, include a compact block: founder/family control \%, PE sponsor details, institutional concentration. Ownership structure directly impacts deal complexity and is relevant for integration considerations.
-
-
-\textbf{Do not include a Management Team table.} No S\&P Global tool returns executive data — see Data Integrity Rule 10. Management names from training data will be stale.
-
-
-\subparagraph{8. Integration Considerations}\mbox{}\par
-\textbf{Required section — do not cut.} This is the analytical capstone of the Corp Dev tear sheet. Synthesized observations drawn from everything above. 3-4 substantive bullets:
+⚠ \textbf{Excluded (do not use as seeds):}
 
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Key risks:} Customer concentration, key-person dependency, technology debt indicators
-\item {} \textbf{Integration complexity:} Geography (multi-country = harder), employee count, number of products
-\item {} \textbf{Synergy signals:} Shared customers, complementary products, overlapping technology vendors
-\item {} \textbf{Open questions:} What would a corp dev team need to diligence before making a bid? Focus on concrete, actionable diligence items — not open-ended strategic questions. Good examples: regulatory approval timeline and jurisdictions, change-of-control provisions in key contracts, key-person retention risk (especially founders/CTOs), customer contract transferability, IP ownership structure, outstanding litigation. Bad examples: ``How defensible is X?'' or ``What is the long-term market opportunity?'' — these are analyst questions, not diligence items.
+\item {} \emph{Shockwave Medical} — Acquired by Johnson \& Johnson (May 2024). Now a subsidiary with no independent funding rounds.
 \end{itemize}
 
-Label clearly as analytical observations, not facts from the data source.
+\subparagraph{Energy / Climate}\mbox{}\par
+
+\subparagraph{Climate Tech}\mbox{}\par
+Seeds: Redwood Materials, Form Energy, Commonwealth Fusion, Sila Nanotechnologies, Climeworks
 
 
-\subparagraph{Page Budget \& Cut Order}\mbox{}\par
-
-\textbf{Target: 2 pages.} Corp Dev profiles can fill both pages with substantive content, but must not spill to a third unless the user explicitly requests a longer format. If content exceeds 2 pages, cut in this order (cut each completely before moving to the next):
-
-
-\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Ownership Snapshot (section 7) — omit entirely
-\item {} Customer Analysis prose under Revenue Mix (section 3) — reduce to 2 sentences max
-\item {} Valuation Context prose (section 6) — keep peer comp table, cut interpretive paragraph below it
-\item {} Precedent Transactions (section 6b) — keep the ``not available'' note, remove if space-critical
-\item {} Capital Structure prose — keep table, cut interpretive paragraph below it
-\item {} Strategic Fit Analysis (section 4) — compress each bullet to 2-3 sentences max (do not remove the section)
-\end{enumerate}
-
-Never cut: Business \& Product Overview (2), Financial Summary (5 core table), Integration Considerations (8).
+\subparagraph{Clean Energy}\mbox{}\par
+Seeds: Enphase Energy, First Solar, Rivian, QuantumScape, Sunnova
 
 
-\subparagraph{Formatting Notes}\mbox{}\par
+\subparagraph{Consumer}\mbox{}\par
+
+\subparagraph{E-Commerce / Marketplace}\mbox{}\par
+Seeds: Shopify, Faire, Whatnot, Fanatics
+
+
+⚠ \textbf{Excluded (do not use as seeds):}
+
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{Strategic Fit Analysis is the centerpiece.} Give it distinctive formatting:
+\item {} \emph{Temu (PDD Holdings)} — PDD Holdings is a massive public conglomerate; its funding activity is captured via equity markets, not venture rounds.
+\end{itemize}
+
+\subparagraph{Consumer Social / Media}\mbox{}\par
+Seeds: Discord, Reddit, Substack
+
+
+⚠ \textbf{Excluded (do not use as seeds):}
+
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Bump text to 9.5pt (size: 19) — slightly larger than standard body text. This section should look like the most important content on the page.
-\item {} Use the standard indented block-style bullets from the global style config (360 DXA left indent).
-\item {} Do not apply left-border accents — they render inconsistently in docx-js.
-\end{itemize}
-\item {} Financial Summary should include R\&D and FCF conversion prominently.
-\item {} Valuation Context with peer comps is required for public companies — do not cut before Ownership Snapshot.
-\item {} For private targets, the profile leans heavily on qualitative sections (Business Overview, Strategic Fit, Relationships) — this is expected and still highly valuable.
-\item {} Tone: analytical and evaluative, not promotional. This isn't a pitch — it's an assessment.
-\item {} \textbf{Two-page discipline:} Before rendering, mentally estimate page count. The combination of Strategic Fit (3 long bullets) + Integration Considerations (4 bullets) alone can consume a full page — if so, compress Strategic Fit bullets first.
+\item {} \emph{BeReal} — Acquired by Voodoo (Jun 2024). Now a subsidiary.
+\item {} \emph{Lemon8} — The brand name ``Lemon8'' resolves in S\&P Global to a small Dutch company (Lemon8 B.V.), \textbf{not} the ByteDance social media app. ByteDance's apps are subsidiaries and do not have independent funding rounds. Do not use.
 \end{itemize}
 
-\vspace{0.8em}\hrule\vspace{0.8em}
+\subparagraph{Industrials / Logistics}\mbox{}\par
 
-\subsection{Skill Resource: spglobal/skills/tear-sheet/references/equity-research.md}\label{file:spglobal-skills-tear-sheet-references-equity-research-md}
-
-\paragraph{Equity Research Tear Sheet}\mbox{}\par
-
-\subparagraph{Purpose}\mbox{}\par
-A dense snapshot for buy-side or sell-side analysts evaluating an investment. Emphasis on valuation, forward estimates, financial trajectory, and analyst consensus. Everything supports or challenges an investment thesis.
+\subparagraph{Logistics / Supply Chain}\mbox{}\par
+Seeds: Flexport, Samsara, Project44, FourKites
 
 
-\textbf{Default page length:} 1 page. Equity research tear sheets are conventionally single-page — density is the point. If the user requests more space, extend to 2 pages.
+⚠ \textbf{Excluded (do not use as seeds):}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \emph{Convoy} — Shut down operations (Oct 2023). The identifier still resolves and historical rounds are available, but no new activity will appear.
+\end{itemize}
+
+\subparagraph{Robotics / Automation}\mbox{}\par
+Seeds: Figure AI, Agility Robotics, Locus Robotics, Symbotic, Covariant
 
 
-\subparagraph{Query Plan}\mbox{}\par
-
-Start with these queries. If results are incomplete, break into narrower follow-ups.
-
-
-\textbf{Query 1 — Profile + market data:} ``[Company] company overview sector industry market capitalization enterprise value stock price 52-week high low shares outstanding beta'' → Header, Business Description → \textbf{Immediately write} to \emph{/tmp/tear-sheet/company-profile.txt}
+\subparagraph{Space / Aerospace}\mbox{}\par
+Seeds: SpaceX, Relativity Space, Rocket Lab, Planet Labs, Astra
 
 
-\textbf{Query 2 — Historical financials:} ``[Company] annual income statement revenue gross profit EBITDA net income EPS free cash flow total debt cash and equivalents last 4 fiscal years'' → Financial Summary (pull 4 years; display 3; use the earliest year only for YoY growth computation) → \textbf{Immediately write} raw values to \emph{/tmp/tear-sheet/financials.csv}
+\subparagraph{Identifier Alias Reference}\mbox{}\par
 
-
-\textbf{Query 2b — Segments (if available):} ``[Company] revenue by segment business unit last 2 fiscal years'' → Revenue \& Segment Breakdown (need 2 years for YoY growth). If segment data is unavailable, skip this section — do not leave a blank table. → \textbf{Immediately write} to \emph{/tmp/tear-sheet/segments.csv} (skip if no segment data returned)
-
-
-\textbf{Query 3 — Valuation + consensus:} ``[Company] P/E EV/EBITDA EV/Revenue valuation multiples consensus revenue EPS estimates analyst recommendations price target'' → Valuation Snapshot, Consensus Estimates → \textbf{Immediately write} multiples to \emph{/tmp/tear-sheet/valuation.csv} → \textbf{Immediately write} estimates to \emph{/tmp/tear-sheet/consensus.csv}
-
-
-\textbf{Query 4 — Earnings:} ``[Company] most recent earnings call key takeaways guidance'' → Earnings Highlights → \textbf{Immediately write} to \emph{/tmp/tear-sheet/earnings.txt}
-
-
-\textbf{Query 5 — Stock performance:} ``[Company] stock price return 1 month 3 month 6 month 1 year YTD performance'' → Stock Performance (no intermediate file — data goes directly into document)
-
-
-\textbf{Query 6 (if user provided comps):} ``[Comp company] market cap EV/Revenue EV/EBITDA revenue growth'' — repeat for each comp → Peer context for Valuation Snapshot → \textbf{Immediately write} to \emph{/tmp/tear-sheet/peer-comps.csv}
-
-
-\subparagraph{Sections}\mbox{}\par
-
-Listed in priority order. If constrained to one page, cut from the bottom.
-
-
-\subparagraph{1. Company Header}\mbox{}\par
-Compact key-value block rendered as a two-column borderless table per the global style config.
-
-
-Left column: Ticker (exchange), sector / industry, HQ Right column: Stock price, 52-week range, market cap, EV, shares outstanding, beta
-
-
-\subparagraph{2. Business Description}\mbox{}\par
-2-3 tight sentences. \textbf{Rewrite in your own words for an analyst audience} — do not paste the CIQ company summary verbatim. The CIQ summary is an input; the output should be concise and thesis-oriented.
-
-
-For well-known, widely covered companies, assume the analyst already knows the basic business. Lead with what's \emph{changing} — strategic pivots, portfolio reshaping, new growth vectors — not a Wikipedia-style overview. For example, for a Fortune 500 company, don't spend a sentence on ``provides financial data to institutions.'' Instead: ``Reshaping its portfolio toward higher-margin data and analytics businesses, with a pending Mobility spin-off and aggressive AI investment through its Kensho subsidiary.''
-
-
-For lesser-known companies, a brief ``what they do'' sentence is appropriate before pivoting to the thesis-relevant dynamics.
-
-
-\subparagraph{3. Valuation Snapshot}\mbox{}\par
-Centerpiece of the equity tear sheet.
+Some well-known brand names don't match S\&P Global's legal entity names. If a brand name returns empty results from \emph{get\_\allowbreak{}info\_\allowbreak{}from\_\allowbreak{}identifiers}, try the alias:
 
 
 \begingroup
@@ -4107,669 +3520,34 @@ Centerpiece of the equity tear sheet.
 \setlength{\tabcolsep}{2pt}
 \begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
 \toprule
-{} \textbf{Metric} & \textbf{Trailing} & \textbf{Forward (NTM)} \\
+{} \textbf{Brand Name} & \textbf{S\&P Global Legal Name} & \textbf{company\_\allowbreak{} id} \\
 \midrule
-{} P/ E &  &  \\
-{} EV/ EBITDA &  &  \\
-{} EV/ Revenue &  &  \\
-{} P/ FCF &  &  \\
-{} Dividend Yield &  &  \\
+{} Together AI & Together Computer, Inc. & C\_\allowbreak{} 1860042219 \\
+{} Character.ai & Character Technologies, Inc. & C\_\allowbreak{} 1829047235 \\
+{} Runway ML & Runway AI, Inc. & C\_\allowbreak{} 633706980 \\
+{} Adept AI & Adept AI Labs Inc. & C\_\allowbreak{} 1780739313 \\
+{} xAI & X.AI LLC & C\_\allowbreak{} 1863863313 \\
 \bottomrule
 \end{longtable}
 \endgroup
 
-\textbf{Forward multiples are mandatory when available from the tools.} Showing only trailing multiples when forward data exists is a significant gap — analysts value companies on forward earnings. If forward multiples aren't available, show trailing only and note ``Fwd estimates N/A.''
+\begin{quote}
+``\textbf{Tip:} When a brand name fails, try \emph{get\_\allowbreak{}info\_\allowbreak{}from\_\allowbreak{}identifiers} with the legal name. If that also fails, the company may not be indexed yet. As a last resort, use the \emph{company\_\allowbreak{}id} directly as the identifier.''
+\end{quote}
 
-
-If the user provided comparable companies, add columns for each comp (or a ``Peer Median'' column if 3+ comps). If no user comps, and the tools return peer data, include a Peer Median column. If neither, show the company's multiples only.
-
-
-\subparagraph{4. Consensus Estimates}\mbox{}\par
-What the Street expects — a key differentiator for this tear sheet type.
-
-
-\textbf{Data availability note:} The depth of consensus data varies by company and coverage. Include whatever the tools return — analyst count, price target, Buy/Hold/Sell distribution — but do not fabricate or estimate any consensus figure. For thinly covered companies, this section may contain only revenue and EPS estimates, which is still valuable.
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
-\toprule
-{} \textbf{Metric} & \textbf{FY[year] Est.} & \textbf{FY[year+1] Est.} \\
-\midrule
-{} Revenue &  &  \\
-{} EPS (normalized) &  &  \\
-{} EBITDA &  &  \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-Use normalized/adjusted EPS where available — GAAP EPS can be distorted by one-time items and is less useful for forward estimates.
-
-
-Below the main estimates table, include a compact analyst consensus block (if data is available from the tools):
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
-\toprule
-{} \textbf{Analyst Consensus} & \textbf{} \\
-\midrule
-{} Mean Price Target & \$XXX \\
-{} \# of Estimates & XX \\
-{} Buy /  Hold /  Sell & XX /  XX /  XX \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-If price target or recommendation data is unavailable, omit the analyst consensus block rather than showing empty rows. Do not fabricate these figures.
-
-
-If consensus data isn't available at all, skip this entire section and note ``Consensus estimates not available.'' Do not estimate.
-
-
-\subparagraph{5. Financial Summary (3-Year)}\mbox{}\par
-Dense single table using actual fiscal year labels.
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
-\toprule
-{} \textbf{Metric (\$M)} & \textbf{FY20XX} & \textbf{FY20XX} & \textbf{FY20XX} \\
-\midrule
-{} Revenue &  &  &  \\
-{} Revenue Growth \% &  &  &  \\
-{} Gross Margin \% &  &  &  \\
-{} EBITDA &  &  &  \\
-{} EBITDA Margin \% &  &  &  \\
-{} Net Income &  &  &  \\
-{} EPS (Diluted) &  &  &  \\
-{} Free Cash Flow &  &  &  \\
-{} Net Debt &  &  &  \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-Compute derived metrics (growth \%, margins) from raw data rather than querying separately.
-
-
-\textbf{Capital Structure (separate compact sub-table below the Financial Summary):} Do NOT append these rows to the 3-year Financial Summary table — blank cells in prior-year columns look like missing data. Instead, render as a separate 2-column sub-table (Metric | Value) directly below, showing only the most recent fiscal year:
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
-\toprule
-{} \textbf{Metric} & \textbf{FY[latest]} \\
-\midrule
-{} Total Debt & \$XXM \\
-{} Cash \& Equivalents & \$XXM \\
-{} Net Debt & \$XXM \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-This matches the capital structure format used in Corp Dev and IB/M\&A tear sheets. Keep it tight — no extra spacing between the Financial Summary and this sub-table.
-
-
-\subparagraph{6. Revenue \& Segment Breakdown}\mbox{}\par
-If segment data is available from the tools, include a compact segment revenue table. This is essential context for equity research — analysts need to see which business lines are driving growth.
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
-\toprule
-{} \textbf{Segment} & \textbf{Revenue (\$M)} & \textbf{\% of Total} & \textbf{YoY Growth} \\
-\midrule
-{} [Segment A] &  &  &  \\
-{} [Segment B] &  &  &  \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-Keep this compact for the one-pager: table only, no qualitative paragraph. If segment data is unavailable, skip this section entirely — do not include a blank or placeholder table.
-
-
-\subparagraph{7. Recent Earnings Highlights}\mbox{}\par
-Include the quarter and date (e.g., ``Q3 FY2025 — October 2025''). 3-4 bullets with an \textbf{investment lens} — this audience wants segment-level specifics, not strategic themes:
-
-
-\textbf{Lead with guidance if provided.} If management issued forward guidance, make it the first bullet with a bold \textbf{Guidance:} prefix (e.g., ``\textbf{Guidance:} FY2026 EPS of \$19.40–\$19.65, implying 9–10\% growth; organic revenue growth of 6–8\%.''). Guidance is the single most actionable forward-looking data point for an analyst — do not bury it among operating highlights.
-
-
-\textbf{Beat/miss context (data permitting):} If consensus estimate data is available for the reported period, frame the headline result bullet as a beat/miss: ``Revenue of \$X beat/missed consensus of \$Y by Z\%.'' If consensus data for the reported period is not available from the tools, describe results in absolute terms and growth rates only — do not fabricate consensus figures.
-
-
-Then:
+\subparagraph{Notes}\mbox{}\par
 
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Segment-level performance: which business lines accelerated or decelerated
-\item {} Margin trajectory: any commentary on cost structure or profitability trends
-\end{itemize}
-
-Attribute to management: ``Management highlighted…'' or ``CFO noted…'' rather than declarative claims. This section should feel like an earnings recap, not a press release summary.
-
-
-\subparagraph{8. Key Operating Metrics}\mbox{}\par
-2-3 sector-relevant KPIs if available from the data (subscriber count, same-store sales, NIM, etc.). If nothing sector-specific, compute ROE and ROIC from the financials already retrieved. Optional — drop if space is tight.
-
-
-\subparagraph{9. Stock Performance (cut first)}\mbox{}\par
-Period return table. Low analytical value for this audience — cut this before anything else.
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
-\toprule
-{} \textbf{Period} & \textbf{Return} \\
-\midrule
-{} 1 Month &  \\
-{} 3 Month &  \\
-{} YTD &  \\
-{} 1 Year &  \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-\subparagraph{Formatting Notes}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{This is the densest tear sheet type.} It should feel noticeably more compressed than the other templates.
-\item {} Financial Summary table: 8pt text (size: 16), row height 240 DXA. Tightest spacing of any template.
-\item {} Valuation Snapshot and Consensus Estimates: 8.5pt text, occupy the visual center — analysts scan these first.
-\item {} Body text: 8.5pt (size: 17) — smaller than the global 9pt default. Every half-point matters on a one-pager.
-\item {} Section spacing: minimize. 6pt before section headers (not the global 12pt), 2pt after rules.
-\item {} Bold any metric showing a notable inflection (growth turning positive, margin expansion/compression).
-\item {} Prioritize information over whitespace at every turn.
+\item {} These lists skew toward US-based companies. For geographic filtering (Europe, Asia, etc.), the competitor expansion step is especially important.
+\item {} For niche sub-sectors not listed here, ask the user for 2–3 example companies to use as seeds.
+\item {} Always validate seeds are still active/relevant — companies pivot, merge, or shut down.
+\item {} \textbf{Refresh cadence:} These seeds should be reviewed quarterly. AI sector seeds in particular change rapidly due to acquisitions and new entrants.
+\item {} Seeds marked as subsidiaries or acquired will still resolve in \emph{get\_\allowbreak{}info\_\allowbreak{}from\_\allowbreak{}identifiers} (status = ``Operating Subsidiary'') but will return zero funding rounds. Skip these for funding queries.
 \end{itemize}
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
-\subsection{Skill Resource: spglobal/skills/tear-sheet/references/ib-ma.md}\label{file:spglobal-skills-tear-sheet-references-ib-ma-md}
-
-\paragraph{Investment Banking / M\&A Tear Sheet}\mbox{}\par
-
-\subparagraph{Purpose}\mbox{}\par
-A company profile for transaction context — potential target, acquirer, or pitchbook inclusion. Emphasis on strategic positioning, segment detail, business relationships, and M\&A activity. Valuation framed in transaction multiples, not investment thesis.
-
-
-\textbf{Default page length:} 1-2 pages. IB company profiles routinely spill to a second page, especially when segment and M\&A data is rich.
-
-
-\subparagraph{Query Plan}\mbox{}\par
-
-Start with these queries. Break apart and follow up if results are incomplete.
-
-
-\textbf{Query 1 — Profile + identification:} ``[Company] business description headquarters founded employees sector industry ownership structure major shareholders'' → Header, Business Overview → \textbf{Immediately write} to \emph{/tmp/tear-sheet/company-profile.txt}
-
-
-\textbf{Query 2 — Segments + financials:} ``[Company] revenue by segment business unit last 2 fiscal years AND annual income statement revenue gross profit EBITDA operating income net income capex free cash flow total debt cash and equivalents last 4 fiscal years'' → Segment Breakdown (need 2 years to compute YoY growth), Financial Summary (pull 4 years; display 3; use the earliest year only for YoY growth computation) → \textbf{Immediately write} raw financials to \emph{/tmp/tear-sheet/financials.csv} → \textbf{Immediately write} segment data to \emph{/tmp/tear-sheet/segments.csv} (skip if no segment data returned)
-
-
-\textbf{Query 3 — Valuation + comps:} If the user provided specific comparable companies, query each: ``[Comp company] enterprise value EV/Revenue EV/EBITDA revenue growth EBITDA margin'' Otherwise: Use the competitors tool to identify 3-5 public peers, then pull EV/Revenue (NTM), EV/EBITDA (NTM), revenue growth \%, and EBITDA margin \% for each. Also: ``[Company] enterprise value market capitalization EV/Revenue EV/EBITDA valuation multiples'' → Header (EV/market cap), Trading Comps → \textbf{Immediately write} company multiples to \emph{/tmp/tear-sheet/valuation.csv} → \textbf{Immediately write} peer data to \emph{/tmp/tear-sheet/peer-comps.csv}
-
-
-\textbf{Query 4 — M\&A activity:} ``[Company] acquisitions divestitures completed transactions last 5 years deal value'' → Company's own deals → \textbf{Immediately write} to \emph{/tmp/tear-sheet/ma-activity.csv}
-
-
-\textbf{Query 5 — Comparable transactions (data permitting):} Use the specific industry from Query 1 results (e.g., ``cloud observability software M\&A transactions'' not ``technology M\&A''). If the user specified comps, also try: ``[comp company] acquisition deal multiples.'' → Comparable Transactions → \textbf{Append} comparable transactions to \emph{/tmp/tear-sheet/ma-activity.csv} (add \emph{type=precedent} to distinguish from company's own deals)
-
-
-\textbf{Query 6 — Relationships + ownership:} ``[Company] key customers suppliers partners business relationships institutional ownership insider ownership'' → Business Relationships, Ownership (data permitting) → \textbf{Immediately write} to \emph{/tmp/tear-sheet/relationships.txt}
-
-
-\subparagraph{Sections}\mbox{}\par
-
-Listed in priority order. See ``Page Budget \& Cut Order'' below for explicit cut guidance.
-
-
-\subparagraph{1. Company Header}\mbox{}\par
-Key-value block with transaction-relevant identifiers.
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
-\toprule
-{} \textbf{Field} & \textbf{Notes} \\
-\midrule
-{} Company name & Large, bold \\
-{} Ticker \& Exchange & If public; omit for private \\
-{} HQ Location & City, State/ Country \\
-{} Founded & Year \\
-{} Employees & Approximate headcount \\
-{} Market Cap /  Valuation & Market cap if public; latest known valuation if private \\
-{} Enterprise Value &  \\
-{} Ownership & Public /  PE-backed (name sponsor) /  Family /  Other \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-For private companies: note ``Private Company'' prominently; skip ticker, exchange.
-
-
-\subparagraph{2. Business Overview}\mbox{}\par
-\textbf{This is a pitchbook paragraph, not a CIQ summary.} Do not paste the company description from the data tools. Rewrite in 4-6 sentences using pitchbook prose:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Characterize the revenue model (recurring vs. transactional, subscription vs. license)
-\item {} Name the customer base at scale (``serves 80\% of Fortune 500 banks'')
-\item {} Identify competitive moats by name (``proprietary dataset of X'', ``only provider with Y'')
-\item {} Frame growth vectors that would matter to a buyer or seller
-\end{itemize}
-
-The tone should be confident and specific. A banker reading this paragraph should immediately understand the company's strategic positioning.
-
-
-\subparagraph{3. Revenue \& Segment Breakdown}\mbox{}\par
-Revenue by business unit or product line.
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
-\toprule
-{} \textbf{Segment} & \textbf{Revenue (\$M)} & \textbf{\% of Total} & \textbf{YoY Growth} \\
-\midrule
-{} [Segment A] &  &  &  \\
-{} [Segment B] &  &  &  \\
-{} \textbf{Total} &  & \textbf{100\%} &  \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-\textbf{If segment data isn't available:} Replace the table with 2-3 sentences describing the revenue mix qualitatively (e.g., ``Revenue is primarily derived from subscription licenses (\textasciitilde{}70\%) and professional services (\textasciitilde{}30\%).''). A blank table looks broken — a qualitative description still conveys useful information.
-
-
-\subparagraph{4. Financial Summary (3-Year + LTM)}\mbox{}\par
-Actual fiscal years as column headers. \textbf{If LTM (last twelve months) data is available, add an LTM column to the right of the most recent fiscal year.} Label it ``LTM [quarter end date]'' (e.g., ``LTM Q3 2025''). Bankers work off LTM for valuation cross-checks — a fiscal-year-only view can be 6+ months stale.
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}}
-\toprule
-{} \textbf{Metric (\$M)} & \textbf{FY20XX} & \textbf{FY20XX} & \textbf{FY20XX} & \textbf{LTM [date]} \\
-\midrule
-{} Revenue &  &  &  &  \\
-{} Revenue Growth \% &  &  &  &  \\
-{} Gross Profit &  &  &  &  \\
-{} Gross Margin \% &  &  &  &  \\
-{} EBITDA &  &  &  &  \\
-{} EBITDA Margin \% &  &  &  &  \\
-{} Operating Income &  &  &  &  \\
-{} Net Income &  &  &  &  \\
-{} Capex &  &  &  &  \\
-{} Free Cash Flow &  &  &  &  \\
-{} FCF Margin \% &  &  &  &  \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-In M\&A context, margins and FCF conversion matter as much as absolute scale — a buyer is evaluating efficiency and cash generation potential.
-
-
-\textbf{Capital Structure} (compact sub-table below the financial summary):
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
-\toprule
-{} \textbf{Metric} & \textbf{Value} \\
-\midrule
-{} Total Debt & \$XXM \\
-{} Cash \& Equivalents & \$XXM \\
-{} Net Debt & \$XXM \\
-{} Net Debt /  EBITDA & X.Xx \\
-{} S\&P Credit Rating & XX (if available) \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-Pull from the balance sheet data already retrieved. This is standard in any banker's company profile — total debt, leverage ratio, and credit rating tell a buyer what the financing picture looks like. If credit rating is unavailable, omit that row.
-
-
-\subparagraph{5. Trading Comps}\mbox{}\par
-Company multiples \textbf{and operating metrics} — bankers use these together, not multiples in isolation.
-
-
-\textbf{Forward multiples are mandatory when available.} The table must include NTM multiples if the tools return them. Showing only trailing multiples when forward data exists is a significant gap — bankers price deals on forward earnings.
-
-
-\textbf{Peer columns are expected.} If the user provided comps, each gets its own column. If not, use the competitors tool to identify 3-5 public peers, pull their multiples and operating metrics, and include them. A company-only trading comps table without peer context is incomplete for any banking use case.
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
-\toprule
-{} \textbf{Metric} & \textbf{[Company]} & \textbf{[Comp 1]} & \textbf{[Comp 2]} & \textbf{[Comp 3]} & \textbf{Peer Median} \\
-\midrule
-{} EV/ Revenue (NTM) &  &  &  &  &  \\
-{} EV/ EBITDA (NTM) &  &  &  &  &  \\
-{} Revenue Growth \% &  &  &  &  &  \\
-{} EBITDA Margin \% &  &  &  &  &  \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-If only the company's own multiples are available after attempting peer queries, show those and list selected peer names below the table.
-
-
-For private companies, skip this section.
-
-
-\subparagraph{6. M\&A Activity}\mbox{}\par
-Two parts. \textbf{Deal values are expected in this section} — bankers notice when they're missing.
-
-
-\textbf{Hard rule: If the M\&A tools return a transaction value, it must appear in the output.} Never downgrade a known deal value to ``Undisclosed'' — this is a data integrity violation. Use ``Undisclosed'' only when the tools genuinely return no value for a transaction.
-
-
-\textbf{a) Company's Own Transactions:}
-
-
-\textbf{The table must include a dedicated Deal Value column.} Do not merge deal values into a Notes or Rationale column — bankers scan for numbers, and a dedicated column enables that.
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}}
-\toprule
-{} \textbf{Date} & \textbf{Target /  Divested} & \textbf{Deal Value (\$M)} & \textbf{Type} & \textbf{Rationale} \\
-\midrule
-{}  &  &  & Acquisition /  Divestiture &  \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-If none found: ``No disclosed transactions in the last 5 years.''
-
-
-\textbf{b) Comparable Sector Transactions (data permitting):} Use the specific industry identified earlier (e.g., ``cloud infrastructure software M\&A'' not ``technology M\&A''). If the user specified comps, also look for transactions involving those specific companies.
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
-\toprule
-{} \textbf{Date} & \textbf{Target} & \textbf{Acquirer} & \textbf{EV (\$M)} & \textbf{EV/ Rev} & \textbf{EV/ EBITDA} \\
-\midrule
-\bottomrule
-\end{longtable}
-\endgroup
-
-If not available from the tools: ``Comparable transaction data not available from data source.'' Do not fabricate precedent multiples.
-
-
-\subparagraph{7. Key Business Relationships}\mbox{}\par
-Leverages S\&P Capital IQ relationship data. Group by type:
-
-
-\textbf{Customers:} Top 3-5 named clients \textbf{Suppliers:} Key vendors and technology providers \textbf{Partners:} Strategic alliances, distribution, JVs \textbf{Competitors:} Key competitive names
-
-
-For each entry, include the relationship type and a parenthetical descriptor explaining the nature of the relationship (e.g., ``AWS — cloud infrastructure (primary hosting provider)'', ``JPMorgan — customer (enterprise analytics platform)''). A name alone without context isn't useful. Give this section breathing room — it's strategically valuable and most competing tear sheets lack it.
-
-
-\subparagraph{8. Ownership Snapshot (data permitting — omit if tools return nothing)}\mbox{}\par
-If the tools return institutional ownership, insider ownership percentage, or top holders, include a compact block:
-
-
-Top institutional holders (if available): list top 3-5 by ownership \%. Insider ownership: aggregate percentage.
-
-
-For PE-backed companies, name the sponsor, acquisition year, and ownership stake. Ownership structure directly affects deal complexity — a widely held public company, a founder-controlled company, and a PE-backed company each require fundamentally different deal approaches.
-
-
-If ownership data is not returned by the tools, omit this section entirely rather than showing placeholders.
-
-
-\textbf{Do not include a Management Team table.} No S\&P Global tool returns executive data — see Data Integrity Rule 10. Management names from training data will be stale.
-
-
-\subparagraph{Page Budget \& Cut Order}\mbox{}\par
-
-\textbf{Target: 2 pages maximum.} IB profiles can use both pages fully, but must not spill to a third. If content exceeds 2 pages, cut in this order (cut each completely before moving to the next):
-
-
-\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Ownership Snapshot (section 8) — omit entirely
-\item {} Comparable Sector Transactions (section 6b) — keep company's own M\&A, cut precedents
-\item {} Business Relationships (section 7) — compress to top 3 competitors + top 2 each of suppliers/partners/customers, drop descriptors to parenthetical only
-\item {} Capital Structure (section 4) — merge Net Debt/EBITDA into Financial Summary as a single row
-\item {} Trading Comparables (section 5) — reduce to 3 peers
-\end{enumerate}
-
-Never cut: Business Overview (2), Revenue \& Segment Breakdown (3), Financial Summary (4 core), M\&A Activity company transactions (6a).
-
-
-\subparagraph{Formatting Notes}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} Business Overview and Segment Breakdown get the most visual weight.
-\item {} \textbf{M\&A Activity is the signature section:} Use Accent color (\#2E75B6) fill with white bold text for M\&A table headers — this is the only table that uses a different header color from the standard \#D6E4F0. It should catch the eye on a scan.
-\item {} \textbf{Business Relationships: give breathing room when space permits.} 6pt between each relationship group, full descriptors on each entry. But if hitting page 3, compress per the cut order above — this section is high-value but also the most compressible.
-\item {} For private companies, the header, business overview, financials, and relationships form the core; other sections may be sparse.
-\item {} \textbf{Two-page discipline:} Before rendering, mentally estimate page count. If Business Relationships + M\&A Activity together will exceed one full page, start cutting per the cut order.
-\end{itemize}
-
-\vspace{0.8em}\hrule\vspace{0.8em}
-
-\subsection{Skill Resource: spglobal/skills/tear-sheet/references/sales-bd.md}\label{file:spglobal-skills-tear-sheet-references-sales-bd-md}
-
-\paragraph{Sales / Business Development Tear Sheet}\mbox{}\par
-
-\subparagraph{Purpose}\mbox{}\par
-A briefing document to prepare a sales or BD team for a client meeting. Emphasis on understanding the prospect's business, what leadership is publicly prioritizing, and identifying angles to connect your product/service to their needs. Financials are simplified to scale and trajectory.
-
-
-This is the most narrative-driven tear sheet type. It reads like a briefing memo, not a data sheet.
-
-
-\textbf{Default page length:} 1-2 pages. No strict convention — prioritize readability over compression.
-
-
-\subparagraph{Query Plan}\mbox{}\par
-
-Start with these queries. Follow up if results are incomplete.
-
-
-\textbf{Query 1 — Company profile + financials:} ``[Company] business description overview products services headquarters employees sector industry revenue gross margin last 2 fiscal years'' → Header, Company Overview, Financial Snapshot → \textbf{Immediately write} to \emph{/tmp/tear-sheet/company-profile.txt} → \textbf{Immediately write} raw financials to \emph{/tmp/tear-sheet/financials.csv}
-
-
-\textbf{Query 2 — Strategy + earnings:} ``[Company] most recent earnings call strategic priorities CEO commentary guidance key initiatives'' → Strategic Priorities → \textbf{Immediately write} to \emph{/tmp/tear-sheet/earnings.txt}
-
-
-\textbf{Query 3 — Relationships + news:} ``[Company] key customers suppliers partners competitors business relationships recent acquisitions partnerships announcements'' → Key Relationships, Recent News → \textbf{Immediately write} to \emph{/tmp/tear-sheet/relationships.txt}
-
-
-Three queries is usually sufficient. For well-known companies, these return rich results. For smaller or private companies, Queries 2 and 3 may be sparse — that's fine. The qualitative sections still deliver value because Claude synthesizes whatever is available into useful framing.
-
-
-\subparagraph{Sections}\mbox{}\par
-
-Listed in priority order. Cut from the bottom if space is constrained.
-
-
-\subparagraph{1. Company Header}\mbox{}\par
-Streamlined — identification only, no valuation metrics.
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
-\toprule
-{} \textbf{Field} & \textbf{Notes} \\
-\midrule
-{} Company name & Large, bold \\
-{} Ticker \& Exchange & If public; omit for private \\
-{} HQ & City, State/ Country \\
-{} Industry /  Sector &  \\
-{} Employees &  \\
-{} Annual Revenue (latest) & Round to nearest \$B or \$M \\
-{} Market Cap & If public; omit for private \\
-{} FY Revenue Guidance & If available from earnings data; e.g., ``6–8\% organic growth'' \\
-{} FY EPS or EPS Guidance & If public company; pull from \emph{earnings.txt} \\
-{} Key Financial Metric & Adj. EPS, EBITDA margin, or similar — one headline number \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-Forward guidance and EPS data come from Query 2 (earnings) — source from \emph{earnings.txt} when populating the header, not just \emph{company-profile.txt}.
-
-
-One horizontal band at the top. No enterprise value, no beta — this audience doesn't need them.
-
-
-\subparagraph{2. Company Overview}\mbox{}\par
-The most important section. A sales rep should read this and walk into a meeting with a solid grasp of the prospect.
-
-
-\textbf{Do not paste the CIQ company summary.} It reads like an SEC filing and will lose a non-finance audience. Rewrite in 3-5 sentences of plain language:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} What the company does (no investor jargon — say ``sells'' not ``monetizes'', say ``yearly revenue'' not ``top-line CAGR'')
-\item {} Who their customers are
-\item {} How they make money
-\item {} Where they operate
-\item {} What makes them distinctive
-\end{itemize}
-
-Write in prose paragraphs. A non-finance person should understand every sentence.
-
-
-\subparagraph{3. Strategic Priorities \& Management Commentary}\mbox{}\par
-What is leadership focused on right now? If you know what the CEO is talking about, you can align your pitch.
-
-
-\textbf{This is NOT an earnings recap.} Do not reuse the same bullets as the equity research tear sheet. Extract 3-5 \emph{strategic themes} with thematic labels and supporting data points:
-
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{AI/Data Monetization:} Management is investing aggressively in AI capabilities, allocating \$X to R\&D in FY2024 and launching three new AI-powered products.
-\item {} \textbf{Margin Expansion:} CEO cited operational efficiency as a top priority, targeting 200bps of operating margin improvement through automation.
-\item {} \textbf{International Growth:} Opening new offices in EMEA; Europe now represents 25\% of revenue, up from 18\%.
-\end{itemize}
-
-Each bullet should answer: ``What does this company care about right now, and what evidence supports it?'' A sales rep should read these and immediately see angles to connect their product.
-
-
-If earnings call data isn't available (common for private companies), replace with ``Recent Developments'' pulling from whatever news or announcements the tools return.
-
-
-\subparagraph{4. Financial Snapshot}\mbox{}\par
-Simplified. Single compact table — just scale, direction, and one profitability signal. A sales rep needs to know three things: how big is this company, is it growing, and is it healthy.
-
-
-\begingroup
-\small
-\setlength{\tabcolsep}{2pt}
-\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
-\toprule
-{} \textbf{Metric} & \textbf{FY[prior year]} & \textbf{FY[latest]} & \textbf{YoY Change} \\
-\midrule
-{} Revenue &  &  & +X\% \\
-{} Gross Margin \% &  &  & +X.Xpp \\
-{} Employees &  &  &  \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-Three rows maximum. No EBITDA, no EV multiples, no balance sheet, no net income. Gross margin (not EBITDA, not net income) is the right single profitability metric for a sales audience — it's intuitive (``how much they keep after direct costs'') and signals business health without requiring finance literacy. If the rep needs deeper financials, they can request the equity research version.
-
-
-For private companies, this table may have only revenue and employees — two data points showing scale and growth are enough for a sales meeting.
-
-
-\subparagraph{5. Key Relationships \& Ecosystem}\mbox{}\par
-Helps reps understand the prospect's world and identify angles.
-
-
-Four labeled lists, 3-5 names each with one-line descriptors:
-
-
-\textbf{Customers:} Who they sell to. Helps understand their go-to-market and shared target customers. Example: ``JPMorgan Chase — customer (enterprise analytics platform deployment)''
-
-
-\textbf{Vendors / Technology:} What they buy. Identifies displacement or integration opportunities. Example: ``AWS — vendor (primary cloud infrastructure); Snowflake — vendor (data warehouse)''
-
-
-\textbf{Partners:} Who they work with. Co-sell angles, mutual connections. Example: ``Deloitte — partner (implementation for enterprise clients)''
-
-
-\textbf{Competitors:} Who they compete against. Positioning context. Example: ``Bloomberg — competitor (financial data terminal)''
-
-
-Every entry needs a parenthetical descriptor so the rep understands \emph{what} the relationship means, not just \emph{who}.
-
-
-If relationship data isn't available, note ``Relationship data not available'' and move on.
-
-
-\subparagraph{6. Recent News \& Developments}\mbox{}\par
-3-5 bullets, each one sentence, most recent first. Include date if available. \textbf{Lead with the latest earnings report} — it's the most important recent event for a sales meeting and sets the context for everything else. Then: M\&A, product launches, leadership changes, major wins.
-
-
-\textbf{Include upcoming catalysts at the end of the section} with a ``\textbf{Coming Up:}'' label. Examples: upcoming earnings dates, pending divestitures, product launches, investor days, regulatory milestones. These create natural engagement windows for sales outreach and are often the best reason to reach out (``I noticed you have your Investor Day coming up in Q2...''). Pull from earnings call commentary and M\&A data (pending transactions).
-
-
-\subparagraph{7. Conversation Starters (cut first)}\mbox{}\par
-2-3 suggested talking points synthesized from the data above. \textbf{Each starter must reference a specific strategic priority from Section 3} — generic questions are useless. Frame as questions.
-
-
-\textbf{Tag each starter with a suggested persona} — e.g., (CTO), (CFO), (CDO), (Head of Data), (VP Engineering), (Head of Procurement). A rep meeting with a CTO needs a different opener than one meeting with a CFO. If the user specified who they're meeting with, generate starters for that persona only.
-
-
-Examples:
-
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \emph{(CTO/CDO)} ``You mentioned [specific AI initiative from Section 3] on your last earnings call — how is that impacting your [relevant need]?''
-\item {} \emph{(CFO/COO)} ``With your [margin expansion target from Section 3], are you evaluating tools that could accelerate that timeline?''
-\item {} \emph{(VP Strategy/Corp Dev)} ``I noticed [Company] recently acquired [target] — does that change your approach to [capability]?''
-\end{itemize}
-
-If the user described what product/service they're selling, tailor these to connect the prospect's priorities to that offering. If not, keep them grounded in the prospect's strategic themes but generic in solution framing.
-
-
-\textbf{Validation test:} Before finalizing each conversation starter, verify it contains at least one specific number, date, product name, or initiative name drawn from the tear sheet. A question that could apply to any company in the sector is not a good conversation starter. ``How are you thinking about AI?'' is generic. ``Your CEO mentioned \$1B in AI investment since 2018 and 20\% adoption of the iLEVEL auto-ingestion feature — how is that changing your analysts' workflows?'' is specific and demonstrates preparation.
-
-
-This section is Claude's synthesis, not raw data from the tools. Label it clearly.
-
-
-\subparagraph{Formatting Notes}\mbox{}\par
-\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
-\item {} \textbf{This should be the warmest, most readable tear sheet.} Rigorous content, but the formatting should feel like a briefing memo, not a data terminal.
-\item {} Body text: use the full 9pt (size: 18). No compression — readability over density.
-\item {} Line spacing: 1.15x on body paragraphs (slightly more generous than default). This template is the one where whitespace is a feature, not waste.
-\item {} Company Overview and Strategic Priorities should take \textasciitilde{}40-50\% of the page.
-\item {} Financial Snapshot: visually compact, secondary prominence. Keep it small and clean.
-\item {} Key Relationships: consider two-column layout (Customers + Vendors on left, Partners + Competitors on right) to save vertical space while keeping descriptors visible.
-\item {} Conversation Starters: use the indented block-style bullets. These are the payoff of the document — they should stand out visually.
-\end{itemize}
-
-\vspace{0.8em}\hrule\vspace{0.8em}
-
-\subsection{Skill: tear-sheet}\label{file:spglobal-skills-tear-sheet-SKILL-md}
+\subsection{Skill: tear-sheet}\label{file:spglobal-skills-tear-sheet-SKILL.md}
 
 \paragraph{File Metadata}\mbox{}\par
 \begingroup
@@ -5173,6 +3951,1026 @@ Not every audience type uses every file — the reference files define which que
 
 \textbf{→ Arithmetic validation is now enforced in Step 3b (Calculate Derived Metrics).} All margin calculations, growth rates, segment totals, percentage columns, and valuation cross-checks are validated during the dedicated calculation pass, before document generation begins. See Step 3b for the full validation checklist.
 
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill Resource: spglobal/skills/tear-sheet/references/corp-dev.md}\label{file:spglobal-skills-tear-sheet-references-corp-dev.md}
+
+\paragraph{Corporate Development Tear Sheet}\mbox{}\par
+
+\subparagraph{Purpose}\mbox{}\par
+A target evaluation profile for an internal Corp Dev team assessing a potential acquisition. Unlike the IB/M\&A profile (which tells a strategic \emph{story} for a pitch), this is an analytical document focused on strategic fit: how the target's products, customers, technology, and operations overlap with or complement the acquirer's. The Corp Dev audience already knows their own company — they need to understand the target through the lens of ``should we buy this, and what would integration look like?''
+
+
+\textbf{Default page length:} 1-2 pages. Corp Dev teams are comfortable with denser profiles and won't penalize a second page if the content is substantive.
+
+
+\subparagraph{Query Plan}\mbox{}\par
+
+Start with these queries. Break apart and follow up if results are incomplete.
+
+
+\textbf{Query 1 — Target profile:} ``[Company] business description products services technology platform headquarters founded employees sector industry'' → Header, Business \& Product Overview → \textbf{Immediately write} to \emph{/tmp/tear-sheet/company-profile.txt}
+
+
+\textbf{Query 2 — Financials:} ``[Company] annual income statement revenue gross profit EBITDA operating income net income capex free cash flow R\&D expense total debt cash and equivalents last 4 fiscal years'' → Financial Summary (pull 4 years; display 3; use the earliest year only for YoY growth computation. R\&D is especially important for Corp Dev — they want to understand the target's investment in IP) → \textbf{Immediately write} raw values to \emph{/tmp/tear-sheet/financials.csv}
+
+
+\textbf{Query 3 — Segments + customers:} ``[Company] revenue by segment business unit last 2 fiscal years key customers end markets customer concentration'' → Revenue Mix (need 2 years for YoY growth), Customer Analysis → \textbf{Immediately write} segment data to \emph{/tmp/tear-sheet/segments.csv} (skip if no segment data returned)
+
+
+\textbf{Query 4 — Relationships + competitive landscape:} ``[Company] key customers suppliers partners competitors business relationships technology vendors'' → Strategic Fit Analysis, Ecosystem Map → \textbf{Immediately write} to \emph{/tmp/tear-sheet/relationships.txt}
+
+
+\textbf{Query 5 — Valuation + peers:} If user provided specific comps: ``[Comp company] enterprise value EV/Revenue EV/EBITDA revenue growth EBITDA margin'' Otherwise: Use the competitors tool to identify 3-5 public peers, then pull EV/Revenue (NTM), EV/EBITDA (NTM), revenue growth \%, and EBITDA margin \% for each. Also: ``[Company] enterprise value market capitalization valuation multiples'' → Valuation Context → \textbf{Immediately write} company multiples to \emph{/tmp/tear-sheet/valuation.csv} → \textbf{Immediately write} peer data to \emph{/tmp/tear-sheet/peer-comps.csv}
+
+
+\textbf{Query 6 — Ownership (data permitting):} ``[Company] ownership structure investors institutional ownership insider ownership'' → Ownership snapshot (no intermediate file — included in company-profile.txt if available)
+
+
+\subparagraph{Sections}\mbox{}\par
+
+Listed in priority order. See ``Page Budget \& Cut Order'' below for explicit cut guidance.
+
+
+\subparagraph{1. Company Header}\mbox{}\par
+Similar to IB/M\&A but adds a ``Strategic Relevance'' tagline.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Notes} \\
+\midrule
+{} Company name & Large, bold \\
+{} Ticker \& Exchange & If public; omit for private \\
+{} HQ Location &  \\
+{} Founded /  Employees &  \\
+{} Enterprise Value & Market cap for public; latest valuation for private \\
+{} Ownership & Public /  PE-backed /  Founder-led /  etc. \\
+{} \textbf{Strategic Relevance} & One sentence: why this target is attractive to an acquirer (synthesized from data) \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+The ``Strategic Relevance'' line is unique to Corp Dev. Write from a neutral analytical perspective, not from the target's marketing language. Frame what an acquirer \emph{gets} — not what the target \emph{is}. Good: ``Dominant position in commodity price benchmarks with regulatory moat and 70\%+ gross margins — a capital-light, high-barrier data asset.'' Bad: ``The world's leading provider of financial data and analytics.'' The former tells a corp dev team why this is attractive; the latter is a press release.
+
+
+\subparagraph{2. Business \& Product Overview}\mbox{}\par
+\textbf{Do not paste the CIQ company summary.} Rewrite in 4-6 sentences (one paragraph, not two) with a product and technology focus — this audience evaluates acquisitions, not investments:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Core products/services and what problem they solve
+\item {} Technology or platform architecture (at a high level)
+\item {} Key differentiators and competitive moat
+\item {} Customer segments — who buys this and why
+\item {} Current strategic direction
+\end{itemize}
+
+Write with an acquirer's lens. The reader is thinking: ``How would this fit with what we already have?'' The description should make it easy to spot overlaps and complements.
+
+
+\subparagraph{3. Revenue Mix \& Customer Profile}\mbox{}\par
+Two sub-sections:
+
+
+\textbf{a) Revenue by Segment} (if available):
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{Segment} & \textbf{Revenue (\$M)} & \textbf{\% of Total} & \textbf{YoY Growth} \\
+\midrule
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{b) Customer Analysis:} Below the segment table (or in place of it if segments aren't available), write a qualitative paragraph covering:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Customer concentration: are the top 5 customers >30\% of revenue? (Critical for acquisition risk)
+\item {} Customer type: enterprise vs. SMB vs. consumer
+\item {} Contract structure: subscription vs. transactional vs. license (if known)
+\item {} Geographic mix
+\end{itemize}
+
+Customer concentration is the single most important signal here — if the tools return any data on top customers or revenue concentration, highlight it prominently. If data is sparse, write what you can infer from the business description and relationships. Keep this to 2-3 sentences — it's context for the segment table, not a standalone analysis.
+
+
+\subparagraph{4. Strategic Fit Analysis}\mbox{}\par
+\textbf{This is the signature section of the Corp Dev tear sheet.} It is required — do not skip or compress it. It uses the Business Relationships data from S\&P Capital IQ to map overlaps and complements.
+
+
+Organize as three buckets. \textbf{Each bucket must be 2-3 sentences of analytical reasoning, not a list of company names.} Listing ``Customers: Microsoft, JPMorgan, Google'' without context is useless. Instead, explain \emph{what the overlap or complement means} for an acquisition.
+
+
+\textbf{Customer Overlap:} Do the target's customers also buy from the acquirer (or the acquirer's industry)? Shared customers = easier cross-sell, but also risk of channel conflict. Name shared relationships and explain the implications.
+
+
+\textbf{Technology / Product Complement:} Does the target fill a gap in the acquirer's portfolio? What does their tech stack look like? Who are their technology vendors? If they're already using the acquirer's technology, explain why that's a strong integration signal.
+
+
+\textbf{Competitive Displacement:} Is the target a competitor, or does acquiring them remove a competitor from the market? Name the target's key competitors and explain how the competitive landscape would change post-acquisition.
+
+
+This section requires synthesis — combine relationship data with the business overview to draw connections. If the user has told you who the acquirer is, tailor to that acquirer. If not, write it generically but still analytically.
+
+
+\textbf{Length discipline:} The 2-3 sentence target per bucket above is a hard constraint, not a suggestion. Each bullet should front-load the insight, then support with one specific data point. The actual outputs frequently balloon to 5-7 sentences per bullet — this is the primary driver of page 3 spillover. If you find yourself writing more than 3 sentences, move the excess detail to Integration Considerations.
+
+
+\subparagraph{5. Financial Summary (3-Year)}\mbox{}\par
+Similar to IB/M\&A but with added emphasis on R\&D and capital efficiency.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{Metric (\$M)} & \textbf{FY20XX} & \textbf{FY20XX} & \textbf{FY20XX} \\
+\midrule
+{} Revenue &  &  &  \\
+{} Revenue Growth \% &  &  &  \\
+{} Gross Margin \% &  &  &  \\
+{} EBITDA &  &  &  \\
+{} EBITDA Margin \% &  &  &  \\
+{} R\&D Expense &  &  &  \\
+{} R\&D as \% of Revenue &  &  &  \\
+{} Capex &  &  &  \\
+{} Free Cash Flow &  &  &  \\
+{} FCF Conversion (FCF/ EBITDA) &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+R\&D intensity signals how much of the target's value is in IP vs. services. FCF conversion signals integration complexity — high-capex businesses are harder to integrate. If R\&D expense isn't separately reported, note ``Not separately disclosed'' in the row rather than ``N/A'' — this itself is informative (suggests R\&D may be embedded in COGS or SG\&A).
+
+
+\textbf{Capital Structure} (compact sub-table below the financial summary):
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Metric} & \textbf{Value} \\
+\midrule
+{} Total Debt & \$XXM \\
+{} Cash \& Equivalents & \$XXM \\
+{} Net Debt & \$XXM \\
+{} Net Debt /  EBITDA & X.Xx \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Frame for acquisition context: below the table, include one sentence interpreting leverage (e.g., ``Net debt of \$X represents Y.Yx EBITDA leverage, which is manageable for an investment-grade acquirer but would compound leverage in an LBO scenario.''). Pull from the balance sheet data already retrieved.
+
+
+\subparagraph{6. Valuation Context}\mbox{}\par
+\textbf{This section is required for public companies.} Corp Dev teams need market context to frame a potential bid. If the tools return valuation multiples, this section must appear. Do not cut it for space — cut Ownership Snapshot (Section 7) first.
+
+
+Not a formal valuation — Corp Dev teams do their own DCFs. This provides market context.
+
+
+\textbf{a) Trading multiples} (if public):
+
+
+\textbf{Peer context is essential, not optional.} If the user provided comps, show each in its own column. If no comps were provided, use the competitors tool to identify 3-5 public peers, then pull EV/Revenue (NTM), EV/EBITDA (NTM), revenue growth \%, and EBITDA margin \% for each.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
+\toprule
+{} \textbf{Metric} & \textbf{[Company]} & \textbf{[Peer 1]} & \textbf{[Peer 2]} & \textbf{[Peer 3]} & \textbf{Peer Median} \\
+\midrule
+{} EV/ Revenue (NTM) &  &  &  &  &  \\
+{} EV/ EBITDA (NTM) &  &  &  &  &  \\
+{} Revenue Growth \% &  &  &  &  &  \\
+{} EBITDA Margin \% &  &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+A company's multiples in isolation tell a corp dev team nothing — they need relative context to assess whether the target is cheap or rich vs. the peer set. This is the minimum viable valuation context for a target profile.
+
+
+If peer multiples are unavailable from the tools, show the company's own multiples and list selected peer names below the table for the reader's reference.
+
+
+\textbf{b) Precedent transactions (data permitting):} If the M\&A tools return recent transactions involving the company's peers or within the same sub-sector, display them:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
+\toprule
+{} \textbf{Date} & \textbf{Target} & \textbf{Acquirer} & \textbf{EV (\$M)} & \textbf{EV/ Rev} & \textbf{EV/ EBITDA} \\
+\midrule
+\bottomrule
+\end{longtable}
+\endgroup
+
+Frame as context: ``Recent transactions in [sub-sector] have valued targets at X–Yx revenue.''
+
+
+If precedent transaction data is not available from the tools, note ``Precedent transaction data not available from data source'' rather than omitting silently. Do not fabricate precedent multiples.
+
+
+For private companies, skip trading multiples. Precedent transactions (data permitting) are still useful.
+
+
+\subparagraph{7. Ownership Snapshot (data permitting — omit if tools return nothing)}\mbox{}\par
+If the tools return ownership data, include a compact block: founder/family control \%, PE sponsor details, institutional concentration. Ownership structure directly impacts deal complexity and is relevant for integration considerations.
+
+
+\textbf{Do not include a Management Team table.} No S\&P Global tool returns executive data — see Data Integrity Rule 10. Management names from training data will be stale.
+
+
+\subparagraph{8. Integration Considerations}\mbox{}\par
+\textbf{Required section — do not cut.} This is the analytical capstone of the Corp Dev tear sheet. Synthesized observations drawn from everything above. 3-4 substantive bullets:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Key risks:} Customer concentration, key-person dependency, technology debt indicators
+\item {} \textbf{Integration complexity:} Geography (multi-country = harder), employee count, number of products
+\item {} \textbf{Synergy signals:} Shared customers, complementary products, overlapping technology vendors
+\item {} \textbf{Open questions:} What would a corp dev team need to diligence before making a bid? Focus on concrete, actionable diligence items — not open-ended strategic questions. Good examples: regulatory approval timeline and jurisdictions, change-of-control provisions in key contracts, key-person retention risk (especially founders/CTOs), customer contract transferability, IP ownership structure, outstanding litigation. Bad examples: ``How defensible is X?'' or ``What is the long-term market opportunity?'' — these are analyst questions, not diligence items.
+\end{itemize}
+
+Label clearly as analytical observations, not facts from the data source.
+
+
+\subparagraph{Page Budget \& Cut Order}\mbox{}\par
+
+\textbf{Target: 2 pages.} Corp Dev profiles can fill both pages with substantive content, but must not spill to a third unless the user explicitly requests a longer format. If content exceeds 2 pages, cut in this order (cut each completely before moving to the next):
+
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Ownership Snapshot (section 7) — omit entirely
+\item {} Customer Analysis prose under Revenue Mix (section 3) — reduce to 2 sentences max
+\item {} Valuation Context prose (section 6) — keep peer comp table, cut interpretive paragraph below it
+\item {} Precedent Transactions (section 6b) — keep the ``not available'' note, remove if space-critical
+\item {} Capital Structure prose — keep table, cut interpretive paragraph below it
+\item {} Strategic Fit Analysis (section 4) — compress each bullet to 2-3 sentences max (do not remove the section)
+\end{enumerate}
+
+Never cut: Business \& Product Overview (2), Financial Summary (5 core table), Integration Considerations (8).
+
+
+\subparagraph{Formatting Notes}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{Strategic Fit Analysis is the centerpiece.} Give it distinctive formatting:
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Bump text to 9.5pt (size: 19) — slightly larger than standard body text. This section should look like the most important content on the page.
+\item {} Use the standard indented block-style bullets from the global style config (360 DXA left indent).
+\item {} Do not apply left-border accents — they render inconsistently in docx-js.
+\end{itemize}
+\item {} Financial Summary should include R\&D and FCF conversion prominently.
+\item {} Valuation Context with peer comps is required for public companies — do not cut before Ownership Snapshot.
+\item {} For private targets, the profile leans heavily on qualitative sections (Business Overview, Strategic Fit, Relationships) — this is expected and still highly valuable.
+\item {} Tone: analytical and evaluative, not promotional. This isn't a pitch — it's an assessment.
+\item {} \textbf{Two-page discipline:} Before rendering, mentally estimate page count. The combination of Strategic Fit (3 long bullets) + Integration Considerations (4 bullets) alone can consume a full page — if so, compress Strategic Fit bullets first.
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill Resource: spglobal/skills/tear-sheet/references/equity-research.md}\label{file:spglobal-skills-tear-sheet-references-equity-research.md}
+
+\paragraph{Equity Research Tear Sheet}\mbox{}\par
+
+\subparagraph{Purpose}\mbox{}\par
+A dense snapshot for buy-side or sell-side analysts evaluating an investment. Emphasis on valuation, forward estimates, financial trajectory, and analyst consensus. Everything supports or challenges an investment thesis.
+
+
+\textbf{Default page length:} 1 page. Equity research tear sheets are conventionally single-page — density is the point. If the user requests more space, extend to 2 pages.
+
+
+\subparagraph{Query Plan}\mbox{}\par
+
+Start with these queries. If results are incomplete, break into narrower follow-ups.
+
+
+\textbf{Query 1 — Profile + market data:} ``[Company] company overview sector industry market capitalization enterprise value stock price 52-week high low shares outstanding beta'' → Header, Business Description → \textbf{Immediately write} to \emph{/tmp/tear-sheet/company-profile.txt}
+
+
+\textbf{Query 2 — Historical financials:} ``[Company] annual income statement revenue gross profit EBITDA net income EPS free cash flow total debt cash and equivalents last 4 fiscal years'' → Financial Summary (pull 4 years; display 3; use the earliest year only for YoY growth computation) → \textbf{Immediately write} raw values to \emph{/tmp/tear-sheet/financials.csv}
+
+
+\textbf{Query 2b — Segments (if available):} ``[Company] revenue by segment business unit last 2 fiscal years'' → Revenue \& Segment Breakdown (need 2 years for YoY growth). If segment data is unavailable, skip this section — do not leave a blank table. → \textbf{Immediately write} to \emph{/tmp/tear-sheet/segments.csv} (skip if no segment data returned)
+
+
+\textbf{Query 3 — Valuation + consensus:} ``[Company] P/E EV/EBITDA EV/Revenue valuation multiples consensus revenue EPS estimates analyst recommendations price target'' → Valuation Snapshot, Consensus Estimates → \textbf{Immediately write} multiples to \emph{/tmp/tear-sheet/valuation.csv} → \textbf{Immediately write} estimates to \emph{/tmp/tear-sheet/consensus.csv}
+
+
+\textbf{Query 4 — Earnings:} ``[Company] most recent earnings call key takeaways guidance'' → Earnings Highlights → \textbf{Immediately write} to \emph{/tmp/tear-sheet/earnings.txt}
+
+
+\textbf{Query 5 — Stock performance:} ``[Company] stock price return 1 month 3 month 6 month 1 year YTD performance'' → Stock Performance (no intermediate file — data goes directly into document)
+
+
+\textbf{Query 6 (if user provided comps):} ``[Comp company] market cap EV/Revenue EV/EBITDA revenue growth'' — repeat for each comp → Peer context for Valuation Snapshot → \textbf{Immediately write} to \emph{/tmp/tear-sheet/peer-comps.csv}
+
+
+\subparagraph{Sections}\mbox{}\par
+
+Listed in priority order. If constrained to one page, cut from the bottom.
+
+
+\subparagraph{1. Company Header}\mbox{}\par
+Compact key-value block rendered as a two-column borderless table per the global style config.
+
+
+Left column: Ticker (exchange), sector / industry, HQ Right column: Stock price, 52-week range, market cap, EV, shares outstanding, beta
+
+
+\subparagraph{2. Business Description}\mbox{}\par
+2-3 tight sentences. \textbf{Rewrite in your own words for an analyst audience} — do not paste the CIQ company summary verbatim. The CIQ summary is an input; the output should be concise and thesis-oriented.
+
+
+For well-known, widely covered companies, assume the analyst already knows the basic business. Lead with what's \emph{changing} — strategic pivots, portfolio reshaping, new growth vectors — not a Wikipedia-style overview. For example, for a Fortune 500 company, don't spend a sentence on ``provides financial data to institutions.'' Instead: ``Reshaping its portfolio toward higher-margin data and analytics businesses, with a pending Mobility spin-off and aggressive AI investment through its Kensho subsidiary.''
+
+
+For lesser-known companies, a brief ``what they do'' sentence is appropriate before pivoting to the thesis-relevant dynamics.
+
+
+\subparagraph{3. Valuation Snapshot}\mbox{}\par
+Centerpiece of the equity tear sheet.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Metric} & \textbf{Trailing} & \textbf{Forward (NTM)} \\
+\midrule
+{} P/ E &  &  \\
+{} EV/ EBITDA &  &  \\
+{} EV/ Revenue &  &  \\
+{} P/ FCF &  &  \\
+{} Dividend Yield &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{Forward multiples are mandatory when available from the tools.} Showing only trailing multiples when forward data exists is a significant gap — analysts value companies on forward earnings. If forward multiples aren't available, show trailing only and note ``Fwd estimates N/A.''
+
+
+If the user provided comparable companies, add columns for each comp (or a ``Peer Median'' column if 3+ comps). If no user comps, and the tools return peer data, include a Peer Median column. If neither, show the company's multiples only.
+
+
+\subparagraph{4. Consensus Estimates}\mbox{}\par
+What the Street expects — a key differentiator for this tear sheet type.
+
+
+\textbf{Data availability note:} The depth of consensus data varies by company and coverage. Include whatever the tools return — analyst count, price target, Buy/Hold/Sell distribution — but do not fabricate or estimate any consensus figure. For thinly covered companies, this section may contain only revenue and EPS estimates, which is still valuable.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.320\textwidth}}
+\toprule
+{} \textbf{Metric} & \textbf{FY[year] Est.} & \textbf{FY[year+1] Est.} \\
+\midrule
+{} Revenue &  &  \\
+{} EPS (normalized) &  &  \\
+{} EBITDA &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Use normalized/adjusted EPS where available — GAAP EPS can be distorted by one-time items and is less useful for forward estimates.
+
+
+Below the main estimates table, include a compact analyst consensus block (if data is available from the tools):
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Analyst Consensus} & \textbf{} \\
+\midrule
+{} Mean Price Target & \$XXX \\
+{} \# of Estimates & XX \\
+{} Buy /  Hold /  Sell & XX /  XX /  XX \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+If price target or recommendation data is unavailable, omit the analyst consensus block rather than showing empty rows. Do not fabricate these figures.
+
+
+If consensus data isn't available at all, skip this entire section and note ``Consensus estimates not available.'' Do not estimate.
+
+
+\subparagraph{5. Financial Summary (3-Year)}\mbox{}\par
+Dense single table using actual fiscal year labels.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{Metric (\$M)} & \textbf{FY20XX} & \textbf{FY20XX} & \textbf{FY20XX} \\
+\midrule
+{} Revenue &  &  &  \\
+{} Revenue Growth \% &  &  &  \\
+{} Gross Margin \% &  &  &  \\
+{} EBITDA &  &  &  \\
+{} EBITDA Margin \% &  &  &  \\
+{} Net Income &  &  &  \\
+{} EPS (Diluted) &  &  &  \\
+{} Free Cash Flow &  &  &  \\
+{} Net Debt &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Compute derived metrics (growth \%, margins) from raw data rather than querying separately.
+
+
+\textbf{Capital Structure (separate compact sub-table below the Financial Summary):} Do NOT append these rows to the 3-year Financial Summary table — blank cells in prior-year columns look like missing data. Instead, render as a separate 2-column sub-table (Metric | Value) directly below, showing only the most recent fiscal year:
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Metric} & \textbf{FY[latest]} \\
+\midrule
+{} Total Debt & \$XXM \\
+{} Cash \& Equivalents & \$XXM \\
+{} Net Debt & \$XXM \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+This matches the capital structure format used in Corp Dev and IB/M\&A tear sheets. Keep it tight — no extra spacing between the Financial Summary and this sub-table.
+
+
+\subparagraph{6. Revenue \& Segment Breakdown}\mbox{}\par
+If segment data is available from the tools, include a compact segment revenue table. This is essential context for equity research — analysts need to see which business lines are driving growth.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{Segment} & \textbf{Revenue (\$M)} & \textbf{\% of Total} & \textbf{YoY Growth} \\
+\midrule
+{} [Segment A] &  &  &  \\
+{} [Segment B] &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Keep this compact for the one-pager: table only, no qualitative paragraph. If segment data is unavailable, skip this section entirely — do not include a blank or placeholder table.
+
+
+\subparagraph{7. Recent Earnings Highlights}\mbox{}\par
+Include the quarter and date (e.g., ``Q3 FY2025 — October 2025''). 3-4 bullets with an \textbf{investment lens} — this audience wants segment-level specifics, not strategic themes:
+
+
+\textbf{Lead with guidance if provided.} If management issued forward guidance, make it the first bullet with a bold \textbf{Guidance:} prefix (e.g., ``\textbf{Guidance:} FY2026 EPS of \$19.40–\$19.65, implying 9–10\% growth; organic revenue growth of 6–8\%.''). Guidance is the single most actionable forward-looking data point for an analyst — do not bury it among operating highlights.
+
+
+\textbf{Beat/miss context (data permitting):} If consensus estimate data is available for the reported period, frame the headline result bullet as a beat/miss: ``Revenue of \$X beat/missed consensus of \$Y by Z\%.'' If consensus data for the reported period is not available from the tools, describe results in absolute terms and growth rates only — do not fabricate consensus figures.
+
+
+Then:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Segment-level performance: which business lines accelerated or decelerated
+\item {} Margin trajectory: any commentary on cost structure or profitability trends
+\end{itemize}
+
+Attribute to management: ``Management highlighted…'' or ``CFO noted…'' rather than declarative claims. This section should feel like an earnings recap, not a press release summary.
+
+
+\subparagraph{8. Key Operating Metrics}\mbox{}\par
+2-3 sector-relevant KPIs if available from the data (subscriber count, same-store sales, NIM, etc.). If nothing sector-specific, compute ROE and ROIC from the financials already retrieved. Optional — drop if space is tight.
+
+
+\subparagraph{9. Stock Performance (cut first)}\mbox{}\par
+Period return table. Low analytical value for this audience — cut this before anything else.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Period} & \textbf{Return} \\
+\midrule
+{} 1 Month &  \\
+{} 3 Month &  \\
+{} YTD &  \\
+{} 1 Year &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\subparagraph{Formatting Notes}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{This is the densest tear sheet type.} It should feel noticeably more compressed than the other templates.
+\item {} Financial Summary table: 8pt text (size: 16), row height 240 DXA. Tightest spacing of any template.
+\item {} Valuation Snapshot and Consensus Estimates: 8.5pt text, occupy the visual center — analysts scan these first.
+\item {} Body text: 8.5pt (size: 17) — smaller than the global 9pt default. Every half-point matters on a one-pager.
+\item {} Section spacing: minimize. 6pt before section headers (not the global 12pt), 2pt after rules.
+\item {} Bold any metric showing a notable inflection (growth turning positive, margin expansion/compression).
+\item {} Prioritize information over whitespace at every turn.
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill Resource: spglobal/skills/tear-sheet/references/ib-ma.md}\label{file:spglobal-skills-tear-sheet-references-ib-ma.md}
+
+\paragraph{Investment Banking / M\&A Tear Sheet}\mbox{}\par
+
+\subparagraph{Purpose}\mbox{}\par
+A company profile for transaction context — potential target, acquirer, or pitchbook inclusion. Emphasis on strategic positioning, segment detail, business relationships, and M\&A activity. Valuation framed in transaction multiples, not investment thesis.
+
+
+\textbf{Default page length:} 1-2 pages. IB company profiles routinely spill to a second page, especially when segment and M\&A data is rich.
+
+
+\subparagraph{Query Plan}\mbox{}\par
+
+Start with these queries. Break apart and follow up if results are incomplete.
+
+
+\textbf{Query 1 — Profile + identification:} ``[Company] business description headquarters founded employees sector industry ownership structure major shareholders'' → Header, Business Overview → \textbf{Immediately write} to \emph{/tmp/tear-sheet/company-profile.txt}
+
+
+\textbf{Query 2 — Segments + financials:} ``[Company] revenue by segment business unit last 2 fiscal years AND annual income statement revenue gross profit EBITDA operating income net income capex free cash flow total debt cash and equivalents last 4 fiscal years'' → Segment Breakdown (need 2 years to compute YoY growth), Financial Summary (pull 4 years; display 3; use the earliest year only for YoY growth computation) → \textbf{Immediately write} raw financials to \emph{/tmp/tear-sheet/financials.csv} → \textbf{Immediately write} segment data to \emph{/tmp/tear-sheet/segments.csv} (skip if no segment data returned)
+
+
+\textbf{Query 3 — Valuation + comps:} If the user provided specific comparable companies, query each: ``[Comp company] enterprise value EV/Revenue EV/EBITDA revenue growth EBITDA margin'' Otherwise: Use the competitors tool to identify 3-5 public peers, then pull EV/Revenue (NTM), EV/EBITDA (NTM), revenue growth \%, and EBITDA margin \% for each. Also: ``[Company] enterprise value market capitalization EV/Revenue EV/EBITDA valuation multiples'' → Header (EV/market cap), Trading Comps → \textbf{Immediately write} company multiples to \emph{/tmp/tear-sheet/valuation.csv} → \textbf{Immediately write} peer data to \emph{/tmp/tear-sheet/peer-comps.csv}
+
+
+\textbf{Query 4 — M\&A activity:} ``[Company] acquisitions divestitures completed transactions last 5 years deal value'' → Company's own deals → \textbf{Immediately write} to \emph{/tmp/tear-sheet/ma-activity.csv}
+
+
+\textbf{Query 5 — Comparable transactions (data permitting):} Use the specific industry from Query 1 results (e.g., ``cloud observability software M\&A transactions'' not ``technology M\&A''). If the user specified comps, also try: ``[comp company] acquisition deal multiples.'' → Comparable Transactions → \textbf{Append} comparable transactions to \emph{/tmp/tear-sheet/ma-activity.csv} (add \emph{type=precedent} to distinguish from company's own deals)
+
+
+\textbf{Query 6 — Relationships + ownership:} ``[Company] key customers suppliers partners business relationships institutional ownership insider ownership'' → Business Relationships, Ownership (data permitting) → \textbf{Immediately write} to \emph{/tmp/tear-sheet/relationships.txt}
+
+
+\subparagraph{Sections}\mbox{}\par
+
+Listed in priority order. See ``Page Budget \& Cut Order'' below for explicit cut guidance.
+
+
+\subparagraph{1. Company Header}\mbox{}\par
+Key-value block with transaction-relevant identifiers.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Notes} \\
+\midrule
+{} Company name & Large, bold \\
+{} Ticker \& Exchange & If public; omit for private \\
+{} HQ Location & City, State/ Country \\
+{} Founded & Year \\
+{} Employees & Approximate headcount \\
+{} Market Cap /  Valuation & Market cap if public; latest known valuation if private \\
+{} Enterprise Value &  \\
+{} Ownership & Public /  PE-backed (name sponsor) /  Family /  Other \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+For private companies: note ``Private Company'' prominently; skip ticker, exchange.
+
+
+\subparagraph{2. Business Overview}\mbox{}\par
+\textbf{This is a pitchbook paragraph, not a CIQ summary.} Do not paste the company description from the data tools. Rewrite in 4-6 sentences using pitchbook prose:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Characterize the revenue model (recurring vs. transactional, subscription vs. license)
+\item {} Name the customer base at scale (``serves 80\% of Fortune 500 banks'')
+\item {} Identify competitive moats by name (``proprietary dataset of X'', ``only provider with Y'')
+\item {} Frame growth vectors that would matter to a buyer or seller
+\end{itemize}
+
+The tone should be confident and specific. A banker reading this paragraph should immediately understand the company's strategic positioning.
+
+
+\subparagraph{3. Revenue \& Segment Breakdown}\mbox{}\par
+Revenue by business unit or product line.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{Segment} & \textbf{Revenue (\$M)} & \textbf{\% of Total} & \textbf{YoY Growth} \\
+\midrule
+{} [Segment A] &  &  &  \\
+{} [Segment B] &  &  &  \\
+{} \textbf{Total} &  & \textbf{100\%} &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+\textbf{If segment data isn't available:} Replace the table with 2-3 sentences describing the revenue mix qualitatively (e.g., ``Revenue is primarily derived from subscription licenses (\textasciitilde{}70\%) and professional services (\textasciitilde{}30\%).''). A blank table looks broken — a qualitative description still conveys useful information.
+
+
+\subparagraph{4. Financial Summary (3-Year + LTM)}\mbox{}\par
+Actual fiscal years as column headers. \textbf{If LTM (last twelve months) data is available, add an LTM column to the right of the most recent fiscal year.} Label it ``LTM [quarter end date]'' (e.g., ``LTM Q3 2025''). Bankers work off LTM for valuation cross-checks — a fiscal-year-only view can be 6+ months stale.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}}
+\toprule
+{} \textbf{Metric (\$M)} & \textbf{FY20XX} & \textbf{FY20XX} & \textbf{FY20XX} & \textbf{LTM [date]} \\
+\midrule
+{} Revenue &  &  &  &  \\
+{} Revenue Growth \% &  &  &  &  \\
+{} Gross Profit &  &  &  &  \\
+{} Gross Margin \% &  &  &  &  \\
+{} EBITDA &  &  &  &  \\
+{} EBITDA Margin \% &  &  &  &  \\
+{} Operating Income &  &  &  &  \\
+{} Net Income &  &  &  &  \\
+{} Capex &  &  &  &  \\
+{} Free Cash Flow &  &  &  &  \\
+{} FCF Margin \% &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+In M\&A context, margins and FCF conversion matter as much as absolute scale — a buyer is evaluating efficiency and cash generation potential.
+
+
+\textbf{Capital Structure} (compact sub-table below the financial summary):
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Metric} & \textbf{Value} \\
+\midrule
+{} Total Debt & \$XXM \\
+{} Cash \& Equivalents & \$XXM \\
+{} Net Debt & \$XXM \\
+{} Net Debt /  EBITDA & X.Xx \\
+{} S\&P Credit Rating & XX (if available) \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Pull from the balance sheet data already retrieved. This is standard in any banker's company profile — total debt, leverage ratio, and credit rating tell a buyer what the financing picture looks like. If credit rating is unavailable, omit that row.
+
+
+\subparagraph{5. Trading Comps}\mbox{}\par
+Company multiples \textbf{and operating metrics} — bankers use these together, not multiples in isolation.
+
+
+\textbf{Forward multiples are mandatory when available.} The table must include NTM multiples if the tools return them. Showing only trailing multiples when forward data exists is a significant gap — bankers price deals on forward earnings.
+
+
+\textbf{Peer columns are expected.} If the user provided comps, each gets its own column. If not, use the competitors tool to identify 3-5 public peers, pull their multiples and operating metrics, and include them. A company-only trading comps table without peer context is incomplete for any banking use case.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
+\toprule
+{} \textbf{Metric} & \textbf{[Company]} & \textbf{[Comp 1]} & \textbf{[Comp 2]} & \textbf{[Comp 3]} & \textbf{Peer Median} \\
+\midrule
+{} EV/ Revenue (NTM) &  &  &  &  &  \\
+{} EV/ EBITDA (NTM) &  &  &  &  &  \\
+{} Revenue Growth \% &  &  &  &  &  \\
+{} EBITDA Margin \% &  &  &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+If only the company's own multiples are available after attempting peer queries, show those and list selected peer names below the table.
+
+
+For private companies, skip this section.
+
+
+\subparagraph{6. M\&A Activity}\mbox{}\par
+Two parts. \textbf{Deal values are expected in this section} — bankers notice when they're missing.
+
+
+\textbf{Hard rule: If the M\&A tools return a transaction value, it must appear in the output.} Never downgrade a known deal value to ``Undisclosed'' — this is a data integrity violation. Use ``Undisclosed'' only when the tools genuinely return no value for a transaction.
+
+
+\textbf{a) Company's Own Transactions:}
+
+
+\textbf{The table must include a dedicated Deal Value column.} Do not merge deal values into a Notes or Rationale column — bankers scan for numbers, and a dedicated column enables that.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.184\textwidth}}
+\toprule
+{} \textbf{Date} & \textbf{Target /  Divested} & \textbf{Deal Value (\$M)} & \textbf{Type} & \textbf{Rationale} \\
+\midrule
+{}  &  &  & Acquisition /  Divestiture &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+If none found: ``No disclosed transactions in the last 5 years.''
+
+
+\textbf{b) Comparable Sector Transactions (data permitting):} Use the specific industry identified earlier (e.g., ``cloud infrastructure software M\&A'' not ``technology M\&A''). If the user specified comps, also look for transactions involving those specific companies.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.153\textwidth}}
+\toprule
+{} \textbf{Date} & \textbf{Target} & \textbf{Acquirer} & \textbf{EV (\$M)} & \textbf{EV/ Rev} & \textbf{EV/ EBITDA} \\
+\midrule
+\bottomrule
+\end{longtable}
+\endgroup
+
+If not available from the tools: ``Comparable transaction data not available from data source.'' Do not fabricate precedent multiples.
+
+
+\subparagraph{7. Key Business Relationships}\mbox{}\par
+Leverages S\&P Capital IQ relationship data. Group by type:
+
+
+\textbf{Customers:} Top 3-5 named clients \textbf{Suppliers:} Key vendors and technology providers \textbf{Partners:} Strategic alliances, distribution, JVs \textbf{Competitors:} Key competitive names
+
+
+For each entry, include the relationship type and a parenthetical descriptor explaining the nature of the relationship (e.g., ``AWS — cloud infrastructure (primary hosting provider)'', ``JPMorgan — customer (enterprise analytics platform)''). A name alone without context isn't useful. Give this section breathing room — it's strategically valuable and most competing tear sheets lack it.
+
+
+\subparagraph{8. Ownership Snapshot (data permitting — omit if tools return nothing)}\mbox{}\par
+If the tools return institutional ownership, insider ownership percentage, or top holders, include a compact block:
+
+
+Top institutional holders (if available): list top 3-5 by ownership \%. Insider ownership: aggregate percentage.
+
+
+For PE-backed companies, name the sponsor, acquisition year, and ownership stake. Ownership structure directly affects deal complexity — a widely held public company, a founder-controlled company, and a PE-backed company each require fundamentally different deal approaches.
+
+
+If ownership data is not returned by the tools, omit this section entirely rather than showing placeholders.
+
+
+\textbf{Do not include a Management Team table.} No S\&P Global tool returns executive data — see Data Integrity Rule 10. Management names from training data will be stale.
+
+
+\subparagraph{Page Budget \& Cut Order}\mbox{}\par
+
+\textbf{Target: 2 pages maximum.} IB profiles can use both pages fully, but must not spill to a third. If content exceeds 2 pages, cut in this order (cut each completely before moving to the next):
+
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Ownership Snapshot (section 8) — omit entirely
+\item {} Comparable Sector Transactions (section 6b) — keep company's own M\&A, cut precedents
+\item {} Business Relationships (section 7) — compress to top 3 competitors + top 2 each of suppliers/partners/customers, drop descriptors to parenthetical only
+\item {} Capital Structure (section 4) — merge Net Debt/EBITDA into Financial Summary as a single row
+\item {} Trading Comparables (section 5) — reduce to 3 peers
+\end{enumerate}
+
+Never cut: Business Overview (2), Revenue \& Segment Breakdown (3), Financial Summary (4 core), M\&A Activity company transactions (6a).
+
+
+\subparagraph{Formatting Notes}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} Business Overview and Segment Breakdown get the most visual weight.
+\item {} \textbf{M\&A Activity is the signature section:} Use Accent color (\#2E75B6) fill with white bold text for M\&A table headers — this is the only table that uses a different header color from the standard \#D6E4F0. It should catch the eye on a scan.
+\item {} \textbf{Business Relationships: give breathing room when space permits.} 6pt between each relationship group, full descriptors on each entry. But if hitting page 3, compress per the cut order above — this section is high-value but also the most compressible.
+\item {} For private companies, the header, business overview, financials, and relationships form the core; other sections may be sparse.
+\item {} \textbf{Two-page discipline:} Before rendering, mentally estimate page count. If Business Relationships + M\&A Activity together will exceed one full page, start cutting per the cut order.
+\end{itemize}
+
+\vspace{0.8em}\hrule\vspace{0.8em}
+
+\subsection{Skill Resource: spglobal/skills/tear-sheet/references/sales-bd.md}\label{file:spglobal-skills-tear-sheet-references-sales-bd.md}
+
+\paragraph{Sales / Business Development Tear Sheet}\mbox{}\par
+
+\subparagraph{Purpose}\mbox{}\par
+A briefing document to prepare a sales or BD team for a client meeting. Emphasis on understanding the prospect's business, what leadership is publicly prioritizing, and identifying angles to connect your product/service to their needs. Financials are simplified to scale and trajectory.
+
+
+This is the most narrative-driven tear sheet type. It reads like a briefing memo, not a data sheet.
+
+
+\textbf{Default page length:} 1-2 pages. No strict convention — prioritize readability over compression.
+
+
+\subparagraph{Query Plan}\mbox{}\par
+
+Start with these queries. Follow up if results are incomplete.
+
+
+\textbf{Query 1 — Company profile + financials:} ``[Company] business description overview products services headquarters employees sector industry revenue gross margin last 2 fiscal years'' → Header, Company Overview, Financial Snapshot → \textbf{Immediately write} to \emph{/tmp/tear-sheet/company-profile.txt} → \textbf{Immediately write} raw financials to \emph{/tmp/tear-sheet/financials.csv}
+
+
+\textbf{Query 2 — Strategy + earnings:} ``[Company] most recent earnings call strategic priorities CEO commentary guidance key initiatives'' → Strategic Priorities → \textbf{Immediately write} to \emph{/tmp/tear-sheet/earnings.txt}
+
+
+\textbf{Query 3 — Relationships + news:} ``[Company] key customers suppliers partners competitors business relationships recent acquisitions partnerships announcements'' → Key Relationships, Recent News → \textbf{Immediately write} to \emph{/tmp/tear-sheet/relationships.txt}
+
+
+Three queries is usually sufficient. For well-known companies, these return rich results. For smaller or private companies, Queries 2 and 3 may be sparse — that's fine. The qualitative sections still deliver value because Claude synthesizes whatever is available into useful framing.
+
+
+\subparagraph{Sections}\mbox{}\par
+
+Listed in priority order. Cut from the bottom if space is constrained.
+
+
+\subparagraph{1. Company Header}\mbox{}\par
+Streamlined — identification only, no valuation metrics.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.480\textwidth}}
+\toprule
+{} \textbf{Field} & \textbf{Notes} \\
+\midrule
+{} Company name & Large, bold \\
+{} Ticker \& Exchange & If public; omit for private \\
+{} HQ & City, State/ Country \\
+{} Industry /  Sector &  \\
+{} Employees &  \\
+{} Annual Revenue (latest) & Round to nearest \$B or \$M \\
+{} Market Cap & If public; omit for private \\
+{} FY Revenue Guidance & If available from earnings data; e.g., ``6–8\% organic growth'' \\
+{} FY EPS or EPS Guidance & If public company; pull from \emph{earnings.txt} \\
+{} Key Financial Metric & Adj. EPS, EBITDA margin, or similar — one headline number \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Forward guidance and EPS data come from Query 2 (earnings) — source from \emph{earnings.txt} when populating the header, not just \emph{company-profile.txt}.
+
+
+One horizontal band at the top. No enterprise value, no beta — this audience doesn't need them.
+
+
+\subparagraph{2. Company Overview}\mbox{}\par
+The most important section. A sales rep should read this and walk into a meeting with a solid grasp of the prospect.
+
+
+\textbf{Do not paste the CIQ company summary.} It reads like an SEC filing and will lose a non-finance audience. Rewrite in 3-5 sentences of plain language:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} What the company does (no investor jargon — say ``sells'' not ``monetizes'', say ``yearly revenue'' not ``top-line CAGR'')
+\item {} Who their customers are
+\item {} How they make money
+\item {} Where they operate
+\item {} What makes them distinctive
+\end{itemize}
+
+Write in prose paragraphs. A non-finance person should understand every sentence.
+
+
+\subparagraph{3. Strategic Priorities \& Management Commentary}\mbox{}\par
+What is leadership focused on right now? If you know what the CEO is talking about, you can align your pitch.
+
+
+\textbf{This is NOT an earnings recap.} Do not reuse the same bullets as the equity research tear sheet. Extract 3-5 \emph{strategic themes} with thematic labels and supporting data points:
+
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{AI/Data Monetization:} Management is investing aggressively in AI capabilities, allocating \$X to R\&D in FY2024 and launching three new AI-powered products.
+\item {} \textbf{Margin Expansion:} CEO cited operational efficiency as a top priority, targeting 200bps of operating margin improvement through automation.
+\item {} \textbf{International Growth:} Opening new offices in EMEA; Europe now represents 25\% of revenue, up from 18\%.
+\end{itemize}
+
+Each bullet should answer: ``What does this company care about right now, and what evidence supports it?'' A sales rep should read these and immediately see angles to connect their product.
+
+
+If earnings call data isn't available (common for private companies), replace with ``Recent Developments'' pulling from whatever news or announcements the tools return.
+
+
+\subparagraph{4. Financial Snapshot}\mbox{}\par
+Simplified. Single compact table — just scale, direction, and one profitability signal. A sales rep needs to know three things: how big is this company, is it growing, and is it healthy.
+
+
+\begingroup
+\small
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}>{\RaggedRight\arraybackslash\hspace{0pt}}p{0.240\textwidth}}
+\toprule
+{} \textbf{Metric} & \textbf{FY[prior year]} & \textbf{FY[latest]} & \textbf{YoY Change} \\
+\midrule
+{} Revenue &  &  & +X\% \\
+{} Gross Margin \% &  &  & +X.Xpp \\
+{} Employees &  &  &  \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+Three rows maximum. No EBITDA, no EV multiples, no balance sheet, no net income. Gross margin (not EBITDA, not net income) is the right single profitability metric for a sales audience — it's intuitive (``how much they keep after direct costs'') and signals business health without requiring finance literacy. If the rep needs deeper financials, they can request the equity research version.
+
+
+For private companies, this table may have only revenue and employees — two data points showing scale and growth are enough for a sales meeting.
+
+
+\subparagraph{5. Key Relationships \& Ecosystem}\mbox{}\par
+Helps reps understand the prospect's world and identify angles.
+
+
+Four labeled lists, 3-5 names each with one-line descriptors:
+
+
+\textbf{Customers:} Who they sell to. Helps understand their go-to-market and shared target customers. Example: ``JPMorgan Chase — customer (enterprise analytics platform deployment)''
+
+
+\textbf{Vendors / Technology:} What they buy. Identifies displacement or integration opportunities. Example: ``AWS — vendor (primary cloud infrastructure); Snowflake — vendor (data warehouse)''
+
+
+\textbf{Partners:} Who they work with. Co-sell angles, mutual connections. Example: ``Deloitte — partner (implementation for enterprise clients)''
+
+
+\textbf{Competitors:} Who they compete against. Positioning context. Example: ``Bloomberg — competitor (financial data terminal)''
+
+
+Every entry needs a parenthetical descriptor so the rep understands \emph{what} the relationship means, not just \emph{who}.
+
+
+If relationship data isn't available, note ``Relationship data not available'' and move on.
+
+
+\subparagraph{6. Recent News \& Developments}\mbox{}\par
+3-5 bullets, each one sentence, most recent first. Include date if available. \textbf{Lead with the latest earnings report} — it's the most important recent event for a sales meeting and sets the context for everything else. Then: M\&A, product launches, leadership changes, major wins.
+
+
+\textbf{Include upcoming catalysts at the end of the section} with a ``\textbf{Coming Up:}'' label. Examples: upcoming earnings dates, pending divestitures, product launches, investor days, regulatory milestones. These create natural engagement windows for sales outreach and are often the best reason to reach out (``I noticed you have your Investor Day coming up in Q2...''). Pull from earnings call commentary and M\&A data (pending transactions).
+
+
+\subparagraph{7. Conversation Starters (cut first)}\mbox{}\par
+2-3 suggested talking points synthesized from the data above. \textbf{Each starter must reference a specific strategic priority from Section 3} — generic questions are useless. Frame as questions.
+
+
+\textbf{Tag each starter with a suggested persona} — e.g., (CTO), (CFO), (CDO), (Head of Data), (VP Engineering), (Head of Procurement). A rep meeting with a CTO needs a different opener than one meeting with a CFO. If the user specified who they're meeting with, generate starters for that persona only.
+
+
+Examples:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \emph{(CTO/CDO)} ``You mentioned [specific AI initiative from Section 3] on your last earnings call — how is that impacting your [relevant need]?''
+\item {} \emph{(CFO/COO)} ``With your [margin expansion target from Section 3], are you evaluating tools that could accelerate that timeline?''
+\item {} \emph{(VP Strategy/Corp Dev)} ``I noticed [Company] recently acquired [target] — does that change your approach to [capability]?''
+\end{itemize}
+
+If the user described what product/service they're selling, tailor these to connect the prospect's priorities to that offering. If not, keep them grounded in the prospect's strategic themes but generic in solution framing.
+
+
+\textbf{Validation test:} Before finalizing each conversation starter, verify it contains at least one specific number, date, product name, or initiative name drawn from the tear sheet. A question that could apply to any company in the sector is not a good conversation starter. ``How are you thinking about AI?'' is generic. ``Your CEO mentioned \$1B in AI investment since 2018 and 20\% adoption of the iLEVEL auto-ingestion feature — how is that changing your analysts' workflows?'' is specific and demonstrates preparation.
+
+
+This section is Claude's synthesis, not raw data from the tools. Label it clearly.
+
+
+\subparagraph{Formatting Notes}\mbox{}\par
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+\item {} \textbf{This should be the warmest, most readable tear sheet.} Rigorous content, but the formatting should feel like a briefing memo, not a data terminal.
+\item {} Body text: use the full 9pt (size: 18). No compression — readability over density.
+\item {} Line spacing: 1.15x on body paragraphs (slightly more generous than default). This template is the one where whitespace is a feature, not waste.
+\item {} Company Overview and Strategic Priorities should take \textasciitilde{}40-50\% of the page.
+\item {} Financial Snapshot: visually compact, secondary prominence. Keep it small and clean.
+\item {} Key Relationships: consider two-column layout (Customers + Vendors on left, Partners + Competitors on right) to save vertical space while keeping descriptors visible.
+\item {} Conversation Starters: use the indented block-style bullets. These are the payoff of the document — they should stand out visually.
+\end{itemize}
 
 \vspace{0.8em}\hrule\vspace{0.8em}
 
