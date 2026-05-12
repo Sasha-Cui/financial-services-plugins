@@ -1,25 +1,34 @@
 # Financial Services Plugins
 
-This is a marketplace of Claude Cowork plugins for financial services professionals. Each subdirectory is a standalone plugin.
+Cowork plugins and Claude Managed Agent templates for financial services. Each named agent ships two ways from one source.
 
 ## Repository Structure
 
 ```
-├── investment-banking/  # Investment banking productivity
+├── plugins/
+│   ├── agent-plugins/               #   named agents — one self-contained plugin each
+│   │   └── <slug>/
+│   │       ├── .claude-plugin/plugin.json
+│   │       ├── agents/<slug>.md     #   ← canonical system prompt (one source, two wrappers)
+│   │       └── skills/              #   ← bundled copies, synced from vertical-plugins/
+│   ├── vertical-plugins/            #   FSI verticals — skill sources, commands, MCPs
+│   │   └── <vertical>/
+│   │       ├── .claude-plugin/plugin.json
+│   │       ├── commands/
+│   │       ├── skills/
+│   │       └── .mcp.json
+│   └── partner-built/               #   partner plugins (LSEG, S&P Global)
+├── managed-agent-cookbooks/         # CMA cookbooks (one dir per named agent)
+│   └── <slug>/
+│       ├── agent.yaml               #   system + skills → ../../plugins/agent-plugins/<slug>/...
+│       ├── subagents/*.yaml         #   depth-1 leaf workers
+│       ├── steering-examples.json
+│       └── README.md                #   security tier + handoff notes
+├── claude-for-msft-365-install/     # admin tooling for the Microsoft 365 add-in (separate from FSI plugins)
+└── scripts/                         # deploy-managed-agent.sh, check.py, validate.py, orchestrate.py, sync-agent-skills.py
 ```
 
-## Plugin Structure
-
-Each plugin follows this layout:
-```
-plugin-name/
-├── .claude-plugin/plugin.json   # Plugin manifest (name, description, version)
-├── commands/                    # Slash commands (.md files)
-├── skills/                      # Knowledge files for specific tasks
-├── hooks/                       # Event-driven automation
-├── mcp/                         # MCP server integrations
-└── .claude/                     # User settings (*.local.md)
-```
+Run `python3 scripts/check.py` before committing — it lints every manifest, verifies all `system.file` / `skills.path` / `callable_agents.manifest` references resolve, and fails if any `agent-plugins/<slug>/skills/` copy has drifted from its `vertical-plugins/` source. **Edit skills in `vertical-plugins/`**, then run `python3 scripts/sync-agent-skills.py` to propagate into the agent bundles.
 
 ## Key Files
 
